@@ -17,7 +17,7 @@ from .materials import hex2rgb
 PRESETS = {
     #            key (color, W, size, az, el)    fill ratio  rim (color, W)       world (color, strength)
     "neutral_day": (("#FFF4E6", 900, 2.0, 35, 40), 0.45, ("#FFFFFF", 500), ("#BFD4F0", 0.6)),
-    "comedy":      (("#FFF1DC", 1000, 2.5, 30, 35), 0.6, ("#FFE2B8", 600), ("#CFE0FF", 0.8)),
+    "comedy":      (("#FFF1DC", 450, 2.5, 30, 35), 0.45, ("#FFE2B8", 300), ("#CFE0FF", 0.35)),
     "adventure":   (("#FFE3B5", 1400, 0.6, 55, 45), 0.3, ("#FFD08A", 900), ("#8FB6E8", 0.7)),
     "suspense":    (("#DCE6FF", 700, 0.8, 70, 25), 0.12, ("#7FA0FF", 700), ("#0B1020", 0.25)),
     "disaster":    (("#FFB070", 1500, 1.0, 80, 15), 0.18, ("#FF6A2A", 1200), ("#3A2418", 0.4)),

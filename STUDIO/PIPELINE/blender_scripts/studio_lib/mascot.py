@@ -363,6 +363,12 @@ def _eyes(P, name, coll, mats, rig):
         c = pb.constraints.new("DAMPED_TRACK")
         c.target = tgt
         c.track_axis = "TRACK_Y"
+        lim = pb.constraints.new("LIMIT_ROTATION")  # eyes never roll back into the head
+        lim.owner_space = "LOCAL"
+        for ax in ("x", "y", "z"):
+            setattr(lim, f"use_limit_{ax}", True)
+            setattr(lim, f"min_{ax}", -math.radians(32))
+            setattr(lim, f"max_{ax}", math.radians(32))
     return objs, tgt
 
 

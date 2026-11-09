@@ -168,27 +168,41 @@ def arm(ch, t, side, shoulder=(0, 0, 0), elbow=(0, 0, 0), wrist=(0, 0, 0), blend
         _key_rot(pb, frames(t), tuple(deg(x) for x in r))
 
 
-GESTURES = {  # side -> (shoulder, elbow, wrist)
-    "rest": ((0, 0, 0), (0, 0, 0), (0, 0, 0)),
-    "point": ((-75, 0, -10), (-5, 0, 0), (0, 0, 0)),
-    "wave": ((-20, 0, -110), (0, 0, -60), (0, 0, 20)),
-    "shrug": ((10, 0, -35), (-70, 0, 0), (0, 40, 0)),
-    "think": ((-35, 0, -10), (-130, 0, 0), (20, 0, 0)),
-    "stop": ((-80, 0, 0), (-20, 0, 0), (-70, 0, 0)),
-    "cover_mouth": ((-40, 0, -5), (-140, 0, 0), (0, 0, 0)),
-    "fist_pump": ((-20, 0, -40), (-120, 0, 0), (0, 0, 0)),
+RELAX_DEG = 22  # relaxed arm angle (world Y) applied on top of the rig A-pose
+
+# shoulder = WORLD euler deg for the RIGHT arm (mirrored for L), relative to the relaxed pose:
+#   X < 0 raises the arm forward, Y < 0 raises it out to the side (R arm), Z twists.
+# elbow = bend in deg (positive bends the forearm forward/up), wrist = local euler deg.
+GESTURES = {
+    "rest": ((0, 0, 0), 0, (0, 0, 0)),
+    "point": ((-80, -10, 0), 5, (0, 0, 0)),
+    "wave": ((-15, -95, 0), 70, (0, 0, 0)),
+    "shrug": ((-15, -25, 0), 80, (0, 0, 0)),
+    "think": ((-35, 5, 0), 120, (0, 0, 0)),
+    "stop": ((-80, 0, 0), 20, (-60, 0, 0)),
+    "cover_mouth": ((-45, 10, 0), 135, (0, 0, 0)),
+    "fist_pump": ((-20, -35, 0), 115, (0, 0, 0)),
 }
 
 
 def gesture(ch, t, name, side="R", blend=0.3, anticipation=True):
-    sh, el, wr = GESTURES[name]
+    (gx, gy, gz), elbow, wrist = GESTURES[name]
+    m = 1 if side == "R" else -1
+    relax = -RELAX_DEG if side == "R" else RELAX_DEG
+    pose = (gx, relax + m * gy, m * gz)
     if anticipation and name != "rest":  # small opposite move first
-        arm(ch, t - blend * 0.4, side, tuple(-x * 0.08 for x in sh), el, wr, blend * 0.6)
-    arm(ch, t, side, sh, el, wr, blend)
-    if name in ("point", "stop"):
-        fingers(ch, t, side, curl=0.9 if name == "point" else 0.0, except_=("index",) if name == "point" else ())
-    elif name in ("fist_pump",):
+        arm_world(ch, t - blend * 0.45, side, (-gx * 0.08, relax - m * gy * 0.05, 0), blend * 0.5)
+    arm_world(ch, t, side, pose, blend)
+    bone_world(ch, t, f"forearm.{side}", (-elbow, 0, 0), blend)  # hinge = rest X: bends forward
+    hd = _pb(ch, f"hand.{side}")
+    _key_rot(hd, frames(max(t - blend, 0)))
+    _key_rot(hd, frames(t), tuple(deg(x) for x in wrist))
+    if name == "point":
+        fingers(ch, t, side, curl=0.9, except_=("index",))
+    elif name == "fist_pump":
         fingers(ch, t, side, curl=1.0)
+    elif name in ("wave", "stop"):
+        fingers(ch, t, side, curl=0.0, spread=1.0)
 
 
 def fingers(ch, t, side, curl=0.0, spread=0.0, except_=(), blend=0.15):
@@ -233,18 +247,50 @@ def walk(ch, t0, t1, path, stride=0.55, cadence=1.9, bounce=0.025):
         for s, sg in (("L", 1), ("R", -1)):
             swing = math.sin(ph + (0 if s == "L" else math.pi))
             th, sn = _pb(ch, f"thigh.{s}"), _pb(ch, f"shin.{s}")
-            th.rotation_euler = (deg(28 * swing), 0, 0)
-            sn.rotation_euler = (deg(-35 * max(0, -math.cos(ph + (0 if s == "L" else math.pi)))), 0, 0)
+            knee = 35 * max(0, -math.cos(ph + (0 if s == "L" else math.pi)))
+            th.rotation_euler = world_rot(ch, th.name, (-28 * swing, 0, 0))
+            sn.rotation_euler = world_rot(ch, sn.name, (knee, 0, 0))  # knee bends backward
             th.keyframe_insert("rotation_euler", frame=f)
             sn.keyframe_insert("rotation_euler", frame=f)
             ua = _pb(ch, f"upper_arm.{s}")
-            ua.rotation_euler = (deg(-20 * swing), 0, 0)
+            ua.rotation_euler = world_rot(ch, ua.name, (20 * swing, sg * RELAX_DEG, 0))  # arms opposite legs
             ua.keyframe_insert("rotation_euler", frame=f)
     return total
 
 
+def world_rot(ch, bone, world_deg=(0, 0, 0)):
+    """Euler (bone-local) for a rotation given in REST armature space (deg): X<0 swings forward (-Y),
+    independent of bone roll. For child bones the axis follows the parent (an elbow hinge moves with the arm)."""
+    from mathutils import Euler
+    rest = ch["rig"].data.bones[bone].matrix_local.to_3x3()
+    rw = Euler(tuple(deg(a) for a in world_deg)).to_matrix()
+    return (rest.inverted() @ rw @ rest).to_euler("XYZ")
+
+
+def bone_world(ch, t, bone, world_deg=(0, 0, 0), blend=0.3):
+    pb = _pb(ch, bone)
+    if blend > 0:
+        _key_rot(pb, frames(max(t - blend, 0)))
+    pb.rotation_euler = world_rot(ch, bone, world_deg)
+    pb.keyframe_insert("rotation_euler", frame=frames(t))
+
+
+def arm_world(ch, t, side, world_deg=(0, 0, 0), blend=0.3):
+    bone_world(ch, t, f"upper_arm.{side}", world_deg, blend)
+
+
+def relax_arms(ch, t=0.0, angle=None):
+    """From rig A-pose to relaxed arms hanging near the body."""
+    angle = angle if angle is not None else RELAX_DEG
+    arm_world(ch, t, "L", (0, angle, 0), blend=0.0)
+    arm_world(ch, t, "R", (0, -angle, 0), blend=0.0)
+    for s in ("L", "R"):
+        fingers(ch, t, s, curl=0.25, blend=0.0)
+
+
 def idle(ch, t0, t1, seed=0):
-    """Breathing + blinks + occasional weight shift and glance - call on every on-screen character."""
+    """Relaxed arms + breathing + blinks + occasional weight shift - call on every on-screen character."""
+    relax_arms(ch, t0)
     breathe(ch, t0, t1)
     blinks(ch, t0, t1, seed=seed)
     rnd = random.Random(seed)

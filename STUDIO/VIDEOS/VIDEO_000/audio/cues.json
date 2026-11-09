@@ -1,0 +1,48 @@
+{
+  "duration": 10.0,
+  "music_db": -8.0,
+  "duck_db": -10.0,
+  "bus_db": {
+    "sfx": -6.0,
+    "amb": -16.0
+  },
+  "music_gates": [
+    [
+      5.437,
+      6.737000000000001
+    ]
+  ],
+  "sfx": [
+    {
+      "t": 0.0,
+      "name": "amb_room",
+      "bus": "amb",
+      "dur": 10.0,
+      "note": "room tone"
+    },
+    {
+      "t": 0.35,
+      "name": "ui_pop",
+      "gain_db": -6,
+      "note": "chip"
+    },
+    {
+      "t": 4.654,
+      "name": "whoosh_fast",
+      "gain_db": -4,
+      "note": "cut to face"
+    },
+    {
+      "t": 5.787000000000001,
+      "name": "ui_tick",
+      "gain_db": 0,
+      "note": "lamp switch click"
+    },
+    {
+      "t": 6.737000000000001,
+      "name": "impact_frame",
+      "gain_db": -2,
+      "note": "flash cut"
+    }
+  ]
+}

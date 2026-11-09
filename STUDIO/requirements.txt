@@ -1,0 +1,6 @@
+numpy
+scipy
+pillow
+skia-python
+pyloudnorm
+soundfile

@@ -98,7 +98,7 @@ def _rim(canvas, path, color, size, light_dir=(1, -0.3)):
     if not color:
         return
     off = skia.Path(path)
-    off.offset(-light_dir[0] * size * 0.04, -light_dir[1] * size * 0.04)
+    off.offset(-light_dir[0] * size * 0.012, -light_dir[1] * size * 0.012)
     edge = skia.Op(path, off, skia.PathOp.kDifference_PathOp)
     if edge:
         canvas.drawPath(edge, paint(color, alpha=0.7))
@@ -171,7 +171,7 @@ def draw_puppet(canvas, x, y, scale=1.0, pose=None, look=None):
     hands = {}
     for side_k, sgn in (("arm_l", -1), ("arm_r", 1)):
         a_sh, a_el = p.get(side_k, (8, 5))
-        hx, hy = _limb(canvas, sgn * tw * 0.47, sh_y, -sgn * a_sh, -sgn * a_el, 0.17 * s, 0.16 * s,
+        hx, hy = _limb(canvas, sgn * tw * 0.47, sh_y, sgn * a_sh, sgn * a_el, 0.17 * s, 0.16 * s,
                        0.07 * s, L["shirt"], L["shirt_shadow"])
         canvas.drawCircle(hx, hy, 0.035 * s, paint(L["skin"]))
         hands[side_k] = (hx, hy)
@@ -219,9 +219,14 @@ def draw_puppet(canvas, x, y, scale=1.0, pose=None, look=None):
         py = ey + p.get("eyes_y", 0) * er * 0.5
         canvas.drawCircle(px, py, er * 0.62, paint(L["eye"]))
         canvas.drawCircle(px - er * 0.2, py - er * 0.25, er * 0.18, paint("#FFFFFF"))
-        if lids > 0.01:
-            canvas.drawRect(skia.Rect(cx - er * 1.1, ey - er * 1.3, cx + er * 1.1,
-                                      ey - er * 1.3 + er * 2.6 * lids), paint(L["skin"]))
+        if lids > 0.01:  # lid clipped to the eye shape, with a dark lash line on its edge
+            canvas.save()
+            canvas.clipRRect(skia.RRect.MakeOval(skia.Rect.MakeXYWH(cx - er * 1.02, ey - er * 1.22,
+                                                                     er * 2.04, er * 2.44)), doAntiAlias=True)
+            lid_y = ey - er * 1.25 + er * 2.5 * lids
+            canvas.drawRect(skia.Rect(cx - er * 1.1, ey - er * 1.3, cx + er * 1.1, lid_y), paint(L["skin_shadow"]))
+            canvas.drawLine(cx - er * 1.1, lid_y, cx + er * 1.1, lid_y, paint(L["eye"], stroke=er * 0.18))
+            canvas.restore()
         brow = p.get("brow_l" if sgn < 0 else "brow_r", 0.0)
         by = ey - er * 1.6 - brow * er * 0.5
         tilt = (-brow * 0.3 if brow < 0 else brow * 0.15) * sgn

@@ -1,0 +1,355 @@
+{
+  "backend": "placeholder",
+  "duration": 8.696,
+  "lines": [
+    {
+      "id": "L01",
+      "who": "narrator",
+      "text": "This is a quiet room, and nothing ever happens here.",
+      "start": 0.4,
+      "end": 4.254,
+      "words": [
+        {
+          "word": "This",
+          "start": 0.45,
+          "end": 0.777,
+          "line": "L01",
+          "who": "narrator"
+        },
+        {
+          "word": "is",
+          "start": 0.807,
+          "end": 0.956,
+          "line": "L01",
+          "who": "narrator"
+        },
+        {
+          "word": "a",
+          "start": 0.986,
+          "end": 1.135,
+          "line": "L01",
+          "who": "narrator"
+        },
+        {
+          "word": "quiet",
+          "start": 1.165,
+          "end": 1.582,
+          "line": "L01",
+          "who": "narrator"
+        },
+        {
+          "word": "room,",
+          "start": 1.612,
+          "end": 1.939,
+          "line": "L01",
+          "who": "narrator"
+        },
+        {
+          "word": "and",
+          "start": 1.969,
+          "end": 2.207,
+          "line": "L01",
+          "who": "narrator"
+        },
+        {
+          "word": "nothing",
+          "start": 2.237,
+          "end": 2.833,
+          "line": "L01",
+          "who": "narrator"
+        },
+        {
+          "word": "ever",
+          "start": 2.863,
+          "end": 3.191,
+          "line": "L01",
+          "who": "narrator"
+        },
+        {
+          "word": "happens",
+          "start": 3.221,
+          "end": 3.816,
+          "line": "L01",
+          "who": "narrator"
+        },
+        {
+          "word": "here.",
+          "start": 3.846,
+          "end": 4.174,
+          "line": "L01",
+          "who": "narrator"
+        }
+      ],
+      "words_local": [
+        {
+          "word": "This",
+          "start": 0.05,
+          "end": 0.377
+        },
+        {
+          "word": "is",
+          "start": 0.407,
+          "end": 0.556
+        },
+        {
+          "word": "a",
+          "start": 0.586,
+          "end": 0.735
+        },
+        {
+          "word": "quiet",
+          "start": 0.765,
+          "end": 1.182
+        },
+        {
+          "word": "room,",
+          "start": 1.212,
+          "end": 1.539
+        },
+        {
+          "word": "and",
+          "start": 1.569,
+          "end": 1.807
+        },
+        {
+          "word": "nothing",
+          "start": 1.837,
+          "end": 2.433
+        },
+        {
+          "word": "ever",
+          "start": 2.463,
+          "end": 2.791
+        },
+        {
+          "word": "happens",
+          "start": 2.821,
+          "end": 3.416
+        },
+        {
+          "word": "here.",
+          "start": 3.446,
+          "end": 3.774
+        }
+      ],
+      "mismatch": 0
+    },
+    {
+      "id": "L02",
+      "who": "narrator",
+      "text": "Until the lamp turns on by itself.",
+      "start": 4.854,
+      "end": 7.596,
+      "words": [
+        {
+          "word": "Until",
+          "start": 4.904,
+          "end": 5.363,
+          "line": "L02",
+          "who": "narrator"
+        },
+        {
+          "word": "the",
+          "start": 5.393,
+          "end": 5.657,
+          "line": "L02",
+          "who": "narrator"
+        },
+        {
+          "word": "lamp",
+          "start": 5.687,
+          "end": 6.048,
+          "line": "L02",
+          "who": "narrator"
+        },
+        {
+          "word": "turns",
+          "start": 6.078,
+          "end": 6.538,
+          "line": "L02",
+          "who": "narrator"
+        },
+        {
+          "word": "on",
+          "start": 6.568,
+          "end": 6.734,
+          "line": "L02",
+          "who": "narrator"
+        },
+        {
+          "word": "by",
+          "start": 6.764,
+          "end": 6.929,
+          "line": "L02",
+          "who": "narrator"
+        },
+        {
+          "word": "itself.",
+          "start": 6.959,
+          "end": 7.517,
+          "line": "L02",
+          "who": "narrator"
+        }
+      ],
+      "words_local": [
+        {
+          "word": "Until",
+          "start": 0.05,
+          "end": 0.509
+        },
+        {
+          "word": "the",
+          "start": 0.539,
+          "end": 0.803
+        },
+        {
+          "word": "lamp",
+          "start": 0.833,
+          "end": 1.194
+        },
+        {
+          "word": "turns",
+          "start": 1.224,
+          "end": 1.684
+        },
+        {
+          "word": "on",
+          "start": 1.714,
+          "end": 1.88
+        },
+        {
+          "word": "by",
+          "start": 1.91,
+          "end": 2.075
+        },
+        {
+          "word": "itself.",
+          "start": 2.105,
+          "end": 2.663
+        }
+      ],
+      "mismatch": 0
+    }
+  ],
+  "words": [
+    {
+      "word": "This",
+      "start": 0.45,
+      "end": 0.777,
+      "line": "L01",
+      "who": "narrator"
+    },
+    {
+      "word": "is",
+      "start": 0.807,
+      "end": 0.956,
+      "line": "L01",
+      "who": "narrator"
+    },
+    {
+      "word": "a",
+      "start": 0.986,
+      "end": 1.135,
+      "line": "L01",
+      "who": "narrator"
+    },
+    {
+      "word": "quiet",
+      "start": 1.165,
+      "end": 1.582,
+      "line": "L01",
+      "who": "narrator"
+    },
+    {
+      "word": "room,",
+      "start": 1.612,
+      "end": 1.939,
+      "line": "L01",
+      "who": "narrator"
+    },
+    {
+      "word": "and",
+      "start": 1.969,
+      "end": 2.207,
+      "line": "L01",
+      "who": "narrator"
+    },
+    {
+      "word": "nothing",
+      "start": 2.237,
+      "end": 2.833,
+      "line": "L01",
+      "who": "narrator"
+    },
+    {
+      "word": "ever",
+      "start": 2.863,
+      "end": 3.191,
+      "line": "L01",
+      "who": "narrator"
+    },
+    {
+      "word": "happens",
+      "start": 3.221,
+      "end": 3.816,
+      "line": "L01",
+      "who": "narrator"
+    },
+    {
+      "word": "here.",
+      "start": 3.846,
+      "end": 4.174,
+      "line": "L01",
+      "who": "narrator"
+    },
+    {
+      "word": "Until",
+      "start": 4.904,
+      "end": 5.363,
+      "line": "L02",
+      "who": "narrator"
+    },
+    {
+      "word": "the",
+      "start": 5.393,
+      "end": 5.657,
+      "line": "L02",
+      "who": "narrator"
+    },
+    {
+      "word": "lamp",
+      "start": 5.687,
+      "end": 6.048,
+      "line": "L02",
+      "who": "narrator"
+    },
+    {
+      "word": "turns",
+      "start": 6.078,
+      "end": 6.538,
+      "line": "L02",
+      "who": "narrator"
+    },
+    {
+      "word": "on",
+      "start": 6.568,
+      "end": 6.734,
+      "line": "L02",
+      "who": "narrator"
+    },
+    {
+      "word": "by",
+      "start": 6.764,
+      "end": 6.929,
+      "line": "L02",
+      "who": "narrator"
+    },
+    {
+      "word": "itself.",
+      "start": 6.959,
+      "end": 7.517,
+      "line": "L02",
+      "who": "narrator"
+    }
+  ]
+}

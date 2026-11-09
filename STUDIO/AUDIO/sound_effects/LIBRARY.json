@@ -1,0 +1,194 @@
+{
+  "impact_soft": {
+    "file": "impact_soft.flac",
+    "desc": "Soft body/cushion thud",
+    "tags": [
+      "impact"
+    ],
+    "dur": 0.5,
+    "peak_db": -1.01
+  },
+  "impact_heavy": {
+    "file": "impact_heavy.flac",
+    "desc": "Big cinematic boom hit",
+    "tags": [
+      "impact",
+      "trailer"
+    ],
+    "dur": 5.01,
+    "peak_db": -1.01
+  },
+  "impact_metal": {
+    "file": "impact_metal.flac",
+    "desc": "Metal clang",
+    "tags": [
+      "impact",
+      "metal"
+    ],
+    "dur": 1.5,
+    "peak_db": -1.04
+  },
+  "impact_frame": {
+    "file": "impact_frame.flac",
+    "desc": "Short punchy hit for impact frames / cuts",
+    "tags": [
+      "impact",
+      "edit"
+    ],
+    "dur": 0.6,
+    "peak_db": -1.01
+  },
+  "whoosh_fast": {
+    "file": "whoosh_fast.flac",
+    "desc": "Fast whip-pan whoosh",
+    "tags": [
+      "whoosh",
+      "edit"
+    ],
+    "dur": 0.35,
+    "peak_db": -1.01
+  },
+  "whoosh_slow": {
+    "file": "whoosh_slow.flac",
+    "desc": "Slow airy pass-by",
+    "tags": [
+      "whoosh"
+    ],
+    "dur": 1.4,
+    "peak_db": -1.01
+  },
+  "swish_cloth": {
+    "file": "swish_cloth.flac",
+    "desc": "Clothing movement swish",
+    "tags": [
+      "foley"
+    ],
+    "dur": 0.25,
+    "peak_db": -5.45
+  },
+  "riser_tension": {
+    "file": "riser_tension.flac",
+    "desc": "Rising tension riser (4s)",
+    "tags": [
+      "riser",
+      "trailer"
+    ],
+    "dur": 4.0,
+    "peak_db": -1.01
+  },
+  "ui_pop": {
+    "file": "ui_pop.flac",
+    "desc": "Small pop for chips/titles",
+    "tags": [
+      "ui"
+    ],
+    "dur": 0.15,
+    "peak_db": -4.67
+  },
+  "ui_tick": {
+    "file": "ui_tick.flac",
+    "desc": "Clock / counter tick",
+    "tags": [
+      "ui"
+    ],
+    "dur": 0.06,
+    "peak_db": -1.01
+  },
+  "ui_ding": {
+    "file": "ui_ding.flac",
+    "desc": "Bright bell ding",
+    "tags": [
+      "ui"
+    ],
+    "dur": 1.2,
+    "peak_db": -1.15
+  },
+  "comedy_boing": {
+    "file": "comedy_boing.flac",
+    "desc": "Cartoon boing",
+    "tags": [
+      "comedy"
+    ],
+    "dur": 0.7,
+    "peak_db": -1.15
+  },
+  "record_scratch": {
+    "file": "record_scratch.flac",
+    "desc": "Record scratch stop",
+    "tags": [
+      "comedy",
+      "edit"
+    ],
+    "dur": 0.5,
+    "peak_db": -1.12
+  },
+  "footstep_hard": {
+    "file": "footstep_hard.flac",
+    "desc": "Footstep on hard floor",
+    "tags": [
+      "foley",
+      "footstep"
+    ],
+    "dur": 0.25,
+    "peak_db": -8.4
+  },
+  "door_open": {
+    "file": "door_open.flac",
+    "desc": "Wooden door creak + latch",
+    "tags": [
+      "foley",
+      "door"
+    ],
+    "dur": 1.4,
+    "peak_db": -1.01
+  },
+  "door_slam": {
+    "file": "door_slam.flac",
+    "desc": "Door slam",
+    "tags": [
+      "foley",
+      "door",
+      "impact"
+    ],
+    "dur": 1.2,
+    "peak_db": -1.01
+  },
+  "amb_room": {
+    "file": "amb_room.flac",
+    "desc": "Quiet room tone",
+    "tags": [
+      "ambience"
+    ],
+    "dur": 10.0,
+    "peak_db": -7.16
+  },
+  "amb_city": {
+    "file": "amb_city.flac",
+    "desc": "Distant city / traffic bed",
+    "tags": [
+      "ambience"
+    ],
+    "dur": 10.0,
+    "peak_db": -10.46
+  },
+  "amb_wind": {
+    "file": "amb_wind.flac",
+    "desc": "Outdoor wind",
+    "tags": [
+      "ambience",
+      "nature"
+    ],
+    "dur": 10.0,
+    "peak_db": -9.12
+  },
+  "amb_subway": {
+    "file": "amb_subway.flac",
+    "desc": "Subway car rumble + rail clacks",
+    "tags": [
+      "ambience",
+      "transport"
+    ],
+    "dur": 10.0,
+    "peak_db": -7.96
+  }
+}

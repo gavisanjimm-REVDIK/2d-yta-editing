@@ -161,7 +161,7 @@ def metal(color="#B8BCC2", rough=0.3):
 def wood(color="#8A5A3A"):
     m, nt, b = _base(f"wood_{color}")
     wave = nt.nodes.new("ShaderNodeTexWave")
-    wave.inputs["Scale"].default_value = 3
+    wave.inputs["Scale"].default_value = 9
     wave.inputs["Distortion"].default_value = 6
     ramp = nt.nodes.new("ShaderNodeValToRGB")
     c = hex2rgb(color)

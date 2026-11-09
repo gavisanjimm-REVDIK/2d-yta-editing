@@ -1,0 +1,10 @@
+{
+  "title": "Pipeline test",
+  "voice_ref": null,
+  "start_offset": 0.4,
+  "tail": 0.8,
+  "lines": [
+    {"id": "L01", "who": "narrator", "text": "This is a quiet room, and nothing ever happens here.", "delivery": "calm", "exaggeration": 0.45, "pause_after": 0.6},
+    {"id": "L02", "who": "narrator", "text": "Until the lamp turns on by itself.", "delivery": "suspense", "exaggeration": 0.6, "pause_after": 0.3}
+  ]
+}

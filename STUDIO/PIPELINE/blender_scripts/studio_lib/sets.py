@@ -28,11 +28,13 @@ def box(name, loc, size, mat, coll, bevel=0.01, rot=(0, 0, 0)):
 def bedroom(wall="#C9D6CF", floor="#9A6B47", night=False):
     c = _c("SET_bedroom")
     W, D, H = 4.0, 4.5, 2.7
-    box("floor", (0, 0, -0.05), (W, D, 0.1), M.wood(floor), c, 0)
+    E = 4.0  # extra depth behind the camera side so wide shots stay inside the room
+    yc = -E / 2
+    box("floor", (0, yc, -0.05), (W, D + E, 0.1), M.wood(floor), c, 0)
     box("wall_back", (0, D / 2, H / 2), (W, 0.1, H), M.simple(wall, 0.85), c, 0)
-    box("wall_left", (-W / 2, 0, H / 2), (0.1, D, H), M.simple(wall, 0.85), c, 0)
-    box("wall_right", (W / 2, 0, H / 2), (0.1, D, H), M.simple(wall, 0.85), c, 0)
-    box("ceiling", (0, 0, H + 0.05), (W, D, 0.1), M.simple("#EEEAE2", 0.9), c, 0)
+    box("wall_left", (-W / 2, yc, H / 2), (0.1, D + E, H), M.simple(wall, 0.85), c, 0)
+    box("wall_right", (W / 2, yc, H / 2), (0.1, D + E, H), M.simple(wall, 0.85), c, 0)
+    box("ceiling", (0, yc, H + 0.05), (W, D + E, 0.1), M.simple("#EEEAE2", 0.9), c, 0)
     box("baseboard", (0, D / 2 - 0.06, 0.05), (W, 0.03, 0.1), M.simple("#F2EFE8", 0.5), c, 0.003)
     # bed
     box("bed_frame", (-1.0, 1.2, 0.2), (1.3, 2.0, 0.4), M.wood("#6E4A30"), c, 0.02)
