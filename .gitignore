@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+# heavy / regenerable outputs
+STUDIO/VIDEOS/*/frames/
+STUDIO/VIDEOS/*/qc/stills/
+STUDIO/VIDEOS/*/audio/stems/
+STUDIO/VIDEOS/*/audio/lines/
+STUDIO/VIDEOS/*/*.blend
+STUDIO/VIDEOS/*/*.blend1
+STUDIO/ASSETS/mascot/turnaround/*.blend
+STUDIO/ASSETS/mascot/turnaround/*.blend1
+STUDIO/AUDIO/sound_effects/*.flac

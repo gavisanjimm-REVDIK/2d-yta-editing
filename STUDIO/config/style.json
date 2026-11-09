@@ -1,0 +1,54 @@
+{
+  "_doc": "House style. Edit here, not in code. See STYLE_BIBLE.md.",
+  "fonts": {
+    "caption": "Anton-Regular.ttf",
+    "title": "Anton-Regular.ttf",
+    "ui": "Oswald-VF.ttf"
+  },
+  "colors": {
+    "accent": "#FF2D2D",
+    "accent_alt": "#FFC23A",
+    "text": "#FFFFFF",
+    "mascot_orange": "#F07A1E"
+  },
+  "captions": {
+    "size": 88,
+    "y": 0.7,
+    "uppercase": true,
+    "color": "#FFFFFF",
+    "upcoming_color": "#FFFFFF",
+    "karaoke": false,
+    "outline": 9,
+    "outline_color": "#000000",
+    "speaker_color": "#FFC23A",
+    "max_words": 4
+  },
+  "safe_margin": 36,
+  "render": {
+    "eevee_samples": 16,
+    "raytracing": false,
+    "motion_blur": true,
+    "view_transform": "Khronos PBR Neutral",
+    "look": "None",
+    "half_res": true,
+    "exposure": -0.9
+  },
+  "audio": {
+    "target_lufs": -14,
+    "narration_lufs": -16,
+    "true_peak_ceiling": -1.0,
+    "music_db": -6,
+    "duck_db": -10
+  },
+  "video": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "default_duration": [
+      30,
+      40
+    ],
+    "crf": 18,
+    "preset": "slow"
+  }
+}

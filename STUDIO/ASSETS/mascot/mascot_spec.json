@@ -1,0 +1,176 @@
+{
+  "_doc": "Mascot identity + proportions. PLACEHOLDER values until the reference images arrive (ASSETS/mascot/reference/). Once a hand-finished ASSETS/mascot/mascot.blend exists it overrides the procedural build. Units = metres, character faces -Y.",
+  "name": "MASCOT",
+  "status": "placeholder - awaiting reference",
+  "colors": {
+    "skin": "#F0C4A0",
+    "hair": "#3B2A20",
+    "shirt": "#F07A1E",
+    "pants": "#33435C",
+    "shoes": "#2A2A2E",
+    "iris": "#4A2E1F",
+    "mouth": "#4A1C1C"
+  },
+  "proportions": {
+    "height": 1.5,
+    "shoulder_width": 0.34,
+    "hip_width": 0.17,
+    "arm_len": 0.52,
+    "sleeve_len": 0.38,
+    "arm_r": [
+      0.045,
+      0.036,
+      0.03
+    ],
+    "palm_r": 0.035,
+    "finger_len": 0.075,
+    "finger_r": 0.0105,
+    "leg_r": [
+      0.065,
+      0.048,
+      0.04
+    ],
+    "foot_r": [
+      0.045,
+      0.035
+    ],
+    "neck_r": 0.045,
+    "torso": {
+      "hip_r": [
+        0.13,
+        0.095
+      ],
+      "belly_r": [
+        0.125,
+        0.095
+      ],
+      "chest_r": [
+        0.14,
+        0.1
+      ],
+      "shoulder_r": [
+        0.12,
+        0.085
+      ]
+    },
+    "head_center": [
+      0,
+      0,
+      1.27
+    ],
+    "head_size": [
+      0.155,
+      0.15,
+      0.175
+    ],
+    "chin_taper": 0.35,
+    "cheek_puff": 0.08,
+    "eye_spacing": 0.105,
+    "eye_height": 0.005,
+    "eye_radius": 0.034,
+    "eye_depth": 0.75,
+    "eye_tall": 1.15,
+    "iris_size": 0.62,
+    "brow_thick": 0.0065,
+    "nose_height": -0.04,
+    "nose_size": 0.022,
+    "mouth_height": -0.085,
+    "mouth_width": 0.05,
+    "hair": {
+      "style": "messy short",
+      "hairline": 0.5,
+      "clumps": [
+        [
+          0,
+          30,
+          0.09,
+          0.055,
+          0.0,
+          -0.6
+        ],
+        [
+          -25,
+          32,
+          0.09,
+          0.055,
+          -0.3,
+          -0.5
+        ],
+        [
+          25,
+          32,
+          0.09,
+          0.055,
+          0.3,
+          -0.5
+        ],
+        [
+          -50,
+          40,
+          0.09,
+          0.055,
+          -0.6,
+          -0.3
+        ],
+        [
+          50,
+          40,
+          0.09,
+          0.055,
+          0.6,
+          -0.3
+        ],
+        [
+          0,
+          10,
+          0.09,
+          0.055,
+          0.1,
+          0.2
+        ],
+        [
+          -80,
+          55,
+          0.09,
+          0.055,
+          -0.6,
+          -0.5
+        ],
+        [
+          80,
+          55,
+          0.09,
+          0.055,
+          0.6,
+          -0.5
+        ],
+        [
+          180,
+          40,
+          0.09,
+          0.055,
+          0.0,
+          -0.8
+        ],
+        [
+          140,
+          45,
+          0.09,
+          0.055,
+          0.3,
+          -0.8
+        ],
+        [
+          -140,
+          45,
+          0.09,
+          0.055,
+          -0.3,
+          -0.8
+        ]
+      ]
+    },
+    "eye_inset": 0.84,
+    "clothing_rings": false
+  }
+}
