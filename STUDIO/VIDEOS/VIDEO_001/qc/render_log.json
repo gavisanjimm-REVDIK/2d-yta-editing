@@ -1,0 +1,32 @@
+[
+  {
+    "time": "2026-11-09 15:30:16",
+    "frames": 1548,
+    "seconds": 153.5,
+    "jobs": {
+      "ext": 51,
+      "basement_hook": 125,
+      "study_safe": 57,
+      "study": 94,
+      "foyer_wide": 103,
+      "cu_marcus": 62,
+      "cu_oliver": 105,
+      "cu_daniel": 252,
+      "cu_sophie": 124,
+      "marcus_turn": 132,
+      "basement_pan": 90,
+      "lineup": 353
+    }
+  },
+  {
+    "time": "2026-11-09 15:33:44",
+    "frames": 543,
+    "seconds": 37.8,
+    "jobs": {
+      "cu_marcus": 62,
+      "cu_oliver": 105,
+      "cu_daniel": 252,
+      "cu_sophie": 124
+    }
+  }
+]

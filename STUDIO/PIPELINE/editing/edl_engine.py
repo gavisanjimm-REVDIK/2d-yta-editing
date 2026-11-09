@@ -459,7 +459,7 @@ def draw_captions(canvas, t):
     canvas.translate(W / 2, y)
     canvas.scale(scale, scale)
     if cap.get("speakers") and ph.get("who") and ph["who"] != "narrator":
-        text(canvas, ph["who"].upper(), 0, -size * 1.05, size * 0.42, st["speaker_color"], face=face,
+        text(canvas, ph["who"].upper(), 0, -size * 1.05, size * 0.55, st["speaker_color"], face=face, outline=6, clamp_safe=False,
              max_w=W - 2 * SAFE)
     x = -total / 2
     for w, tok, wd in zip(ph["words"], toks, widths):

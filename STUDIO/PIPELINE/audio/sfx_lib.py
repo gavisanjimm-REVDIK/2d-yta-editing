@@ -206,6 +206,100 @@ def amb_subway():
     return dsp.normalize(x * (0.9 + 0.1 * np.sin(2 * np.pi * 0.2 * t)), 0.4)
 
 
+# ================================================================ VIDEO_001: storm mystery
+@reg("thunder_clap", "Close thunder crack + long rumble", ("weather", "impact"))
+def thunder_clap():
+    d = 5.0
+    t = tvec(d)
+    crack = dsp.highpass(dsp.white(d, rng(30)), 900) * np.exp(-t / 0.05) * 0.8
+    crack += dsp.bandpass(dsp.white(d, rng(31)), 300, 3000) * np.exp(-np.maximum(t - 0.08, 0) / 0.12) * (t > 0.08) * 0.6
+    rum = dsp.lowpass(dsp.brown(d, rng(32)), 160) * (1 - np.exp(-t / 0.15)) * np.exp(-t / 1.6)
+    rum *= 0.7 + 0.3 * np.abs(np.sin(2 * np.pi * 1.7 * t + dsp.lowpass(dsp.white(d, rng(33)), 3) * 4))
+    x = dsp.saturate(crack + rum * 1.4, 1.5)
+    return dsp.fade(dsp.normalize(dsp.mono(dsp.convolve_reverb(x, dsp.make_ir(3.0, 0.7, 2500), 0.3))[: samples(d)]), 0.001, 0.5)
+
+
+@reg("thunder_rumble", "Distant rolling thunder", ("weather",))
+def thunder_rumble():
+    d = 4.0
+    t = tvec(d)
+    x = dsp.lowpass(dsp.brown(d, rng(34)), 120) * np.sin(np.pi * np.clip(t / d, 0, 1)) ** 0.7
+    x *= 0.6 + 0.4 * np.abs(np.sin(2 * np.pi * 1.1 * t))
+    return dsp.fade(dsp.normalize(x), 0.05, 0.6)
+
+
+@reg("amb_rain", "Heavy rain bed (indoor-muffled version via lowpass in mix)", ("ambience", "weather"))
+def amb_rain():
+    d = 12.0
+    hiss = dsp.bandpass(dsp.pink(d, rng(35)), 500, 9000)
+    drops = np.zeros(samples(d))
+    r = rng(36)
+    for k in r.uniform(0, d, 900):
+        dsp.place(drops, dsp.bandpass(dsp.white(0.02, r), 2000, 8000) * dsp.exp_decay(0.02, 0.003) * r.uniform(0.2, 1), k)
+    body = dsp.lowpass(dsp.brown(d, rng(37)), 300) * 0.4
+    return dsp.normalize(hiss * 0.5 + drops * 0.8 + body, 0.5)
+
+
+@reg("heartbeat", "Two slow heartbeats", ("tension",))
+def heartbeat():
+    d = 1.6
+    x = np.zeros(samples(d))
+    for k, g in ((0.0, 1.0), (0.22, 0.7), (0.8, 1.0), (1.02, 0.7)):
+        b = dsp.sine(np.linspace(70, 40, samples(0.18)), 0.18) * dsp.exp_decay(0.18, 0.05)
+        dsp.place(x, b * g, k)
+    return dsp.fade(dsp.normalize(dsp.lowpass(x, 300)))
+
+
+@reg("pencil_scribble", "Pencil scribbling on paper", ("foley",))
+def pencil_scribble():
+    d = 0.9
+    t = tvec(d)
+    n = dsp.bandpass(dsp.white(d, rng(38)), 2500, 9000)
+    strokes = (0.5 + 0.5 * np.sin(2 * np.pi * 7 * t)) ** 2
+    return dsp.fade(dsp.normalize(n * strokes) * 0.6, 0.02, 0.1)
+
+
+@reg("stairs_wood", "Footsteps down creaky wooden stairs (4 steps)", ("foley", "footstep"))
+def stairs_wood():
+    d = 1.6
+    x = np.zeros(samples(d))
+    for i in range(4):
+        st = dsp.lowpass(dsp.white(0.25, rng(40 + i)), 1200) * dsp.exp_decay(0.25, 0.03)
+        st += dsp.sine(np.linspace(110, 70, samples(0.25)), 0.25) * dsp.exp_decay(0.25, 0.05) * 0.8
+        dsp.place(x, st, i * 0.33)
+        if i % 2:
+            cr = dsp.bandpass(np.sign(np.sin(2 * np.pi * np.cumsum(260 + 40 * np.sin(np.linspace(0, 9, samples(0.3)))) / SR)), 400, 2500)
+            dsp.place(x, cr * dsp.adsr(0.3, 0.05, 0.1, 0.6, 0.1) * 0.15, i * 0.33 + 0.05)
+    return dsp.fade(dsp.normalize(x))
+
+
+@reg("flashlight_click", "Flashlight switch click", ("foley", "ui"))
+def flashlight_click():
+    d = 0.08
+    x = dsp.bandpass(dsp.white(d, rng(44)), 1500, 6000) * dsp.exp_decay(d, 0.004)
+    x[samples(0.035):] += dsp.bandpass(dsp.white(d, rng(45)), 1000, 4000)[: samples(d) - samples(0.035)] * dsp.exp_decay(d - 0.035, 0.004)[: samples(d) - samples(0.035)] * 0.6
+    return dsp.fade(dsp.normalize(x) * 0.8, 0.0005, 0.005)
+
+
+@reg("sting_mystery", "Mystery end sting: low hit + dissonant bell cluster", ("music", "sting"))
+def sting_mystery():
+    d = 4.0
+    x = dsp.mono(impact_heavy())[: samples(d)] * 0.6
+    x = dsp.pad_to(x, samples(d))
+    for f in (dsp.note_hz("C5"), dsp.note_hz("F#5"), dsp.note_hz("B5")):
+        x += dsp.fm_bell(f, d, 2.7, 3.0, 1.4) * 0.25
+    return dsp.fade(dsp.normalize(x), 0.001, 0.8)
+
+
+@reg("safe_creak", "Heavy metal safe door creak", ("foley", "door"))
+def safe_creak():
+    d = 1.2
+    t = tvec(d)
+    f = 120 + 50 * np.sin(2 * np.pi * 0.9 * t)
+    x = dsp.bandpass(np.sign(np.sin(2 * np.pi * np.cumsum(f) / SR)), 200, 2200) * dsp.adsr(d, 0.1, 0.3, 0.7, 0.4)
+    return dsp.fade(dsp.normalize(x) * 0.7)
+
+
 # ================================================================ generator
 def build(names=None):
     OUT.mkdir(parents=True, exist_ok=True)

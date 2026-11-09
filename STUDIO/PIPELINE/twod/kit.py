@@ -128,7 +128,7 @@ def text_width(s, size, face="Anton-Regular.ttf"):
 
 
 def text(canvas, s, x, y, size=72, color="#FFFFFF", face="Anton-Regular.ttf", align="center",
-         outline=0, outline_color="#000000", shadow=True, max_w=None, alpha=1.0):
+         outline=0, outline_color="#000000", shadow=True, max_w=None, alpha=1.0, clamp_safe=True):
     """Draw single-line text; shrinks to fit max_w (default: safe width). Returns final size."""
     max_w = max_w or (W - 2 * SAFE)
     while size > 10 and text_width(s, size, face) > max_w:
@@ -136,7 +136,8 @@ def text(canvas, s, x, y, size=72, color="#FFFFFF", face="Anton-Regular.ttf", al
     font = skia.Font(typeface(face), size)
     w = font.measureText(s)
     x0 = {"center": x - w / 2, "left": x, "right": x - w}[align]
-    x0 = clamp(x0, SAFE, W - SAFE - w)
+    if clamp_safe:  # only valid without a canvas transform
+        x0 = clamp(x0, SAFE, W - SAFE - w)
     blob = skia.TextBlob(s, font)
     if shadow:
         sp = paint("#000000", alpha=0.45 * alpha)

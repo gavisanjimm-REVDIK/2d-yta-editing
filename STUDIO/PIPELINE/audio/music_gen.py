@@ -199,6 +199,48 @@ def cue_video000(edl) -> Score:
     return s
 
 
+def cue_video001(edl) -> Score:
+    """Mystery: low drone + ticking pizzicato under the interrogation, eerie bells for the clue,
+    total silence before the reveal, slow build for the question, sting at the freeze."""
+    B = edl.B
+    s = Score(edl.DURATION, bpm=edl.BPM)
+    beat = s.beat
+    # 0-1.7 hook: thunder carries it; drone swells in under the narration
+    s.note("pad", lambda f, d: inst_pad(f, d, bright=700), "D2", 0.3, B["foyer"] - 0.3, 0.9)
+    s.note("pad", lambda f, d: inst_strings(f, d, 900), "A2", 1.7, B["safe"] - 1.7, 0.5)
+    # study: tremolo strings (panic)
+    s.chord("pad", lambda f, d: inst_tremolo(f, d, 10), ["D3", "F3", "G#3"], B["safe"], B["foyer"] - B["safe"], 0.55)
+    # interrogation: pizzicato pulse + bass ostinato (quick cuts)
+    pat = ["D3", "F3", "A3", "G#3"]
+    t, i = B["foyer"], 0
+    while t < B["turn"]:
+        s.note("lead", lambda f, d: inst_pluck(f, d, 0.35), pat[i % 4], t, beat * 0.9, 0.45, 0.25 * (-1) ** i)
+        if i % 2 == 0:
+            s.note("bass", inst_bass, "D2" if (i // 8) % 2 == 0 else "A#1", t, beat * 1.8, 0.7)
+        t += beat / 2
+        i += 1
+    s.note("pad", lambda f, d: inst_pad(f, d, bright=600), "D2", B["foyer"], B["turn"] - B["foyer"] + 0.5, 0.6)
+    # the clue: slower, eerie bells, low pulse
+    t = B["turn"]
+    for k, n in enumerate(["A5", "G#5", "D5", "F5", "A5", "G#5"]):
+        s.note("lead", inst_bell, n, t + k * beat * 2, beat * 3, 0.35, 0.3 * (-1) ** k)
+    s.note("pad", lambda f, d: inst_strings(f, d, 700), "D2", B["turn"], B["silence"] - B["turn"], 0.7)
+    s.note("pad", lambda f, d: inst_strings(f, d, 1200), "G#3", B["daniel2"], B["silence"] - B["daniel2"], 0.4)
+    # silence for the reveal moment
+    s.gate(B["silence"], B["lineup"] + 0.1, 0.04)
+    # recap + question: slow build
+    s.note("pad", lambda f, d: inst_pad(f, d, bright=900), "D2", B["lineup"], B["freeze"] - B["lineup"] + 0.3, 0.8)
+    s.chord("pad", lambda f, d: inst_strings(f, d, 1500), ["D3", "F3", "A3"], B["lineup"], B["zoom"] - B["lineup"], 0.5)
+    s.chord("pad", lambda f, d: inst_tremolo(f, d, 7), ["D3", "G#3", "C4"], B["zoom"], B["freeze"] - B["zoom"], 0.6)
+    t = B["zoom"]
+    while t < B["freeze"] - 0.1:  # ticking clock under the question
+        s.note("perc", lambda f, d: drum_hat(0.05) * 1.5, 100, t, 0.05, 0.6)
+        t += beat / 2
+    # end: low drone tail under the end card (sting comes from SFX)
+    s.note("pad", lambda f, d: inst_strings(f, d, 600), "D2", B["freeze"] + 0.2, edl.DURATION - B["freeze"] - 0.2, 0.5)
+    return s
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("video")

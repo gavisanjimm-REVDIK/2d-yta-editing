@@ -100,8 +100,19 @@ def main():
         x = lib_cache[name]
         if x is None:
             continue
+        if c.get("offset"):
+            x = x[samples(c["offset"]):]
         if c.get("dur"):
-            x = dsp.fade(dsp.pad_to(x, samples(c["dur"])), 0.01, min(0.3, c["dur"] / 3))
+            if c.get("loop") and len(x) < samples(c["dur"]):  # crossfaded tiling for ambience beds
+                xf = samples(0.5)
+                out = x.copy()
+                while len(out) < samples(c["dur"]):
+                    ramp = np.linspace(0, 1, xf)
+                    ramp = ramp[:, None] if x.ndim == 2 else ramp
+                    out[-xf:] = out[-xf:] * (1 - ramp) + x[:xf] * ramp
+                    out = np.concatenate([out, x[xf:]])
+                x = out
+            x = dsp.fade(dsp.pad_to(x, samples(c["dur"])), c.get("fade_in", 0.01), c.get("fade_out", min(0.3, c["dur"] / 3)))
         x = dsp.stereo(x, c.get("pan", 0.0))
         bus = buses.setdefault(c.get("bus", "sfx"), np.zeros((N, 2)))
         gain = dsp.db(c.get("gain_db", 0.0))

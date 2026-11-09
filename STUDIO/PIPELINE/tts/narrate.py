@@ -1,6 +1,7 @@
 """narrate.py - script.json -> per-line wavs + narration_raw.wav + timing.json (word level).
 
 Backends (pick with --backend):
+  kokoro      Kokoro-82M (Apache-2.0) via kokoro-onnx, many voices -> one per character (default if model present)
   chatterbox  local open-source TTS, voice clone from reference clip (default if installed)
   placeholder silent audio with estimated word timing (so edit/captions can be built before TTS exists)
 
@@ -39,6 +40,7 @@ NUMS = {"zero": "0", "one": "1", "two": "2", "three": "3", "four": "4", "five": 
 
 
 def norm_words(s: str) -> list[str]:
+    s = s.replace(" '", "'")  # whisper splits "o 'clock"
     w = re.findall(r"[a-z0-9']+", s.lower())
     return [NUMS.get(x, x) for x in w]
 
@@ -73,6 +75,30 @@ class Placeholder:
                 for i, t in enumerate(toks)]
 
 
+KOKORO_DIR = Path("/opt/models/kokoro")
+
+
+class Kokoro:
+    """line keys: voice (e.g. bm_george), speed, lang (en-us / en-gb). Takes vary speed slightly."""
+    name = "kokoro"
+
+    def __init__(self):
+        from kokoro_onnx import Kokoro as K
+        self.k = K(str(KOKORO_DIR / "kokoro-v1.0.onnx"), str(KOKORO_DIR / "voices-v1.0.bin"))
+        self.take = 0
+
+    def synth(self, line, ref):
+        voice = line.get("voice", "am_michael")
+        lang = line.get("lang", "en-gb" if voice.startswith("b") else "en-us")
+        sp = line.get("speed", 1.0) * (1.0, 0.96, 1.04, 0.92)[self.take % 4]
+        if isinstance(voice, list):  # blend two voices: [["bm_george", 0.7], ["bm_lewis", 0.3]]
+            vs = sum(self.k.get_voice_style(v) * w for v, w in voice)
+            voice = vs
+        x, sr = self.k.create(line["text"], voice=voice, speed=sp, lang=lang)
+        from scipy.signal import resample_poly
+        return resample_poly(np.asarray(x, dtype=np.float64), SR, sr)
+
+
 class Chatterbox:
     name = "chatterbox"
 
@@ -91,6 +117,7 @@ class Chatterbox:
 
 
 _WHISPER = None
+WHISPER_MODEL = "small.en"
 
 
 def whisper_words(wav: np.ndarray):
@@ -98,13 +125,18 @@ def whisper_words(wav: np.ndarray):
     from faster_whisper import WhisperModel
     from scipy.signal import resample_poly
     if _WHISPER is None:
-        _WHISPER = WhisperModel("small.en", device="cpu", compute_type="int8")
+        _WHISPER = WhisperModel(WHISPER_MODEL, device="cpu", compute_type="int8")
     x16 = resample_poly(wav, 16000, SR).astype(np.float32)
     segs, _ = _WHISPER.transcribe(x16, word_timestamps=True, language="en", beam_size=5)
     out = []
     for s in segs:
         for w in s.words or []:
-            out.append({"word": w.word.strip(), "start": round(w.start, 3), "end": round(w.end, 3)})
+            word = w.word.strip()
+            if out and word.startswith("'"):  # whisper splits "o'clock" -> "o" + "'clock"
+                out[-1]["word"] += word
+                out[-1]["end"] = round(w.end, 3)
+                continue
+            out.append({"word": word, "start": round(w.start, 3), "end": round(w.end, 3)})
     return out
 
 
@@ -121,7 +153,7 @@ def trim_silence(x, thresh_db=-45, pad=0.04):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("video")
-    ap.add_argument("--backend", default="auto", choices=["auto", "chatterbox", "placeholder"])
+    ap.add_argument("--backend", default="auto", choices=["auto", "kokoro", "chatterbox", "placeholder"])
     ap.add_argument("--takes", type=int, default=3)
     ap.add_argument("--only", nargs="*", help="re-do only these line ids")
     a = ap.parse_args()
@@ -132,7 +164,9 @@ def main():
     (adir / "lines").mkdir(parents=True, exist_ok=True)
 
     be = None
-    if a.backend in ("auto", "chatterbox"):
+    if a.backend in ("auto", "kokoro") and (KOKORO_DIR / "kokoro-v1.0.onnx").exists():
+        be = Kokoro()
+    if be is None and a.backend in ("auto", "chatterbox"):
         try:
             be = Chatterbox()
         except Exception as e:  # noqa
@@ -156,6 +190,8 @@ def main():
         ref = str(STUDIO / ref) if ref else None
         best = None
         for k in range(a.takes if can_whisper else 1):
+            if hasattr(be, "take"):
+                be.take = k
             wav = trim_silence(be.synth(ln, ref)) if can_whisper else be.synth(ln, ref)
             if can_whisper:
                 words = whisper_words(wav)

@@ -190,5 +190,92 @@
     ],
     "dur": 10.0,
     "peak_db": -7.96
+  },
+  "thunder_clap": {
+    "file": "thunder_clap.flac",
+    "desc": "Close thunder crack + long rumble",
+    "tags": [
+      "weather",
+      "impact"
+    ],
+    "dur": 5.0,
+    "peak_db": -1.01
+  },
+  "thunder_rumble": {
+    "file": "thunder_rumble.flac",
+    "desc": "Distant rolling thunder",
+    "tags": [
+      "weather"
+    ],
+    "dur": 4.0,
+    "peak_db": -1.01
+  },
+  "amb_rain": {
+    "file": "amb_rain.flac",
+    "desc": "Heavy rain bed (indoor-muffled version via lowpass in mix)",
+    "tags": [
+      "ambience",
+      "weather"
+    ],
+    "dur": 12.0,
+    "peak_db": -6.02
+  },
+  "heartbeat": {
+    "file": "heartbeat.flac",
+    "desc": "Two slow heartbeats",
+    "tags": [
+      "tension"
+    ],
+    "dur": 1.6,
+    "peak_db": -1.01
+  },
+  "pencil_scribble": {
+    "file": "pencil_scribble.flac",
+    "desc": "Pencil scribbling on paper",
+    "tags": [
+      "foley"
+    ],
+    "dur": 0.9,
+    "peak_db": -5.45
+  },
+  "stairs_wood": {
+    "file": "stairs_wood.flac",
+    "desc": "Footsteps down creaky wooden stairs (4 steps)",
+    "tags": [
+      "foley",
+      "footstep"
+    ],
+    "dur": 1.6,
+    "peak_db": -2.51
+  },
+  "flashlight_click": {
+    "file": "flashlight_click.flac",
+    "desc": "Flashlight switch click",
+    "tags": [
+      "foley",
+      "ui"
+    ],
+    "dur": 0.08,
+    "peak_db": -2.95
+  },
+  "sting_mystery": {
+    "file": "sting_mystery.flac",
+    "desc": "Mystery end sting: low hit + dissonant bell cluster",
+    "tags": [
+      "music",
+      "sting"
+    ],
+    "dur": 4.0,
+    "peak_db": -1.01
+  },
+  "safe_creak": {
+    "file": "safe_creak.flac",
+    "desc": "Heavy metal safe door creak",
+    "tags": [
+      "foley",
+      "door"
+    ],
+    "dur": 1.2,
+    "peak_db": -4.11
   }
 }

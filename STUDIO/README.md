@@ -58,5 +58,6 @@ STUDIO/
 | QC: qc_video, loop_test | qc_video run on VIDEO_000; loop_test written, not yet run on a loop video |
 | Blender studio_lib + mascot | builds & renders (EEVEE on CPU, ~6–11 s per 540×960 frame); 3D template scene + test stills checked |
 | acting | expressions, blinks, brows, eye target (limited ±32°), relaxed arms, walk cycle checked in renders; gestures `wave`/`think`/`shrug` still rough |
-| mascot look | **placeholder** – waiting for reference images (`ASSETS/mascot/reference/`) |
-| TTS (Chatterbox) | code written, **not installed/tested** here; `placeholder` backend = silent audio + estimated word timing |
+| mascot look | 2D: built from `ASSETS/mascot/reference/character_sheet.webp`. 3D: still the placeholder procedural model |
+| TTS | **Kokoro-82M** (local, Apache-2.0) working: one voice per character, Whisper-checked takes + word timing (VIDEO_001). Chatterbox backend written, not tested |
+| 2D toon style (`twod/toon.py`) | working – storybook cast system from the mascot character sheet: outlines, expressions, IK arms, props, lip-sync |

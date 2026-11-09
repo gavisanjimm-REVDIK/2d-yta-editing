@@ -1,0 +1,203 @@
+{
+  "duration": 56.58,
+  "music_db": -2.0,
+  "duck_db": -8.0,
+  "bus_db": {
+    "sfx": -5.0,
+    "amb": -7.0
+  },
+  "music_gates": [],
+  "sfx": [
+    {
+      "t": 0.0,
+      "name": "amb_rain",
+      "bus": "amb",
+      "dur": 1.8,
+      "loop": true,
+      "gain_db": 0.0,
+      "fade_in": 0.05,
+      "fade_out": 0.3,
+      "offset": 0.0
+    },
+    {
+      "t": 1.7,
+      "name": "amb_rain",
+      "bus": "amb",
+      "dur": 4.1579999999999995,
+      "loop": true,
+      "gain_db": -16,
+      "fade_in": 0.02,
+      "fade_out": 0.3,
+      "offset": 2.8899999999999997
+    },
+    {
+      "t": 5.858,
+      "name": "amb_rain",
+      "bus": "amb",
+      "dur": 29.52,
+      "loop": true,
+      "gain_db": -7,
+      "fade_in": 0.05,
+      "fade_out": 0.3,
+      "offset": 3.958599999999999
+    },
+    {
+      "t": 35.378,
+      "name": "amb_rain",
+      "bus": "amb",
+      "dur": 2.992999999999995,
+      "loop": true,
+      "gain_db": -16,
+      "fade_in": 0.05,
+      "fade_out": 0.3,
+      "offset": 0.14260000000000161
+    },
+    {
+      "t": 38.370999999999995,
+      "name": "amb_rain",
+      "bus": "amb",
+      "dur": 18.209000000000003,
+      "loop": true,
+      "gain_db": -8,
+      "fade_in": 0.05,
+      "fade_out": 0.3,
+      "offset": 5.230699999999985
+    },
+    {
+      "t": 0.0,
+      "name": "thunder_clap",
+      "gain_db": 2.0,
+      "note": "frame-0 lightning"
+    },
+    {
+      "t": 1.25,
+      "name": "thunder_rumble",
+      "gain_db": -6
+    },
+    {
+      "t": 1.65,
+      "name": "whoosh_fast",
+      "gain_db": -6,
+      "note": "zoom into the house"
+    },
+    {
+      "t": 1.8499999999999999,
+      "name": "flashlight_click",
+      "gain_db": -2
+    },
+    {
+      "t": 5.808,
+      "name": "safe_creak",
+      "gain_db": -6
+    },
+    {
+      "t": 8.437999999999999,
+      "name": "thunder_clap",
+      "gain_db": -3,
+      "note": "lightning in study window"
+    },
+    {
+      "t": 10.783,
+      "name": "impact_frame",
+      "gain_db": -10
+    },
+    {
+      "t": 14.627,
+      "name": "pencil_scribble",
+      "gain_db": -8
+    },
+    {
+      "t": 16.271,
+      "name": "whoosh_fast",
+      "gain_db": -8
+    },
+    {
+      "t": 19.776,
+      "name": "whoosh_fast",
+      "gain_db": -8
+    },
+    {
+      "t": 22.936,
+      "name": "thunder_rumble",
+      "gain_db": -6
+    },
+    {
+      "t": 24.740000000000002,
+      "name": "whoosh_fast",
+      "gain_db": -8
+    },
+    {
+      "t": 27.25,
+      "name": "thunder_clap",
+      "gain_db": -6
+    },
+    {
+      "t": 29.077,
+      "name": "swish_cloth",
+      "gain_db": -10
+    },
+    {
+      "t": 35.428,
+      "name": "door_open",
+      "gain_db": -12
+    },
+    {
+      "t": 35.578,
+      "name": "stairs_wood",
+      "gain_db": -6
+    },
+    {
+      "t": 37.028,
+      "name": "thunder_rumble",
+      "gain_db": -16,
+      "note": "heard, not seen (no windows)"
+    },
+    {
+      "t": 38.35099999999999,
+      "name": "impact_heavy",
+      "gain_db": -2,
+      "note": "reveal hit, music silent"
+    },
+    {
+      "t": 38.571,
+      "name": "heartbeat",
+      "gain_db": -4
+    },
+    {
+      "t": 39.821,
+      "name": "ui_pop",
+      "gain_db": -12
+    },
+    {
+      "t": 41.701,
+      "name": "ui_pop",
+      "gain_db": -12
+    },
+    {
+      "t": 43.301,
+      "name": "ui_pop",
+      "gain_db": -12
+    },
+    {
+      "t": 44.501000000000005,
+      "name": "thunder_rumble",
+      "gain_db": -10
+    },
+    {
+      "t": 46.34,
+      "name": "riser_tension",
+      "gain_db": -14
+    },
+    {
+      "t": 51.556999999999995,
+      "name": "sting_mystery",
+      "gain_db": 0,
+      "note": "freeze + question"
+    },
+    {
+      "t": 52.177,
+      "name": "ui_pop",
+      "gain_db": -8
+    }
+  ]
+}

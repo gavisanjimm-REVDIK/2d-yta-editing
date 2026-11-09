@@ -30,10 +30,13 @@ F="$HERE/ASSETS/fonts"; mkdir -p "$F"
 [ -f "$F/Oswald-VF.ttf" ] || curl -sSfL -o "$F/Oswald-VF.ttf" "https://raw.githubusercontent.com/google/fonts/main/ofl/oswald/Oswald%5Bwght%5D.ttf"
 
 if [[ "${1:-}" == "--tts" ]]; then
-  echo "== TTS: chatterbox + faster-whisper (CPU)"
-  pip install -q --index-url https://download.pytorch.org/whl/cpu torch torchaudio
-  pip install -q chatterbox-tts faster-whisper
+  echo "== TTS: Kokoro-82M (Apache-2.0, ONNX, CPU) + faster-whisper for word timing / voice QC"
+  pip install -q kokoro-onnx faster-whisper
+  K=/opt/models/kokoro; mkdir -p "$K"
+  [ -f "$K/kokoro-v1.0.onnx" ] || curl -sSfL -o "$K/kokoro-v1.0.onnx" https://huggingface.co/fastrtc/kokoro-onnx/resolve/main/kokoro-v1.0.onnx
+  [ -f "$K/voices-v1.0.bin" ] || curl -sSfL -o "$K/voices-v1.0.bin" https://huggingface.co/fastrtc/kokoro-onnx/resolve/main/voices-v1.0.bin
 fi
+[ -f "$F/Cinzel-VF.ttf" ] || curl -sSfL -o "$F/Cinzel-VF.ttf" "https://raw.githubusercontent.com/google/fonts/main/ofl/cinzel/Cinzel%5Bwght%5D.ttf"
 
 echo "== sfx library"
 python3 "$HERE/PIPELINE/audio/sfx_lib.py" >/dev/null && echo "ok"
