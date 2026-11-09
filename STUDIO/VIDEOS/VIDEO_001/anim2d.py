@@ -18,7 +18,8 @@ sys.path.insert(0, str(STUDIO / "PIPELINE" / "twod"))
 sys.path.insert(0, str(HERE))
 import skia  # noqa: E402
 from kit import W, H, FPS, key, blink, mouth_open, clamp, smooth_noise, rgb  # noqa: E402
-from toon import draw_character, CAST, mix_expr, prop_flashlight, prop_notebook, prop_towel  # noqa: E402
+from toon import draw_character, CAST, mix_expr, prop_flashlight, prop_notebook, prop_magnifier  # noqa: E402
+from lipsync import load as load_lip, viseme  # noqa: E402
 import sets as S  # noqa: E402
 import edit_video001 as EDL  # noqa: E402
 
@@ -27,6 +28,13 @@ WORDS = EDL.WORDS
 
 
 # ================================================================ shared helpers
+LIP = load_lip("VIDEO_001")
+
+
+def vis(t, who):
+    return viseme(t, LIP, who)
+
+
 def talk(t, who):
     return mouth_open(t, WORDS, who=who)
 
@@ -140,95 +148,117 @@ def expr_track(t, track, blend=0.12):
     return cur if isinstance(cur, dict) else mix_expr(cur, cur, 1)
 
 
-# ================================================================ 1. storm exterior (hook, event on frame 0)
+DET = "marcus_detective"
+
+
+def ground(c, x, y, w, alpha=0.32):
+    """Soft contact shadow so characters/props stand ON the floor."""
+    p = skia.Paint(AntiAlias=True, Color=rgb("#1A0E0A"))
+    p.setAlphaf(alpha)
+    p.setMaskFilter(skia.MaskFilter.MakeBlur(skia.kNormal_BlurStyle, w * 0.08))
+    c.drawOval(skia.Rect(x - w / 2, y - w * 0.07, x + w / 2, y + w * 0.07), p)
+
+
+def actor(c, name, x, y, h, pose, shadow=True):
+    if shadow:
+        ground(c, x, y, h * 0.42)
+    return draw_character(c, name, x, y, h, pose)
+
+
+def window_flash(c, t, r, rr=6):
+    lt = lightning(t)
+    x, y, w_, h_ = r
+    c.save()
+    c.clipPath(S.rect(x, y, w_, h_, rr), doAntiAlias=True)
+    rain(c, t, r, n=30, alpha=0.6, seed=int(x), length=45)
+    if lt > 0.01:
+        c.drawPaint(skia.Paint(Color=skia.Color(235, 240, 255, int(235 * lt))))
+    c.restore()
+    return lt
+
+
+def nervous_idle(t, seed):
+    return {"blink": blink(t, seed), "tilt": idle_tilt(t, seed), "bob": 0.012 * math.sin(t * 2.2 + seed),
+            "look": (0.5 * smooth_noise(t, seed + 5, 0.2), 0.0)}
+
+
+# ================================================================ HOOK 1: storm exterior (event on frame 0)
 def shot_ext(c, t):
     c.save()
-    z = key(t, [(0.0, 1.0), (B["basement_hook"], 1.75, "in")])
-    cam(c, z, 540, 1180 + 120 * (z - 1))
+    z = key(t, [(0.0, 1.0), (B["hook_lineup"], 1.6, "in")])
+    cam(c, z, 540, 1180 + 100 * (z - 1))
     bg(c, "ext")
     lt = lightning(t)
     if lt > 0.05:
         bolt(c, 760, 0, 900, int(t * 2) + 3, lt)
     rain(c, t, (-200, -200, W + 400, H + 400), n=140, alpha=0.45, length=90)
     c.restore()
-    overlay(c, "#DCE4FF", 0.75 * lt, skia.BlendMode.kScreen)
+    overlay(c, "#DCE4FF", 0.7 * lt, skia.BlendMode.kScreen)
     vignette(c, 0.55)
 
 
-# ================================================================ 2. basement hook: detective, flashlight, solid walls
-def _basement_view(c, t, cx, scale, marcus=None, aim_bg=None, base_y=960):
-    """Dark basement panorama + flashlight. marcus = dict(x, y, h, pose). aim_bg = point on wall (bg coords)."""
+# ================================================================ HOOK 2: three suspects (all equally uneasy)
+TRIO = {"oliver": (250, 1640, 940), "daniel": (545, 1660, 910), "sophie": (840, 1640, 820)}
+TRIO_POSE = {"oliver": dict(arm_r="neck", arm_l="behind", expr="nervous"),
+             "daniel": dict(arm_l="hips", arm_r="neck", expr="worried"),
+             "sophie": dict(arm_l="front", arm_r="front", expr="shy", look=(0.0, 0.6))}
+
+
+def trio(c, t, extra=None, sweat=0.0):
+    for i, (n, (x, y, h)) in enumerate(TRIO.items()):
+        p = nervous_idle(t, 11 + i)
+        p.update(TRIO_POSE[n])
+        p["sweat"] = sweat
+        p["vis"] = vis(t, n)
+        if extra:
+            p.update(extra(n, t))
+        actor(c, n, x, y, h, p)
+
+
+def shot_hook_lineup(c, t):
     c.save()
-    cam(c, scale, cx, base_y)
-    bg(c, "base_dark")
-    info = None
-    if marcus:
-        pose = dict(marcus["pose"])
-        pose["prop_r"] = prop_flashlight(1.0)
-        info = draw_character(c, "marcus", marcus["x"], marcus["y"], marcus["h"], pose)
-    m = c.getTotalMatrix()
+    cam(c, 1.0, 540, 960)
+    bg(c, "foyer")
+    S.draw_candles(c, S.FOYER_CANDLES, t, 0.8)
+    lt = window_flash(c, t, (300, 120, 170, 330), 85) + window_flash(c, t, (640, 120, 170, 330), 85)
+
+    def glance(n, tt):  # they glance at each other (everyone is a possible suspect)
+        k = {"oliver": 1, "daniel": -1, "sophie": -1}[n]
+        return {"look": (k * 0.8 * clamp((tt - B["hook_lineup"] - 0.4) / 0.3), 0.0)}
+    trio(c, t, glance)
     c.restore()
-    if info and "r" in info["hands"] and aim_bg is not None:
-        hand = info["hands"]["r"]
-        aim_dev = m.mapXY(*aim_bg)
-        cone, a = beam(c, hand, aim_dev)
-        # lit version of the wall inside the cone (the light reveals solid stone everywhere)
-        c.save()
-        c.clipPath(cone, doAntiAlias=True)
-        c.concat(m)
-        lit = skia.Paint()
-        lit.setAlphaf(0.95)
-        c.drawImage(S.img("base_lit"), 0, 0, skia.SamplingOptions(skia.FilterMode.kLinear), lit)
-        c.restore()
-        # soft beam glow
-        (hx, hy), _ = hand
-        sh = skia.GradientShader.MakeRadial(skia.Point(hx, hy), 1500,
-                                            [skia.Color(255, 236, 190, 70), skia.Color(255, 236, 190, 0)])
-        c.save()
-        c.clipPath(cone, doAntiAlias=True)
-        c.drawPaint(skia.Paint(Shader=sh, BlendMode=skia.BlendMode.kPlus))
-        c.restore()
-        # redraw the detective on top (so the beam does not cover him), with flashlight spill
-        c.save()
-        c.concat(m)
-        pose = dict(marcus["pose"])
-        pose["prop_r"] = prop_flashlight(1.0)
-        dimmed(c, 0.25)
-        draw_character(c, "marcus", marcus["x"], marcus["y"], marcus["h"], pose)
-        c.restore()
-        c.restore()
-        S.radial(c, hx, hy, 70, "#FFF3C8", 0.8, plus=True)
-    vignette(c, 0.6)
+    overlay(c, "#DCE4FF", 0.12 * min(lt, 1), skia.BlendMode.kScreen)
+    vignette(c, 0.45)
 
 
-def shot_basement_hook(c, t):
-    t0 = B["basement_hook"]
+# ================================================================ HOOK 3: the detective
+def shot_hook_marcus(c, t):
     td = B["detective"]
-    turn = key(t, [(t0, -0.7), (td - 0.15, -0.7), (td + 0.25, 0.1, "back")])
-    sweep = key(t, [(t0, 700.0), (td - 0.1, 1900.0, "io"), (td + 0.4, 1500.0, "out")])
-    pose = {"expr": expr_track(t, [(t0, "suspicious"), (td + 0.1, "smug")]),
-            "turn": turn, "look": (key(t, [(t0, -0.8), (td, -0.8), (td + 0.25, 0.0)]), 0.0),
-            "blink": blink(t, 4), "arm_r": "flash", "arm_l": "relaxed", "tilt": idle_tilt(t, 1),
-            "talk": 0.0, "bob": 0.02 * math.sin(t * 2)}
-    z = key(t, [(t0, 1.0), (B["safe"], 1.12, "lin")])
-    _basement_view(c, t, 1330, z, {"x": 1180, "y": 1780, "h": 1150, "pose": pose}, (sweep, 650))
-
-
-# ================================================================ 3. study: empty safe insert, Harrison
-def _study_light(c, t):
-    S.draw_candles(c, S.STUDY_CANDLES, t)
-    lt = lightning(t)
     c.save()
-    c.clipPath(S.rect(620, 160, 360, 640, 170), doAntiAlias=True)
-    rain(c, t, (620, 160, 360, 640), n=40, alpha=0.6, seed=4, length=50)
-    c.drawPaint(skia.Paint(Color=skia.Color(230, 236, 255, int(230 * lt))))
+    cam(c, 1.0, 540, 960)
+    bg(c, "foyer")
+    S.draw_candles(c, S.FOYER_CANDLES, t, 0.8)
+    lt = window_flash(c, t, (300, 120, 170, 330), 85) + window_flash(c, t, (640, 120, 170, 330), 85)
+    pose = {"expr": expr_track(t, [(B["hook_marcus"], "determined"), (td, "smug")]), "blink": blink(t, 4),
+            "turn": key(t, [(B["hook_marcus"], 0.5), (td, 0.0)]), "look": (0.0, 0.0),
+            "arm_r": key(t, [(B["hook_marcus"], (0.18, 1.28)), (td - 0.1, (0.18, 1.28)), (td + 0.25, (-0.2, -1.25), "back"),
+                             (td + 0.9, (-0.2, -1.25)), (td + 1.2, (0.18, 1.28))]),
+            "arm_l": "hips", "tilt": idle_tilt(t, 1) - 4 * clamp((t - td) / 0.3)}
+    actor(c, DET, 600, 1760, 1150, pose)
     c.restore()
-    return lt
+    overlay(c, "#DCE4FF", 0.15 * min(lt, 1), skia.BlendMode.kScreen)
+    vignette(c, 0.5)
+
+
+# ================================================================ Harrison & the empty safe
+def _study_light(c, t):
+    S.draw_candles(c, S.STUDY_CANDLES, t, 1.0, holder=False)
+    return window_flash(c, t, (620, 160, 360, 640), 170)
 
 
 def shot_study_safe(c, t):
     c.save()
-    cam(c, 2.3, 470, 1120)
+    cam(c, 1.9, 470, 1110)
     bg(c, "study")
     _study_light(c, t)
     c.restore()
@@ -236,215 +266,284 @@ def shot_study_safe(c, t):
 
 
 def shot_study(c, t):
-    t0 = B["harrison_ms"]
+    t0, pw = B["harrison_ms"], B["power"]
     c.save()
-    cam(c, 1.22, 610, 1020)
+    cam(c, 1.0, 540, 960)
     bg(c, "study")
     lt = _study_light(c, t)
-    pw = B["power"]
-    pose = {"expr": expr_track(t, [(t0, "panic"), (pw, "shocked")]),
-            "talk": talk(t, "harrison"), "blink": blink(t, 7),
-            "arm_l": key(t, [(t0, (0.55, -1.05)), (pw - 0.1, (0.55, -1.05)), (pw + 0.2, (0.4, 0.9))]),
-            "arm_r": key(t, [(t0, (0.55, -1.05)), (pw - 0.1, (0.55, -1.05)), (pw + 0.2, (1.2, -0.3))]),
+    pose = {"expr": expr_track(t, [(t0, "panic"), (pw, "shocked")]), "vis": vis(t, "harrison"),
+            "blink": blink(t, 7),
+            "arm_l": key(t, [(t0, (0.55, -1.0)), (pw - 0.1, (0.55, -1.0)), (pw + 0.2, (0.3, 0.9))]),
+            "arm_r": key(t, [(t0, (0.55, -1.0)), (pw - 0.1, (0.55, -1.0)), (pw + 0.2, (1.2, -0.35))]),
             "hand_r": "point" if t > pw else "open",
-            "turn": key(t, [(t0, -0.2), (pw, -0.2), (pw + 0.3, 0.35)]),
-            "look": (key(t, [(t0, 0.0), (pw, 0.0), (pw + 0.2, 0.8)]), -0.2),
-            "tilt": 3 * math.sin(t * 9) * (t < pw),  # panicked jitter
-            "bob": 0.03 * abs(math.sin(t * 6))}
-    draw_character(c, "harrison", 560, 1960, 1500, pose)
+            "turn": key(t, [(t0, -0.2), (pw, -0.2), (pw + 0.3, 0.4)]),
+            "look": (key(t, [(t0, 0.0), (pw, 0.0), (pw + 0.2, 0.8)]), -0.3), "tilt": 2 * math.sin(t * 8) * (t < pw)}
+    actor(c, "harrison", 400, 1760, 1150, pose)
     c.restore()
-    overlay(c, "#DCE4FF", 0.25 * lt, skia.BlendMode.kScreen)
+    overlay(c, "#DCE4FF", 0.22 * lt, skia.BlendMode.kScreen)
     vignette(c, 0.5)
 
 
-# ================================================================ 4. foyer: detective + three suspects
-def _foyer_light(c, t, windows=True):
-    S.draw_candles(c, S.FOYER_CANDLES, t, 0.8)
-    lt = lightning(t)
-    if windows and lt > 0.01:
-        for x0 in (300, 640):
-            c.save()
-            c.clipPath(S.rect(x0, 120, 170, 330, 85), doAntiAlias=True)
-            c.drawPaint(skia.Paint(Color=skia.Color(235, 240, 255, int(240 * lt))))
-            c.restore()
-    return lt
-
-
-def suspects_pose(t, name, base_expr="nervous"):
-    seed = {"oliver": 11, "daniel": 12, "sophie": 13}[name]
-    p = {"expr": base_expr, "blink": blink(t, seed), "tilt": idle_tilt(t, seed), "talk": talk(t, name),
-         "look": (0.6 * smooth_noise(t, seed + 5, 0.15), 0.0), "bob": 0.015 * math.sin(t * 2.2 + seed)}
-    if name == "oliver":
-        p.update(arm_r="neck", arm_l="behind", expr="nervous")
-    elif name == "daniel":
-        p.update(arm_l="hips", arm_r="hips", expr="confident")
-    else:
-        p.update(arm_l="front", arm_r="front", prop_r=prop_towel, expr="shy", look=(0.0, 0.7))
-    return p
-
-
+# ================================================================ "Nobody leaves" (over the shoulder)
 def shot_foyer_wide(c, t):
     c.save()
     cam(c, 1.0, 540, 960)
     bg(c, "foyer")
-    lt = _foyer_light(c, t)
-    draw_character(c, "oliver", 520, 1690, 980, suspects_pose(t, "oliver"))
-    draw_character(c, "daniel", 735, 1710, 940, suspects_pose(t, "daniel"))
-    draw_character(c, "sophie", 945, 1690, 830, suspects_pose(t, "sophie"))
-    mp = {"expr": "determined", "turn": 0.75, "look": (0.9, 0.0), "talk": talk(t, "marcus"), "blink": blink(t, 4),
-          "arm_l": "hips", "arm_r": key(t, [(B["foyer"], (0.18, 1.28)), (B["foyer"] + 0.5, (1.1, 0.05))]),
+    S.draw_candles(c, S.FOYER_CANDLES, t, 0.8)
+    lt = window_flash(c, t, (300, 120, 170, 330), 85) + window_flash(c, t, (640, 120, 170, 330), 85)
+    sub = {"oliver": (470, 1610, 820), "daniel": (690, 1625, 800), "sophie": (900, 1610, 720)}
+    for i, (n, (x, y, h)) in enumerate(sub.items()):
+        p = nervous_idle(t, 11 + i)
+        p.update(TRIO_POSE[n])
+        p["look"] = (-0.7, 0.0)  # all watch the detective
+        actor(c, n, x, y, h, p)
+    mp = {"expr": "determined", "turn": 0.7, "look": (0.9, 0.0), "vis": vis(t, "marcus"), "blink": blink(t, 4),
+          "arm_l": "hips", "arm_r": key(t, [(B["foyer"], (0.18, 1.28)), (B["foyer"] + 0.5, (1.0, 0.1), "back")]),
           "hand_r": "point", "tilt": idle_tilt(t, 1)}
-    draw_character(c, "marcus", 70, 2230, 1450, mp)
+    actor(c, DET, 150, 2060, 1250, mp, shadow=False)
     c.restore()
-    overlay(c, "#DCE4FF", 0.18 * lt, skia.BlendMode.kScreen)
+    overlay(c, "#DCE4FF", 0.12 * min(lt, 1), skia.BlendMode.kScreen)
     vignette(c, 0.45)
 
 
-# ================================================================ 5. close-ups (blurred foyer behind)
-CU = {"marcus": (410, 820), "oliver": (670, 900), "daniel": (560, 760), "sophie": (660, 700)}  # cx in [400, 680] so the zoomed bg covers the frame
+# ================================================================ alibis: medium close-ups (smaller, more room)
+CU = {"oliver": (640, 880), "daniel": (520, 760), "sophie": (660, 700), "marcus": (430, 820)}
+MCU_H, MCU_Y = 1550, 2200
 
 
-def _cu_bg(c, t, name, z=1.35):
+def _cu_bg(c, t, name):
     cx, cy = CU[name]
     c.save()
-    cam(c, z, cx, cy)
+    cam(c, 1.25, cx, cy)
     bg(c, "foyer_blur")
     S.draw_candles(c, S.FOYER_CANDLES, t, 0.8)
-    lt = lightning(t)
+    lt = window_flash(c, t, (300, 120, 170, 330), 85) + window_flash(c, t, (640, 120, 170, 330), 85)
     c.restore()
-    return lt
+    return min(lt, 1)
 
 
-def shot_cu_marcus(c, t):
-    lt = _cu_bg(c, t, "marcus")
-    pose = {"expr": expr_track(t, [(B["marcus_q"], "suspicious")]), "talk": talk(t, "marcus"),
-            "blink": blink(t, 4), "turn": 0.25, "look": (0.5, 0.0), "tilt": idle_tilt(t, 1),
-            "arm_l": "front_high", "prop_l": prop_notebook, "arm_r": "chin"}
-    draw_character(c, "marcus", 540, 3020, 2650, pose)
-    overlay(c, "#DCE4FF", 0.2 * lt, skia.BlendMode.kScreen)
+def _finish(c, lt):
+    overlay(c, "#DCE4FF", 0.15 * lt, skia.BlendMode.kScreen)
     vignette(c, 0.45)
 
 
 def shot_cu_oliver(c, t):
     lt = _cu_bg(c, t, "oliver")
-    wig = 0.06 * math.sin(t * 16)
-    pose = {"expr": "nervous" if talk(t, "oliver") < 0.05 else "worried", "talk": talk(t, "oliver"),
-            "blink": blink(t, 11, 2.0), "turn": -0.25, "look": (-0.5 + 0.4 * math.sin(t * 1.7), 0.0),
-            "tilt": idle_tilt(t, 2) - 3, "arm_r": (-0.45, -0.05 + wig), "arm_l": "relaxed", "sweat": 0.6}
-    draw_character(c, "oliver", 540, 3080, 2650, pose)
-    overlay(c, "#DCE4FF", 0.2 * lt, skia.BlendMode.kScreen)
-    vignette(c, 0.45)
-
-
-def _daniel_pose(t):
-    if t >= B["daniel_ecu"] - 0.01 and t < B["lineup"]:  # the moment he realises
-        return {"expr": "nervous", "talk": 0.0, "blink": 0.0, "turn": 0.0, "sweat": 1.0,
-                "look": (math.sin(t * 9) * 0.7, 0.0), "arm_l": "relaxed", "arm_r": "relaxed"}
-    if t >= B["daniel2"] - 0.01:  # "Yes! Clear as day."
-        return {"expr": "confident", "talk": talk(t, "daniel"), "blink": blink(t, 12), "turn": 0.15,
-                "arm_l": "shrug", "arm_r": "shrug", "tilt": 4 + idle_tilt(t, 3)}
-    bw = B["basement_word"]
-    return {"expr": expr_track(t, [(B["daniel"], "confident"), (B["lightning_word"], "happy")]),
-            "talk": talk(t, "daniel"), "blink": blink(t, 12), "flip": True, "turn": 0.2,
-            "arm_r": key(t, [(B["daniel"], (0.18, 1.28)), (bw - 0.3, (0.18, 1.28)), (bw, (1.25, -0.15), "back")]),
-            "hand_r": "point" if t > bw - 0.15 else "open", "arm_l": "hips", "tilt": idle_tilt(t, 3),
-            "look": (0.6, 0.0)}
+    dk = B["o_dark"]
+    pose = {"expr": expr_track(t, [(B["oliver"], "neutral"), (dk - 0.2, "worried")]), "vis": vis(t, "oliver"),
+            "blink": blink(t, 11), "turn": -0.2, "look": key(t, [(B["oliver"], (0.0, 0.0)), (dk - 0.8, (0.6, -0.5))]),
+            "tilt": idle_tilt(t, 2), "arm_r": (-0.45, -0.05 + 0.05 * math.sin(t * 14)), "arm_l": "behind"}
+    actor(c, "oliver", 540, MCU_Y, MCU_H, pose, shadow=False)
+    _finish(c, lt)
 
 
 def shot_cu_daniel(c, t):
     lt = _cu_bg(c, t, "daniel")
-    draw_character(c, "daniel", 540, 3060, 2650, _daniel_pose(t))
-    if B["daniel_ecu"] <= t < B["lineup"]:
-        overlay(c, "#1A2240", 0.25)
-    overlay(c, "#DCE4FF", 0.2 * lt, skia.BlendMode.kScreen)
-    vignette(c, 0.45)
+    pp = B["d_pipe"]
+    pose = {"expr": expr_track(t, [(B["daniel"], "neutral"), (pp, "smile"), (pp + 1.2, "worried")]),
+            "vis": vis(t, "daniel"), "blink": blink(t, 12), "turn": 0.15, "tilt": idle_tilt(t, 3),
+            # scratches his neck while talking - the same nervous habit as Oliver's tie: nobody stands out
+            "arm_r": (-0.45, -0.05) if B["daniel"] + 0.3 < t < pp else "relaxed",
+            "arm_l": "hips", "look": (0.3 * smooth_noise(t, 9, 0.3), 0.0)}
+    actor(c, "daniel", 540, MCU_Y, MCU_H, pose, shadow=False)
+    _finish(c, lt)
 
 
 def shot_cu_sophie(c, t):
     lt = _cu_bg(c, t, "sophie")
-    th = B["thunder_word"]
-    pose = {"expr": expr_track(t, [(B["sophie"], "shy"), (th, "worried"), (th + 0.9, "shy")]),
-            "talk": talk(t, "sophie"), "blink": blink(t, 13),
-            "look": key(t, [(B["sophie"], (0.0, 0.8)), (th - 0.1, (0.0, 0.8)), (th + 0.1, (0.7, -0.8)),
-                            (th + 0.9, (0.7, -0.8)), (th + 1.1, (0.0, 0.8))]),
-            "turn": key(t, [(B["sophie"], -0.1), (th, -0.1), (th + 0.2, 0.3), (th + 0.9, 0.3), (th + 1.1, -0.1)]),
-            "tilt": key(t, [(B["sophie"], 6), (th, 6), (th + 0.2, -3), (th + 0.9, -3), (th + 1.1, 6)]),
-            "arm_l": "front", "arm_r": "front", "prop_r": prop_towel}
-    draw_character(c, "sophie", 540, 2860, 2450, pose)
+    rt, dr = B["s_rattled"], B["s_dropped"]
+    pose = {"expr": expr_track(t, [(B["sophie"], "shy"), (rt - 0.1, "surprised"), (dr + 0.4, "worried")]),
+            "vis": vis(t, "sophie"), "blink": blink(t, 13),
+            "look": key(t, [(B["sophie"], (0.0, 0.5)), (rt - 0.2, (0.0, 0.5)), (rt, (0.6, -0.8)), (dr + 0.4, (0.0, 0.6))]),
+            "turn": key(t, [(B["sophie"], -0.1), (rt - 0.2, -0.1), (rt, 0.25), (dr + 0.4, -0.1)]),
+            "arm_l": "front", "arm_r": (0.45, -0.5) if rt < t < dr + 0.6 else "front",  # hand flies up at the thunder
+            "tilt": idle_tilt(t, 4) + 4}
+    actor(c, "sophie", 540, MCU_Y - 60, MCU_H * 0.92, pose, shadow=False)
+    _finish(c, lt)
+
+
+def shot_cu_marcus(c, t):
+    lt = _cu_bg(c, t, "marcus")
+    pose = {"expr": "suspicious", "vis": vis(t, "marcus"), "blink": blink(t, 4), "turn": 0.25,
+            "look": (0.6, -0.1), "tilt": idle_tilt(t, 1), "arm_r": "chin", "arm_l": "front_high",
+            "prop_l": prop_notebook}
+    actor(c, DET, 540, MCU_Y, MCU_H, pose, shadow=False)
+    _finish(c, lt)
+
+
+# ================================================================ the investigation: 3 rooms, equal treatment
+def _room_cam(t, t0):
+    u = clamp((t - t0) / EDL.ROOM_LEN)
+    return 1.04 + 0.05 * u, 520 + 40 * u
+
+
+def _inspect_pose(t, t0, look_up_at):
+    up = look_up_at is not None and t > look_up_at
+    return {"expr": "surprised" if up and t < look_up_at + 0.5 else "suspicious", "blink": blink(t, 4),
+            "arm_r": "front_high", "prop_r": prop_magnifier, "arm_l": "hips",
+            "turn": key(t, [(t0, 0.6), (t0 + 0.6, 0.2)]),
+            "look": (0.6, -0.9) if up else (0.6, 0.6), "tilt": -6 if up else 6, "lean": 4 if not up else 0}
+
+
+def shot_room_laundry(c, t):
+    t0 = B["room_laundry"]
+    z, cx = _room_cam(t, t0)
+    c.save()
+    cam(c, z, cx, 1050)
+    bg(c, "laundry")
+    lt = window_flash(c, t, S.LAUNDRY_WIN)
+    actor(c, DET, 330, 1800, 950, _inspect_pose(t, t0, t0 + 0.9))
+    c.restore()
     overlay(c, "#DCE4FF", 0.2 * lt, skia.BlendMode.kScreen)
     vignette(c, 0.45)
 
 
-# ================================================================ 6. detective turns toward the basement door
-def shot_marcus_turn(c, t):
-    t0, tn = B["turn"], B["daniel_name"]
+def shot_room_kitchen(c, t):
+    t0 = B["room_kitchen"]
+    z, cx = _room_cam(t, t0)
     c.save()
-    cam(c, 1.25, 430, 1060)
-    bg(c, "foyer")
-    lt = _foyer_light(c, t)
-    pose = {"expr": expr_track(t, [(t0, "determined"), (t0 + 0.6, "suspicious")]), "talk": talk(t, "marcus"),
-            "blink": blink(t, 4), "arm_l": "front_high", "prop_l": prop_notebook, "arm_r": "chin",
-            "turn": key(t, [(t0, 0.4), (t0 + 0.9, -0.85, "io"), (tn - 0.15, -0.85), (tn + 0.3, 0.6, "io")]),
-            "look": key(t, [(t0, (0.5, 0.0)), (t0 + 0.9, (-1.0, 0.1)), (tn - 0.15, (-1.0, 0.1)), (tn + 0.3, (0.9, 0.0))]),
-            "tilt": idle_tilt(t, 1)}
-    draw_character(c, "marcus", 600, 2020, 1450, pose)
+    cam(c, z, cx, 1050)
+    bg(c, "kitchen")
+    S.draw_candles(c, S.KITCHEN_CANDLES, t, 0.9)
+    lt = window_flash(c, t, S.KITCHEN_WIN)
+    actor(c, DET, 760, 1820, 950, dict(_inspect_pose(t, t0, t0 + 0.9), flip=True))
     c.restore()
-    overlay(c, "#DCE4FF", 0.18 * lt, skia.BlendMode.kScreen)
+    overlay(c, "#DCE4FF", 0.2 * lt, skia.BlendMode.kScreen)
     vignette(c, 0.45)
 
 
-# ================================================================ 7. down into the basement: pan across solid walls
-def shot_basement_pan(c, t):
-    t0, t1 = B["descend"], B["daniel_ecu"]
-    cx = key(t, [(t0, 650.0), (t1, 1650.0, "io")])
-    walk_x = key(t, [(t0, 420.0), (t0 + 1.0, 980.0, "out")])
-    walk_y = key(t, [(t0, 1520.0), (t0 + 1.0, 1760.0, "out")])
-    walking = t < t0 + 1.0
-    pose = {"expr": expr_track(t, [(t0, "suspicious"), (B["explain"], "determined")]), "talk": talk(t, "marcus"),
-            "blink": blink(t, 4), "arm_r": "flash", "arm_l": "relaxed",
-            "walk": (t * 1.8) % 1 if walking else None,
-            "turn": key(t, [(t0, 0.6), (B["explain"], 0.6), (B["explain"] + 0.5, 0.0)]),
-            "look": (key(t, [(t0, 0.9), (B["explain"], 0.9), (B["explain"] + 0.5, 0.0)]), 0.0)}
-    aim = (cx + 520 + 120 * math.sin(t * 2.1), 760 + 80 * math.sin(t * 1.3))
-    _basement_view(c, t, cx, 1.0, {"x": walk_x, "y": walk_y, "h": 1050, "pose": pose}, aim)
+def shot_room_basement(c, t):
+    """Same framing and length as the other rooms. Dark (power out), flashlight sweeps the walls.
+    Thunder is heard during this shot, but nothing lights up down here."""
+    t0 = B["room_basement"]
+    u = clamp((t - t0) / EDL.ROOM_LEN)
+    cx = 1250 + 60 * u
+    pose = {"expr": "suspicious", "blink": blink(t, 4), "arm_r": "flash", "arm_l": "hips",
+            "turn": key(t, [(t0, 0.6), (t0 + 0.6, 0.3)]), "look": (0.8, -0.4), "tilt": 4}
+    aim = (cx - 500 + 1100 * u, 700 + 120 * math.sin(t * 2.0))
+    _basement_view(c, t, cx, 1.04 + 0.05 * u, {"x": 1150, "y": 1790, "h": 950, "pose": pose}, aim)
 
 
-# ================================================================ 8. the three suspects together (recap + question)
-LINEUP = {"oliver": (250, 1860, 1080), "daniel": (545, 1880, 1040), "sophie": (840, 1860, 930)}
-
-
-def shot_lineup(c, t):
-    tz, tf = B["zoom"], B["freeze"]
-    dx, dy, dh = LINEUP["daniel"]
-    dhead_y = dy - dh * 0.72
-    z = key(t, [(B["lineup"], 1.0), (tz, 1.04, "lin"), (tf, 2.35, "io")])
-    cx = key(t, [(B["lineup"], 540.0), (tz, 540.0), (tf, dx, "io")])
-    cy = key(t, [(B["lineup"], 960.0), (tz, 960.0), (tf, dhead_y + 60, "io")])
+def _basement_view(c, t, cx, scale, marcus, aim_bg):
     c.save()
-    cam(c, z, cx, cy)
-    bg(c, "foyer")
-    lt = _foyer_light(c, t)
-    named = {"oliver": B["n_oliver"], "sophie": B["n_sophie"], "daniel": B["n_daniel"]}
-    for name in ("oliver", "sophie", "daniel"):
-        x, y, h = LINEUP[name]
-        pose = suspects_pose(t, name)
-        if name == "daniel":
-            pose.update(expr=expr_track(t, [(B["lineup"], "confident"), (tz, "nervous")]),
-                        sweat=key(t, [(tz, 0.0), (tz + 1.0, 1.0)]), arm_l="relaxed", arm_r="relaxed",
-                        look=(0.8 * math.sin(t * 5) if t > tz else 0.2, 0.0))
-        # spotlight whoever the narrator names; others dim
-        active = None
-        for n2, tt in sorted(named.items(), key=lambda kv: kv[1]):
-            if B["lineup"] < t and t >= tt - 0.1 and t < B["recap_end"]:
-                active = n2
-        dim = 0.0 if active in (None, name) else 0.45
-        if dim:
-            dimmed(c, dim)
-        draw_character(c, name, x, y, h, pose)
-        if dim:
-            c.restore()
+    cam(c, scale, cx, 1000)
+    bg(c, "base_dark")
+    pose = dict(marcus["pose"], prop_r=prop_flashlight(1.0))
+    info = actor(c, DET, marcus["x"], marcus["y"], marcus["h"], pose)
+    m = c.getTotalMatrix()
     c.restore()
-    overlay(c, "#DCE4FF", 0.18 * lt, skia.BlendMode.kScreen)
+    hand = info["hands"]["r"]
+    cone, _ = beam(c, hand, m.mapXY(*aim_bg))
+    c.save()
+    c.clipPath(cone, doAntiAlias=True)
+    c.concat(m)
+    lit = skia.Paint()
+    lit.setAlphaf(0.95)
+    c.drawImage(S.img("base_lit"), 0, 0, skia.SamplingOptions(skia.FilterMode.kLinear), lit)
+    c.restore()
+    (hx, hy), _ = hand
+    sh = skia.GradientShader.MakeRadial(skia.Point(hx, hy), 1500, [skia.Color(255, 236, 190, 70), skia.Color(255, 236, 190, 0)])
+    c.save()
+    c.clipPath(cone, doAntiAlias=True)
+    c.drawPaint(skia.Paint(Shader=sh, BlendMode=skia.BlendMode.kPlus))
+    c.restore()
+    c.save()
+    c.concat(m)
+    dimmed(c, 0.22)
+    actor(c, DET, marcus["x"], marcus["y"], marcus["h"], pose)
+    c.restore()
+    c.restore()
+    S.radial(c, hx, hy, 60, "#FFF3C8", 0.8, plus=True)
+    vignette(c, 0.55)
+
+
+# ================================================================ "I know exactly who is lying."
+def shot_marcus_end(c, t):
+    ly = B["lying"]
+    c.save()
+    cam(c, 1.0, 540, 960)
+    bg(c, "foyer")
+    S.draw_candles(c, S.FOYER_CANDLES, t, 0.8)
+    window_flash(c, t, (300, 120, 170, 330), 85)
+    window_flash(c, t, (640, 120, 170, 330), 85)
+    pose = {"expr": expr_track(t, [(B["marcus_end"], "neutral"), (ly - 0.3, "smug")]), "vis": vis(t, "marcus"),
+            "blink": blink(t, 4), "turn": 0.0, "look": (0.0, 0.0), "arm_l": "hips",
+            "arm_r": key(t, [(B["marcus_end"], (0.18, 1.28)), (ly - 0.4, (0.18, 1.28)), (ly - 0.1, (-0.2, -1.25), "back"),
+                             (ly + 0.8, (-0.2, -1.25)), (ly + 1.1, (0.18, 1.28))]),
+            "tilt": -5 * clamp((t - ly + 0.3) / 0.3)}
+    actor(c, DET, 540, 1840, 1250, pose)
+    c.restore()
+    vignette(c, 0.45)
+
+
+# ================================================================ recap panels (split screen, each 1080 x ~633)
+PANEL_CY = 960  # the split screen shows the middle band (y 643..1276) of each panel shot
+CARD = (190, 652, 700, 616)  # framed "photo" of the room inside the band
+CARD_S = 0.64
+
+
+def _panel(c, t, name_t, label, room_bg, cx, cy, draw_people):
+    c.drawPaint(skia.Paint(Color=rgb("#241A22")))
+    x, y, w_, h_ = CARD
+    c.save()
+    c.clipRect(skia.Rect.MakeXYWH(x, y, w_, h_))
+    c.translate(x + w_ / 2, y + h_ / 2)
+    c.scale(CARD_S, CARD_S)
+    c.translate(-cx, -cy)
+    bg(c, room_bg)
+    draw_people(c, t)
+    c.restore()
+    fr = skia.Paint(AntiAlias=True, Color=rgb("#E9DFC4"), Style=skia.Paint.kStroke_Style, StrokeWidth=10)
+    c.drawRect(skia.Rect.MakeXYWH(x, y, w_, h_), fr)
+    active = name_t - 0.1 <= t < B["n_fit"] - 0.1 or t >= B["n_fit"] - 0.1
+    if not active:
+        overlay(c, "#000000", 0.55)
+    from kit import text
+    text(c, label, x + 24, y + 70, 50, "#FFFFFF", face="Anton-Regular.ttf", align="left", outline=8)
+
+
+def _p_kitchen(c, t):
+    S.draw_candles(c, S.KITCHEN_CANDLES, t, 0.9)
+    window_flash(c, t, S.KITCHEN_WIN)
+    actor(c, "oliver", 560, 1330, 700, dict(nervous_idle(t, 11), arm_r="neck", arm_l="behind", expr="neutral"))
+
+
+def _p_basement(c, t):
+    overlay(c, "#0A1020", 0.3)
+    actor(c, "daniel", 1350, 1460, 640, dict(nervous_idle(t, 12), arm_l="hips", arm_r="relaxed", expr="neutral"))
+
+
+def _p_laundry(c, t):
+    window_flash(c, t, S.LAUNDRY_WIN)
+    actor(c, "sophie", 330, 1560, 660, dict(nervous_idle(t, 13), arm_l="front", arm_r="front", expr="neutral"))
+
+
+def shot_panel_kitchen(c, t):
+    _panel(c, t, B["n_kitchen"], "KITCHEN · OLIVER", "kitchen", 540, 940, _p_kitchen)
+
+
+def shot_panel_basement(c, t):
+    _panel(c, t, B["n_basement"], "BASEMENT · DANIEL", "base_lit", 1330, 1060, _p_basement)
+
+
+def shot_panel_laundry(c, t):
+    _panel(c, t, B["n_laundry"], "LAUNDRY ROOM · SOPHIE", "laundry", 540, 1110, _p_laundry)
+
+
+# ================================================================ final question: all three, equal, slow push to the group
+def shot_final_lineup(c, t):
+    z = key(t, [(B["final"], 1.0), (B["freeze"], 1.1, "io")])
+    c.save()
+    cam(c, z, 540, 1020)
+    bg(c, "foyer")
+    S.draw_candles(c, S.FOYER_CANDLES, t, 0.8)
+    lt = window_flash(c, t, (300, 120, 170, 330), 85) + window_flash(c, t, (640, 120, 170, 330), 85)
+
+    def look_cam(n, tt):
+        return {"look": (0.0, 0.0), "expr": {"oliver": "nervous", "daniel": "worried", "sophie": "worried"}[n]}
+    trio(c, t, look_cam, sweat=1.0)
+    c.restore()
+    overlay(c, "#DCE4FF", 0.12 * min(lt, 1), skia.BlendMode.kScreen)
     vignette(c, 0.45)
 
 
@@ -479,14 +578,17 @@ if __name__ == "__main__":
     if a.still:
         still(a.still[0], float(a.still[1]), HERE / "qc" / f"still_{a.still[0]}_{float(a.still[1]):.2f}.png")
     elif a.stills:
+        import shutil
+        shutil.rmtree(HERE / "qc" / "test_stills", ignore_errors=True)
         for s in EDL.SEGMENTS:
-            if s["src"] in SHOTS:
-                tm = (s["t0"] + s["t1"]) / 2
-                still(s["src"], tm, HERE / "qc" / "test_stills" / f"{tm:05.2f}_{s['src']}.png")
+            for sub in (s["split"] if s["src"] == "split" else [s]):
+                if sub["src"] in SHOTS:
+                    tm = (s["t0"] + s["t1"]) / 2
+                    still(sub["src"], tm, HERE / "qc" / "test_stills" / f"{tm:05.2f}_{sub['src']}.png")
     else:
         todo = [(j, i) for j, fr in json.loads(a.frames_json).items() for i in fr]
         with Pool() as p:
             for k, _ in enumerate(p.imap_unordered(render, todo, chunksize=6)):
-                if k % 100 == 0:
+                if k % 200 == 0:
                     print(f"  2d {k}/{len(todo)}", flush=True)
         print(f"  2d rendered {len(todo)} frames")

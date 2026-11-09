@@ -1,4 +1,5 @@
-"""EDL - VIDEO_001 "The Man Who Knew It Was Raining". Every beat comes from narration word timing."""
+"""EDL - VIDEO_001 "The Man Who Knew It Was Raining" (v2: fair-play riddle, nobody singled out).
+Every beat comes from narration word timing."""
 import json
 import sys
 from pathlib import Path
@@ -19,87 +20,87 @@ def L(lid, edge="start"):
 
 
 B = {
-    "basement_hook": 1.7,
+    "hook_lineup": w("but", "L01") - 0.05,
+    "hook_marcus": w("can", "L01") - 0.05,
     "detective": w("detective", "L01"),
-    "safe": L("L01", "end") + 0.35,
+    "safe": L("L02") - 0.1,
     "harrison_ms": w("gone", "L02", edge="end") + 0.1,
     "power": w("power", "L02"),
-    "foyer": L("L02", "end") + 0.2,
-    "marcus_q": L("L03", "end") + 0.25,
-    "oliver": L("L04", "end") + 0.12,
-    "daniel": L("L05", "end") + 0.1,
-    "lightning_word": w("lightning", "L06"),
-    "basement_word": w("basement", "L06"),
-    "sophie": L("L06", "end") + 0.1,
-    "thunder_word": w("thunder", "L07"),
-    "turn": L("L07", "end") + 0.1,
-    "daniel_name": w("daniel", "L08"),
-    "daniel2": L("L08", "end") + 0.12,
-    "descend": L("L09", "end") + 0.05,
-    "explain": L("L10"),
-    "daniel_ecu": L("L10", "end") + 0.15,
-    "silence": L("L10", "end") + 0.05,
-    "lineup": L("L11") - 0.02,
-    "n_oliver": w("oliver", "L11"),
-    "n_sophie": w("sophie", "L11"),
-    "n_daniel": w("daniel", "L11"),
-    "recap_end": L("L11", "end") + 0.2,
-    "zoom": L("L12"),
-    "who": w("who", "L12"),
-    "freeze": L("L12", "end") + 0.05,
+    "foyer": L("L03") - 0.1,
+    "oliver": L("L04") - 0.1,
+    "o_dark": w("dark", "L04"),
+    "daniel": L("L05") - 0.1,
+    "d_pipe": w("pipe", "L05"),
+    "sophie": L("L06") - 0.1,
+    "s_rattled": w("rattled", "L06"),
+    "s_dropped": w("dropped", "L06"),
+    "marcus_hmm": L("L07") - 0.12,
+    "rooms": L("L07", "end") + 0.3,
+    "marcus_end": L("L08") - 0.15,
+    "lying": w("lying", "L08"),
+    "recap": L("L09") - 0.1,
+    "n_kitchen": w("kitchen", "L09"),
+    "n_basement": w("basement", "L09"),
+    "n_laundry": w("laundry", "L09"),
+    "n_fit": w("one", "L09"),
+    "final": L("L10") - 0.1,
+    "freeze": L("L10", "end") + 0.08,
 }
+ROOM_LEN = (B["marcus_end"] - B["rooms"]) / 3
+B["room_laundry"] = B["rooms"]
+B["room_basement"] = B["rooms"] + ROOM_LEN
+B["room_kitchen"] = B["rooms"] + 2 * ROOM_LEN
 DURATION = round(B["freeze"] + 5.0, 2)
 BPM = 84
-# lightning strikes (global s). The basement shots never light up from these: no windows down there.
-STRIKES = [0.0, 1.25, B["power"] + 0.1, B["lightning_word"] + 0.05, B["thunder_word"] - 0.1,
-           B["explain"] + 0.6, B["n_daniel"] + 1.2]
+# lightning strikes (global s). Rooms with windows light up; the basement never does (thunder only).
+STRIKES = [0.0, 1.3, B["detective"] - 0.2, B["power"] + 0.1, B["o_dark"] - 0.6, B["s_rattled"] - 0.1,
+           B["room_laundry"] + 0.9, B["room_basement"] + 1.0, B["room_kitchen"] + 0.9, B["final"] + 0.5]
 
 
 def seg(t0, t1, src, fx=()):
     return {"t0": t0, "t1": t1, "src": src, "src_t": t0, "fx": list(fx)}
 
 
+def push(t0, t1, a=1.0, b=1.06, cx=0.5, cy=0.5):
+    return {"fx": "zoom", "keys": [(t0, a, cx, cy), (t1, b, cx, cy, "lin")]}
+
+
+WHIP = 0.2
 SEGMENTS = [
-    seg(0.0, B["basement_hook"], "ext", [{"fx": "shake", "t0": 0.0, "t1": 0.5, "amp": 22}]),
-    seg(B["basement_hook"], B["safe"], "basement_hook",
-        [{"fx": "zoom", "keys": [(B["basement_hook"], 1.25, 0.5, 0.45), (B["basement_hook"] + 0.35, 1.0, 0.5, 0.45, "out")]}]),
-    seg(B["safe"], B["harrison_ms"], "study_safe",
-        [{"fx": "zoom", "keys": [(B["safe"], 1.0, 0.5, 0.5), (B["harrison_ms"], 1.12, 0.5, 0.5, "lin")]}]),
+    seg(0.0, B["hook_lineup"], "ext", [{"fx": "shake", "t0": 0.0, "t1": 0.45, "amp": 18}]),
+    seg(B["hook_lineup"], B["hook_marcus"], "hook_lineup", [push(B["hook_lineup"], B["hook_marcus"], 1.0, 1.08)]),
+    seg(B["hook_marcus"], B["safe"], "hook_marcus", [push(B["hook_marcus"], B["safe"], 1.0, 1.05)]),
+    seg(B["safe"], B["harrison_ms"], "study_safe", [push(B["safe"], B["harrison_ms"], 1.0, 1.1)]),
     seg(B["harrison_ms"], B["foyer"], "study"),
-    seg(B["foyer"], B["marcus_q"], "foyer_wide",
-        [{"fx": "zoom", "keys": [(B["foyer"], 1.0, 0.5, 0.5), (B["marcus_q"], 1.08, 0.45, 0.5, "lin")]}]),
-    seg(B["marcus_q"], B["oliver"], "cu_marcus"),
-    seg(B["oliver"], B["daniel"], "cu_oliver", [{"fx": "whip", "t": B["oliver"], "dur": 0.22, "dir": -1}]),
-    seg(B["daniel"], B["sophie"], "cu_daniel",
-        [{"fx": "whip", "t": B["daniel"], "dur": 0.22, "dir": -1},
-         {"fx": "zoom", "keys": [(B["lightning_word"] - 0.1, 1.0, 0.5, 0.35), (B["lightning_word"] + 0.1, 1.1, 0.5, 0.35, "out")]}]),
-    seg(B["sophie"], B["turn"], "cu_sophie", [{"fx": "whip", "t": B["sophie"], "dur": 0.22, "dir": -1}]),
-    seg(B["turn"], B["daniel2"], "marcus_turn",
-        [{"fx": "zoom", "keys": [(B["turn"], 1.0, 0.5, 0.45), (B["daniel2"], 1.15, 0.5, 0.4, "lin")]}]),
-    seg(B["daniel2"], B["descend"], "cu_daniel",
-        [{"fx": "zoom", "keys": [(B["daniel2"], 1.12, 0.5, 0.35), (B["descend"], 1.0, 0.5, 0.35, "out")]}]),
-    seg(B["descend"], B["daniel_ecu"], "basement_pan"),
-    seg(B["daniel_ecu"], B["lineup"], "cu_daniel",
-        [{"fx": "zoom", "keys": [(B["daniel_ecu"], 1.55, 0.5, 0.3), (B["lineup"], 1.75, 0.5, 0.3, "lin")]},
-         {"fx": "shake", "t0": B["daniel_ecu"], "t1": B["daniel_ecu"] + 0.35, "amp": 12},
-         {"fx": "flash", "t": B["daniel_ecu"], "dur": 0.1}]),
-    seg(B["lineup"], DURATION, "lineup",
-        [{"fx": "freeze", "t0": B["freeze"], "t1": DURATION + 1, "tint": "#2A3A6A", "amount": 0.25},
-         {"fx": "vignette", "strength": 0.35}]),
+    seg(B["foyer"], B["oliver"], "foyer_wide", [push(B["foyer"], B["oliver"], 1.0, 1.05, 0.55)]),
+    seg(B["oliver"], B["daniel"], "cu_oliver", [{"fx": "whip", "t": B["oliver"], "dur": WHIP, "dir": -1}]),
+    seg(B["daniel"], B["sophie"], "cu_daniel", [{"fx": "whip", "t": B["daniel"], "dur": WHIP, "dir": -1}]),
+    seg(B["sophie"], B["marcus_hmm"], "cu_sophie", [{"fx": "whip", "t": B["sophie"], "dur": WHIP, "dir": -1}]),
+    seg(B["marcus_hmm"], B["rooms"], "cu_marcus", [push(B["marcus_hmm"], B["rooms"], 1.0, 1.06, 0.5, 0.4)]),
+    # the investigation: three rooms, same length, same framing, same camera move -> nobody singled out
+    seg(B["room_laundry"], B["room_basement"], "room_laundry"),
+    seg(B["room_basement"], B["room_kitchen"], "room_basement"),
+    seg(B["room_kitchen"], B["marcus_end"], "room_kitchen"),
+    seg(B["marcus_end"], B["recap"], "marcus_end", [push(B["marcus_end"], B["recap"], 1.0, 1.08, 0.5, 0.4)]),
+    {"t0": B["recap"], "t1": B["final"], "src": "split", "dir": "v", "gap": 10, "split": [
+        {"src": "panel_kitchen", "src_t": B["recap"]},
+        {"src": "panel_basement", "src_t": B["recap"]},
+        {"src": "panel_laundry", "src_t": B["recap"]}]},
+    seg(B["final"], DURATION, "final_lineup",
+        [{"fx": "freeze", "t0": B["freeze"], "t1": DURATION + 1, "tint": "#2A3A6A", "amount": 0.22}]),
 ]
 
 sys.path.insert(0, str(HERE))
 import gfx  # noqa: E402
 
 OVERLAYS = [
-    {"type": "custom", "t0": B["lineup"] + 0.1, "t1": B["zoom"] - 0.1, "anim": 0.25,
-     "draw": gfx.case_file(B["n_oliver"], B["n_sophie"], B["n_daniel"])},
     {"type": "custom", "t0": B["freeze"], "t1": DURATION + 1, "anim": 0.2, "draw": gfx.end_card(B["freeze"])},
 ]
-CAPTIONS = {"words": WORDS, "speakers": True, "emphasis": ["lying", "one", "gone", "nine", "nobody", "lightning",
-                                                             "window", "explain", "who"],
-            # close-ups: faces fill the upper/middle frame -> captions drop to the torso
-            "pos": [(B["marcus_q"], B["turn"], 0.88), (B["daniel2"], B["descend"], 0.88),
-                    (B["daniel_ecu"], B["lineup"], 0.88), (B["lineup"], B["zoom"], 0.84), (B["zoom"], B["freeze"], 0.88)],
+CAPTIONS = {"words": WORDS, "speakers": True,
+            "emphasis": ["impossible", "gone", "nine", "nobody", "lightning", "window", "thunder", "lying", "kitchen",
+                         "basement", "laundry", "fit"],
+            # captions sit low (on torsos) in close-ups and on the panels' gap line in the recap
+            "pos": [(B["foyer"], B["rooms"], 0.86), (B["marcus_end"], B["recap"], 0.86), (B["recap"], B["final"], 0.955),
+                    (B["final"], B["freeze"], 0.86)],
             "max_words": 4}
 AUDIO = "audio/mix_master.wav"

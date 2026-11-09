@@ -223,9 +223,20 @@ def draw_basement(c, w, h, lit=False):
               sdx=18)
         c.drawLine(cx_, cy_, cx_ + s, 1450 + 30, line_w(4, INK, 0.7))
     # stairs on the far left going UP to the foyer door (the only way in)
-    for k in range(7):
-        shape(c, rect(-40 + k * 30, 1450 - k * 140, 260 - k * 30, 34), "#6B4A32" if lit else "#241C22", ow=3.5)
-    shape(c, rect(40, 120, 160, 300, 8), "#3A2418" if lit else "#151015")
+    wood, wood_sh = ("#6B4A32", "#553A26") if lit else ("#241C22", "#1C161B")
+    shape(c, poly([(0, 1450), (330, 1450), (330, 1410), (60, 420), (0, 420)]), wood_sh, ow=3.5)  # solid stair block
+    for k in range(8):  # treads resting on the stair block
+        y = 1450 - (k + 1) * 125
+        x = 300 - k * 34
+        shape(c, rect(x - 260, y, 300, 30, 4), wood, ow=3.5)
+    c.drawLine(300, 1290, 40, 330, line_w(12, "#3A2418" if lit else "#18121A"))  # hand rail
+    for k in range(5):
+        c.drawLine(300 - k * 60, 1290 - k * 222, 300 - k * 60, 1430 - k * 222, line_w(6, "#3A2418" if lit else "#18121A"))
+    shape(c, rect(20, 120, 180, 300, 8), "#3A2418" if lit else "#151015")  # door at the top
+    # toolbox + drip under the leaky pipe (Daniel's story fits here...)
+    shape(c, rect(1500, 1380, 170, 80, 8), "#B5352E" if lit else "#3A1A1E")
+    shape(c, rect(1550, 1360, 70, 22, 6), "#5A5A60" if lit else "#22222A", ow=3)
+    shape(c, oval(1720, 1455, 60, 12), "#5A7A9A" if lit else "#22283A", ow=3)  # small puddle
     # dead bulb hanging (power is out)
     c.drawLine(1300, 0, 1300, 330, line_w(4))
     shape(c, oval(1300, 360, 34, 40), "#D8D4C8" if lit else "#3A3A44", ow=3.5)
@@ -292,19 +303,33 @@ def draw_study(c, w, h):
     shape(c, rect(700, 1250, 520, 60, 8), "#6A3E2A", shade="#56301F", sdy=12, sdx=0)
     shape(c, rect(730, 1310, 60, 300), "#56301F")
     shape(c, rect(1120, 1310, 60, 300), "#56301F")
+    # brass candelabra standing on the desk
+    shape(c, oval(900, 1244, 70, 12), "#B08A3A", ow=3)
+    shape(c, rect(892, 1130, 16, 112, 4), "#C9A24A", ow=3)
+    arm = skia.Path()
+    arm.moveTo(840, 1112)
+    arm.quadTo(900, 1190, 960, 1112)
+    c.drawPath(arm, line_w(12, "#C9A24A"))
+    c.drawPath(arm, line_w(3))
     # floor + rug
     shape(c, poly([(0, 1420), (w, 1420), (w, h), (0, h)]), "#3A2218")
     shape(c, smooth_path([(120, 1640), (980, 1600), (1040, 1840), (60, 1880)]), "#7A2A2A", shade="#5E2020", sdx=20)
 
 
-STUDY_CANDLES = [(840, 1180), (900, 1150), (960, 1180)]
+STUDY_CANDLES = [(840, 1115), (900, 1135), (960, 1115)]
 
 
-def draw_candles(c, pts, t, scale=1.0, base_col="#E8DCC0"):
-    for i, (x, y) in enumerate(pts):
+def draw_candles(c, pts, t, scale=1.0, base_col="#E8DCC0", holder=True):
+    """Candles standing on their base point (x, y = surface they stand on), brass holder included."""
+    for i, (x, y0) in enumerate(pts):
         f = 0.85 + 0.15 * math.sin(t * 13 + i * 2.1) * math.sin(t * 7.3 + i)
-        radial(c, x, y - 40 * scale, 420 * scale * f, "#FFB45A", 0.22, plus=True)
-        shape(c, rect(x - 14 * scale, y - 30 * scale, 28 * scale, 110 * scale, 4), base_col, ow=3)
+        y = y0 - (22 if holder else 0) * scale - 80 * scale  # candle top
+        radial(c, x, y - 10 * scale, 420 * scale * f, "#FFB45A", 0.22, plus=True)
+        if holder:
+            shape(c, oval(x, y0 - 6 * scale, 30 * scale, 8 * scale), "#C9A24A", ow=2.5)
+            shape(c, rect(x - 8 * scale, y0 - 24 * scale, 16 * scale, 20 * scale, 3), "#B08A3A", ow=2.5)
+        shape(c, rect(x - 14 * scale, y, 28 * scale, 80 * scale, 4), base_col, ow=3)
+        y += 30 * scale
         fl = smooth_path([(x, y - 80 * scale * f), (x + 12 * scale, y - 45 * scale), (x, y - 30 * scale),
                           (x - 12 * scale, y - 45 * scale)])
         c.drawPath(fl, P("#FFD36A"))
@@ -354,13 +379,108 @@ def draw_foyer(c, w, h):
     # side tables with candles
     for tx in (440, 980):
         shape(c, rect(tx - 70, 1180, 140, 26, 6), "#6A3E2A")
-        shape(c, rect(tx - 12, 1206, 24, 110), "#56301F")
+        shape(c, rect(tx - 12, 1206, 24, 100), "#56301F")
+        shape(c, rect(tx - 45, 1300, 90, 14, 5), "#46261A", ow=3)  # foot on the floor
     # dark chandelier (power out)
     c.drawLine(w / 2, 0, w / 2, 140, line_w(5))
     shape(c, smooth_path([(w / 2 - 150, 150), (w / 2 + 150, 150), (w / 2 + 80, 230), (w / 2 - 80, 230)]), "#6A5A3A")
 
 
-FOYER_CANDLES = [(425, 1150), (455, 1140), (965, 1150), (995, 1140)]
+FOYER_CANDLES = [(420, 1180), (462, 1180), (960, 1180), (1002, 1180)]
+
+
+# ================================================================ kitchen (has a window over the sink)
+KITCHEN_WIN = (380, 380, 320, 380)
+
+
+def draw_kitchen(c, w, h):
+    vgrad(c, (0, 0, w, 1300), "#E6D2A6", "#D4BC8C")
+    for y in range(700, 1300, 70):  # tiled backsplash
+        for x in range(0, w, 70):
+            c.drawRect(skia.Rect.MakeXYWH(x + 3, y + 3, 64, 64), P("#EFE6D2" if (x // 70 + y // 70) % 2 else "#E2D6BC"))
+    x, y, ww, hh = KITCHEN_WIN
+    shape(c, rect(x - 20, y - 20, ww + 40, hh + 40, 10), "#F2EFE8")
+    shape(c, rect(x, y, ww, hh, 6), "#1C2140")
+    c.drawLine(x + ww / 2, y, x + ww / 2, y + hh, line_w(9, "#E8E2D6"))
+    c.drawLine(x, y + hh / 2, x + ww, y + hh / 2, line_w(9, "#E8E2D6"))
+    shape(c, poly([(x - 40, y - 30), (x + ww + 40, y - 30), (x + ww + 10, y + 70), (x - 10, y + 70)]), "#C9503A",
+          shade="#A83E2C", sdy=10, sdx=0)  # valance
+    # counter + sink under the window
+    shape(c, rect(0, 1000, w, 50, 6), "#9A6A44", shade="#7E5434", sdy=10, sdx=0)
+    shape(c, rect(0, 1050, w, 250), "#B88458", shade="#9A6A44", sdx=0, sdy=0)
+    for k in range(0, w, 270):
+        shape(c, rect(k + 15, 1070, 240, 210, 10), "#C99668", ow=3.5)
+        shape(c, oval(k + 135, 1100, 20, 8), "#5A3A22", ow=2.5)
+    shape(c, rect(420, 990, 240, 22, 6), "#B8BEC4")
+    c.drawPath(oval(540, 960, 50, 40), line_w(9, "#9AA2AA"))
+    # iron stove right with pot
+    shape(c, rect(760, 880, 300, 420, 12), "#2E2E34", shade="#232328", sdx=20)
+    shape(c, rect(790, 1020, 240, 160, 8), "#1A1A1E")
+    shape(c, rect(800, 790, 170, 100, 10), "#7A8A96", shade="#62707A", sdx=14)  # pot
+    shape(c, rect(780, 780, 210, 20, 6), "#8A9AA6")
+    for k in range(3):
+        c.drawPath(smooth_path([(860 + k * 25, 760), (870 + k * 25, 700), (855 + k * 25, 650)], closed=False),
+                   line_w(5, "#FFFFFF", 0.5))
+    # hanging pans + shelf with plates
+    c.drawLine(60, 230, 330, 230, line_w(8, "#5A3A22"))
+    for k, r in enumerate((60, 48, 40)):
+        c.drawLine(100 + k * 90, 230, 100 + k * 90, 300, line_w(5))
+        shape(c, oval(100 + k * 90, 300 + r, r, r), "#B87440", shade="#94592C", sdx=8)
+    shape(c, rect(760, 300, 300, 26, 4), "#7E5434")
+    for k in range(4):
+        shape(c, oval(800 + k * 70, 260, 32, 40), "#F4F1EA", ow=3)
+    # floor
+    shape(c, poly([(0, 1300), (w, 1300), (w, h), (0, h)]), "#8A5A3A")
+    for k in range(0, w + 400, 140):
+        c.drawLine(k, 1300, k - 300, h, line_w(3, INK, 0.45))
+    # kitchen table with candles
+    shape(c, rect(80, 1460, 520, 40, 8), "#9A6A44", shade="#7E5434", sdy=10, sdx=0)
+    shape(c, rect(110, 1500, 40, 260), "#7E5434")
+    shape(c, rect(530, 1500, 40, 260), "#7E5434")
+
+
+KITCHEN_CANDLES = [(260, 1462), (420, 1462)]
+
+
+# ================================================================ laundry room upstairs (has a window)
+LAUNDRY_WIN = (620, 300, 300, 420)
+
+
+def draw_laundry(c, w, h):
+    vgrad(c, (0, 0, w, 1300), "#7FA3A8", "#6E9196")
+    for x in range(30, w, 90):  # striped wallpaper
+        c.drawRect(skia.Rect.MakeXYWH(x, 0, 26, 1300), P("#88ADB2"))
+    x, y, ww, hh = LAUNDRY_WIN
+    shape(c, rect(x - 20, y - 20, ww + 40, hh + 40, 10), "#F2EFE8")
+    shape(c, rect(x, y, ww, hh, 6), "#1C2140")
+    c.drawLine(x + ww / 2, y, x + ww / 2, y + hh, line_w(9, "#E8E2D6"))
+    c.drawLine(x, y + hh / 2, x + ww, y + hh / 2, line_w(9, "#E8E2D6"))
+    shape(c, rect(x - 40, y + hh + 20, ww + 80, 26, 4), "#F2EFE8")  # sill
+    # clothesline with hanging shirts
+    c.drawLine(0, 230, 560, 260, line_w(4))
+    for k, col in enumerate(("#F4F1EA", "#C9503A", "#3F6FA8")):
+        xx = 80 + k * 160
+        shape(c, poly([(xx, 240 + k * 7), (xx + 110, 245 + k * 7), (xx + 100, 420), (xx + 10, 420)]), col, ow=3.5)
+    # shelves with folded towels
+    for sy in (560, 760):
+        shape(c, rect(40, sy, 420, 22, 4), "#8A5A3A")
+        for k in range(3):
+            shape(c, rect(70 + k * 130, sy - 70, 110, 70, 10), ["#F4F1EA", "#E8C9A0", "#C8DCE8"][k], ow=3)
+    # ironing board + wash tub
+    shape(c, smooth_path([(560, 1080), (1000, 1070), (1040, 1090), (1000, 1110), (560, 1110)]), "#E8E2D6")
+    c.drawLine(640, 1110, 920, 1300, line_w(10, "#5A5A60"))
+    c.drawLine(920, 1110, 640, 1300, line_w(10, "#5A5A60"))
+    # floor
+    shape(c, poly([(0, 1300), (w, 1300), (w, h), (0, h)]), "#9A7A5A")
+    for k in range(1300, h, 90):
+        c.drawLine(0, k, w, k, line_w(3, INK, 0.4))
+    # wicker basket + the dropped sheets on the floor (Sophie's story fits here...)
+    shape(c, rect(80, 1380, 300, 210, 30), "#C9A060", shade="#A88040", sdx=16)
+    for k in range(4):
+        c.drawLine(80, 1420 + k * 45, 380, 1420 + k * 45, line_w(3, INK, 0.5))
+    shape(c, smooth_path([(470, 1640), (640, 1560), (820, 1600), (980, 1700), (780, 1760), (540, 1740)]),
+          "#F4F1EA", shade="#DCD5C8", sdx=18)
+    c.drawPath(smooth_path([(560, 1690), (700, 1640), (860, 1700)], closed=False), line_w(3.5, INK, 0.6))
 
 
 @lru_cache(maxsize=None)
@@ -377,6 +497,10 @@ def img(name):
         return snapshot(draw_study, blur=14)
     if name == "foyer":
         return snapshot(draw_foyer)
+    if name == "kitchen":
+        return snapshot(draw_kitchen)
+    if name == "laundry":
+        return snapshot(draw_laundry)
     if name == "foyer_blur":
         return snapshot(draw_foyer, blur=16)
     raise KeyError(name)

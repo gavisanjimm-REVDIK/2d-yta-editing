@@ -1,41 +1,43 @@
-# VIDEO_001 – The Man Who Knew It Was Raining (2D, 56.6 s)
+# VIDEO_001 – The Man Who Knew It Was Raining (2D, 55.7 s) – v2
 
-Detective riddle. Style: storybook 2D (`PIPELINE/twod/toon.py`), mascot = Detective Marcus, built from
-`ASSETS/mascot/reference/character_sheet.webp`.
+Fair-play detective riddle in storybook 2D (`PIPELINE/twod/toon.py`). The mascot plays Detective Marcus
+(`marcus_detective`: same face, hair and brown tee, plus a trench coat, fedora and magnifying glass).
 
-## Script changes (and why)
-- **The answer is no longer said out loud.** The original Scene 4/5 lines ("HOW did you see lightning when this
-  basement has NO WINDOWS?", "a window that doesn't even exist") give the answer away, which the brief forbids.
-  The detective now stops at *"Then explain something to me…"* while his flashlight sweeps solid stone walls.
-  The narrator ends with *"So, who is lying? And how did he know?"*
-- **The clue stays fair and visual.** The hook already shows the basement: bare stone, pipes, no window. Lightning
-  lights up every room that has windows (exterior, study, foyer). Inside the basement there is thunder but never a
-  flash. Viewers who watch closely can solve it.
-- **Tighter, more natural dialogue.** For example Oliver: *"In the kitchen, sir, preparing dinner. I never left."*
-  Daniel: *"Yes! Clear as day. What's wrong with that?"*
-- **The recap is a parchment "case file"** listing what each suspect said (kitchen, upstairs, basement). It does not
-  give the answer.
-- Creator-only answer (not in the video): Daniel's alibi is impossible because the basement has no windows.
+## Story v2: the thief is not obvious
+- **All three alibis mention the storm at a window.** Oliver: lightning lit the kitchen window. Daniel: lightning
+  flashed through the basement window. Sophie: thunder rattled the laundry-room window. Daniel's line no longer
+  stands out.
+- **Every suspect shows the same kind of nerves.** Oliver fiddles with his tie, Daniel scratches his neck, Sophie
+  startles at the thunder. All three sweat in the final shot.
+- **The detective searches all three rooms the same way.** Laundry room, basement, kitchen: same length, same camera
+  move, same sounds. The laundry room and the kitchen have windows that flash. The basement has none: thunder is heard
+  down there, but nothing lights up.
+- **Each alibi has a detail that fits** (dropped sheets in the laundry room, a toolbox and a puddle under the leaky
+  pipe, a pot on the stove), so viewers must look past the obvious.
+- **The recap** shows three framed room cards that light up as the narrator names each one. The video ends on all
+  three suspects with "WHO IS LYING?". Nobody is singled out and the answer is never said.
+- Creator-only answer: Daniel. The basement has no window.
 
-## Pipeline
+## Changes in v2 (from feedback)
+| request | fix |
+|---|---|
+| bald spot in the boy's hair | the bangs' top edge now follows the skull (`toon.py hair_front`) |
+| models and fonts too big | close-ups 2650 → 1550 px tall; captions 88 → 66 px; speaker names smaller |
+| floating elements | contact shadows under every character; candles on brass holders standing on surfaces; desk candelabra; table feet; real basement staircase; sheets lie on the floor |
+| mouth animation | `twod/lipsync.py`: how far the mouth opens comes from the speaker's voice loudness per frame; its shape (wide/E, round/O, closed on M/B/P) comes from the letters; drawn as a viseme mouth. Measured: open 0.45 on average, closed 16% of speaking frames, ~7 changes/s (≈ syllable rate). Daniel's mouth now draws on top of his beard |
+| proper detective | trench coat, belt, lapels, fedora, magnifying glass, notebook, flashlight |
+| reactions fit the story | expression tracks per line (Harrison panic → shock; Marcus determined → suspicious → smug; suspects' reactions tied to their own words) |
+| thief too obvious | new plot (see above) |
+
+## Pipeline numbers
 | step | result |
 |---|---|
-| voices | Kokoro-82M: narrator bm_george, Harrison bm_lewis, Marcus am_adam, Oliver bm_fable, Daniel am_eric, Sophie bf_emma. 12/12 lines Whisper-clean. ~60 s total. |
-| shots | 14 segments, 10 shot functions; backgrounds cached per process |
-| render | 1548 needed frames, 153 s (0.10 s/frame, 2D Skia, all cores); close-up re-render 543 frames, 38 s |
-| export | ~105 s (x264 slow, CRF 18) |
-| mix | voice −16 LUFS, music −26, SFX −25, rain −38 (stems). Master −14.1 LUFS, −1.1 dBTP |
-| QC | 1080×1920 · 30 fps · h264/aac 48k · 56.57 s · loudness/peak pass · no black. The "freeze" check flags 52.5–56.5 s: this is the intentional end freeze-frame |
-
-## Fixed after QA
-- captions covered faces in the close-ups → captions drop to the torso (y 0.88) for every close-up
-- caption showed "NINE O / 'CLOCK" → Whisper apostrophe splits are merged (fixed in narrate.py too)
-- black strips at the edges of close-ups → the background camera is clamped
-- speaker names were tiny and off-centre → bigger, centred, outlined
-- foyer wide: the detective hid Oliver → reframed as an over-the-shoulder shot
+| voices | Kokoro-82M, 10 lines, all Whisper-clean (captions use the script's spelling, e.g. "Hmm") |
+| render | 1821 frames, 160 s (0.09 s/frame); partial re-render 530 frames, 47 s |
+| mix | master −14.2 LUFS, −1.1 dBTP |
+| QC | all checks pass except the freeze check: frames from 51.6 s on are the intended end freeze-frame |
 
 ## Known weak spots
-- the voices are TTS: clean, but less acted than a human performance
-- the "folded laundry" prop is a plain white block
-- the mascot's shirt is **brown**, as in the reference sheet (earlier notes said orange; needs your call)
-- walking is simple: front-step bob only, no side-view walk cycle
+- TTS voices: clean, but less acted than a human performance
+- walking is a simple bob (the search shots use standing poses)
+- the mascot's shirt is brown, as in the reference sheet (an orange shirt was mentioned earlier; open question)

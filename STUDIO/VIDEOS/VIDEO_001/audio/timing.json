@@ -1,207 +1,231 @@
 {
   "backend": "kokoro",
-  "duration": 53.327,
+  "duration": 52.177,
   "lines": [
     {
       "id": "L01",
       "who": "narrator",
-      "text": "One of these three people is lying. And the detective caught them with just one question!",
+      "text": "Three suspects. Three alibis. But one of them is impossible. Can you spot it before the detective does?",
       "start": 0.25,
-      "end": 5.508,
+      "end": 6.654,
       "words": [
         {
-          "word": "One",
+          "word": "Three",
           "start": 0.25,
-          "end": 0.39,
+          "end": 0.49,
           "line": "L01",
           "who": "narrator"
         },
         {
-          "word": "of",
-          "start": 0.39,
-          "end": 0.53,
+          "word": "suspects.",
+          "start": 0.49,
+          "end": 0.95,
           "line": "L01",
           "who": "narrator"
         },
         {
-          "word": "these",
-          "start": 0.53,
-          "end": 0.73,
+          "word": "Three",
+          "start": 1.41,
+          "end": 1.59,
           "line": "L01",
           "who": "narrator"
         },
         {
-          "word": "three",
-          "start": 0.73,
-          "end": 1.05,
+          "word": "alibis.",
+          "start": 1.59,
+          "end": 2.27,
           "line": "L01",
           "who": "narrator"
         },
         {
-          "word": "people",
-          "start": 1.05,
-          "end": 1.43,
-          "line": "L01",
-          "who": "narrator"
-        },
-        {
-          "word": "is",
-          "start": 1.43,
-          "end": 1.71,
-          "line": "L01",
-          "who": "narrator"
-        },
-        {
-          "word": "lying",
-          "start": 1.71,
-          "end": 2.13,
-          "line": "L01",
-          "who": "narrator"
-        },
-        {
-          "word": "and",
-          "start": 2.13,
+          "word": "But",
+          "start": 2.55,
           "end": 2.73,
           "line": "L01",
           "who": "narrator"
         },
         {
-          "word": "the",
+          "word": "one",
           "start": 2.73,
-          "end": 2.83,
+          "end": 2.89,
           "line": "L01",
           "who": "narrator"
         },
         {
-          "word": "detective",
-          "start": 2.83,
-          "end": 3.13,
-          "line": "L01",
-          "who": "narrator"
-        },
-        {
-          "word": "caught",
-          "start": 3.13,
-          "end": 3.63,
+          "word": "of",
+          "start": 2.89,
+          "end": 3.05,
           "line": "L01",
           "who": "narrator"
         },
         {
           "word": "them",
-          "start": 3.63,
-          "end": 3.93,
+          "start": 3.05,
+          "end": 3.19,
           "line": "L01",
           "who": "narrator"
         },
         {
-          "word": "with",
-          "start": 3.93,
-          "end": 4.27,
+          "word": "is",
+          "start": 3.19,
+          "end": 3.43,
           "line": "L01",
           "who": "narrator"
         },
         {
-          "word": "just",
-          "start": 4.27,
-          "end": 4.51,
+          "word": "impossible.",
+          "start": 3.43,
+          "end": 3.95,
           "line": "L01",
           "who": "narrator"
         },
         {
-          "word": "one",
-          "start": 4.51,
-          "end": 4.85,
+          "word": "Can",
+          "start": 4.53,
+          "end": 4.63,
           "line": "L01",
           "who": "narrator"
         },
         {
-          "word": "question.",
-          "start": 4.85,
-          "end": 5.15,
+          "word": "you",
+          "start": 4.63,
+          "end": 4.77,
+          "line": "L01",
+          "who": "narrator"
+        },
+        {
+          "word": "spot",
+          "start": 4.77,
+          "end": 5.03,
+          "line": "L01",
+          "who": "narrator"
+        },
+        {
+          "word": "it",
+          "start": 5.03,
+          "end": 5.19,
+          "line": "L01",
+          "who": "narrator"
+        },
+        {
+          "word": "before",
+          "start": 5.19,
+          "end": 5.49,
+          "line": "L01",
+          "who": "narrator"
+        },
+        {
+          "word": "the",
+          "start": 5.49,
+          "end": 5.65,
+          "line": "L01",
+          "who": "narrator"
+        },
+        {
+          "word": "detective",
+          "start": 5.65,
+          "end": 6.03,
+          "line": "L01",
+          "who": "narrator"
+        },
+        {
+          "word": "does?",
+          "start": 6.03,
+          "end": 6.41,
           "line": "L01",
           "who": "narrator"
         }
       ],
       "words_local": [
         {
-          "word": "One",
+          "word": "Three",
           "start": 0.0,
-          "end": 0.14
+          "end": 0.24
         },
         {
-          "word": "of",
-          "start": 0.14,
-          "end": 0.28
+          "word": "suspects.",
+          "start": 0.24,
+          "end": 0.7
         },
         {
-          "word": "these",
-          "start": 0.28,
-          "end": 0.48
+          "word": "Three",
+          "start": 1.16,
+          "end": 1.34
         },
         {
-          "word": "three",
-          "start": 0.48,
-          "end": 0.8
+          "word": "alibis.",
+          "start": 1.34,
+          "end": 2.02
         },
         {
-          "word": "people",
-          "start": 0.8,
-          "end": 1.18
-        },
-        {
-          "word": "is",
-          "start": 1.18,
-          "end": 1.46
-        },
-        {
-          "word": "lying",
-          "start": 1.46,
-          "end": 1.88
-        },
-        {
-          "word": "and",
-          "start": 1.88,
+          "word": "But",
+          "start": 2.3,
           "end": 2.48
         },
         {
-          "word": "the",
+          "word": "one",
           "start": 2.48,
-          "end": 2.58
+          "end": 2.64
         },
         {
-          "word": "detective",
-          "start": 2.58,
-          "end": 2.88
-        },
-        {
-          "word": "caught",
-          "start": 2.88,
-          "end": 3.38
+          "word": "of",
+          "start": 2.64,
+          "end": 2.8
         },
         {
           "word": "them",
-          "start": 3.38,
-          "end": 3.68
+          "start": 2.8,
+          "end": 2.94
         },
         {
-          "word": "with",
-          "start": 3.68,
-          "end": 4.02
+          "word": "is",
+          "start": 2.94,
+          "end": 3.18
         },
         {
-          "word": "just",
-          "start": 4.02,
-          "end": 4.26
+          "word": "impossible.",
+          "start": 3.18,
+          "end": 3.7
         },
         {
-          "word": "one",
-          "start": 4.26,
-          "end": 4.6
+          "word": "Can",
+          "start": 4.28,
+          "end": 4.38
         },
         {
-          "word": "question.",
-          "start": 4.6,
-          "end": 4.9
+          "word": "you",
+          "start": 4.38,
+          "end": 4.52
+        },
+        {
+          "word": "spot",
+          "start": 4.52,
+          "end": 4.78
+        },
+        {
+          "word": "it",
+          "start": 4.78,
+          "end": 4.94
+        },
+        {
+          "word": "before",
+          "start": 4.94,
+          "end": 5.24
+        },
+        {
+          "word": "the",
+          "start": 5.24,
+          "end": 5.4
+        },
+        {
+          "word": "detective",
+          "start": 5.4,
+          "end": 5.78
+        },
+        {
+          "word": "does?",
+          "start": 5.78,
+          "end": 6.16
         }
       ],
       "mismatch": 0
@@ -210,97 +234,97 @@
       "id": "L02",
       "who": "harrison",
       "text": "My diamond necklace is gone! The power went out at exactly nine o'clock!",
-      "start": 5.958,
-      "end": 10.683,
+      "start": 7.054,
+      "end": 11.778,
       "words": [
         {
           "word": "My",
-          "start": 5.958,
-          "end": 6.158,
+          "start": 7.054,
+          "end": 7.254,
           "line": "L02",
           "who": "harrison"
         },
         {
           "word": "diamond",
-          "start": 6.158,
-          "end": 6.498,
+          "start": 7.254,
+          "end": 7.594,
           "line": "L02",
           "who": "harrison"
         },
         {
           "word": "necklace",
-          "start": 6.498,
-          "end": 7.018,
+          "start": 7.594,
+          "end": 8.114,
           "line": "L02",
           "who": "harrison"
         },
         {
           "word": "is",
-          "start": 7.018,
-          "end": 7.358,
+          "start": 8.114,
+          "end": 8.454,
           "line": "L02",
           "who": "harrison"
         },
         {
-          "word": "gone.",
-          "start": 7.358,
-          "end": 7.638,
+          "word": "gone!",
+          "start": 8.454,
+          "end": 8.734,
           "line": "L02",
           "who": "harrison"
         },
         {
           "word": "The",
-          "start": 8.198,
-          "end": 8.338,
+          "start": 9.294,
+          "end": 9.434,
           "line": "L02",
           "who": "harrison"
         },
         {
           "word": "power",
-          "start": 8.338,
-          "end": 8.618,
+          "start": 9.434,
+          "end": 9.714,
           "line": "L02",
           "who": "harrison"
         },
         {
           "word": "went",
-          "start": 8.618,
-          "end": 8.838,
+          "start": 9.714,
+          "end": 9.934,
           "line": "L02",
           "who": "harrison"
         },
         {
           "word": "out",
-          "start": 8.838,
-          "end": 9.098,
+          "start": 9.934,
+          "end": 10.194,
           "line": "L02",
           "who": "harrison"
         },
         {
           "word": "at",
-          "start": 9.098,
-          "end": 9.298,
+          "start": 10.194,
+          "end": 10.394,
           "line": "L02",
           "who": "harrison"
         },
         {
           "word": "exactly",
-          "start": 9.298,
-          "end": 9.698,
+          "start": 10.394,
+          "end": 10.794,
           "line": "L02",
           "who": "harrison"
         },
         {
           "word": "nine",
-          "start": 9.698,
-          "end": 10.118,
+          "start": 10.794,
+          "end": 11.214,
           "line": "L02",
           "who": "harrison"
         },
         {
-          "word": "o'clock.",
-          "start": 10.118,
-          "end": 10.518,
+          "word": "o'clock!",
+          "start": 11.214,
+          "end": 11.614,
           "line": "L02",
           "who": "harrison"
         }
@@ -327,7 +351,7 @@
           "end": 1.4
         },
         {
-          "word": "gone.",
+          "word": "gone!",
           "start": 1.4,
           "end": 1.68
         },
@@ -367,87 +391,101 @@
           "end": 4.16
         },
         {
-          "word": "o'clock.",
+          "word": "o'clock!",
           "start": 4.16,
           "end": 4.56
         }
       ],
-      "mismatch": 2
+      "mismatch": 0
     },
     {
       "id": "L03",
       "who": "marcus",
-      "text": "Nobody leaves this mansion until I find out what happened.",
-      "start": 10.983,
-      "end": 14.077,
+      "text": "Nobody leaves this mansion. Now, where was each of you at nine?",
+      "start": 12.078,
+      "end": 15.557,
       "words": [
         {
           "word": "Nobody",
-          "start": 10.983,
-          "end": 11.303,
+          "start": 12.078,
+          "end": 12.398,
           "line": "L03",
           "who": "marcus"
         },
         {
           "word": "leaves",
-          "start": 11.303,
-          "end": 11.663,
+          "start": 12.398,
+          "end": 12.758,
           "line": "L03",
           "who": "marcus"
         },
         {
           "word": "this",
-          "start": 11.663,
-          "end": 11.923,
+          "start": 12.758,
+          "end": 13.018,
           "line": "L03",
           "who": "marcus"
         },
         {
-          "word": "mansion,",
-          "start": 11.923,
-          "end": 12.343,
+          "word": "mansion.",
+          "start": 13.018,
+          "end": 13.438,
           "line": "L03",
           "who": "marcus"
         },
         {
-          "word": "until",
-          "start": 12.583,
-          "end": 12.783,
+          "word": "Now,",
+          "start": 13.878,
+          "end": 14.118,
           "line": "L03",
           "who": "marcus"
         },
         {
-          "word": "I",
-          "start": 12.783,
-          "end": 12.943,
+          "word": "where",
+          "start": 14.118,
+          "end": 14.338,
           "line": "L03",
           "who": "marcus"
         },
         {
-          "word": "find",
-          "start": 12.943,
-          "end": 13.183,
+          "word": "was",
+          "start": 14.338,
+          "end": 14.458,
           "line": "L03",
           "who": "marcus"
         },
         {
-          "word": "out",
-          "start": 13.183,
-          "end": 13.383,
+          "word": "each",
+          "start": 14.458,
+          "end": 14.658,
           "line": "L03",
           "who": "marcus"
         },
         {
-          "word": "what",
-          "start": 13.383,
-          "end": 13.563,
+          "word": "of",
+          "start": 14.658,
+          "end": 14.818,
           "line": "L03",
           "who": "marcus"
         },
         {
-          "word": "happened.",
-          "start": 13.563,
-          "end": 13.803,
+          "word": "you",
+          "start": 14.818,
+          "end": 14.918,
+          "line": "L03",
+          "who": "marcus"
+        },
+        {
+          "word": "at",
+          "start": 14.918,
+          "end": 15.038,
+          "line": "L03",
+          "who": "marcus"
+        },
+        {
+          "word": "nine?",
+          "start": 15.038,
+          "end": 15.318,
           "line": "L03",
           "who": "marcus"
         }
@@ -469,1431 +507,1129 @@
           "end": 0.94
         },
         {
-          "word": "mansion,",
+          "word": "mansion.",
           "start": 0.94,
           "end": 1.36
         },
         {
-          "word": "until",
-          "start": 1.6,
-          "end": 1.8
-        },
-        {
-          "word": "I",
+          "word": "Now,",
           "start": 1.8,
-          "end": 1.96
+          "end": 2.04
         },
         {
-          "word": "find",
-          "start": 1.96,
-          "end": 2.2
+          "word": "where",
+          "start": 2.04,
+          "end": 2.26
         },
         {
-          "word": "out",
-          "start": 2.2,
-          "end": 2.4
+          "word": "was",
+          "start": 2.26,
+          "end": 2.38
         },
         {
-          "word": "what",
-          "start": 2.4,
+          "word": "each",
+          "start": 2.38,
           "end": 2.58
         },
         {
-          "word": "happened.",
+          "word": "of",
           "start": 2.58,
-          "end": 2.82
+          "end": 2.74
+        },
+        {
+          "word": "you",
+          "start": 2.74,
+          "end": 2.84
+        },
+        {
+          "word": "at",
+          "start": 2.84,
+          "end": 2.96
+        },
+        {
+          "word": "nine?",
+          "start": 2.96,
+          "end": 3.24
         }
       ],
       "mismatch": 0
     },
     {
       "id": "L04",
-      "who": "marcus",
-      "text": "So. Where were you when the lights went out?",
-      "start": 14.427,
-      "end": 16.271,
+      "who": "oliver",
+      "text": "In the kitchen, sir, cooking dinner. Lightning lit up the kitchen window, then everything went dark.",
+      "start": 15.807,
+      "end": 21.205,
       "words": [
         {
-          "word": "So,",
-          "start": 14.427,
-          "end": 14.687,
+          "word": "In",
+          "start": 15.807,
+          "end": 15.967,
           "line": "L04",
-          "who": "marcus"
-        },
-        {
-          "word": "where",
-          "start": 14.867,
-          "end": 14.947,
-          "line": "L04",
-          "who": "marcus"
-        },
-        {
-          "word": "were",
-          "start": 14.947,
-          "end": 15.047,
-          "line": "L04",
-          "who": "marcus"
-        },
-        {
-          "word": "you",
-          "start": 15.047,
-          "end": 15.187,
-          "line": "L04",
-          "who": "marcus"
-        },
-        {
-          "word": "when",
-          "start": 15.187,
-          "end": 15.327,
-          "line": "L04",
-          "who": "marcus"
+          "who": "oliver"
         },
         {
           "word": "the",
-          "start": 15.327,
-          "end": 15.427,
+          "start": 15.967,
+          "end": 16.067,
           "line": "L04",
-          "who": "marcus"
+          "who": "oliver"
         },
         {
-          "word": "lights",
-          "start": 15.427,
-          "end": 15.627,
+          "word": "kitchen,",
+          "start": 16.067,
+          "end": 16.407,
           "line": "L04",
-          "who": "marcus"
+          "who": "oliver"
+        },
+        {
+          "word": "sir,",
+          "start": 16.627,
+          "end": 16.747,
+          "line": "L04",
+          "who": "oliver"
+        },
+        {
+          "word": "cooking",
+          "start": 16.907,
+          "end": 17.047,
+          "line": "L04",
+          "who": "oliver"
+        },
+        {
+          "word": "dinner.",
+          "start": 17.047,
+          "end": 17.467,
+          "line": "L04",
+          "who": "oliver"
+        },
+        {
+          "word": "Lightning",
+          "start": 17.967,
+          "end": 18.127,
+          "line": "L04",
+          "who": "oliver"
+        },
+        {
+          "word": "lit",
+          "start": 18.127,
+          "end": 18.407,
+          "line": "L04",
+          "who": "oliver"
+        },
+        {
+          "word": "up",
+          "start": 18.407,
+          "end": 18.567,
+          "line": "L04",
+          "who": "oliver"
+        },
+        {
+          "word": "the",
+          "start": 18.567,
+          "end": 18.707,
+          "line": "L04",
+          "who": "oliver"
+        },
+        {
+          "word": "kitchen",
+          "start": 18.707,
+          "end": 18.947,
+          "line": "L04",
+          "who": "oliver"
+        },
+        {
+          "word": "window,",
+          "start": 18.947,
+          "end": 19.347,
+          "line": "L04",
+          "who": "oliver"
+        },
+        {
+          "word": "then",
+          "start": 19.607,
+          "end": 19.687,
+          "line": "L04",
+          "who": "oliver"
+        },
+        {
+          "word": "everything",
+          "start": 19.687,
+          "end": 19.987,
+          "line": "L04",
+          "who": "oliver"
         },
         {
           "word": "went",
-          "start": 15.627,
-          "end": 15.887,
+          "start": 19.987,
+          "end": 20.287,
           "line": "L04",
-          "who": "marcus"
+          "who": "oliver"
         },
         {
-          "word": "out?",
-          "start": 15.887,
-          "end": 16.127,
+          "word": "dark.",
+          "start": 20.287,
+          "end": 20.587,
           "line": "L04",
-          "who": "marcus"
+          "who": "oliver"
         }
       ],
       "words_local": [
         {
-          "word": "So,",
+          "word": "In",
           "start": 0.0,
-          "end": 0.26
-        },
-        {
-          "word": "where",
-          "start": 0.44,
-          "end": 0.52
-        },
-        {
-          "word": "were",
-          "start": 0.52,
-          "end": 0.62
-        },
-        {
-          "word": "you",
-          "start": 0.62,
-          "end": 0.76
-        },
-        {
-          "word": "when",
-          "start": 0.76,
-          "end": 0.9
+          "end": 0.16
         },
         {
           "word": "the",
-          "start": 0.9,
-          "end": 1.0
+          "start": 0.16,
+          "end": 0.26
         },
         {
-          "word": "lights",
-          "start": 1.0,
-          "end": 1.2
+          "word": "kitchen,",
+          "start": 0.26,
+          "end": 0.6
+        },
+        {
+          "word": "sir,",
+          "start": 0.82,
+          "end": 0.94
+        },
+        {
+          "word": "cooking",
+          "start": 1.1,
+          "end": 1.24
+        },
+        {
+          "word": "dinner.",
+          "start": 1.24,
+          "end": 1.66
+        },
+        {
+          "word": "Lightning",
+          "start": 2.16,
+          "end": 2.32
+        },
+        {
+          "word": "lit",
+          "start": 2.32,
+          "end": 2.6
+        },
+        {
+          "word": "up",
+          "start": 2.6,
+          "end": 2.76
+        },
+        {
+          "word": "the",
+          "start": 2.76,
+          "end": 2.9
+        },
+        {
+          "word": "kitchen",
+          "start": 2.9,
+          "end": 3.14
+        },
+        {
+          "word": "window,",
+          "start": 3.14,
+          "end": 3.54
+        },
+        {
+          "word": "then",
+          "start": 3.8,
+          "end": 3.88
+        },
+        {
+          "word": "everything",
+          "start": 3.88,
+          "end": 4.18
         },
         {
           "word": "went",
-          "start": 1.2,
-          "end": 1.46
+          "start": 4.18,
+          "end": 4.48
         },
         {
-          "word": "out?",
-          "start": 1.46,
-          "end": 1.7
+          "word": "dark.",
+          "start": 4.48,
+          "end": 4.78
         }
       ],
       "mismatch": 0
     },
     {
       "id": "L05",
-      "who": "oliver",
-      "text": "In the kitchen, sir, preparing dinner. I never left.",
-      "start": 16.471,
-      "end": 19.796,
+      "who": "daniel",
+      "text": "Down in the basement, fixing a leaky pipe. I saw the lightning flash through the basement window.",
+      "start": 21.405,
+      "end": 25.949,
       "words": [
         {
-          "word": "In",
-          "start": 16.471,
-          "end": 16.651,
+          "word": "Down",
+          "start": 21.405,
+          "end": 21.625,
           "line": "L05",
-          "who": "oliver"
+          "who": "daniel"
+        },
+        {
+          "word": "in",
+          "start": 21.625,
+          "end": 21.765,
+          "line": "L05",
+          "who": "daniel"
         },
         {
           "word": "the",
-          "start": 16.651,
-          "end": 16.751,
+          "start": 21.765,
+          "end": 21.845,
           "line": "L05",
-          "who": "oliver"
+          "who": "daniel"
         },
         {
-          "word": "kitchen,",
-          "start": 16.751,
-          "end": 17.071,
+          "word": "basement,",
+          "start": 21.845,
+          "end": 22.165,
           "line": "L05",
-          "who": "oliver"
+          "who": "daniel"
         },
         {
-          "word": "sir,",
-          "start": 17.291,
-          "end": 17.371,
+          "word": "fixing",
+          "start": 22.165,
+          "end": 22.525,
           "line": "L05",
-          "who": "oliver"
+          "who": "daniel"
         },
         {
-          "word": "preparing",
-          "start": 17.551,
-          "end": 17.791,
+          "word": "a",
+          "start": 22.525,
+          "end": 22.745,
           "line": "L05",
-          "who": "oliver"
+          "who": "daniel"
         },
         {
-          "word": "dinner,",
-          "start": 17.791,
-          "end": 18.151,
+          "word": "leaky",
+          "start": 22.745,
+          "end": 23.045,
           "line": "L05",
-          "who": "oliver"
+          "who": "daniel"
+        },
+        {
+          "word": "pipe.",
+          "start": 23.045,
+          "end": 23.265,
+          "line": "L05",
+          "who": "daniel"
         },
         {
           "word": "I",
-          "start": 18.491,
-          "end": 18.571,
+          "start": 23.665,
+          "end": 23.765,
           "line": "L05",
-          "who": "oliver"
+          "who": "daniel"
         },
         {
-          "word": "never",
-          "start": 18.571,
-          "end": 18.791,
+          "word": "saw",
+          "start": 23.765,
+          "end": 23.905,
           "line": "L05",
-          "who": "oliver"
+          "who": "daniel"
         },
         {
-          "word": "left.",
-          "start": 18.791,
-          "end": 19.071,
+          "word": "the",
+          "start": 23.905,
+          "end": 24.045,
           "line": "L05",
-          "who": "oliver"
+          "who": "daniel"
+        },
+        {
+          "word": "lightning",
+          "start": 24.045,
+          "end": 24.305,
+          "line": "L05",
+          "who": "daniel"
+        },
+        {
+          "word": "flash",
+          "start": 24.305,
+          "end": 24.705,
+          "line": "L05",
+          "who": "daniel"
+        },
+        {
+          "word": "through",
+          "start": 24.705,
+          "end": 24.985,
+          "line": "L05",
+          "who": "daniel"
+        },
+        {
+          "word": "the",
+          "start": 24.985,
+          "end": 25.125,
+          "line": "L05",
+          "who": "daniel"
+        },
+        {
+          "word": "basement",
+          "start": 25.125,
+          "end": 25.425,
+          "line": "L05",
+          "who": "daniel"
+        },
+        {
+          "word": "window.",
+          "start": 25.425,
+          "end": 25.805,
+          "line": "L05",
+          "who": "daniel"
         }
       ],
       "words_local": [
         {
-          "word": "In",
+          "word": "Down",
           "start": 0.0,
-          "end": 0.18
+          "end": 0.22
+        },
+        {
+          "word": "in",
+          "start": 0.22,
+          "end": 0.36
         },
         {
           "word": "the",
-          "start": 0.18,
-          "end": 0.28
+          "start": 0.36,
+          "end": 0.44
         },
         {
-          "word": "kitchen,",
-          "start": 0.28,
-          "end": 0.6
+          "word": "basement,",
+          "start": 0.44,
+          "end": 0.76
         },
         {
-          "word": "sir,",
-          "start": 0.82,
-          "end": 0.9
+          "word": "fixing",
+          "start": 0.76,
+          "end": 1.12
         },
         {
-          "word": "preparing",
-          "start": 1.08,
-          "end": 1.32
+          "word": "a",
+          "start": 1.12,
+          "end": 1.34
         },
         {
-          "word": "dinner,",
-          "start": 1.32,
-          "end": 1.68
+          "word": "leaky",
+          "start": 1.34,
+          "end": 1.64
+        },
+        {
+          "word": "pipe.",
+          "start": 1.64,
+          "end": 1.86
         },
         {
           "word": "I",
-          "start": 2.02,
-          "end": 2.1
+          "start": 2.26,
+          "end": 2.36
         },
         {
-          "word": "never",
-          "start": 2.1,
-          "end": 2.32
+          "word": "saw",
+          "start": 2.36,
+          "end": 2.5
         },
         {
-          "word": "left.",
-          "start": 2.32,
-          "end": 2.6
+          "word": "the",
+          "start": 2.5,
+          "end": 2.64
+        },
+        {
+          "word": "lightning",
+          "start": 2.64,
+          "end": 2.9
+        },
+        {
+          "word": "flash",
+          "start": 2.9,
+          "end": 3.3
+        },
+        {
+          "word": "through",
+          "start": 3.3,
+          "end": 3.58
+        },
+        {
+          "word": "the",
+          "start": 3.58,
+          "end": 3.72
+        },
+        {
+          "word": "basement",
+          "start": 3.72,
+          "end": 4.02
+        },
+        {
+          "word": "window.",
+          "start": 4.02,
+          "end": 4.4
         }
       ],
       "mismatch": 0
     },
     {
       "id": "L06",
-      "who": "daniel",
-      "text": "I was down in the basement checking the pipes. I even saw the lightning flash through the basement window!",
-      "start": 19.946,
-      "end": 24.76,
+      "who": "sophie",
+      "text": "Upstairs in the laundry room. The thunder rattled the window so hard, I dropped the sheets.",
+      "start": 26.149,
+      "end": 30.757,
       "words": [
         {
-          "word": "I",
-          "start": 19.946,
-          "end": 20.066,
+          "word": "Upstairs",
+          "start": 26.149,
+          "end": 26.509,
           "line": "L06",
-          "who": "daniel"
-        },
-        {
-          "word": "was",
-          "start": 20.066,
-          "end": 20.186,
-          "line": "L06",
-          "who": "daniel"
-        },
-        {
-          "word": "down",
-          "start": 20.186,
-          "end": 20.446,
-          "line": "L06",
-          "who": "daniel"
+          "who": "sophie"
         },
         {
           "word": "in",
-          "start": 20.446,
-          "end": 20.646,
+          "start": 26.509,
+          "end": 26.709,
           "line": "L06",
-          "who": "daniel"
+          "who": "sophie"
         },
         {
           "word": "the",
-          "start": 20.646,
-          "end": 20.746,
+          "start": 26.709,
+          "end": 26.809,
           "line": "L06",
-          "who": "daniel"
+          "who": "sophie"
         },
         {
-          "word": "basement",
-          "start": 20.746,
-          "end": 21.046,
+          "word": "laundry",
+          "start": 26.809,
+          "end": 27.029,
           "line": "L06",
-          "who": "daniel"
+          "who": "sophie"
         },
         {
-          "word": "checking",
-          "start": 21.046,
-          "end": 21.366,
+          "word": "room.",
+          "start": 27.029,
+          "end": 27.389,
           "line": "L06",
-          "who": "daniel"
+          "who": "sophie"
+        },
+        {
+          "word": "The",
+          "start": 27.869,
+          "end": 27.929,
+          "line": "L06",
+          "who": "sophie"
+        },
+        {
+          "word": "thunder",
+          "start": 27.929,
+          "end": 28.169,
+          "line": "L06",
+          "who": "sophie"
+        },
+        {
+          "word": "rattled",
+          "start": 28.169,
+          "end": 28.469,
+          "line": "L06",
+          "who": "sophie"
         },
         {
           "word": "the",
-          "start": 21.366,
-          "end": 21.586,
+          "start": 28.469,
+          "end": 28.689,
           "line": "L06",
-          "who": "daniel"
+          "who": "sophie"
         },
         {
-          "word": "pipes.",
-          "start": 21.586,
-          "end": 21.806,
+          "word": "window",
+          "start": 28.689,
+          "end": 28.929,
           "line": "L06",
-          "who": "daniel"
+          "who": "sophie"
+        },
+        {
+          "word": "so",
+          "start": 28.929,
+          "end": 29.269,
+          "line": "L06",
+          "who": "sophie"
+        },
+        {
+          "word": "hard,",
+          "start": 29.269,
+          "end": 29.649,
+          "line": "L06",
+          "who": "sophie"
         },
         {
           "word": "I",
-          "start": 22.366,
-          "end": 22.386,
+          "start": 29.649,
+          "end": 29.869,
           "line": "L06",
-          "who": "daniel"
+          "who": "sophie"
         },
         {
-          "word": "even",
-          "start": 22.386,
-          "end": 22.526,
+          "word": "dropped",
+          "start": 29.869,
+          "end": 30.049,
           "line": "L06",
-          "who": "daniel"
-        },
-        {
-          "word": "saw",
-          "start": 22.526,
-          "end": 22.766,
-          "line": "L06",
-          "who": "daniel"
+          "who": "sophie"
         },
         {
           "word": "the",
-          "start": 22.766,
-          "end": 22.886,
+          "start": 30.049,
+          "end": 30.249,
           "line": "L06",
-          "who": "daniel"
+          "who": "sophie"
         },
         {
-          "word": "lightning",
-          "start": 22.886,
-          "end": 23.146,
+          "word": "sheets.",
+          "start": 30.249,
+          "end": 30.469,
           "line": "L06",
-          "who": "daniel"
-        },
-        {
-          "word": "flash",
-          "start": 23.146,
-          "end": 23.526,
-          "line": "L06",
-          "who": "daniel"
-        },
-        {
-          "word": "through",
-          "start": 23.526,
-          "end": 23.806,
-          "line": "L06",
-          "who": "daniel"
-        },
-        {
-          "word": "the",
-          "start": 23.806,
-          "end": 23.946,
-          "line": "L06",
-          "who": "daniel"
-        },
-        {
-          "word": "basement",
-          "start": 23.946,
-          "end": 24.246,
-          "line": "L06",
-          "who": "daniel"
-        },
-        {
-          "word": "window.",
-          "start": 24.246,
-          "end": 24.546,
-          "line": "L06",
-          "who": "daniel"
+          "who": "sophie"
         }
       ],
       "words_local": [
         {
-          "word": "I",
+          "word": "Upstairs",
           "start": 0.0,
-          "end": 0.12
-        },
-        {
-          "word": "was",
-          "start": 0.12,
-          "end": 0.24
-        },
-        {
-          "word": "down",
-          "start": 0.24,
-          "end": 0.5
+          "end": 0.36
         },
         {
           "word": "in",
-          "start": 0.5,
-          "end": 0.7
+          "start": 0.36,
+          "end": 0.56
         },
         {
           "word": "the",
-          "start": 0.7,
-          "end": 0.8
+          "start": 0.56,
+          "end": 0.66
         },
         {
-          "word": "basement",
-          "start": 0.8,
-          "end": 1.1
+          "word": "laundry",
+          "start": 0.66,
+          "end": 0.88
         },
         {
-          "word": "checking",
-          "start": 1.1,
-          "end": 1.42
+          "word": "room.",
+          "start": 0.88,
+          "end": 1.24
+        },
+        {
+          "word": "The",
+          "start": 1.72,
+          "end": 1.78
+        },
+        {
+          "word": "thunder",
+          "start": 1.78,
+          "end": 2.02
+        },
+        {
+          "word": "rattled",
+          "start": 2.02,
+          "end": 2.32
         },
         {
           "word": "the",
-          "start": 1.42,
-          "end": 1.64
+          "start": 2.32,
+          "end": 2.54
         },
         {
-          "word": "pipes.",
-          "start": 1.64,
-          "end": 1.86
+          "word": "window",
+          "start": 2.54,
+          "end": 2.78
+        },
+        {
+          "word": "so",
+          "start": 2.78,
+          "end": 3.12
+        },
+        {
+          "word": "hard,",
+          "start": 3.12,
+          "end": 3.5
         },
         {
           "word": "I",
-          "start": 2.42,
-          "end": 2.44
+          "start": 3.5,
+          "end": 3.72
         },
         {
-          "word": "even",
-          "start": 2.44,
-          "end": 2.58
-        },
-        {
-          "word": "saw",
-          "start": 2.58,
-          "end": 2.82
+          "word": "dropped",
+          "start": 3.72,
+          "end": 3.9
         },
         {
           "word": "the",
-          "start": 2.82,
-          "end": 2.94
+          "start": 3.9,
+          "end": 4.1
         },
         {
-          "word": "lightning",
-          "start": 2.94,
-          "end": 3.2
-        },
-        {
-          "word": "flash",
-          "start": 3.2,
-          "end": 3.58
-        },
-        {
-          "word": "through",
-          "start": 3.58,
-          "end": 3.86
-        },
-        {
-          "word": "the",
-          "start": 3.86,
-          "end": 4.0
-        },
-        {
-          "word": "basement",
-          "start": 4.0,
-          "end": 4.3
-        },
-        {
-          "word": "window.",
-          "start": 4.3,
-          "end": 4.6
+          "word": "sheets.",
+          "start": 4.1,
+          "end": 4.32
         }
       ],
       "mismatch": 0
     },
     {
       "id": "L07",
-      "who": "sophie",
-      "text": "I was upstairs folding laundry. I heard the thunder, but I didn't see anyone.",
-      "start": 24.91,
-      "end": 28.877,
+      "who": "marcus",
+      "text": "Hmm. Let me see these rooms for myself.",
+      "start": 31.107,
+      "end": 33.241,
       "words": [
         {
-          "word": "I",
-          "start": 24.91,
-          "end": 25.03,
+          "word": "Hmm.",
+          "start": 31.107,
+          "end": 31.347,
           "line": "L07",
-          "who": "sophie"
+          "who": "marcus"
         },
         {
-          "word": "was",
-          "start": 25.03,
-          "end": 25.11,
+          "word": "Let",
+          "start": 31.347,
+          "end": 31.627,
           "line": "L07",
-          "who": "sophie"
+          "who": "marcus"
         },
         {
-          "word": "upstairs",
-          "start": 25.11,
-          "end": 25.53,
+          "word": "me",
+          "start": 31.627,
+          "end": 31.767,
           "line": "L07",
-          "who": "sophie"
-        },
-        {
-          "word": "folding",
-          "start": 25.53,
-          "end": 25.95,
-          "line": "L07",
-          "who": "sophie"
-        },
-        {
-          "word": "laundry.",
-          "start": 25.95,
-          "end": 26.41,
-          "line": "L07",
-          "who": "sophie"
-        },
-        {
-          "word": "I",
-          "start": 26.91,
-          "end": 27.05,
-          "line": "L07",
-          "who": "sophie"
-        },
-        {
-          "word": "heard",
-          "start": 27.05,
-          "end": 27.21,
-          "line": "L07",
-          "who": "sophie"
-        },
-        {
-          "word": "the",
-          "start": 27.21,
-          "end": 27.35,
-          "line": "L07",
-          "who": "sophie"
-        },
-        {
-          "word": "thunder",
-          "start": 27.35,
-          "end": 27.61,
-          "line": "L07",
-          "who": "sophie"
-        },
-        {
-          "word": "but",
-          "start": 27.61,
-          "end": 27.83,
-          "line": "L07",
-          "who": "sophie"
-        },
-        {
-          "word": "I",
-          "start": 27.83,
-          "end": 27.95,
-          "line": "L07",
-          "who": "sophie"
-        },
-        {
-          "word": "didn't",
-          "start": 27.95,
-          "end": 28.23,
-          "line": "L07",
-          "who": "sophie"
+          "who": "marcus"
         },
         {
           "word": "see",
-          "start": 28.23,
-          "end": 28.37,
+          "start": 31.767,
+          "end": 31.907,
           "line": "L07",
-          "who": "sophie"
+          "who": "marcus"
         },
         {
-          "word": "anyone.",
-          "start": 28.37,
-          "end": 28.69,
+          "word": "these",
+          "start": 31.907,
+          "end": 32.107,
           "line": "L07",
-          "who": "sophie"
+          "who": "marcus"
+        },
+        {
+          "word": "rooms",
+          "start": 32.107,
+          "end": 32.367,
+          "line": "L07",
+          "who": "marcus"
+        },
+        {
+          "word": "for",
+          "start": 32.367,
+          "end": 32.607,
+          "line": "L07",
+          "who": "marcus"
+        },
+        {
+          "word": "myself.",
+          "start": 32.607,
+          "end": 32.867,
+          "line": "L07",
+          "who": "marcus"
         }
       ],
       "words_local": [
         {
-          "word": "I",
+          "word": "Hmm.",
           "start": 0.0,
-          "end": 0.12
+          "end": 0.24
         },
         {
-          "word": "was",
-          "start": 0.12,
-          "end": 0.2
+          "word": "Let",
+          "start": 0.24,
+          "end": 0.52
         },
         {
-          "word": "upstairs",
-          "start": 0.2,
-          "end": 0.62
-        },
-        {
-          "word": "folding",
-          "start": 0.62,
-          "end": 1.04
-        },
-        {
-          "word": "laundry.",
-          "start": 1.04,
-          "end": 1.5
-        },
-        {
-          "word": "I",
-          "start": 2.0,
-          "end": 2.14
-        },
-        {
-          "word": "heard",
-          "start": 2.14,
-          "end": 2.3
-        },
-        {
-          "word": "the",
-          "start": 2.3,
-          "end": 2.44
-        },
-        {
-          "word": "thunder",
-          "start": 2.44,
-          "end": 2.7
-        },
-        {
-          "word": "but",
-          "start": 2.7,
-          "end": 2.92
-        },
-        {
-          "word": "I",
-          "start": 2.92,
-          "end": 3.04
-        },
-        {
-          "word": "didn't",
-          "start": 3.04,
-          "end": 3.32
+          "word": "me",
+          "start": 0.52,
+          "end": 0.66
         },
         {
           "word": "see",
-          "start": 3.32,
-          "end": 3.46
+          "start": 0.66,
+          "end": 0.8
         },
         {
-          "word": "anyone.",
-          "start": 3.46,
-          "end": 3.78
+          "word": "these",
+          "start": 0.8,
+          "end": 1.0
+        },
+        {
+          "word": "rooms",
+          "start": 1.0,
+          "end": 1.26
+        },
+        {
+          "word": "for",
+          "start": 1.26,
+          "end": 1.5
+        },
+        {
+          "word": "myself.",
+          "start": 1.5,
+          "end": 1.76
         }
       ],
-      "mismatch": 0
+      "mismatch": 1
     },
     {
       "id": "L08",
       "who": "marcus",
-      "text": "Interesting. Daniel, you saw the lightning through the basement window?",
-      "start": 29.577,
-      "end": 33.258,
+      "text": "Thank you. I know exactly who is lying.",
+      "start": 40.841,
+      "end": 43.078,
       "words": [
         {
-          "word": "Interesting.",
-          "start": 29.577,
-          "end": 30.117,
+          "word": "Thank",
+          "start": 40.841,
+          "end": 41.081,
           "line": "L08",
           "who": "marcus"
         },
         {
-          "word": "Daniel,",
-          "start": 30.597,
-          "end": 30.837,
+          "word": "you.",
+          "start": 41.081,
+          "end": 41.321,
           "line": "L08",
           "who": "marcus"
         },
         {
-          "word": "you",
-          "start": 31.157,
-          "end": 31.317,
+          "word": "I",
+          "start": 41.481,
+          "end": 41.581,
           "line": "L08",
           "who": "marcus"
         },
         {
-          "word": "saw",
-          "start": 31.317,
-          "end": 31.497,
+          "word": "know",
+          "start": 41.581,
+          "end": 41.701,
           "line": "L08",
           "who": "marcus"
         },
         {
-          "word": "the",
-          "start": 31.497,
-          "end": 31.637,
+          "word": "exactly",
+          "start": 41.701,
+          "end": 42.061,
           "line": "L08",
           "who": "marcus"
         },
         {
-          "word": "lightning",
-          "start": 31.637,
-          "end": 31.937,
+          "word": "who",
+          "start": 42.061,
+          "end": 42.401,
           "line": "L08",
           "who": "marcus"
         },
         {
-          "word": "through",
-          "start": 31.937,
-          "end": 32.217,
+          "word": "is",
+          "start": 42.401,
+          "end": 42.541,
           "line": "L08",
           "who": "marcus"
         },
         {
-          "word": "the",
-          "start": 32.217,
-          "end": 32.357,
-          "line": "L08",
-          "who": "marcus"
-        },
-        {
-          "word": "basement",
-          "start": 32.357,
-          "end": 32.637,
-          "line": "L08",
-          "who": "marcus"
-        },
-        {
-          "word": "window.",
-          "start": 32.637,
-          "end": 32.997,
+          "word": "lying.",
+          "start": 42.541,
+          "end": 42.821,
           "line": "L08",
           "who": "marcus"
         }
       ],
       "words_local": [
         {
-          "word": "Interesting.",
+          "word": "Thank",
           "start": 0.0,
-          "end": 0.54
+          "end": 0.24
         },
         {
-          "word": "Daniel,",
-          "start": 1.02,
-          "end": 1.26
+          "word": "you.",
+          "start": 0.24,
+          "end": 0.48
         },
         {
-          "word": "you",
-          "start": 1.58,
-          "end": 1.74
+          "word": "I",
+          "start": 0.64,
+          "end": 0.74
         },
         {
-          "word": "saw",
-          "start": 1.74,
-          "end": 1.92
+          "word": "know",
+          "start": 0.74,
+          "end": 0.86
         },
         {
-          "word": "the",
-          "start": 1.92,
-          "end": 2.06
+          "word": "exactly",
+          "start": 0.86,
+          "end": 1.22
         },
         {
-          "word": "lightning",
-          "start": 2.06,
-          "end": 2.36
+          "word": "who",
+          "start": 1.22,
+          "end": 1.56
         },
         {
-          "word": "through",
-          "start": 2.36,
-          "end": 2.64
+          "word": "is",
+          "start": 1.56,
+          "end": 1.7
         },
         {
-          "word": "the",
-          "start": 2.64,
-          "end": 2.78
-        },
-        {
-          "word": "basement",
-          "start": 2.78,
-          "end": 3.06
-        },
-        {
-          "word": "window.",
-          "start": 3.06,
-          "end": 3.42
+          "word": "lying.",
+          "start": 1.7,
+          "end": 1.98
         }
       ],
       "mismatch": 0
     },
     {
       "id": "L09",
-      "who": "daniel",
-      "text": "Yes! Clear as day. What's wrong with that?",
-      "start": 33.508,
-      "end": 35.328,
+      "who": "narrator",
+      "text": "Kitchen. Basement. Laundry room. One of these stories does not fit the house.",
+      "start": 43.578,
+      "end": 48.297,
       "words": [
         {
-          "word": "Yes,",
-          "start": 33.508,
-          "end": 33.748,
+          "word": "Kitchen.",
+          "start": 43.578,
+          "end": 43.938,
           "line": "L09",
-          "who": "daniel"
+          "who": "narrator"
         },
         {
-          "word": "clear",
-          "start": 33.968,
-          "end": 34.048,
+          "word": "Basement.",
+          "start": 44.178,
+          "end": 44.538,
           "line": "L09",
-          "who": "daniel"
+          "who": "narrator"
         },
         {
-          "word": "as",
-          "start": 34.048,
-          "end": 34.208,
+          "word": "Laundry",
+          "start": 45.098,
+          "end": 45.238,
           "line": "L09",
-          "who": "daniel"
+          "who": "narrator"
         },
         {
-          "word": "day,",
-          "start": 34.208,
-          "end": 34.408,
+          "word": "room.",
+          "start": 45.238,
+          "end": 45.698,
           "line": "L09",
-          "who": "daniel"
+          "who": "narrator"
         },
         {
-          "word": "what's",
-          "start": 34.488,
-          "end": 34.668,
+          "word": "One",
+          "start": 46.138,
+          "end": 46.198,
           "line": "L09",
-          "who": "daniel"
+          "who": "narrator"
         },
         {
-          "word": "wrong",
-          "start": 34.668,
-          "end": 34.808,
+          "word": "of",
+          "start": 46.198,
+          "end": 46.298,
           "line": "L09",
-          "who": "daniel"
+          "who": "narrator"
         },
         {
-          "word": "with",
-          "start": 34.808,
-          "end": 34.988,
+          "word": "these",
+          "start": 46.298,
+          "end": 46.478,
           "line": "L09",
-          "who": "daniel"
+          "who": "narrator"
         },
         {
-          "word": "that?",
-          "start": 34.988,
-          "end": 35.208,
+          "word": "stories",
+          "start": 46.478,
+          "end": 46.878,
           "line": "L09",
-          "who": "daniel"
+          "who": "narrator"
+        },
+        {
+          "word": "does",
+          "start": 46.878,
+          "end": 47.158,
+          "line": "L09",
+          "who": "narrator"
+        },
+        {
+          "word": "not",
+          "start": 47.158,
+          "end": 47.358,
+          "line": "L09",
+          "who": "narrator"
+        },
+        {
+          "word": "fit",
+          "start": 47.358,
+          "end": 47.598,
+          "line": "L09",
+          "who": "narrator"
+        },
+        {
+          "word": "the",
+          "start": 47.598,
+          "end": 47.778,
+          "line": "L09",
+          "who": "narrator"
+        },
+        {
+          "word": "house.",
+          "start": 47.778,
+          "end": 48.078,
+          "line": "L09",
+          "who": "narrator"
         }
       ],
       "words_local": [
         {
-          "word": "Yes,",
+          "word": "Kitchen.",
           "start": 0.0,
-          "end": 0.24
+          "end": 0.36
         },
         {
-          "word": "clear",
-          "start": 0.46,
-          "end": 0.54
+          "word": "Basement.",
+          "start": 0.6,
+          "end": 0.96
         },
         {
-          "word": "as",
-          "start": 0.54,
-          "end": 0.7
+          "word": "Laundry",
+          "start": 1.52,
+          "end": 1.66
         },
         {
-          "word": "day,",
-          "start": 0.7,
-          "end": 0.9
+          "word": "room.",
+          "start": 1.66,
+          "end": 2.12
         },
         {
-          "word": "what's",
-          "start": 0.98,
-          "end": 1.16
+          "word": "One",
+          "start": 2.56,
+          "end": 2.62
         },
         {
-          "word": "wrong",
-          "start": 1.16,
-          "end": 1.3
+          "word": "of",
+          "start": 2.62,
+          "end": 2.72
         },
         {
-          "word": "with",
-          "start": 1.3,
-          "end": 1.48
+          "word": "these",
+          "start": 2.72,
+          "end": 2.9
         },
         {
-          "word": "that?",
-          "start": 1.48,
-          "end": 1.7
+          "word": "stories",
+          "start": 2.9,
+          "end": 3.3
+        },
+        {
+          "word": "does",
+          "start": 3.3,
+          "end": 3.58
+        },
+        {
+          "word": "not",
+          "start": 3.58,
+          "end": 3.78
+        },
+        {
+          "word": "fit",
+          "start": 3.78,
+          "end": 4.02
+        },
+        {
+          "word": "the",
+          "start": 4.02,
+          "end": 4.2
+        },
+        {
+          "word": "house.",
+          "start": 4.2,
+          "end": 4.5
         }
       ],
       "mismatch": 0
     },
     {
       "id": "L10",
-      "who": "marcus",
-      "text": "Then explain something to me.",
-      "start": 36.428,
-      "end": 38.221,
+      "who": "narrator",
+      "text": "Look closely. Who is lying?",
+      "start": 48.597,
+      "end": 50.577,
       "words": [
         {
-          "word": "then",
-          "start": 36.428,
-          "end": 36.648,
+          "word": "Look",
+          "start": 48.597,
+          "end": 48.817,
           "line": "L10",
-          "who": "marcus"
+          "who": "narrator"
         },
         {
-          "word": "explain",
-          "start": 36.648,
-          "end": 37.148,
+          "word": "closely.",
+          "start": 48.817,
+          "end": 49.297,
           "line": "L10",
-          "who": "marcus"
+          "who": "narrator"
         },
         {
-          "word": "something",
-          "start": 37.148,
-          "end": 37.548,
+          "word": "Who",
+          "start": 49.297,
+          "end": 49.757,
           "line": "L10",
-          "who": "marcus"
+          "who": "narrator"
         },
         {
-          "word": "to",
-          "start": 37.548,
-          "end": 37.808,
+          "word": "is",
+          "start": 49.757,
+          "end": 49.897,
           "line": "L10",
-          "who": "marcus"
+          "who": "narrator"
         },
         {
-          "word": "me.",
-          "start": 37.808,
-          "end": 38.028,
+          "word": "lying?",
+          "start": 49.897,
+          "end": 50.197,
           "line": "L10",
-          "who": "marcus"
+          "who": "narrator"
         }
       ],
       "words_local": [
         {
-          "word": "then",
+          "word": "Look",
           "start": 0.0,
           "end": 0.22
         },
         {
-          "word": "explain",
+          "word": "closely.",
           "start": 0.22,
-          "end": 0.72
+          "end": 0.7
         },
         {
-          "word": "something",
-          "start": 0.72,
-          "end": 1.12
-        },
-        {
-          "word": "to",
-          "start": 1.12,
-          "end": 1.38
-        },
-        {
-          "word": "me.",
-          "start": 1.38,
-          "end": 1.6
-        }
-      ],
-      "mismatch": 0
-    },
-    {
-      "id": "L11",
-      "who": "narrator",
-      "text": "Oliver was in the kitchen. Sophie was upstairs. And Daniel was in the basement, watching the lightning.",
-      "start": 39.821,
-      "end": 45.99,
-      "words": [
-        {
-          "word": "Oliver",
-          "start": 39.821,
-          "end": 40.121,
-          "line": "L11",
-          "who": "narrator"
-        },
-        {
-          "word": "was",
-          "start": 40.121,
-          "end": 40.421,
-          "line": "L11",
-          "who": "narrator"
-        },
-        {
-          "word": "in",
-          "start": 40.421,
-          "end": 40.581,
-          "line": "L11",
-          "who": "narrator"
-        },
-        {
-          "word": "the",
-          "start": 40.581,
-          "end": 40.721,
-          "line": "L11",
-          "who": "narrator"
-        },
-        {
-          "word": "kitchen,",
-          "start": 40.721,
-          "end": 41.061,
-          "line": "L11",
-          "who": "narrator"
-        },
-        {
-          "word": "Sophie",
-          "start": 41.701,
-          "end": 41.801,
-          "line": "L11",
-          "who": "narrator"
-        },
-        {
-          "word": "was",
-          "start": 41.801,
-          "end": 42.081,
-          "line": "L11",
-          "who": "narrator"
-        },
-        {
-          "word": "upstairs",
-          "start": 42.081,
-          "end": 42.621,
-          "line": "L11",
-          "who": "narrator"
-        },
-        {
-          "word": "and",
-          "start": 42.621,
-          "end": 43.301,
-          "line": "L11",
-          "who": "narrator"
-        },
-        {
-          "word": "Daniel",
-          "start": 43.301,
-          "end": 43.621,
-          "line": "L11",
-          "who": "narrator"
-        },
-        {
-          "word": "was",
-          "start": 43.621,
-          "end": 43.861,
-          "line": "L11",
-          "who": "narrator"
-        },
-        {
-          "word": "in",
-          "start": 43.861,
-          "end": 44.021,
-          "line": "L11",
-          "who": "narrator"
-        },
-        {
-          "word": "the",
-          "start": 44.021,
-          "end": 44.141,
-          "line": "L11",
-          "who": "narrator"
-        },
-        {
-          "word": "basement",
-          "start": 44.141,
-          "end": 44.581,
-          "line": "L11",
-          "who": "narrator"
-        },
-        {
-          "word": "watching",
-          "start": 44.581,
-          "end": 45.141,
-          "line": "L11",
-          "who": "narrator"
-        },
-        {
-          "word": "the",
-          "start": 45.141,
-          "end": 45.441,
-          "line": "L11",
-          "who": "narrator"
-        },
-        {
-          "word": "lightning.",
-          "start": 45.441,
-          "end": 45.701,
-          "line": "L11",
-          "who": "narrator"
-        }
-      ],
-      "words_local": [
-        {
-          "word": "Oliver",
-          "start": 0.0,
-          "end": 0.3
-        },
-        {
-          "word": "was",
-          "start": 0.3,
-          "end": 0.6
-        },
-        {
-          "word": "in",
-          "start": 0.6,
-          "end": 0.76
-        },
-        {
-          "word": "the",
-          "start": 0.76,
-          "end": 0.9
-        },
-        {
-          "word": "kitchen,",
-          "start": 0.9,
-          "end": 1.24
-        },
-        {
-          "word": "Sophie",
-          "start": 1.88,
-          "end": 1.98
-        },
-        {
-          "word": "was",
-          "start": 1.98,
-          "end": 2.26
-        },
-        {
-          "word": "upstairs",
-          "start": 2.26,
-          "end": 2.8
-        },
-        {
-          "word": "and",
-          "start": 2.8,
-          "end": 3.48
-        },
-        {
-          "word": "Daniel",
-          "start": 3.48,
-          "end": 3.8
-        },
-        {
-          "word": "was",
-          "start": 3.8,
-          "end": 4.04
-        },
-        {
-          "word": "in",
-          "start": 4.04,
-          "end": 4.2
-        },
-        {
-          "word": "the",
-          "start": 4.2,
-          "end": 4.32
-        },
-        {
-          "word": "basement",
-          "start": 4.32,
-          "end": 4.76
-        },
-        {
-          "word": "watching",
-          "start": 4.76,
-          "end": 5.32
-        },
-        {
-          "word": "the",
-          "start": 5.32,
-          "end": 5.62
-        },
-        {
-          "word": "lightning.",
-          "start": 5.62,
-          "end": 5.88
-        }
-      ],
-      "mismatch": 0
-    },
-    {
-      "id": "L12",
-      "who": "narrator",
-      "text": "The detective only needed one look around. So, who is lying? And how did he know?",
-      "start": 46.34,
-      "end": 51.527,
-      "words": [
-        {
-          "word": "The",
-          "start": 46.34,
-          "end": 46.48,
-          "line": "L12",
-          "who": "narrator"
-        },
-        {
-          "word": "detective",
-          "start": 46.48,
-          "end": 46.84,
-          "line": "L12",
-          "who": "narrator"
-        },
-        {
-          "word": "only",
-          "start": 46.84,
-          "end": 47.26,
-          "line": "L12",
-          "who": "narrator"
-        },
-        {
-          "word": "needed",
-          "start": 47.26,
-          "end": 47.6,
-          "line": "L12",
-          "who": "narrator"
-        },
-        {
-          "word": "one",
-          "start": 47.6,
-          "end": 47.94,
-          "line": "L12",
-          "who": "narrator"
-        },
-        {
-          "word": "look",
-          "start": 47.94,
-          "end": 48.16,
-          "line": "L12",
-          "who": "narrator"
-        },
-        {
-          "word": "around,",
-          "start": 48.16,
-          "end": 48.54,
-          "line": "L12",
-          "who": "narrator"
-        },
-        {
-          "word": "so",
-          "start": 48.96,
-          "end": 49.24,
-          "line": "L12",
-          "who": "narrator"
-        },
-        {
-          "word": "who",
-          "start": 49.24,
-          "end": 49.54,
-          "line": "L12",
-          "who": "narrator"
+          "word": "Who",
+          "start": 0.7,
+          "end": 1.16
         },
         {
           "word": "is",
-          "start": 49.54,
-          "end": 49.66,
-          "line": "L12",
-          "who": "narrator"
+          "start": 1.16,
+          "end": 1.3
         },
         {
-          "word": "lying",
-          "start": 49.66,
-          "end": 50.08,
-          "line": "L12",
-          "who": "narrator"
-        },
-        {
-          "word": "and",
-          "start": 50.08,
-          "end": 50.6,
-          "line": "L12",
-          "who": "narrator"
-        },
-        {
-          "word": "how",
-          "start": 50.6,
-          "end": 50.78,
-          "line": "L12",
-          "who": "narrator"
-        },
-        {
-          "word": "did",
-          "start": 50.78,
-          "end": 50.96,
-          "line": "L12",
-          "who": "narrator"
-        },
-        {
-          "word": "he",
-          "start": 50.96,
-          "end": 51.08,
-          "line": "L12",
-          "who": "narrator"
-        },
-        {
-          "word": "know?",
-          "start": 51.08,
-          "end": 51.32,
-          "line": "L12",
-          "who": "narrator"
-        }
-      ],
-      "words_local": [
-        {
-          "word": "The",
-          "start": 0.0,
-          "end": 0.14
-        },
-        {
-          "word": "detective",
-          "start": 0.14,
-          "end": 0.5
-        },
-        {
-          "word": "only",
-          "start": 0.5,
-          "end": 0.92
-        },
-        {
-          "word": "needed",
-          "start": 0.92,
-          "end": 1.26
-        },
-        {
-          "word": "one",
-          "start": 1.26,
+          "word": "lying?",
+          "start": 1.3,
           "end": 1.6
-        },
-        {
-          "word": "look",
-          "start": 1.6,
-          "end": 1.82
-        },
-        {
-          "word": "around,",
-          "start": 1.82,
-          "end": 2.2
-        },
-        {
-          "word": "so",
-          "start": 2.62,
-          "end": 2.9
-        },
-        {
-          "word": "who",
-          "start": 2.9,
-          "end": 3.2
-        },
-        {
-          "word": "is",
-          "start": 3.2,
-          "end": 3.32
-        },
-        {
-          "word": "lying",
-          "start": 3.32,
-          "end": 3.74
-        },
-        {
-          "word": "and",
-          "start": 3.74,
-          "end": 4.26
-        },
-        {
-          "word": "how",
-          "start": 4.26,
-          "end": 4.44
-        },
-        {
-          "word": "did",
-          "start": 4.44,
-          "end": 4.62
-        },
-        {
-          "word": "he",
-          "start": 4.62,
-          "end": 4.74
-        },
-        {
-          "word": "know?",
-          "start": 4.74,
-          "end": 4.98
         }
       ],
       "mismatch": 0
@@ -1901,1025 +1637,885 @@
   ],
   "words": [
     {
-      "word": "One",
+      "word": "Three",
       "start": 0.25,
-      "end": 0.39,
+      "end": 0.49,
       "line": "L01",
       "who": "narrator"
     },
     {
-      "word": "of",
-      "start": 0.39,
-      "end": 0.53,
+      "word": "suspects.",
+      "start": 0.49,
+      "end": 0.95,
       "line": "L01",
       "who": "narrator"
     },
     {
-      "word": "these",
-      "start": 0.53,
-      "end": 0.73,
+      "word": "Three",
+      "start": 1.41,
+      "end": 1.59,
       "line": "L01",
       "who": "narrator"
     },
     {
-      "word": "three",
-      "start": 0.73,
-      "end": 1.05,
+      "word": "alibis.",
+      "start": 1.59,
+      "end": 2.27,
       "line": "L01",
       "who": "narrator"
     },
     {
-      "word": "people",
-      "start": 1.05,
-      "end": 1.43,
-      "line": "L01",
-      "who": "narrator"
-    },
-    {
-      "word": "is",
-      "start": 1.43,
-      "end": 1.71,
-      "line": "L01",
-      "who": "narrator"
-    },
-    {
-      "word": "lying",
-      "start": 1.71,
-      "end": 2.13,
-      "line": "L01",
-      "who": "narrator"
-    },
-    {
-      "word": "and",
-      "start": 2.13,
+      "word": "But",
+      "start": 2.55,
       "end": 2.73,
       "line": "L01",
       "who": "narrator"
     },
     {
-      "word": "the",
+      "word": "one",
       "start": 2.73,
-      "end": 2.83,
+      "end": 2.89,
       "line": "L01",
       "who": "narrator"
     },
     {
-      "word": "detective",
-      "start": 2.83,
-      "end": 3.13,
-      "line": "L01",
-      "who": "narrator"
-    },
-    {
-      "word": "caught",
-      "start": 3.13,
-      "end": 3.63,
+      "word": "of",
+      "start": 2.89,
+      "end": 3.05,
       "line": "L01",
       "who": "narrator"
     },
     {
       "word": "them",
-      "start": 3.63,
-      "end": 3.93,
+      "start": 3.05,
+      "end": 3.19,
       "line": "L01",
       "who": "narrator"
     },
     {
-      "word": "with",
-      "start": 3.93,
-      "end": 4.27,
+      "word": "is",
+      "start": 3.19,
+      "end": 3.43,
       "line": "L01",
       "who": "narrator"
     },
     {
-      "word": "just",
-      "start": 4.27,
-      "end": 4.51,
+      "word": "impossible.",
+      "start": 3.43,
+      "end": 3.95,
       "line": "L01",
       "who": "narrator"
     },
     {
-      "word": "one",
-      "start": 4.51,
-      "end": 4.85,
+      "word": "Can",
+      "start": 4.53,
+      "end": 4.63,
       "line": "L01",
       "who": "narrator"
     },
     {
-      "word": "question.",
-      "start": 4.85,
-      "end": 5.15,
+      "word": "you",
+      "start": 4.63,
+      "end": 4.77,
+      "line": "L01",
+      "who": "narrator"
+    },
+    {
+      "word": "spot",
+      "start": 4.77,
+      "end": 5.03,
+      "line": "L01",
+      "who": "narrator"
+    },
+    {
+      "word": "it",
+      "start": 5.03,
+      "end": 5.19,
+      "line": "L01",
+      "who": "narrator"
+    },
+    {
+      "word": "before",
+      "start": 5.19,
+      "end": 5.49,
+      "line": "L01",
+      "who": "narrator"
+    },
+    {
+      "word": "the",
+      "start": 5.49,
+      "end": 5.65,
+      "line": "L01",
+      "who": "narrator"
+    },
+    {
+      "word": "detective",
+      "start": 5.65,
+      "end": 6.03,
+      "line": "L01",
+      "who": "narrator"
+    },
+    {
+      "word": "does?",
+      "start": 6.03,
+      "end": 6.41,
       "line": "L01",
       "who": "narrator"
     },
     {
       "word": "My",
-      "start": 5.958,
-      "end": 6.158,
+      "start": 7.054,
+      "end": 7.254,
       "line": "L02",
       "who": "harrison"
     },
     {
       "word": "diamond",
-      "start": 6.158,
-      "end": 6.498,
+      "start": 7.254,
+      "end": 7.594,
       "line": "L02",
       "who": "harrison"
     },
     {
       "word": "necklace",
-      "start": 6.498,
-      "end": 7.018,
+      "start": 7.594,
+      "end": 8.114,
       "line": "L02",
       "who": "harrison"
     },
     {
       "word": "is",
-      "start": 7.018,
-      "end": 7.358,
+      "start": 8.114,
+      "end": 8.454,
       "line": "L02",
       "who": "harrison"
     },
     {
-      "word": "gone.",
-      "start": 7.358,
-      "end": 7.638,
+      "word": "gone!",
+      "start": 8.454,
+      "end": 8.734,
       "line": "L02",
       "who": "harrison"
     },
     {
       "word": "The",
-      "start": 8.198,
-      "end": 8.338,
+      "start": 9.294,
+      "end": 9.434,
       "line": "L02",
       "who": "harrison"
     },
     {
       "word": "power",
-      "start": 8.338,
-      "end": 8.618,
+      "start": 9.434,
+      "end": 9.714,
       "line": "L02",
       "who": "harrison"
     },
     {
       "word": "went",
-      "start": 8.618,
-      "end": 8.838,
+      "start": 9.714,
+      "end": 9.934,
       "line": "L02",
       "who": "harrison"
     },
     {
       "word": "out",
-      "start": 8.838,
-      "end": 9.098,
+      "start": 9.934,
+      "end": 10.194,
       "line": "L02",
       "who": "harrison"
     },
     {
       "word": "at",
-      "start": 9.098,
-      "end": 9.298,
+      "start": 10.194,
+      "end": 10.394,
       "line": "L02",
       "who": "harrison"
     },
     {
       "word": "exactly",
-      "start": 9.298,
-      "end": 9.698,
+      "start": 10.394,
+      "end": 10.794,
       "line": "L02",
       "who": "harrison"
     },
     {
       "word": "nine",
-      "start": 9.698,
-      "end": 10.118,
+      "start": 10.794,
+      "end": 11.214,
       "line": "L02",
       "who": "harrison"
     },
     {
-      "word": "o'clock.",
-      "start": 10.118,
-      "end": 10.518,
+      "word": "o'clock!",
+      "start": 11.214,
+      "end": 11.614,
       "line": "L02",
       "who": "harrison"
     },
     {
       "word": "Nobody",
-      "start": 10.983,
-      "end": 11.303,
+      "start": 12.078,
+      "end": 12.398,
       "line": "L03",
       "who": "marcus"
     },
     {
       "word": "leaves",
-      "start": 11.303,
-      "end": 11.663,
+      "start": 12.398,
+      "end": 12.758,
       "line": "L03",
       "who": "marcus"
     },
     {
       "word": "this",
-      "start": 11.663,
-      "end": 11.923,
+      "start": 12.758,
+      "end": 13.018,
       "line": "L03",
       "who": "marcus"
     },
     {
-      "word": "mansion,",
-      "start": 11.923,
-      "end": 12.343,
+      "word": "mansion.",
+      "start": 13.018,
+      "end": 13.438,
       "line": "L03",
       "who": "marcus"
     },
     {
-      "word": "until",
-      "start": 12.583,
-      "end": 12.783,
+      "word": "Now,",
+      "start": 13.878,
+      "end": 14.118,
       "line": "L03",
-      "who": "marcus"
-    },
-    {
-      "word": "I",
-      "start": 12.783,
-      "end": 12.943,
-      "line": "L03",
-      "who": "marcus"
-    },
-    {
-      "word": "find",
-      "start": 12.943,
-      "end": 13.183,
-      "line": "L03",
-      "who": "marcus"
-    },
-    {
-      "word": "out",
-      "start": 13.183,
-      "end": 13.383,
-      "line": "L03",
-      "who": "marcus"
-    },
-    {
-      "word": "what",
-      "start": 13.383,
-      "end": 13.563,
-      "line": "L03",
-      "who": "marcus"
-    },
-    {
-      "word": "happened.",
-      "start": 13.563,
-      "end": 13.803,
-      "line": "L03",
-      "who": "marcus"
-    },
-    {
-      "word": "So,",
-      "start": 14.427,
-      "end": 14.687,
-      "line": "L04",
       "who": "marcus"
     },
     {
       "word": "where",
-      "start": 14.867,
-      "end": 14.947,
-      "line": "L04",
+      "start": 14.118,
+      "end": 14.338,
+      "line": "L03",
       "who": "marcus"
     },
     {
-      "word": "were",
-      "start": 14.947,
-      "end": 15.047,
-      "line": "L04",
+      "word": "was",
+      "start": 14.338,
+      "end": 14.458,
+      "line": "L03",
+      "who": "marcus"
+    },
+    {
+      "word": "each",
+      "start": 14.458,
+      "end": 14.658,
+      "line": "L03",
+      "who": "marcus"
+    },
+    {
+      "word": "of",
+      "start": 14.658,
+      "end": 14.818,
+      "line": "L03",
       "who": "marcus"
     },
     {
       "word": "you",
-      "start": 15.047,
-      "end": 15.187,
-      "line": "L04",
+      "start": 14.818,
+      "end": 14.918,
+      "line": "L03",
       "who": "marcus"
     },
     {
-      "word": "when",
-      "start": 15.187,
-      "end": 15.327,
-      "line": "L04",
+      "word": "at",
+      "start": 14.918,
+      "end": 15.038,
+      "line": "L03",
       "who": "marcus"
     },
     {
-      "word": "the",
-      "start": 15.327,
-      "end": 15.427,
-      "line": "L04",
-      "who": "marcus"
-    },
-    {
-      "word": "lights",
-      "start": 15.427,
-      "end": 15.627,
-      "line": "L04",
-      "who": "marcus"
-    },
-    {
-      "word": "went",
-      "start": 15.627,
-      "end": 15.887,
-      "line": "L04",
-      "who": "marcus"
-    },
-    {
-      "word": "out?",
-      "start": 15.887,
-      "end": 16.127,
-      "line": "L04",
+      "word": "nine?",
+      "start": 15.038,
+      "end": 15.318,
+      "line": "L03",
       "who": "marcus"
     },
     {
       "word": "In",
-      "start": 16.471,
-      "end": 16.651,
-      "line": "L05",
+      "start": 15.807,
+      "end": 15.967,
+      "line": "L04",
       "who": "oliver"
     },
     {
       "word": "the",
-      "start": 16.651,
-      "end": 16.751,
-      "line": "L05",
+      "start": 15.967,
+      "end": 16.067,
+      "line": "L04",
       "who": "oliver"
     },
     {
       "word": "kitchen,",
-      "start": 16.751,
-      "end": 17.071,
-      "line": "L05",
+      "start": 16.067,
+      "end": 16.407,
+      "line": "L04",
       "who": "oliver"
     },
     {
       "word": "sir,",
-      "start": 17.291,
-      "end": 17.371,
-      "line": "L05",
+      "start": 16.627,
+      "end": 16.747,
+      "line": "L04",
       "who": "oliver"
     },
     {
-      "word": "preparing",
-      "start": 17.551,
-      "end": 17.791,
-      "line": "L05",
+      "word": "cooking",
+      "start": 16.907,
+      "end": 17.047,
+      "line": "L04",
       "who": "oliver"
     },
     {
-      "word": "dinner,",
-      "start": 17.791,
-      "end": 18.151,
-      "line": "L05",
+      "word": "dinner.",
+      "start": 17.047,
+      "end": 17.467,
+      "line": "L04",
       "who": "oliver"
     },
     {
-      "word": "I",
-      "start": 18.491,
-      "end": 18.571,
-      "line": "L05",
+      "word": "Lightning",
+      "start": 17.967,
+      "end": 18.127,
+      "line": "L04",
       "who": "oliver"
     },
     {
-      "word": "never",
-      "start": 18.571,
-      "end": 18.791,
-      "line": "L05",
+      "word": "lit",
+      "start": 18.127,
+      "end": 18.407,
+      "line": "L04",
       "who": "oliver"
     },
     {
-      "word": "left.",
-      "start": 18.791,
-      "end": 19.071,
-      "line": "L05",
+      "word": "up",
+      "start": 18.407,
+      "end": 18.567,
+      "line": "L04",
       "who": "oliver"
     },
     {
-      "word": "I",
-      "start": 19.946,
-      "end": 20.066,
-      "line": "L06",
-      "who": "daniel"
+      "word": "the",
+      "start": 18.567,
+      "end": 18.707,
+      "line": "L04",
+      "who": "oliver"
     },
     {
-      "word": "was",
-      "start": 20.066,
-      "end": 20.186,
-      "line": "L06",
-      "who": "daniel"
+      "word": "kitchen",
+      "start": 18.707,
+      "end": 18.947,
+      "line": "L04",
+      "who": "oliver"
     },
     {
-      "word": "down",
-      "start": 20.186,
-      "end": 20.446,
-      "line": "L06",
+      "word": "window,",
+      "start": 18.947,
+      "end": 19.347,
+      "line": "L04",
+      "who": "oliver"
+    },
+    {
+      "word": "then",
+      "start": 19.607,
+      "end": 19.687,
+      "line": "L04",
+      "who": "oliver"
+    },
+    {
+      "word": "everything",
+      "start": 19.687,
+      "end": 19.987,
+      "line": "L04",
+      "who": "oliver"
+    },
+    {
+      "word": "went",
+      "start": 19.987,
+      "end": 20.287,
+      "line": "L04",
+      "who": "oliver"
+    },
+    {
+      "word": "dark.",
+      "start": 20.287,
+      "end": 20.587,
+      "line": "L04",
+      "who": "oliver"
+    },
+    {
+      "word": "Down",
+      "start": 21.405,
+      "end": 21.625,
+      "line": "L05",
       "who": "daniel"
     },
     {
       "word": "in",
-      "start": 20.446,
-      "end": 20.646,
-      "line": "L06",
+      "start": 21.625,
+      "end": 21.765,
+      "line": "L05",
       "who": "daniel"
     },
     {
       "word": "the",
-      "start": 20.646,
-      "end": 20.746,
-      "line": "L06",
+      "start": 21.765,
+      "end": 21.845,
+      "line": "L05",
       "who": "daniel"
     },
     {
-      "word": "basement",
-      "start": 20.746,
-      "end": 21.046,
-      "line": "L06",
+      "word": "basement,",
+      "start": 21.845,
+      "end": 22.165,
+      "line": "L05",
       "who": "daniel"
     },
     {
-      "word": "checking",
-      "start": 21.046,
-      "end": 21.366,
-      "line": "L06",
+      "word": "fixing",
+      "start": 22.165,
+      "end": 22.525,
+      "line": "L05",
       "who": "daniel"
     },
     {
-      "word": "the",
-      "start": 21.366,
-      "end": 21.586,
-      "line": "L06",
+      "word": "a",
+      "start": 22.525,
+      "end": 22.745,
+      "line": "L05",
       "who": "daniel"
     },
     {
-      "word": "pipes.",
-      "start": 21.586,
-      "end": 21.806,
-      "line": "L06",
+      "word": "leaky",
+      "start": 22.745,
+      "end": 23.045,
+      "line": "L05",
+      "who": "daniel"
+    },
+    {
+      "word": "pipe.",
+      "start": 23.045,
+      "end": 23.265,
+      "line": "L05",
       "who": "daniel"
     },
     {
       "word": "I",
-      "start": 22.366,
-      "end": 22.386,
-      "line": "L06",
-      "who": "daniel"
-    },
-    {
-      "word": "even",
-      "start": 22.386,
-      "end": 22.526,
-      "line": "L06",
+      "start": 23.665,
+      "end": 23.765,
+      "line": "L05",
       "who": "daniel"
     },
     {
       "word": "saw",
-      "start": 22.526,
-      "end": 22.766,
-      "line": "L06",
+      "start": 23.765,
+      "end": 23.905,
+      "line": "L05",
       "who": "daniel"
     },
     {
       "word": "the",
-      "start": 22.766,
-      "end": 22.886,
-      "line": "L06",
+      "start": 23.905,
+      "end": 24.045,
+      "line": "L05",
       "who": "daniel"
     },
     {
       "word": "lightning",
-      "start": 22.886,
-      "end": 23.146,
-      "line": "L06",
+      "start": 24.045,
+      "end": 24.305,
+      "line": "L05",
       "who": "daniel"
     },
     {
       "word": "flash",
-      "start": 23.146,
-      "end": 23.526,
-      "line": "L06",
+      "start": 24.305,
+      "end": 24.705,
+      "line": "L05",
       "who": "daniel"
     },
     {
       "word": "through",
-      "start": 23.526,
-      "end": 23.806,
-      "line": "L06",
+      "start": 24.705,
+      "end": 24.985,
+      "line": "L05",
       "who": "daniel"
     },
     {
       "word": "the",
-      "start": 23.806,
-      "end": 23.946,
-      "line": "L06",
+      "start": 24.985,
+      "end": 25.125,
+      "line": "L05",
       "who": "daniel"
     },
     {
       "word": "basement",
-      "start": 23.946,
-      "end": 24.246,
-      "line": "L06",
+      "start": 25.125,
+      "end": 25.425,
+      "line": "L05",
       "who": "daniel"
     },
     {
       "word": "window.",
-      "start": 24.246,
-      "end": 24.546,
-      "line": "L06",
+      "start": 25.425,
+      "end": 25.805,
+      "line": "L05",
       "who": "daniel"
     },
     {
-      "word": "I",
-      "start": 24.91,
-      "end": 25.03,
-      "line": "L07",
+      "word": "Upstairs",
+      "start": 26.149,
+      "end": 26.509,
+      "line": "L06",
       "who": "sophie"
     },
     {
-      "word": "was",
-      "start": 25.03,
-      "end": 25.11,
-      "line": "L07",
-      "who": "sophie"
-    },
-    {
-      "word": "upstairs",
-      "start": 25.11,
-      "end": 25.53,
-      "line": "L07",
-      "who": "sophie"
-    },
-    {
-      "word": "folding",
-      "start": 25.53,
-      "end": 25.95,
-      "line": "L07",
-      "who": "sophie"
-    },
-    {
-      "word": "laundry.",
-      "start": 25.95,
-      "end": 26.41,
-      "line": "L07",
-      "who": "sophie"
-    },
-    {
-      "word": "I",
-      "start": 26.91,
-      "end": 27.05,
-      "line": "L07",
-      "who": "sophie"
-    },
-    {
-      "word": "heard",
-      "start": 27.05,
-      "end": 27.21,
-      "line": "L07",
+      "word": "in",
+      "start": 26.509,
+      "end": 26.709,
+      "line": "L06",
       "who": "sophie"
     },
     {
       "word": "the",
-      "start": 27.21,
-      "end": 27.35,
-      "line": "L07",
+      "start": 26.709,
+      "end": 26.809,
+      "line": "L06",
+      "who": "sophie"
+    },
+    {
+      "word": "laundry",
+      "start": 26.809,
+      "end": 27.029,
+      "line": "L06",
+      "who": "sophie"
+    },
+    {
+      "word": "room.",
+      "start": 27.029,
+      "end": 27.389,
+      "line": "L06",
+      "who": "sophie"
+    },
+    {
+      "word": "The",
+      "start": 27.869,
+      "end": 27.929,
+      "line": "L06",
       "who": "sophie"
     },
     {
       "word": "thunder",
-      "start": 27.35,
-      "end": 27.61,
-      "line": "L07",
+      "start": 27.929,
+      "end": 28.169,
+      "line": "L06",
       "who": "sophie"
     },
     {
-      "word": "but",
-      "start": 27.61,
-      "end": 27.83,
-      "line": "L07",
+      "word": "rattled",
+      "start": 28.169,
+      "end": 28.469,
+      "line": "L06",
+      "who": "sophie"
+    },
+    {
+      "word": "the",
+      "start": 28.469,
+      "end": 28.689,
+      "line": "L06",
+      "who": "sophie"
+    },
+    {
+      "word": "window",
+      "start": 28.689,
+      "end": 28.929,
+      "line": "L06",
+      "who": "sophie"
+    },
+    {
+      "word": "so",
+      "start": 28.929,
+      "end": 29.269,
+      "line": "L06",
+      "who": "sophie"
+    },
+    {
+      "word": "hard,",
+      "start": 29.269,
+      "end": 29.649,
+      "line": "L06",
       "who": "sophie"
     },
     {
       "word": "I",
-      "start": 27.83,
-      "end": 27.95,
-      "line": "L07",
+      "start": 29.649,
+      "end": 29.869,
+      "line": "L06",
       "who": "sophie"
     },
     {
-      "word": "didn't",
-      "start": 27.95,
-      "end": 28.23,
-      "line": "L07",
+      "word": "dropped",
+      "start": 29.869,
+      "end": 30.049,
+      "line": "L06",
       "who": "sophie"
+    },
+    {
+      "word": "the",
+      "start": 30.049,
+      "end": 30.249,
+      "line": "L06",
+      "who": "sophie"
+    },
+    {
+      "word": "sheets.",
+      "start": 30.249,
+      "end": 30.469,
+      "line": "L06",
+      "who": "sophie"
+    },
+    {
+      "word": "Hmm.",
+      "start": 31.107,
+      "end": 31.347,
+      "line": "L07",
+      "who": "marcus"
+    },
+    {
+      "word": "Let",
+      "start": 31.347,
+      "end": 31.627,
+      "line": "L07",
+      "who": "marcus"
+    },
+    {
+      "word": "me",
+      "start": 31.627,
+      "end": 31.767,
+      "line": "L07",
+      "who": "marcus"
     },
     {
       "word": "see",
-      "start": 28.23,
-      "end": 28.37,
+      "start": 31.767,
+      "end": 31.907,
       "line": "L07",
-      "who": "sophie"
+      "who": "marcus"
     },
     {
-      "word": "anyone.",
-      "start": 28.37,
-      "end": 28.69,
+      "word": "these",
+      "start": 31.907,
+      "end": 32.107,
       "line": "L07",
-      "who": "sophie"
+      "who": "marcus"
     },
     {
-      "word": "Interesting.",
-      "start": 29.577,
-      "end": 30.117,
+      "word": "rooms",
+      "start": 32.107,
+      "end": 32.367,
+      "line": "L07",
+      "who": "marcus"
+    },
+    {
+      "word": "for",
+      "start": 32.367,
+      "end": 32.607,
+      "line": "L07",
+      "who": "marcus"
+    },
+    {
+      "word": "myself.",
+      "start": 32.607,
+      "end": 32.867,
+      "line": "L07",
+      "who": "marcus"
+    },
+    {
+      "word": "Thank",
+      "start": 40.841,
+      "end": 41.081,
       "line": "L08",
       "who": "marcus"
     },
     {
-      "word": "Daniel,",
-      "start": 30.597,
-      "end": 30.837,
+      "word": "you.",
+      "start": 41.081,
+      "end": 41.321,
       "line": "L08",
       "who": "marcus"
     },
     {
-      "word": "you",
-      "start": 31.157,
-      "end": 31.317,
+      "word": "I",
+      "start": 41.481,
+      "end": 41.581,
       "line": "L08",
       "who": "marcus"
     },
     {
-      "word": "saw",
-      "start": 31.317,
-      "end": 31.497,
+      "word": "know",
+      "start": 41.581,
+      "end": 41.701,
       "line": "L08",
       "who": "marcus"
     },
     {
-      "word": "the",
-      "start": 31.497,
-      "end": 31.637,
-      "line": "L08",
-      "who": "marcus"
-    },
-    {
-      "word": "lightning",
-      "start": 31.637,
-      "end": 31.937,
-      "line": "L08",
-      "who": "marcus"
-    },
-    {
-      "word": "through",
-      "start": 31.937,
-      "end": 32.217,
-      "line": "L08",
-      "who": "marcus"
-    },
-    {
-      "word": "the",
-      "start": 32.217,
-      "end": 32.357,
-      "line": "L08",
-      "who": "marcus"
-    },
-    {
-      "word": "basement",
-      "start": 32.357,
-      "end": 32.637,
-      "line": "L08",
-      "who": "marcus"
-    },
-    {
-      "word": "window.",
-      "start": 32.637,
-      "end": 32.997,
-      "line": "L08",
-      "who": "marcus"
-    },
-    {
-      "word": "Yes,",
-      "start": 33.508,
-      "end": 33.748,
-      "line": "L09",
-      "who": "daniel"
-    },
-    {
-      "word": "clear",
-      "start": 33.968,
-      "end": 34.048,
-      "line": "L09",
-      "who": "daniel"
-    },
-    {
-      "word": "as",
-      "start": 34.048,
-      "end": 34.208,
-      "line": "L09",
-      "who": "daniel"
-    },
-    {
-      "word": "day,",
-      "start": 34.208,
-      "end": 34.408,
-      "line": "L09",
-      "who": "daniel"
-    },
-    {
-      "word": "what's",
-      "start": 34.488,
-      "end": 34.668,
-      "line": "L09",
-      "who": "daniel"
-    },
-    {
-      "word": "wrong",
-      "start": 34.668,
-      "end": 34.808,
-      "line": "L09",
-      "who": "daniel"
-    },
-    {
-      "word": "with",
-      "start": 34.808,
-      "end": 34.988,
-      "line": "L09",
-      "who": "daniel"
-    },
-    {
-      "word": "that?",
-      "start": 34.988,
-      "end": 35.208,
-      "line": "L09",
-      "who": "daniel"
-    },
-    {
-      "word": "then",
-      "start": 36.428,
-      "end": 36.648,
-      "line": "L10",
-      "who": "marcus"
-    },
-    {
-      "word": "explain",
-      "start": 36.648,
-      "end": 37.148,
-      "line": "L10",
-      "who": "marcus"
-    },
-    {
-      "word": "something",
-      "start": 37.148,
-      "end": 37.548,
-      "line": "L10",
-      "who": "marcus"
-    },
-    {
-      "word": "to",
-      "start": 37.548,
-      "end": 37.808,
-      "line": "L10",
-      "who": "marcus"
-    },
-    {
-      "word": "me.",
-      "start": 37.808,
-      "end": 38.028,
-      "line": "L10",
-      "who": "marcus"
-    },
-    {
-      "word": "Oliver",
-      "start": 39.821,
-      "end": 40.121,
-      "line": "L11",
-      "who": "narrator"
-    },
-    {
-      "word": "was",
-      "start": 40.121,
-      "end": 40.421,
-      "line": "L11",
-      "who": "narrator"
-    },
-    {
-      "word": "in",
-      "start": 40.421,
-      "end": 40.581,
-      "line": "L11",
-      "who": "narrator"
-    },
-    {
-      "word": "the",
-      "start": 40.581,
-      "end": 40.721,
-      "line": "L11",
-      "who": "narrator"
-    },
-    {
-      "word": "kitchen,",
-      "start": 40.721,
-      "end": 41.061,
-      "line": "L11",
-      "who": "narrator"
-    },
-    {
-      "word": "Sophie",
+      "word": "exactly",
       "start": 41.701,
-      "end": 41.801,
-      "line": "L11",
-      "who": "narrator"
-    },
-    {
-      "word": "was",
-      "start": 41.801,
-      "end": 42.081,
-      "line": "L11",
-      "who": "narrator"
-    },
-    {
-      "word": "upstairs",
-      "start": 42.081,
-      "end": 42.621,
-      "line": "L11",
-      "who": "narrator"
-    },
-    {
-      "word": "and",
-      "start": 42.621,
-      "end": 43.301,
-      "line": "L11",
-      "who": "narrator"
-    },
-    {
-      "word": "Daniel",
-      "start": 43.301,
-      "end": 43.621,
-      "line": "L11",
-      "who": "narrator"
-    },
-    {
-      "word": "was",
-      "start": 43.621,
-      "end": 43.861,
-      "line": "L11",
-      "who": "narrator"
-    },
-    {
-      "word": "in",
-      "start": 43.861,
-      "end": 44.021,
-      "line": "L11",
-      "who": "narrator"
-    },
-    {
-      "word": "the",
-      "start": 44.021,
-      "end": 44.141,
-      "line": "L11",
-      "who": "narrator"
-    },
-    {
-      "word": "basement",
-      "start": 44.141,
-      "end": 44.581,
-      "line": "L11",
-      "who": "narrator"
-    },
-    {
-      "word": "watching",
-      "start": 44.581,
-      "end": 45.141,
-      "line": "L11",
-      "who": "narrator"
-    },
-    {
-      "word": "the",
-      "start": 45.141,
-      "end": 45.441,
-      "line": "L11",
-      "who": "narrator"
-    },
-    {
-      "word": "lightning.",
-      "start": 45.441,
-      "end": 45.701,
-      "line": "L11",
-      "who": "narrator"
-    },
-    {
-      "word": "The",
-      "start": 46.34,
-      "end": 46.48,
-      "line": "L12",
-      "who": "narrator"
-    },
-    {
-      "word": "detective",
-      "start": 46.48,
-      "end": 46.84,
-      "line": "L12",
-      "who": "narrator"
-    },
-    {
-      "word": "only",
-      "start": 46.84,
-      "end": 47.26,
-      "line": "L12",
-      "who": "narrator"
-    },
-    {
-      "word": "needed",
-      "start": 47.26,
-      "end": 47.6,
-      "line": "L12",
-      "who": "narrator"
-    },
-    {
-      "word": "one",
-      "start": 47.6,
-      "end": 47.94,
-      "line": "L12",
-      "who": "narrator"
-    },
-    {
-      "word": "look",
-      "start": 47.94,
-      "end": 48.16,
-      "line": "L12",
-      "who": "narrator"
-    },
-    {
-      "word": "around,",
-      "start": 48.16,
-      "end": 48.54,
-      "line": "L12",
-      "who": "narrator"
-    },
-    {
-      "word": "so",
-      "start": 48.96,
-      "end": 49.24,
-      "line": "L12",
-      "who": "narrator"
+      "end": 42.061,
+      "line": "L08",
+      "who": "marcus"
     },
     {
       "word": "who",
-      "start": 49.24,
-      "end": 49.54,
-      "line": "L12",
+      "start": 42.061,
+      "end": 42.401,
+      "line": "L08",
+      "who": "marcus"
+    },
+    {
+      "word": "is",
+      "start": 42.401,
+      "end": 42.541,
+      "line": "L08",
+      "who": "marcus"
+    },
+    {
+      "word": "lying.",
+      "start": 42.541,
+      "end": 42.821,
+      "line": "L08",
+      "who": "marcus"
+    },
+    {
+      "word": "Kitchen.",
+      "start": 43.578,
+      "end": 43.938,
+      "line": "L09",
+      "who": "narrator"
+    },
+    {
+      "word": "Basement.",
+      "start": 44.178,
+      "end": 44.538,
+      "line": "L09",
+      "who": "narrator"
+    },
+    {
+      "word": "Laundry",
+      "start": 45.098,
+      "end": 45.238,
+      "line": "L09",
+      "who": "narrator"
+    },
+    {
+      "word": "room.",
+      "start": 45.238,
+      "end": 45.698,
+      "line": "L09",
+      "who": "narrator"
+    },
+    {
+      "word": "One",
+      "start": 46.138,
+      "end": 46.198,
+      "line": "L09",
+      "who": "narrator"
+    },
+    {
+      "word": "of",
+      "start": 46.198,
+      "end": 46.298,
+      "line": "L09",
+      "who": "narrator"
+    },
+    {
+      "word": "these",
+      "start": 46.298,
+      "end": 46.478,
+      "line": "L09",
+      "who": "narrator"
+    },
+    {
+      "word": "stories",
+      "start": 46.478,
+      "end": 46.878,
+      "line": "L09",
+      "who": "narrator"
+    },
+    {
+      "word": "does",
+      "start": 46.878,
+      "end": 47.158,
+      "line": "L09",
+      "who": "narrator"
+    },
+    {
+      "word": "not",
+      "start": 47.158,
+      "end": 47.358,
+      "line": "L09",
+      "who": "narrator"
+    },
+    {
+      "word": "fit",
+      "start": 47.358,
+      "end": 47.598,
+      "line": "L09",
+      "who": "narrator"
+    },
+    {
+      "word": "the",
+      "start": 47.598,
+      "end": 47.778,
+      "line": "L09",
+      "who": "narrator"
+    },
+    {
+      "word": "house.",
+      "start": 47.778,
+      "end": 48.078,
+      "line": "L09",
+      "who": "narrator"
+    },
+    {
+      "word": "Look",
+      "start": 48.597,
+      "end": 48.817,
+      "line": "L10",
+      "who": "narrator"
+    },
+    {
+      "word": "closely.",
+      "start": 48.817,
+      "end": 49.297,
+      "line": "L10",
+      "who": "narrator"
+    },
+    {
+      "word": "Who",
+      "start": 49.297,
+      "end": 49.757,
+      "line": "L10",
       "who": "narrator"
     },
     {
       "word": "is",
-      "start": 49.54,
-      "end": 49.66,
-      "line": "L12",
+      "start": 49.757,
+      "end": 49.897,
+      "line": "L10",
       "who": "narrator"
     },
     {
-      "word": "lying",
-      "start": 49.66,
-      "end": 50.08,
-      "line": "L12",
-      "who": "narrator"
-    },
-    {
-      "word": "and",
-      "start": 50.08,
-      "end": 50.6,
-      "line": "L12",
-      "who": "narrator"
-    },
-    {
-      "word": "how",
-      "start": 50.6,
-      "end": 50.78,
-      "line": "L12",
-      "who": "narrator"
-    },
-    {
-      "word": "did",
-      "start": 50.78,
-      "end": 50.96,
-      "line": "L12",
-      "who": "narrator"
-    },
-    {
-      "word": "he",
-      "start": 50.96,
-      "end": 51.08,
-      "line": "L12",
-      "who": "narrator"
-    },
-    {
-      "word": "know?",
-      "start": 51.08,
-      "end": 51.32,
-      "line": "L12",
+      "word": "lying?",
+      "start": 49.897,
+      "end": 50.197,
+      "line": "L10",
       "who": "narrator"
     }
   ]

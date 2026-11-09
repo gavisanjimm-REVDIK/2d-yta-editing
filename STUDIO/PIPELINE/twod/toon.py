@@ -51,6 +51,9 @@ def _c(**kw):
 CAST = {
     # the mascot (identity source: ASSETS/mascot/reference). Detective role in VIDEO_001: same design + props.
     "marcus": _c(),
+    # Marcus on duty: same mascot (hair, face, brown tee) + trench coat, fedora, magnifying glass
+    "marcus_detective": _c(shirt="#B8894C", shirt_sh="#97703B", sleeves="long", extras=("trench", "fedora"),
+                           tee="#6B3A22"),
     "harrison": _c(skin="#F0BE96", skin_sh="#D69C76", hair="#D9D4CC", hair_sh="#B5AEA4", hair_style="bald_mustache",
                    shirt="#5B2A4A", shirt_sh="#431D36", pants="#2E2433", pants_sh="#1F1824", shoes="#1E1A1A",
                    sleeves="long", torso_h=1.55, shoulder_w=1.2, hip_w=1.05, belly=0.22, leg=1.4,
@@ -264,10 +267,10 @@ def hair_front(pen, C, hx, hy, rx, ry, turn):
     if st == "messy":
         # bangs: spikes falling over the forehead (reference: covers top of forehead)
         p = skia.Path()
-        top = hy - ry * 1.1
+        # top edge follows the skull (slightly outside it) so no skin shows through: no bald spot
         p.moveTo(hx - rx * 0.98, hy - ry * 0.32)
-        p.quadTo(hx - rx * 0.95, top - 0.1, hx - rx * 0.35, top)
-        p.quadTo(hx + rx * 0.3, top - 0.12, hx + rx * 0.98, hy - ry * 0.35)
+        p.arcTo(skia.Rect(hx - rx * 1.06, hy - ry * 1.1, hx + rx * 1.06, hy + ry * 1.1), 196, 148, False)
+        p.lineTo(hx + rx * 0.98, hy - ry * 0.35)
         tips = [(0.86, -0.22), (0.58, -0.4), (0.3, -0.28), (0.02, -0.46), (-0.3, -0.34), (-0.6, -0.48), (-0.9, -0.22)]
         last = (hx + rx * 0.98, hy - ry * 0.35)
         for i, (tx, ty) in enumerate(tips):
@@ -423,27 +426,38 @@ def draw_brows(pen, C, hx, hy, rx, ry, E, pose):
 
 
 def draw_mouth(pen, C, mx, my, E, pose):
-    talk = pose.get("talk", 0.0)
+    """Closed shape from the expression; when speaking, a viseme mouth:
+    pose["vis"] = (open 0..1, wide 0..1, round 0..1) from lipsync.json (voice loudness + letters).
+    Legacy pose["talk"] (0..1) still works (treated as open)."""
+    vis = pose.get("vis")
+    if vis is None and pose.get("talk", 0) > 0:
+        vis = (pose["talk"], 0.3, 0.2)
     shape = E["mouth"]
     mw = 0.32
-    if talk > 0.06 or shape in ("open", "grin", "o"):
-        op = max(talk, {"open": 0.85, "grin": 0.55, "o": 0.6}.get(shape, 0.0))
-        w = mw * (0.55 if shape == "o" else 1.0) * (0.85 + 0.15 * op)
-        h = 0.08 + 0.32 * op
+    op = vis[0] if vis else 0.0
+    fixed = {"open": 0.8, "grin": 0.5, "o": 0.55}.get(shape, 0.0)
+    if op > 0.05 or fixed:
+        wide = vis[1] if vis and op > 0.05 else (0.6 if shape == "grin" else 0.3)
+        rnd = vis[2] if vis and op > 0.05 else (1.0 if shape == "o" else 0.0)
+        op = max(op, fixed * (0.6 if op > 0.05 else 1.0))
+        w = mw * (0.8 + 0.4 * wide - 0.42 * rnd)
+        h = 0.05 + 0.34 * op * (1 + 0.25 * rnd)
+        smile = 0.05 if shape in ("grin", "smile", "smirk", "confident", "happy") else (
+            -0.04 if shape in ("frown", "wavy", "grit") else 0.0)
         p = skia.Path()
-        if shape == "o":
-            p.addOval(skia.Rect(mx - w, my - h * 0.4, mx + w, my + h * 0.7))
+        if rnd > 0.55:
+            p.addOval(skia.Rect(mx - w, my - h * 0.35, mx + w, my + h * 0.75))
         else:
-            up = -0.06 if shape in ("grin", "smile", "smirk", "confident") else 0.0
-            p.moveTo(mx - w, my + up)
-            p.quadTo(mx, my + up * 0.3 - 0.02, mx + w, my + up)
-            p.quadTo(mx + w * 0.9, my + h, mx, my + h * 1.05)
-            p.quadTo(mx - w * 0.9, my + h, mx - w, my + up)
+            p.moveTo(mx - w, my - smile)
+            p.cubicTo(mx - w * 0.5, my - h * 0.32, mx + w * 0.5, my - h * 0.32, mx + w, my - smile)
+            p.cubicTo(mx + w * 0.95, my + h * 0.9, mx - w * 0.95, my + h * 0.9, mx - w, my - smile)
             p.close()
-        pen.c.drawPath(p, pen.p("#7A2A22"))
+        pen.c.drawPath(p, pen.p("#6E231D"))
         pen.c.save()
         pen.c.clipPath(p, doAntiAlias=True)
-        pen.c.drawPath(oval(mx, my + h * 1.0, w * 0.6, h * 0.45), pen.p("#E0706A"))
+        if wide > 0.45 and rnd < 0.5:  # upper teeth on wide sounds (E / grin)
+            pen.c.drawRect(skia.Rect(mx - w, my - h, mx + w, my - h * 0.05 + 0.06), pen.p("#FFFFFF"))
+        pen.c.drawPath(oval(mx, my + h * 0.72, w * 0.62, h * 0.38), pen.p("#E0706A"))
         pen.c.restore()
         pen.stroke(p)
         return
@@ -597,11 +611,57 @@ def draw_character(canvas, C, x, y_feet, height_px, pose=None):
     pen.shape(head, C["skin"], C["skin_sh"], shade_dx=0.14, shade_dy=0.05)
     draw_face(pen, C, 0, hy, rx, ry, E, pose)
     hair_front(pen, C, 0, hy, rx, ry, turn)
+    if C["hair_style"] == "cap_beard":  # mouth sits on top of the beard so speech stays visible
+        draw_mouth(pen, C, turn * 0.32 * rx * 1.15, hy + ry * 0.55, E, pose)
     draw_brows(pen, C, 0, hy, rx, ry, E, pose)
+    if "fedora" in C["extras"]:
+        draw_fedora(pen, 0, hy, rx, ry, turn)
     canvas.restore()
     canvas.restore()
     canvas.restore()
     return {"head": (x, y_feet + hy * u), "unit": u, "hands": pose.get("_hands", {})}
+
+
+def draw_fedora(pen, hx, hy, rx, ry, turn):
+    """Brown fedora sitting on the messy hair, slightly tilted; hair still pokes out at the sides."""
+    c = pen.c
+    c.save()
+    c.rotate(-6 + turn * 5, hx, hy - ry)
+    by = hy - ry * 0.92  # brim height
+    fx = turn * 0.12
+    brim = smooth_path([(hx - rx * 1.38 + fx, by + 0.02), (hx + fx, by - 0.16), (hx + rx * 1.38 + fx, by - 0.02),
+                        (hx + rx * 1.2 + fx, by + 0.16), (hx + fx, by + 0.2), (hx - rx * 1.2 + fx, by + 0.18)])
+    crown = skia.Path()
+    crown.moveTo(hx - rx * 0.8 + fx, by + 0.05)
+    crown.cubicTo(hx - rx * 0.86 + fx, by - 0.55, hx - rx * 0.6 + fx, by - 0.86, hx - 0.12 + fx, by - 0.78)
+    crown.quadTo(hx + fx, by - 0.68, hx + 0.12 + fx, by - 0.8)
+    crown.cubicTo(hx + rx * 0.62 + fx, by - 0.88, hx + rx * 0.86 + fx, by - 0.55, hx + rx * 0.8 + fx, by + 0.05)
+    crown.close()
+    pen.shape(crown, "#5A3E2A", "#46301F", shade_dx=0.18, shade_dy=0)
+    band = skia.Path()
+    band.moveTo(hx - rx * 0.82 + fx, by - 0.04)
+    band.quadTo(hx + fx, by - 0.12, hx + rx * 0.82 + fx, by - 0.04)
+    band.lineTo(hx + rx * 0.8 + fx, by - 0.24)
+    band.quadTo(hx + fx, by - 0.32, hx - rx * 0.82 + fx, by - 0.24)
+    band.close()
+    pen.shape(band, "#2A1E18")
+    pen.shape(brim, "#5A3E2A", "#46301F", shade_dx=0.0, shade_dy=0.06)
+    c.restore()
+
+
+def prop_magnifier(pen, x, y, ang, side):
+    """Magnifying glass held at the hand, lens pointing along the forearm."""
+    ex, ey = x + math.cos(ang) * 0.55, y + math.sin(ang) * 0.55
+    pen.capsule(x - math.cos(ang) * 0.1, y - math.sin(ang) * 0.1, ex, ey, 0.14, "#5A3A22")
+    lx, ly = x + math.cos(ang) * 0.9, y + math.sin(ang) * 0.9
+    lens = oval(lx, ly, 0.36, 0.36)
+    pen.c.drawPath(lens, pen.p("#CFE6F5", 0.55))
+    pen.c.drawPath(oval(lx - 0.1, ly - 0.12, 0.09, 0.05), pen.p("#FFFFFF", 0.8))
+    rim = skia.Paint(pen.line)
+    rim.setStrokeWidth(0.12)
+    rim.setColor(rgb("#C9A24A"))
+    pen.c.drawPath(lens, rim)
+    pen.stroke(oval(lx, ly, 0.42, 0.42))
 
 
 def _torso_details(pen, C, top, hip_y, sw, hw, th):
@@ -610,7 +670,35 @@ def _torso_details(pen, C, top, hip_y, sw, hw, th):
     q = skia.Path()
     q.moveTo(-0.22, top + 0.02)
     q.quadTo(0, top + 0.22, 0.22, top + 0.02)
-    if "butler" in ex:
+    if "trench" in ex:
+        coat_l = hip_y + 0.62  # coat hangs to the knees, drawn over the legs
+        skirt = smooth_path([(-hw / 2 - 0.02, hip_y - 0.2), (hw / 2 + 0.02, hip_y - 0.2), (hw / 2 + 0.16, coat_l),
+                             (0.02, coat_l + 0.04), (-hw / 2 - 0.16, coat_l)])
+        pen.shape(skirt, C["shirt"], C["shirt_sh"], shade_dx=0.12)
+        q2 = skia.Path()
+        q2.moveTo(0.02, hip_y - 0.1)
+        q2.lineTo(0.02, coat_l + 0.02)
+        pen.stroke(q2, pen.ow * 0.8)
+        tee = smooth_path([(-0.2, top + 0.01), (0.2, top + 0.01), (0.08, top + th * 0.62), (-0.08, top + th * 0.62)])
+        pen.shape(tee, C.get("tee", "#6B3A22"))
+        for s_ in (-1, 1):  # lapels + collar up
+            lap = skia.Path()
+            lap.moveTo(s_ * 0.2, top - 0.06)
+            lap.lineTo(s_ * 0.42, top + 0.05)
+            lap.lineTo(s_ * 0.3, top + th * 0.3)
+            lap.lineTo(s_ * 0.1, top + th * 0.64)
+            lap.close()
+            pen.shape(lap, "#A87A40")
+        belt = skia.Path()
+        belt.addRoundRect(skia.Rect(-hw / 2 - 0.04, hip_y - 0.3, hw / 2 + 0.04, hip_y - 0.14), 0.04, 0.04)
+        pen.shape(belt, "#8A6232")
+        bk = skia.Path()
+        bk.addRect(skia.Rect(-0.1, hip_y - 0.32, 0.1, hip_y - 0.12))
+        pen.stroke(bk, pen.ow * 0.8, "#E0C070")
+        for yy in (0.72, 0.86):
+            for s_ in (-1, 1):
+                pen.shape(oval(s_ * 0.2, top + th * yy - 0.05, 0.045, 0.045), "#4A3420", outline=False)
+    elif "butler" in ex:
         v = skia.Path()  # white shirt front + lapels
         v.moveTo(-0.28, top + 0.02)
         v.lineTo(0.28, top + 0.02)

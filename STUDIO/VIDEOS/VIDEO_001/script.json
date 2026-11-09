@@ -1,23 +1,21 @@
 {
   "title": "The Man Who Knew It Was Raining",
   "start_offset": 0.25,
-  "tail": 1.6,
+  "tail": 1.4,
   "cast": {
     "narrator": "bm_george", "harrison": "bm_lewis", "marcus": "am_adam",
     "oliver": "bm_fable", "daniel": "am_eric", "sophie": "bf_emma"
   },
   "lines": [
-    {"id": "L01", "who": "narrator", "voice": "bm_george", "speed": 1.08, "text": "One of these three people is lying. And the detective caught them with just one question!", "pause_after": 0.45},
+    {"id": "L01", "who": "narrator", "voice": "bm_george", "speed": 1.05, "text": "Three suspects. Three alibis. But one of them is impossible. Can you spot it before the detective does?", "pause_after": 0.4},
     {"id": "L02", "who": "harrison", "voice": "bm_lewis", "speed": 1.05, "text": "My diamond necklace is gone! The power went out at exactly nine o'clock!", "pause_after": 0.3},
-    {"id": "L03", "who": "marcus", "voice": "am_adam", "speed": 1.0, "text": "Nobody leaves this mansion until I find out what happened.", "pause_after": 0.35},
-    {"id": "L04", "who": "marcus", "voice": "am_adam", "speed": 1.05, "text": "So. Where were you when the lights went out?", "pause_after": 0.2},
-    {"id": "L05", "who": "oliver", "voice": "bm_fable", "speed": 1.08, "text": "In the kitchen, sir, preparing dinner. I never left.", "pause_after": 0.15},
-    {"id": "L06", "who": "daniel", "voice": "am_eric", "speed": 1.1, "text": "I was down in the basement checking the pipes. I even saw the lightning flash through the basement window!", "pause_after": 0.15},
-    {"id": "L07", "who": "sophie", "voice": "bf_emma", "speed": 1.05, "text": "I was upstairs folding laundry. I heard the thunder, but I didn't see anyone.", "pause_after": 0.7},
-    {"id": "L08", "who": "marcus", "voice": "am_adam", "speed": 0.95, "text": "Interesting. Daniel, you saw the lightning through the basement window?", "pause_after": 0.25},
-    {"id": "L09", "who": "daniel", "voice": "am_eric", "speed": 1.1, "text": "Yes! Clear as day. What's wrong with that?", "pause_after": 1.1},
-    {"id": "L10", "who": "marcus", "voice": "am_adam", "speed": 0.88, "text": "Then explain something to me.", "pause_after": 1.6},
-    {"id": "L11", "who": "narrator", "voice": "bm_george", "speed": 1.05, "text": "Oliver was in the kitchen. Sophie was upstairs. And Daniel was in the basement, watching the lightning.", "pause_after": 0.35},
-    {"id": "L12", "who": "narrator", "voice": "bm_george", "speed": 1.0, "text": "The detective only needed one look around. So, who is lying? And how did he know?", "pause_after": 0.2}
+    {"id": "L03", "who": "marcus", "voice": "am_adam", "speed": 1.02, "text": "Nobody leaves this mansion. Now, where was each of you at nine?", "pause_after": 0.25},
+    {"id": "L04", "who": "oliver", "voice": "bm_fable", "speed": 1.08, "text": "In the kitchen, sir, cooking dinner. Lightning lit up the kitchen window, then everything went dark.", "pause_after": 0.2},
+    {"id": "L05", "who": "daniel", "voice": "am_eric", "speed": 1.08, "text": "Down in the basement, fixing a leaky pipe. I saw the lightning flash through the basement window.", "pause_after": 0.2},
+    {"id": "L06", "who": "sophie", "voice": "bf_emma", "speed": 1.05, "text": "Upstairs in the laundry room. The thunder rattled the window so hard, I dropped the sheets.", "pause_after": 0.35},
+    {"id": "L07", "who": "marcus", "voice": "am_adam", "speed": 0.98, "text": "Hmm. Let me see these rooms for myself.", "pause_after": 7.6},
+    {"id": "L08", "who": "marcus", "voice": "am_adam", "speed": 0.95, "text": "Thank you. I know exactly who is lying.", "pause_after": 0.5},
+    {"id": "L09", "who": "narrator", "voice": "bm_george", "speed": 1.05, "text": "Kitchen. Basement. Laundry room. One of these stories does not fit the house.", "pause_after": 0.3},
+    {"id": "L10", "who": "narrator", "voice": "bm_george", "speed": 1.0, "text": "Look closely. Who is lying?", "pause_after": 0.2}
   ]
 }

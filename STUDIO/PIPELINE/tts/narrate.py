@@ -203,6 +203,10 @@ def main():
                 best = (wav, words, mm)
             if mm == 0:
                 break
+        toks = ln["text"].split()
+        if len(toks) == len(best[1]):  # captions use the script's spelling, whisper only gives timing
+            for wd, tk in zip(best[1], toks):
+                wd["word"] = tk
         dsp.write(lp, best[0])
         line_data[ln["id"]] = best
         if best[2] > 0:

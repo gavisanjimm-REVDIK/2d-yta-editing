@@ -12,13 +12,13 @@
     "mascot_orange": "#F07A1E"
   },
   "captions": {
-    "size": 88,
+    "size": 66,
     "y": 0.7,
     "uppercase": true,
     "color": "#FFFFFF",
     "upcoming_color": "#FFFFFF",
     "karaoke": false,
-    "outline": 9,
+    "outline": 10,
     "outline_color": "#000000",
     "speaker_color": "#FFC23A",
     "max_words": 4

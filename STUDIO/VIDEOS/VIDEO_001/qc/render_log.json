@@ -28,5 +28,78 @@
       "cu_daniel": 252,
       "cu_sophie": 124
     }
+  },
+  {
+    "time": "2026-11-09 22:29:34",
+    "frames": 1821,
+    "seconds": 199.0,
+    "jobs": {
+      "ext": 75,
+      "hook_lineup": 60,
+      "hook_marcus": 74,
+      "study_safe": 57,
+      "study": 94,
+      "foyer_wide": 112,
+      "cu_oliver": 168,
+      "cu_daniel": 142,
+      "cu_sophie": 148,
+      "cu_marcus": 77,
+      "room_laundry": 71,
+      "room_basement": 72,
+      "room_kitchen": 71,
+      "marcus_end": 84,
+      "panel_kitchen": 150,
+      "panel_basement": 150,
+      "panel_laundry": 150,
+      "final_lineup": 66
+    }
+  },
+  {
+    "time": "2026-11-09 22:31:34",
+    "frames": 516,
+    "seconds": 27.3,
+    "jobs": {
+      "panel_kitchen": 150,
+      "panel_basement": 150,
+      "panel_laundry": 150,
+      "final_lineup": 66
+    }
+  },
+  {
+    "time": "2026-11-09 22:36:42",
+    "frames": 1821,
+    "seconds": 160.2,
+    "jobs": {
+      "ext": 75,
+      "hook_lineup": 60,
+      "hook_marcus": 74,
+      "study_safe": 57,
+      "study": 94,
+      "foyer_wide": 112,
+      "cu_oliver": 168,
+      "cu_daniel": 142,
+      "cu_sophie": 148,
+      "cu_marcus": 77,
+      "room_laundry": 71,
+      "room_basement": 72,
+      "room_kitchen": 71,
+      "marcus_end": 84,
+      "panel_kitchen": 150,
+      "panel_basement": 150,
+      "panel_laundry": 150,
+      "final_lineup": 66
+    }
+  },
+  {
+    "time": "2026-11-09 22:39:54",
+    "frames": 530,
+    "seconds": 47.1,
+    "jobs": {
+      "hook_lineup": 60,
+      "foyer_wide": 112,
+      "cu_daniel": 142,
+      "panel_basement": 150,
+      "final_lineup": 66
+    }
   }
 ]

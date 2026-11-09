@@ -123,7 +123,7 @@ def needed_frames(edl, step=1):
         seg = seg_at(t, edl.SEGMENTS)
         if not seg:
             continue
-        subs = seg["split"] if seg.get("src") == "split" else [seg]
+        subs = [{"t0": seg["t0"], "t1": seg["t1"], **x} for x in seg["split"]] if seg.get("src") == "split" else [seg]
         for s in subs:
             if s.get("src") in (None, "black"):
                 continue
@@ -179,7 +179,7 @@ def draw_segment(canvas, seg, t, rect=(0, 0, W, H)):
         canvas.drawRect(skia.Rect.MakeXYWH(*rect), paint("#000000"))
         return
     if seg.get("src") == "split":
-        subs = seg["split"]
+        subs = [{"t0": seg["t0"], "t1": seg["t1"], **x} for x in seg["split"]]  # sub-shots share the segment time
         n = len(subs)
         x, y, w, h = rect
         gap = seg.get("gap", 8)
@@ -459,7 +459,7 @@ def draw_captions(canvas, t):
     canvas.translate(W / 2, y)
     canvas.scale(scale, scale)
     if cap.get("speakers") and ph.get("who") and ph["who"] != "narrator":
-        text(canvas, ph["who"].upper(), 0, -size * 1.05, size * 0.55, st["speaker_color"], face=face, outline=6, clamp_safe=False,
+        text(canvas, ph["who"].upper(), 0, -size * 1.05, size * 0.5, st["speaker_color"], face=face, outline=5, clamp_safe=False,
              max_w=W - 2 * SAFE)
     x = -total / 2
     for w, tok, wd in zip(ph["words"], toks, widths):
