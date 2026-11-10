@@ -115,9 +115,9 @@ def dim_layer(c, amount):
 
 # suspects: everyone gets one "guilty-looking" habit (red herrings, nobody stands out)
 SUS = {
-    "gaston": dict(arm_r=(0.55, -0.15), prop_r=prop_cleaver, arm_l="hips", expr="sad", tears=0.6),
+    "gaston": dict(arm_r="raise_tool", prop_r=prop_cleaver, arm_l="hips", expr="sad", tears=0.6),
     "prim": dict(arm_l="front_high", prop_l=prop_papers, arm_r="relaxed", expr="smug", turn=0.15),
-    "cedric": dict(arm_l="hips", arm_r=(0.35, 0.75), prop_r=prop_keys, expr="confident"),
+    "cedric": dict(arm_l="hips", arm_r=(0.22, 1.2), prop_r=prop_keys, expr="confident"),
 }
 
 
@@ -192,7 +192,7 @@ def shot_arrive(c, t):
     pose = {"expr": expr_track(t, [(t0, "surprised"), (t0 + 0.9, "neutral"), (B["nobody"] - 0.2, "determined")]),
             "vis": vis(t, "marcus"), "blink": blink(t, 4), "snow": snow,
             "walk": (t * 1.8) % 1 if t < t0 + 0.9 else None,
-            "arm_l": "hips" if t > t0 + 2.0 else (0.2, -0.4 + 0.15 * math.sin(t * 18)),  # brushing snow off
+            "arm_l": "hips" if t > t0 + 2.0 else (-0.85, 0.05 + 0.1 * math.sin(t * 18), "down"),  # brushes snow off
             "arm_r": key(t, [(t0, (0.18, 1.28)), (B["nobody"], (0.18, 1.28)), (B["nobody"] + 0.3, (1.1, 0.05), "back")]),
             "hand_r": "point" if t > B["nobody"] else "open",
             "turn": key(t, [(t0, 0.4), (B["nobody"], 0.0)]), "tilt": idle_tilt(t, 1)}
@@ -219,7 +219,7 @@ def shot_cu_gaston(c, t):
     cr = B["crying"]
     pose = sus_pose(t, "gaston", 21, expr=expr_track(t, [(B["gaston"], "worried"), (cr - 0.2, "sad")]),
                     tears=key(t, [(B["gaston"], 0.5), (cr - 0.2, 0.5), (cr, 1.0)]), turn=-0.15,
-                    arm_r=(0.55, -0.15 + 0.12 * math.sin(t * 7)))  # waves the cleaver while talking
+                    arm_r=(0.85, -0.5 + 0.1 * math.sin(t * 7), "down"))  # waves the cleaver beside his head
     actor(c, "gaston", 540, MCU_Y, MCU_H, pose, shadow=False, t=t)
     vignette(c, 0.45)
 
@@ -240,7 +240,7 @@ def shot_cu_cedric(c, t):
     yr = B["yours"]
     pose = sus_pose(t, "cedric", 23, expr=expr_track(t, [(B["cedric"], "surprised"), (B["cedric"] + 0.8, "confident"),
                                                           (yr - 0.3, "smile")]),
-                    arm_r=key(t, [(B["cedric"], (0.35, 0.75)), (yr - 0.4, (0.35, 0.75)), (yr - 0.1, (1.1, 0.1), "back")]),
+                    arm_r=key(t, [(B["cedric"], (0.22, 1.2)), (yr - 0.4, (0.22, 1.2)), (yr - 0.1, (1.1, 0.1), "back")]),
                     hand_r="point" if t > yr - 0.15 else "open", prop_r=None if t > yr - 0.2 else prop_keys,
                     look=(0.7, 0.0) if t > yr - 0.3 else (0.0, 0.0))
     actor(c, "cedric", 540, MCU_Y, MCU_H, pose, shadow=False, t=t)
@@ -250,7 +250,7 @@ def shot_cu_cedric(c, t):
 def shot_cu_marcus(c, t):
     cu_bg(c, t, "marcus")
     pose = {"expr": "suspicious", "vis": vis(t, "marcus"), "blink": blink(t, 4), "turn": 0.25, "look": (0.6, -0.1),
-            "tilt": idle_tilt(t, 1), "arm_r": "chin", "arm_l": "front_high", "prop_l": prop_notebook}
+            "tilt": idle_tilt(t, 1), "arm_r": "chin", "hand_r": "fist", "arm_l": "front_high", "prop_l": prop_notebook}
     actor(c, DET, 540, MCU_Y, MCU_H, pose, shadow=False, t=t)
     vignette(c, 0.45)
 
@@ -258,7 +258,7 @@ def shot_cu_marcus(c, t):
 # ================================================================ 6. the search: kitchen, library, hall (equal)
 def inspect_pose(t, t0, flip=False):
     u = clamp((t - t0) / EDL.ROOM_LEN)
-    return {"expr": "suspicious" if u < 0.6 else "determined", "blink": blink(t, 4), "arm_r": "front_high",
+    return {"expr": "suspicious" if u < 0.6 else "determined", "blink": blink(t, 4), "arm_r": (0.8, 0.2),
             "prop_r": prop_magnifier, "arm_l": "hips", "turn": key(t, [(t0, 0.6), (t0 + 0.6, 0.2)]),
             "look": (0.6, 0.5), "tilt": 6, "lean": 4, "flip": flip}
 
@@ -322,8 +322,7 @@ def shot_marcus_end(c, t):
     hall_live(c, t)
     pose = {"expr": expr_track(t, [(B["marcus_end"], "neutral"), (cl, "smug")]), "vis": vis(t, "marcus"),
             "blink": blink(t, 4), "arm_l": "hips",
-            "arm_r": key(t, [(B["marcus_end"], (0.18, 1.28)), (cl - 0.3, (0.18, 1.28)), (cl, (-0.2, -1.25), "back"),
-                             (cl + 0.9, (-0.2, -1.25)), (cl + 1.2, (0.18, 1.28))]),
+            "arm_r": (0.38, -1.18, "down") if cl - 0.05 < t < cl + 1.0 else "down",  # salute to the hat brim
             "tilt": -5 * clamp((t - cl) / 0.3)}
     actor(c, DET, 470, 1840, 1250, pose, t=t)
     c.restore()

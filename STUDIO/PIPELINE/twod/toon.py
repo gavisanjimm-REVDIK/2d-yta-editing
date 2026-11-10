@@ -122,7 +122,12 @@ ARM = {
     "point": (1.25, -0.1, "out"),
     "point_up": (0.9, -0.85, "out"),
     "up": (0.55, -1.05, "out"),
-    "chin": (-0.55, -0.2, "down"),
+    "chin": (-0.5, -0.22, "down"),        # fist under the chin (drawn in front of the face)
+    "salute": (0.38, -1.18, "down"),       # two fingers to the hat brim / temple
+    "magnify": (0.8, 0.05, "out"),        # magnifying glass held out to the side
+    "magnify_up": (0.7, -0.45, "down"),    # ...raised toward the eye line
+    "brush": (-0.85, 0.05, "down"),       # brushing snow off the other shoulder
+    "raise_tool": (0.85, -0.5, "down"),   # cleaver/tool raised beside the head
     "neck": (-0.45, -0.05, "down"),
     "front": (-0.3, 0.75, "out"),
     "front_high": (-0.25, 0.45, "out"),
@@ -630,6 +635,9 @@ def draw_character(canvas, C, x, y_feet, height_px, pose=None):
     for side, key_ in ((-1, "arm_l"), (1, "arm_r")):
         a = pose.get(key_, "down")
         hx_, hy_, bend = ARM[a] if isinstance(a, str) else (a + ("out",))[:3]
+        if a == "hips":  # knuckles on the side of THIS body (belly / wide hips aware)
+            hx_ = (hw / 2 + bel * 0.9 + 0.1) - (sw / 2 - 0.1)
+            hy_ = th * 0.62
         sx_ = side * (sw / 2 - 0.1)
         sy_ = top + 0.16
         hand = (sx_ + side * hx_, sy_ + hy_)
@@ -641,8 +649,10 @@ def draw_character(canvas, C, x, y_feet, height_px, pose=None):
             _draw_arm(pen, C, pose, *arm)
     pen.shape(torso, C["shirt"], C["shirt_sh"], shade_dx=0.16, shade_dy=0.0)
     _torso_details(pen, C, top, hip_y, sw, hw, th)
+    def raised(arm):  # hand above the shoulder line -> it belongs in front of the face/hat
+        return arm[5] != "behind" and arm[4][1] < arm[2][1] - 0.05
     for arm in arms:
-        if arm[5] != "behind":
+        if arm[5] != "behind" and not raised(arm):
             _draw_arm(pen, C, pose, *arm)
 
     if pose.get("snow", 0) > 0.02:
@@ -681,6 +691,9 @@ def draw_character(canvas, C, x, y_feet, height_px, pose=None):
     if "fedora" in C["extras"]:
         draw_fedora(pen, 0, hy, rx, ry, turn, pose.get("snow", 0.0))
     canvas.restore()
+    for arm in arms:
+        if raised(arm):
+            _draw_arm(pen, C, pose, *arm)
     canvas.restore()
     canvas.restore()
     return {"head": (x, y_feet + hy * u), "unit": u, "hands": pose.get("_hands", {})}

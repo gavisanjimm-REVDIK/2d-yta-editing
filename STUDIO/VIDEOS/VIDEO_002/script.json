@@ -16,7 +16,8 @@
       "voice": "bm_george",
       "speed": 1.08,
       "text": "Lord Pumpernickel was found face down in his pudding. Poisoned!",
-      "pause_after": 0.3
+      "pause_after": 0.3,
+      "eleven_prompt": "[dramatically] Lord Pumpernickel was found... face down in his pudding. [pause] Poisoned!"
     },
     {
       "id": "L02",
@@ -24,7 +25,8 @@
       "voice": "bm_george",
       "speed": 1.08,
       "text": "Three suspects. One killer. And one tiny clue that almost everyone misses.",
-      "pause_after": 0.6
+      "pause_after": 0.6,
+      "eleven_prompt": "Three suspects. One killer. [mischievously] And one tiny clue that almost everyone misses."
     },
     {
       "id": "L03",
@@ -32,7 +34,8 @@
       "voice": "am_adam",
       "speed": 1.05,
       "text": "Phew, what a blizzard! Right. Nobody leaves until I find the poisoner.",
-      "pause_after": 0.25
+      "pause_after": 0.25,
+      "eleven_prompt": "[exhales] Phew... what a blizzard! [pause] [slowly] Right. Nobody leaves... until I find the poisoner."
     },
     {
       "id": "L04",
@@ -40,7 +43,8 @@
       "voice": "am_onyx",
       "speed": 1.05,
       "text": "I made the pudding at six. Then I chopped onions all night. That's why I'm crying!",
-      "pause_after": 0.2
+      "pause_after": 0.2,
+      "eleven_prompt": "[strong French accent] [crying] I made the pudding at six! Then I chopped onions all night. [sobbing] That's why I'm crying!"
     },
     {
       "id": "L05",
@@ -48,7 +52,8 @@
       "voice": "bf_alice",
       "speed": 1.08,
       "text": "I was in the library, typing his new will. He left everything to his cat.",
-      "pause_after": 0.2
+      "pause_after": 0.2,
+      "eleven_prompt": "[haughtily] I was in the library, typing his new will. [pause] He left everything... to his cat."
     },
     {
       "id": "L06",
@@ -56,7 +61,8 @@
       "voice": "am_liam",
       "speed": 1.08,
       "text": "Don't look at me! I only just got here. My car pulled in right before yours, detective.",
-      "pause_after": 0.6
+      "pause_after": 0.6,
+      "eleven_prompt": "[smugly] Don't look at me! I only just got here. My car pulled in right before yours, detective."
     },
     {
       "id": "L07",
@@ -64,7 +70,8 @@
       "voice": "am_adam",
       "speed": 1.0,
       "text": "Interesting. Let me have a look around.",
-      "pause_after": 8.7
+      "pause_after": 8.7,
+      "eleven_prompt": "[curious] Interesting. [pause] Let me have a look around."
     },
     {
       "id": "L08",
@@ -72,7 +79,8 @@
       "voice": "am_adam",
       "speed": 0.98,
       "text": "Case closed. The killer already told me everything.",
-      "pause_after": 0.4
+      "pause_after": 0.4,
+      "eleven_prompt": "[confidently] Case closed. [pause] The killer already told me everything."
     },
     {
       "id": "L09",
@@ -80,7 +88,8 @@
       "voice": "bm_george",
       "speed": 1.08,
       "text": "Gaston was in the kitchen. Miss Prim was in the library. And Cedric had only just arrived.",
-      "pause_after": 0.3
+      "pause_after": 0.3,
+      "eleven_prompt": "Gaston was in the kitchen. Miss Prim was in the library. And Cedric... had only just arrived."
     },
     {
       "id": "L10",
@@ -88,7 +97,32 @@
       "voice": "bm_george",
       "speed": 1.02,
       "text": "And no, it wasn't the cat. So, who is the killer?",
-      "pause_after": 0.2
+      "pause_after": 0.2,
+      "eleven_prompt": "[dryly] And no, it wasn't the cat. [pause] So... who is the killer?"
     }
-  ]
+  ],
+  "voice_engine": "elevenlabs eleven_v4 (takes in audio/eleven/<id>_<k>.mp3, narrate --backend files)",
+  "eleven_flow": "Yzdh33lF0oZlp5W5ACLb",
+  "eleven_cast": {
+    "narrator": [
+      "qkG6pQFWpZTnYnoQZGFs",
+      "Timothy Pemberton Smythe - British Posh"
+    ],
+    "marcus": [
+      "E2V3GaVUzlP02pNJb74T",
+      "Richard Swanson (inquisitive, friendly, American)"
+    ],
+    "gaston": [
+      "CKPSX8kOS9MJCGVaFNok",
+      "Henri - French-American"
+    ],
+    "prim": [
+      "IbXTsH7MlHi5GQco8zZH",
+      "Philippa - Clear British"
+    ],
+    "cedric": [
+      "RQirksf9cwYYdznttqcq",
+      "Rowan - young British (RP)"
+    ]
+  }
 }

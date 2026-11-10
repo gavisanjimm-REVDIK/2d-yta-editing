@@ -99,6 +99,29 @@ class Kokoro:
         return resample_poly(np.asarray(x, dtype=np.float64), SR, sr)
 
 
+class Files:
+    """Pre-made takes (e.g. ElevenLabs, generated outside this script): VIDEOS/<V>/audio/eleven/<id>_<k>.mp3|wav.
+    Each take is Whisper-checked like any other; the best take wins."""
+    name = "files"
+
+    def __init__(self, vdir):
+        self.dir = vdir / "audio" / "eleven"
+        self.take = 0
+
+    def takes(self, line):
+        return sorted(list(self.dir.glob(f"{line['id']}_*.mp3")) + list(self.dir.glob(f"{line['id']}_*.wav")))
+
+    def synth(self, line, ref):
+        files = self.takes(line)
+        if not files:
+            raise FileNotFoundError(f"no take for {line['id']} in {self.dir}")
+        p = files[self.take % len(files)]
+        import subprocess
+        raw = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", str(p), "-f", "f32le", "-ac", "1", "-ar", str(SR), "-"],
+                             capture_output=True, check=True).stdout
+        return np.frombuffer(raw, np.float32).astype(np.float64)
+
+
 class Chatterbox:
     name = "chatterbox"
 
@@ -153,7 +176,7 @@ def trim_silence(x, thresh_db=-45, pad=0.04):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("video")
-    ap.add_argument("--backend", default="auto", choices=["auto", "kokoro", "chatterbox", "placeholder"])
+    ap.add_argument("--backend", default="auto", choices=["auto", "files", "kokoro", "chatterbox", "placeholder"])
     ap.add_argument("--takes", type=int, default=3)
     ap.add_argument("--only", nargs="*", help="re-do only these line ids")
     a = ap.parse_args()
@@ -164,7 +187,9 @@ def main():
     (adir / "lines").mkdir(parents=True, exist_ok=True)
 
     be = None
-    if a.backend in ("auto", "kokoro") and (KOKORO_DIR / "kokoro-v1.0.onnx").exists():
+    if a.backend == "files":
+        be = Files(vdir)
+    if be is None and a.backend in ("auto", "kokoro") and (KOKORO_DIR / "kokoro-v1.0.onnx").exists():
         be = Kokoro()
     if be is None and a.backend in ("auto", "chatterbox"):
         try:
@@ -189,7 +214,8 @@ def main():
         ref = ln.get("voice_ref") or script.get("voice_ref")
         ref = str(STUDIO / ref) if ref else None
         best = None
-        for k in range(a.takes if can_whisper else 1):
+        n_takes = len(be.takes(ln)) if be.name == "files" else a.takes
+        for k in range(n_takes if can_whisper else 1):
             if hasattr(be, "take"):
                 be.take = k
             wav = trim_silence(be.synth(ln, ref)) if can_whisper else be.synth(ln, ref)
