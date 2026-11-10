@@ -8,14 +8,14 @@
   "color_space": "bt709",
   "acodec": "aac",
   "sample_rate": 48000,
-  "duration": 56.9,
+  "duration": 58.433,
   "lufs": -14.1,
-  "true_peak": -1.5,
+  "true_peak": -1.4,
   "lra": 2.4,
   "black": [],
   "frozen": [
     [
-      53.8333,
+      55.3333,
       null
     ]
   ],

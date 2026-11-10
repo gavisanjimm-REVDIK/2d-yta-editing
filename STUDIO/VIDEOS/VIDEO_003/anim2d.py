@@ -307,17 +307,18 @@ def shot_lunch(c, t):
     chamber_live(c, t)
     dx, dy = S.DOORS[2]
     hatch = clamp((t - rr + 0.35) / 0.2)
-    S.lion_eyes(c, dx + 145, dy + 500, 1.3, t, hatch)
-    # mummy pushes the meat cart up to door two (pose: both hands forward on the cart)
-    mx = key(t, [(t0, 230.0), (rr - 0.5, 330.0, "out")])
-    S.shape(c, S.rect(mx + 70, 1440, 220, 110, 12), "#7A5428")
-    for k, col in enumerate(("#B5352E", "#C9503A", "#B5352E")):
-        S.shape(c, S.oval(mx + 120 + k * 55, 1430, 32, 22), col, ow=3)
-    actor(c, "mummy", mx, 1700, 900, mummy_pose(t, expr="happy" if t < rr else "surprised", arm_r=(0.9, 0.55, "down"),
-                                                arm_l=(0.3, 0.75, "down"), turn=0.5,
-                                                walk=(t * 1.6) % 1 if t < rr - 0.5 else None), t=t)
+    S.lion_eyes(c, dx + 125, dy + 500, 1.6, t, hatch)
+    # mummy strolls to door two and knocks: "my kitties are mummies too"
+    mx = key(t, [(t0, 200.0), (t0 + 1.6, 330.0, "out")])
+    knock = (rr - 1.2 < t < rr - 0.4) and (int(t * 6) % 2 == 0)
+    actor(c, "mummy", mx, 1700, 900, mummy_pose(t, expr="happy" if t < rr else "surprised",
+                                                arm_r=arm_blend("mummy", t, [(t0, "relaxed"),
+                                                                             (rr - 1.2, (1.0 if knock else 0.9, -0.2, "down")),
+                                                                             (rr - 0.2, "hips")], 0.25),
+                                                hand_r="fist", arm_l="hips", turn=0.5,
+                                                walk=(t * 1.6) % 1 if t < t0 + 1.6 else None), t=t)
     jump = clamp((t - rr) / 0.12) * (1 - clamp((t - rr - 0.5) / 0.3))
-    actor(c, DET, 820, 1760 - 140 * jump, 860,
+    actor(c, DET, 905, 1780 - 140 * jump, 780,
           marcus_pose(t, expr="suspicious" if t < rr else "panic", turn=-0.5,
                       arm_l=arm_blend(DET, t, [(t0, "hips"), (rr + 0.12, "up")], 0.12),
                       arm_r=arm_blend(DET, t, [(t0, "relaxed"), (rr + 0.12, "up")], 0.12),

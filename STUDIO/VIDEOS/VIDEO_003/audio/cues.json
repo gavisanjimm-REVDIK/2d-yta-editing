@@ -1,5 +1,5 @@
 {
-  "duration": 56.91,
+  "duration": 58.43,
   "music_db": 0.0,
   "duck_db": -8.0,
   "bus_db": {
@@ -12,7 +12,7 @@
       "t": 0.0,
       "name": "amb_tomb",
       "bus": "amb",
-      "dur": 56.91,
+      "dur": 58.43,
       "loop": true,
       "gain_db": 0,
       "fade_in": 0.05,
@@ -134,55 +134,62 @@
       "note": "chisel taps"
     },
     {
-      "t": 40.644,
-      "name": "cart_roll",
-      "gain_db": -6
+      "t": 44.439,
+      "name": "impact_soft",
+      "gain_db": -8,
+      "note": "knock"
     },
     {
-      "t": 43.575,
+      "t": 44.769,
+      "name": "impact_soft",
+      "gain_db": -8,
+      "note": "knock"
+    },
+    {
+      "t": 45.289,
       "name": "door_open",
       "gain_db": -14,
       "note": "hatch"
     },
     {
-      "t": 43.875,
+      "t": 45.589,
       "name": "lion_roar",
       "gain_db": 2,
       "note": "LUNCH TIME"
     },
     {
-      "t": 45.275,
+      "t": 46.788999999999994,
       "name": "pudding_plop",
       "gain_db": -12,
       "note": "gulp"
     },
     {
-      "t": 47.86,
+      "t": 49.374,
       "name": "ui_pop",
       "gain_db": -12
     },
     {
-      "t": 48.4,
+      "t": 49.914,
       "name": "ui_pop",
       "gain_db": -12
     },
     {
-      "t": 49.06,
+      "t": 50.574,
       "name": "ui_pop",
       "gain_db": -12
     },
     {
-      "t": 51.43,
+      "t": 52.944,
       "name": "riser_tension",
       "gain_db": -14
     },
     {
-      "t": 52.894999999999996,
+      "t": 54.40899999999999,
       "name": "sting_mystery",
       "gain_db": 0
     },
     {
-      "t": 53.515,
+      "t": 55.028999999999996,
       "name": "ui_pop",
       "gain_db": -8
     }

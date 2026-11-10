@@ -1,4 +1,4 @@
-# VIDEO_003 – The Three Doors of Doom (2D, 56.9 s)
+# VIDEO_003 – The Three Doors of Doom (2D, 58.4 s) – v3
 
 Three-door riddle with a twist, in the same storybook 2D style. Detective Marcus + Mr. Whiskers (the cat from
 VIDEO_002, now a cat burglar) + Mumford the mummy gatekeeper.
@@ -12,13 +12,15 @@ doors, one way out:
 3. **A flood that arrives in 3,000 years**
 
 Marcus picks the classic answer: "Those lions starved ages ago, door two!" The mummy: "I carved these signs on my
-very first day… three thousand years ago." Then "Lunch time, kitties!" A hatch opens, glowing eyes, ROAR. "Okay…
+very first day… three thousand years ago." Then: "Oh, and my kitties are mummies too. They can't starve. They just
+get hungrier!" He knocks on door two, the hatch opens, glowing bandaged eyes, ROAR. "Okay…
 maybe not door two." Recap of the three signs, then WHICH DOOR? / COMMENT 1, 2 OR 3!
 
 ## Creator-only answer (never in the video)
 **Door 1.** The signs are 3,000 years old:
 - **Door 1:** the fire burned out 2,000 years ago. Quiet clue: a cobweb over the door handle.
-- **Door 2:** the lions are fed every day by the mummy, and roar. This kills the classic answer.
+- **Door 2:** mummy lions. They can't starve, so 3,000 years without food only made them hungrier. The sign stays
+  true: nobody feeds them. This kills the classic answer.
 - **Door 3:** the flood is due right now. Quiet clues: water seeping under the door and drip sounds.
 
 ## Pipeline numbers
@@ -29,6 +31,12 @@ maybe not door two." Recap of the three signs, then WHICH DOOR? / COMMENT 1, 2 O
 | render | 1808 frames, 157 s |
 | mix | voice −16, music −26, SFX −21.9, tomb ambience −37.3 LUFS. Master −14.1 LUFS, −1.5 dBTP |
 | QC | all checks pass except the freeze check: 53.8 s onward is the intended end freeze-frame |
+
+## v3: plot-hole fix (from feedback)
+The v2 sign said the lions had not eaten, yet the mummy fed them ("Lunch time, kitties!" plus a meat cart), so the
+sign contradicted the story. Now the lions are mummies too: they can't starve, they just get hungrier. The meat cart
+is gone (clay jars in its place). The mummy knocks on door 2 instead of feeding the lions, and the lion eyes in the
+hatch are wrapped in bandages. Line L10 was re-recorded; duration 58.4 s.
 
 ## v2 changes (from feedback)
 | request | fix |

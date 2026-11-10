@@ -78,5 +78,26 @@
       "panel_2": 110,
       "panel_3": 110
     }
+  },
+  {
+    "time": "2026-11-10 20:09:55",
+    "frames": 1854,
+    "seconds": 139.9,
+    "jobs": {
+      "corridor": 235,
+      "chamber_wide": 159,
+      "cu_mummy": 129,
+      "door1": 117,
+      "door2": 115,
+      "door3": 130,
+      "cu_marcus": 132,
+      "cu_mummy2": 200,
+      "lunch": 178,
+      "cu_gulp": 84,
+      "panel_1": 110,
+      "panel_2": 110,
+      "panel_3": 110,
+      "final": 45
+    }
   }
 ]

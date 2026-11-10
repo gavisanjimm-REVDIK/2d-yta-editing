@@ -2,7 +2,8 @@
 
 Creator-only answer (never shown): DOOR 1. The signs were carved 3,000 years ago (the mummy says so):
   door 1 "fire that burns for 1,000 years"  -> burned out 2,000 years ago (cobweb on the handle, no glow)  SAFE
-  door 2 "lions that have not eaten in 3 years" -> the classic answer, but the mummy feeds them daily (ROAR)
+  door 2 "lions that have not eaten in 3 years" -> the classic answer, but they are MUMMY lions: they can't starve,
+                                                  they only get hungrier (ROAR) - the sign stays true
   door 3 "a flood that arrives in 3,000 years"  -> it's due right now (water seeping under the door)
 """
 import json
@@ -96,7 +97,7 @@ OVERLAYS = [
 ]
 CAPTIONS = {"words": WORDS, "speakers": True,
             "emphasis": ["thief", "pyramid", "slammed", "shut", "visitor", "fire", "lions", "flood", "thousand",
-                         "three", "two", "carved", "first", "lunch", "safe", "which"],
+                         "three", "two", "carved", "first", "mummies", "hungrier", "safe", "which"],
             "pos": [(B["cu_mummy"], B["recap"], 0.86), (B["recap"], B["final"], 0.955), (B["final"], B["freeze"], 0.86)],
             "max_words": 4}
 AUDIO = "audio/mix_master.wav"

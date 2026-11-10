@@ -1,6 +1,6 @@
 {
   "backend": "kokoro",
-  "duration": 54.035,
+  "duration": 55.549,
   "lines": [
     {
       "id": "L01",
@@ -1277,114 +1277,222 @@
     {
       "id": "L10",
       "who": "mummy",
-      "text": "Now, excuse me. Lunch time, kitties!",
+      "text": "Oh, and my kitties are mummies too. They can't starve. They just get hungrier!",
       "start": 40.644,
-      "end": 43.625,
+      "end": 45.339,
       "words": [
         {
-          "word": "Now",
+          "word": "Oh,",
           "start": 40.644,
-          "end": 40.944,
+          "end": 40.904,
           "line": "L10",
           "who": "mummy"
         },
         {
-          "word": "excuse",
-          "start": 40.944,
-          "end": 41.404,
+          "word": "and",
+          "start": 40.904,
+          "end": 41.084,
           "line": "L10",
           "who": "mummy"
         },
         {
-          "word": "me,",
-          "start": 41.404,
-          "end": 41.744,
+          "word": "my",
+          "start": 41.084,
+          "end": 41.244,
           "line": "L10",
           "who": "mummy"
         },
         {
-          "word": "lunchtime",
-          "start": 42.264,
-          "end": 42.744,
+          "word": "kitties",
+          "start": 41.244,
+          "end": 41.604,
           "line": "L10",
           "who": "mummy"
         },
         {
-          "word": "kitties.",
-          "start": 42.744,
-          "end": 43.204,
+          "word": "are",
+          "start": 41.604,
+          "end": 41.764,
+          "line": "L10",
+          "who": "mummy"
+        },
+        {
+          "word": "mummies",
+          "start": 41.764,
+          "end": 42.024,
+          "line": "L10",
+          "who": "mummy"
+        },
+        {
+          "word": "too.",
+          "start": 42.024,
+          "end": 42.384,
+          "line": "L10",
+          "who": "mummy"
+        },
+        {
+          "word": "They",
+          "start": 42.724,
+          "end": 42.824,
+          "line": "L10",
+          "who": "mummy"
+        },
+        {
+          "word": "can't",
+          "start": 42.824,
+          "end": 43.104,
+          "line": "L10",
+          "who": "mummy"
+        },
+        {
+          "word": "starve.",
+          "start": 43.104,
+          "end": 43.584,
+          "line": "L10",
+          "who": "mummy"
+        },
+        {
+          "word": "They",
+          "start": 44.044,
+          "end": 44.144,
+          "line": "L10",
+          "who": "mummy"
+        },
+        {
+          "word": "just",
+          "start": 44.144,
+          "end": 44.324,
+          "line": "L10",
+          "who": "mummy"
+        },
+        {
+          "word": "get",
+          "start": 44.324,
+          "end": 44.524,
+          "line": "L10",
+          "who": "mummy"
+        },
+        {
+          "word": "hungrier!",
+          "start": 44.524,
+          "end": 44.984,
           "line": "L10",
           "who": "mummy"
         }
       ],
       "words_local": [
         {
-          "word": "Now",
+          "word": "Oh,",
           "start": 0.0,
-          "end": 0.3
+          "end": 0.26
         },
         {
-          "word": "excuse",
-          "start": 0.3,
-          "end": 0.76
+          "word": "and",
+          "start": 0.26,
+          "end": 0.44
         },
         {
-          "word": "me,",
-          "start": 0.76,
-          "end": 1.1
+          "word": "my",
+          "start": 0.44,
+          "end": 0.6
         },
         {
-          "word": "lunchtime",
-          "start": 1.62,
-          "end": 2.1
+          "word": "kitties",
+          "start": 0.6,
+          "end": 0.96
         },
         {
-          "word": "kitties.",
-          "start": 2.1,
-          "end": 2.56
+          "word": "are",
+          "start": 0.96,
+          "end": 1.12
+        },
+        {
+          "word": "mummies",
+          "start": 1.12,
+          "end": 1.38
+        },
+        {
+          "word": "too.",
+          "start": 1.38,
+          "end": 1.74
+        },
+        {
+          "word": "They",
+          "start": 2.08,
+          "end": 2.18
+        },
+        {
+          "word": "can't",
+          "start": 2.18,
+          "end": 2.46
+        },
+        {
+          "word": "starve.",
+          "start": 2.46,
+          "end": 2.94
+        },
+        {
+          "word": "They",
+          "start": 3.4,
+          "end": 3.5
+        },
+        {
+          "word": "just",
+          "start": 3.5,
+          "end": 3.68
+        },
+        {
+          "word": "get",
+          "start": 3.68,
+          "end": 3.88
+        },
+        {
+          "word": "hungrier!",
+          "start": 3.88,
+          "end": 4.34
         }
       ],
-      "mismatch": 2
+      "mismatch": 0
     },
     {
       "id": "L11",
       "who": "marcus",
       "text": "Okay. Maybe not door two.",
-      "start": 45.225,
-      "end": 47.36,
+      "start": 46.739,
+      "end": 48.874,
       "words": [
         {
           "word": "Okay.",
-          "start": 45.225,
-          "end": 45.725,
+          "start": 46.739,
+          "end": 47.239,
           "line": "L11",
           "who": "marcus"
         },
         {
           "word": "Maybe",
-          "start": 45.885,
-          "end": 46.025,
+          "start": 47.399,
+          "end": 47.539,
           "line": "L11",
           "who": "marcus"
         },
         {
           "word": "not",
-          "start": 46.025,
-          "end": 46.245,
+          "start": 47.539,
+          "end": 47.759,
           "line": "L11",
           "who": "marcus"
         },
         {
           "word": "door",
-          "start": 46.245,
-          "end": 46.525,
+          "start": 47.759,
+          "end": 48.039,
           "line": "L11",
           "who": "marcus"
         },
         {
           "word": "two.",
-          "start": 46.525,
-          "end": 46.865,
+          "start": 48.039,
+          "end": 48.379,
           "line": "L11",
           "who": "marcus"
         }
@@ -1422,104 +1530,104 @@
       "id": "L12",
       "who": "narrator",
       "text": "Fire, lions, or flood. Only one door is safe. Which door would you choose?",
-      "start": 47.86,
-      "end": 52.835,
+      "start": 49.374,
+      "end": 54.349,
       "words": [
         {
           "word": "Fire,",
-          "start": 47.86,
-          "end": 48.24,
+          "start": 49.374,
+          "end": 49.754,
           "line": "L12",
           "who": "narrator"
         },
         {
           "word": "lions,",
-          "start": 48.4,
-          "end": 48.72,
+          "start": 49.914,
+          "end": 50.234,
           "line": "L12",
           "who": "narrator"
         },
         {
           "word": "or",
-          "start": 49.04,
-          "end": 49.06,
+          "start": 50.554,
+          "end": 50.574,
           "line": "L12",
           "who": "narrator"
         },
         {
           "word": "flood.",
-          "start": 49.06,
-          "end": 49.42,
+          "start": 50.574,
+          "end": 50.934,
           "line": "L12",
           "who": "narrator"
         },
         {
           "word": "Only",
-          "start": 49.86,
-          "end": 50.06,
+          "start": 51.374,
+          "end": 51.574,
           "line": "L12",
           "who": "narrator"
         },
         {
           "word": "one",
-          "start": 50.06,
-          "end": 50.32,
+          "start": 51.574,
+          "end": 51.834,
           "line": "L12",
           "who": "narrator"
         },
         {
           "word": "door",
-          "start": 50.32,
-          "end": 50.52,
+          "start": 51.834,
+          "end": 52.034,
           "line": "L12",
           "who": "narrator"
         },
         {
           "word": "is",
-          "start": 50.52,
-          "end": 50.7,
+          "start": 52.034,
+          "end": 52.214,
           "line": "L12",
           "who": "narrator"
         },
         {
           "word": "safe.",
-          "start": 50.7,
-          "end": 51.0,
+          "start": 52.214,
+          "end": 52.514,
           "line": "L12",
           "who": "narrator"
         },
         {
           "word": "Which",
-          "start": 51.48,
-          "end": 51.58,
+          "start": 52.994,
+          "end": 53.094,
           "line": "L12",
           "who": "narrator"
         },
         {
           "word": "door",
-          "start": 51.58,
-          "end": 51.86,
+          "start": 53.094,
+          "end": 53.374,
           "line": "L12",
           "who": "narrator"
         },
         {
           "word": "would",
-          "start": 51.86,
-          "end": 52.06,
+          "start": 53.374,
+          "end": 53.574,
           "line": "L12",
           "who": "narrator"
         },
         {
           "word": "you",
-          "start": 52.06,
-          "end": 52.22,
+          "start": 53.574,
+          "end": 53.734,
           "line": "L12",
           "who": "narrator"
         },
         {
           "word": "choose?",
-          "start": 52.22,
-          "end": 52.52,
+          "start": 53.734,
+          "end": 54.034,
           "line": "L12",
           "who": "narrator"
         }
@@ -2280,170 +2388,233 @@
       "who": "mummy"
     },
     {
-      "word": "Now",
+      "word": "Oh,",
       "start": 40.644,
-      "end": 40.944,
+      "end": 40.904,
       "line": "L10",
       "who": "mummy"
     },
     {
-      "word": "excuse",
-      "start": 40.944,
-      "end": 41.404,
+      "word": "and",
+      "start": 40.904,
+      "end": 41.084,
       "line": "L10",
       "who": "mummy"
     },
     {
-      "word": "me,",
-      "start": 41.404,
-      "end": 41.744,
+      "word": "my",
+      "start": 41.084,
+      "end": 41.244,
       "line": "L10",
       "who": "mummy"
     },
     {
-      "word": "lunchtime",
-      "start": 42.264,
-      "end": 42.744,
+      "word": "kitties",
+      "start": 41.244,
+      "end": 41.604,
       "line": "L10",
       "who": "mummy"
     },
     {
-      "word": "kitties.",
-      "start": 42.744,
-      "end": 43.204,
+      "word": "are",
+      "start": 41.604,
+      "end": 41.764,
+      "line": "L10",
+      "who": "mummy"
+    },
+    {
+      "word": "mummies",
+      "start": 41.764,
+      "end": 42.024,
+      "line": "L10",
+      "who": "mummy"
+    },
+    {
+      "word": "too.",
+      "start": 42.024,
+      "end": 42.384,
+      "line": "L10",
+      "who": "mummy"
+    },
+    {
+      "word": "They",
+      "start": 42.724,
+      "end": 42.824,
+      "line": "L10",
+      "who": "mummy"
+    },
+    {
+      "word": "can't",
+      "start": 42.824,
+      "end": 43.104,
+      "line": "L10",
+      "who": "mummy"
+    },
+    {
+      "word": "starve.",
+      "start": 43.104,
+      "end": 43.584,
+      "line": "L10",
+      "who": "mummy"
+    },
+    {
+      "word": "They",
+      "start": 44.044,
+      "end": 44.144,
+      "line": "L10",
+      "who": "mummy"
+    },
+    {
+      "word": "just",
+      "start": 44.144,
+      "end": 44.324,
+      "line": "L10",
+      "who": "mummy"
+    },
+    {
+      "word": "get",
+      "start": 44.324,
+      "end": 44.524,
+      "line": "L10",
+      "who": "mummy"
+    },
+    {
+      "word": "hungrier!",
+      "start": 44.524,
+      "end": 44.984,
       "line": "L10",
       "who": "mummy"
     },
     {
       "word": "Okay.",
-      "start": 45.225,
-      "end": 45.725,
+      "start": 46.739,
+      "end": 47.239,
       "line": "L11",
       "who": "marcus"
     },
     {
       "word": "Maybe",
-      "start": 45.885,
-      "end": 46.025,
+      "start": 47.399,
+      "end": 47.539,
       "line": "L11",
       "who": "marcus"
     },
     {
       "word": "not",
-      "start": 46.025,
-      "end": 46.245,
+      "start": 47.539,
+      "end": 47.759,
       "line": "L11",
       "who": "marcus"
     },
     {
       "word": "door",
-      "start": 46.245,
-      "end": 46.525,
+      "start": 47.759,
+      "end": 48.039,
       "line": "L11",
       "who": "marcus"
     },
     {
       "word": "two.",
-      "start": 46.525,
-      "end": 46.865,
+      "start": 48.039,
+      "end": 48.379,
       "line": "L11",
       "who": "marcus"
     },
     {
       "word": "Fire,",
-      "start": 47.86,
-      "end": 48.24,
+      "start": 49.374,
+      "end": 49.754,
       "line": "L12",
       "who": "narrator"
     },
     {
       "word": "lions,",
-      "start": 48.4,
-      "end": 48.72,
+      "start": 49.914,
+      "end": 50.234,
       "line": "L12",
       "who": "narrator"
     },
     {
       "word": "or",
-      "start": 49.04,
-      "end": 49.06,
+      "start": 50.554,
+      "end": 50.574,
       "line": "L12",
       "who": "narrator"
     },
     {
       "word": "flood.",
-      "start": 49.06,
-      "end": 49.42,
+      "start": 50.574,
+      "end": 50.934,
       "line": "L12",
       "who": "narrator"
     },
     {
       "word": "Only",
-      "start": 49.86,
-      "end": 50.06,
+      "start": 51.374,
+      "end": 51.574,
       "line": "L12",
       "who": "narrator"
     },
     {
       "word": "one",
-      "start": 50.06,
-      "end": 50.32,
+      "start": 51.574,
+      "end": 51.834,
       "line": "L12",
       "who": "narrator"
     },
     {
       "word": "door",
-      "start": 50.32,
-      "end": 50.52,
+      "start": 51.834,
+      "end": 52.034,
       "line": "L12",
       "who": "narrator"
     },
     {
       "word": "is",
-      "start": 50.52,
-      "end": 50.7,
+      "start": 52.034,
+      "end": 52.214,
       "line": "L12",
       "who": "narrator"
     },
     {
       "word": "safe.",
-      "start": 50.7,
-      "end": 51.0,
+      "start": 52.214,
+      "end": 52.514,
       "line": "L12",
       "who": "narrator"
     },
     {
       "word": "Which",
-      "start": 51.48,
-      "end": 51.58,
+      "start": 52.994,
+      "end": 53.094,
       "line": "L12",
       "who": "narrator"
     },
     {
       "word": "door",
-      "start": 51.58,
-      "end": 51.86,
+      "start": 53.094,
+      "end": 53.374,
       "line": "L12",
       "who": "narrator"
     },
     {
       "word": "would",
-      "start": 51.86,
-      "end": 52.06,
+      "start": 53.374,
+      "end": 53.574,
       "line": "L12",
       "who": "narrator"
     },
     {
       "word": "you",
-      "start": 52.06,
-      "end": 52.22,
+      "start": 53.574,
+      "end": 53.734,
       "line": "L12",
       "who": "narrator"
     },
     {
       "word": "choose?",
-      "start": 52.22,
-      "end": 52.52,
+      "start": 53.734,
+      "end": 54.034,
       "line": "L12",
       "who": "narrator"
     }

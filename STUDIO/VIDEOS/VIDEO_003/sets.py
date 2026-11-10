@@ -171,7 +171,7 @@ def draw_chamber(c, w, h):
                           (x + DOOR_W / 2 + 20, FLOOR_Y + 40), (x + 20, FLOOR_Y + 22)]), "#8AA6B8", ow=2.5)
     c.drawPath(smooth_path([(x + 60, FLOOR_Y + 8), (x + DOOR_W / 2, FLOOR_Y + 18), (x + DOOR_W - 60, FLOOR_Y + 8)],
                            closed=False), line_w(3, "#FFFFFF", 0.6))
-    # sarcophagus (the mummy's bed) left, meat cart right, cat-sized hole low on the right wall
+    # sarcophagus (the mummy's bed) left, clay jars right, cat-sized hole low on the right wall
     shape(c, rect(-60, 1240, 300, 520, 60), "#C9A24A", shade="#A8842E", sdx=20)
     shape(c, oval(90, 1360, 70, 80), "#E8B86A")  # golden face mask
     shape(c, poly([(20, 1300), (160, 1300), (190, 1460), (-10, 1460)]), "#2E6A9A", ow=3.5)  # striped headdress
@@ -180,11 +180,10 @@ def draw_chamber(c, w, h):
         c.drawPath(oval(90 + dx, 1352, 10, 6), P(INK))
     for k in range(4):
         c.drawLine(10, 1500 + k * 50, 220, 1500 + k * 50, line_w(6, "#2E6A9A"))
-    shape(c, rect(830, 1480, 220, 120, 12), "#7A5428")
-    for k, col in enumerate(("#B5352E", "#C9503A", "#B5352E")):
-        shape(c, oval(880 + k * 55, 1470, 32, 22), col, ow=3)
-    for wx in (860, 1020):
-        shape(c, oval(wx, 1610, 26, 26), "#3A2418", ow=3)
+    for k, (bx, by) in enumerate(((900, 1520), (960, 1530))):  # old clay jars (no food anywhere in here)
+        shape(c, smooth_path([(bx - 30, by - 90), (bx + 30, by - 90), (bx + 46, by - 30), (bx + 30, by), (bx - 30, by),
+                              (bx - 46, by - 30)]), "#B5703A", shade="#94592C", sdx=10)
+        shape(c, rect(bx - 22, by - 108, 44, 22, 6), "#94592C", ow=3)
     shape(c, rect(1000, 1110, 70, 60, 30), "#1A1008")  # where the cat squeezed out
 
 
@@ -215,6 +214,9 @@ def lion_eyes(c, x, y, s, t, on):
     if on <= 0:
         return
     shape(c, rect(x - 50 * s, y - 30 * s, 100 * s, 60 * s, 6), "#0A0604", ow=3)
+    for k in range(3):  # bandage strips across the dark: mummy lions
+        yy = y - 20 * s + k * 18 * s
+        c.drawLine(x - 46 * s, yy + 4 * s * (k % 2), x + 46 * s, yy - 4 * s * (k % 2), line_w(7 * s, "#C9B994", 0.9 * on))
     for dx in (-22, 22):
         radial(c, x + dx * s, y, 30 * s, "#FFD040", 0.8 * on, plus=True)
         c.drawPath(oval(x + dx * s, y, 12 * s, 9 * s * (0.3 + 0.7 * on)), P("#FFE070", on))
