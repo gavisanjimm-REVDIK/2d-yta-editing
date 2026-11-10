@@ -1,0 +1,245 @@
+{
+  "duration": 55.91,
+  "music_db": -4.0,
+  "duck_db": -8.0,
+  "bus_db": {
+    "sfx": -5.0,
+    "amb": -1.0
+  },
+  "music_gates": [],
+  "sfx": [
+    {
+      "t": 0.0,
+      "name": "amb_wind",
+      "bus": "amb",
+      "dur": 6.587,
+      "loop": true,
+      "gain_db": -14,
+      "fade_in": 0.05,
+      "fade_out": 0.3,
+      "offset": 0.0
+    },
+    {
+      "t": 6.587,
+      "name": "amb_wind",
+      "bus": "amb",
+      "dur": 4.104000000000001,
+      "loop": true,
+      "gain_db": 0.0,
+      "fade_in": 0.02,
+      "fade_out": 0.3,
+      "offset": 3.5631000000000004
+    },
+    {
+      "t": 10.691,
+      "name": "amb_wind",
+      "bus": "amb",
+      "dur": 45.218999999999994,
+      "loop": true,
+      "gain_db": -14,
+      "fade_in": 0.05,
+      "fade_out": 0.3,
+      "offset": 3.8983000000000008
+    },
+    {
+      "t": 0.0,
+      "name": "amb_room",
+      "bus": "amb",
+      "dur": 55.91,
+      "loop": true,
+      "gain_db": -10,
+      "fade_in": 0.05,
+      "fade_out": 0.3,
+      "offset": 0.0
+    },
+    {
+      "t": 0.0,
+      "name": "spoon_clatter",
+      "gain_db": -2,
+      "note": "frame-0 event"
+    },
+    {
+      "t": 0.05,
+      "name": "pudding_plop",
+      "gain_db": -6
+    },
+    {
+      "t": 3.48,
+      "name": "impact_frame",
+      "gain_db": -3
+    },
+    {
+      "t": 4.197,
+      "name": "whoosh_fast",
+      "gain_db": -8
+    },
+    {
+      "t": 5.657,
+      "name": "impact_soft",
+      "gain_db": -6
+    },
+    {
+      "t": 6.487,
+      "name": "whoosh_slow",
+      "gain_db": -10
+    },
+    {
+      "t": 9.691,
+      "name": "door_open",
+      "gain_db": -6
+    },
+    {
+      "t": 9.741000000000001,
+      "name": "wind_gust",
+      "gain_db": -4
+    },
+    {
+      "t": 9.991000000000001,
+      "name": "footstep_hard",
+      "gain_db": -10
+    },
+    {
+      "t": 10.341000000000001,
+      "name": "footstep_hard",
+      "gain_db": -10
+    },
+    {
+      "t": 10.991000000000001,
+      "name": "swish_cloth",
+      "gain_db": -6,
+      "note": "brushing snow off"
+    },
+    {
+      "t": 11.291,
+      "name": "swish_cloth",
+      "gain_db": -8
+    },
+    {
+      "t": 13.853000000000002,
+      "name": "whoosh_fast",
+      "gain_db": -9
+    },
+    {
+      "t": 15.573,
+      "name": "chop",
+      "gain_db": -12
+    },
+    {
+      "t": 17.953,
+      "name": "comedy_sting",
+      "gain_db": -8,
+      "note": "sob gag"
+    },
+    {
+      "t": 18.092,
+      "name": "whoosh_fast",
+      "gain_db": -9
+    },
+    {
+      "t": 19.612,
+      "name": "typewriter",
+      "gain_db": -14
+    },
+    {
+      "t": 22.142,
+      "name": "meow",
+      "gain_db": -4
+    },
+    {
+      "t": 22.58,
+      "name": "whoosh_fast",
+      "gain_db": -9
+    },
+    {
+      "t": 23.0,
+      "name": "keys_jingle",
+      "gain_db": -8
+    },
+    {
+      "t": 26.08,
+      "name": "keys_jingle",
+      "gain_db": -12
+    },
+    {
+      "t": 27.955000000000002,
+      "name": "pencil_scribble",
+      "gain_db": -9
+    },
+    {
+      "t": 30.006,
+      "name": "footstep_hard",
+      "gain_db": -10
+    },
+    {
+      "t": 31.006,
+      "name": "ui_tick",
+      "gain_db": -12
+    },
+    {
+      "t": 32.772666666666666,
+      "name": "footstep_hard",
+      "gain_db": -10
+    },
+    {
+      "t": 33.772666666666666,
+      "name": "ui_tick",
+      "gain_db": -12
+    },
+    {
+      "t": 35.53933333333334,
+      "name": "footstep_hard",
+      "gain_db": -10
+    },
+    {
+      "t": 36.53933333333334,
+      "name": "ui_tick",
+      "gain_db": -12
+    },
+    {
+      "t": 38.616,
+      "name": "swish_cloth",
+      "gain_db": -8
+    },
+    {
+      "t": 38.866,
+      "name": "impact_frame",
+      "gain_db": -8
+    },
+    {
+      "t": 41.685,
+      "name": "ui_pop",
+      "gain_db": -12
+    },
+    {
+      "t": 43.565,
+      "name": "ui_pop",
+      "gain_db": -12
+    },
+    {
+      "t": 45.445,
+      "name": "ui_pop",
+      "gain_db": -12
+    },
+    {
+      "t": 48.802,
+      "name": "meow",
+      "gain_db": -6,
+      "note": "offended cat"
+    },
+    {
+      "t": 47.472,
+      "name": "riser_tension",
+      "gain_db": -14
+    },
+    {
+      "t": 50.885,
+      "name": "sting_mystery",
+      "gain_db": 0
+    },
+    {
+      "t": 51.505,
+      "name": "ui_pop",
+      "gain_db": -8
+    }
+  ]
+}

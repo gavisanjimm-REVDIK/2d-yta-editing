@@ -277,5 +277,80 @@
     ],
     "dur": 1.2,
     "peak_db": -4.11
+  },
+  "spoon_clatter": {
+    "file": "spoon_clatter.flac",
+    "desc": "Spoon dropping on a plate/table",
+    "tags": [
+      "foley",
+      "comedy"
+    ],
+    "dur": 0.9,
+    "peak_db": -3.74
+  },
+  "pudding_plop": {
+    "file": "pudding_plop.flac",
+    "desc": "Wet comedic plop",
+    "tags": [
+      "comedy"
+    ],
+    "dur": 0.4,
+    "peak_db": -1.01
+  },
+  "wind_gust": {
+    "file": "wind_gust.flac",
+    "desc": "Blizzard gust through an open door",
+    "tags": [
+      "weather"
+    ],
+    "dur": 2.2,
+    "peak_db": -1.01
+  },
+  "chop": {
+    "file": "chop.flac",
+    "desc": "Knife chopping on a board (3 chops)",
+    "tags": [
+      "foley"
+    ],
+    "dur": 0.8,
+    "peak_db": -3.17
+  },
+  "typewriter": {
+    "file": "typewriter.flac",
+    "desc": "Typewriter clacks + bell",
+    "tags": [
+      "foley"
+    ],
+    "dur": 1.4,
+    "peak_db": -2.95
+  },
+  "keys_jingle": {
+    "file": "keys_jingle.flac",
+    "desc": "Car keys jingling",
+    "tags": [
+      "foley"
+    ],
+    "dur": 0.7,
+    "peak_db": -5.45
+  },
+  "meow": {
+    "file": "meow.flac",
+    "desc": "Grumpy cat meow (synth)",
+    "tags": [
+      "comedy",
+      "animal"
+    ],
+    "dur": 0.75,
+    "peak_db": -4.11
+  },
+  "comedy_sting": {
+    "file": "comedy_sting.flac",
+    "desc": "Bassoon-ish 'bwomp' comedic sting",
+    "tags": [
+      "comedy",
+      "music"
+    ],
+    "dur": 0.9,
+    "peak_db": -2.95
   }
 }

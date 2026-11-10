@@ -1,0 +1,94 @@
+{
+  "title": "Death by Pudding",
+  "start_offset": 0.2,
+  "tail": 1.2,
+  "cast": {
+    "narrator": "bm_george",
+    "marcus": "am_adam",
+    "gaston": "am_onyx",
+    "prim": "bf_alice",
+    "cedric": "am_liam"
+  },
+  "lines": [
+    {
+      "id": "L01",
+      "who": "narrator",
+      "voice": "bm_george",
+      "speed": 1.08,
+      "text": "Lord Pumpernickel was found face down in his pudding. Poisoned!",
+      "pause_after": 0.3
+    },
+    {
+      "id": "L02",
+      "who": "narrator",
+      "voice": "bm_george",
+      "speed": 1.08,
+      "text": "Three suspects. One killer. And one tiny clue that almost everyone misses.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "L03",
+      "who": "marcus",
+      "voice": "am_adam",
+      "speed": 1.05,
+      "text": "Phew, what a blizzard! Right. Nobody leaves until I find the poisoner.",
+      "pause_after": 0.25
+    },
+    {
+      "id": "L04",
+      "who": "gaston",
+      "voice": "am_onyx",
+      "speed": 1.05,
+      "text": "I made the pudding at six. Then I chopped onions all night. That's why I'm crying!",
+      "pause_after": 0.2
+    },
+    {
+      "id": "L05",
+      "who": "prim",
+      "voice": "bf_alice",
+      "speed": 1.08,
+      "text": "I was in the library, typing his new will. He left everything to his cat.",
+      "pause_after": 0.2
+    },
+    {
+      "id": "L06",
+      "who": "cedric",
+      "voice": "am_liam",
+      "speed": 1.08,
+      "text": "Don't look at me! I only just got here. My car pulled in right before yours, detective.",
+      "pause_after": 0.6
+    },
+    {
+      "id": "L07",
+      "who": "marcus",
+      "voice": "am_adam",
+      "speed": 1.0,
+      "text": "Interesting. Let me have a look around.",
+      "pause_after": 8.7
+    },
+    {
+      "id": "L08",
+      "who": "marcus",
+      "voice": "am_adam",
+      "speed": 0.98,
+      "text": "Case closed. The killer already told me everything.",
+      "pause_after": 0.4
+    },
+    {
+      "id": "L09",
+      "who": "narrator",
+      "voice": "bm_george",
+      "speed": 1.08,
+      "text": "Gaston was in the kitchen. Miss Prim was in the library. And Cedric had only just arrived.",
+      "pause_after": 0.3
+    },
+    {
+      "id": "L10",
+      "who": "narrator",
+      "voice": "bm_george",
+      "speed": 1.02,
+      "text": "And no, it wasn't the cat. So, who is the killer?",
+      "pause_after": 0.2
+    }
+  ]
+}

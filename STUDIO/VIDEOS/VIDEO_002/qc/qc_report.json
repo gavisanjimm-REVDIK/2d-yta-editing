@@ -1,0 +1,35 @@
+{
+  "file": "STUDIO/EXPORTS/VIDEO_002.mp4",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30.0,
+  "vcodec": "h264",
+  "pix_fmt": "yuv420p",
+  "color_space": "bt709",
+  "acodec": "aac",
+  "sample_rate": 48000,
+  "duration": 55.9,
+  "lufs": -14.1,
+  "true_peak": -1.1,
+  "lra": 4.2,
+  "black": [],
+  "frozen": [
+    [
+      51.8,
+      55.8333
+    ]
+  ],
+  "silence": [],
+  "checks": {
+    "resolution_1080x1920": true,
+    "fps_30": true,
+    "h264": true,
+    "aac_48k": true,
+    "duration_55-60s": true,
+    "lufs_-14_+-1": true,
+    "true_peak_<=-1": true,
+    "no_black_>0.1s": true,
+    "no_freeze_>0.6s": false
+  },
+  "contact_sheet": "/home/user/2d-yta-editing/STUDIO/VIDEOS/VIDEO_002/qc/contact_sheet.jpg"
+}

@@ -1,0 +1,45 @@
+[
+  {
+    "time": "2026-11-10 00:46:33",
+    "frames": 1882,
+    "seconds": 156.4,
+    "jobs": {
+      "dining": 130,
+      "trio": 68,
+      "ext": 93,
+      "arrive": 129,
+      "cu_gaston": 127,
+      "cu_prim": 134,
+      "cu_cedric": 149,
+      "cu_marcus": 71,
+      "room_kitchen": 83,
+      "room_library": 83,
+      "room_hall": 83,
+      "marcus_end": 98,
+      "panel_kitchen": 177,
+      "panel_library": 177,
+      "panel_hall": 177,
+      "final_lineup": 103
+    }
+  },
+  {
+    "time": "2026-11-10 00:48:11",
+    "frames": 177,
+    "seconds": 7.4,
+    "jobs": {
+      "panel_hall": 177
+    }
+  },
+  {
+    "time": "2026-11-10 00:50:51",
+    "frames": 574,
+    "seconds": 41.2,
+    "jobs": {
+      "ext": 93,
+      "cu_gaston": 127,
+      "cu_prim": 134,
+      "cu_cedric": 149,
+      "cu_marcus": 71
+    }
+  }
+]

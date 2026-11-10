@@ -233,6 +233,40 @@ def cue_video001(edl) -> Score:
     return s
 
 
+def cue_video002(edl) -> Score:
+    """Comedic murder mystery: sneaky pizzicato walking bass + bells, a silly bassoon-ish sting for gags,
+    sparse mystery during the search, silence before 'Case closed', ticking build to the question."""
+    B = edl.B
+    s = Score(edl.DURATION, bpm=edl.BPM)
+    beat = s.beat
+    s.chord("pad", lambda f, d: inst_tremolo(f, d, 9), ["D3", "F3", "A3"], 0.0, B["trio"], 0.5)
+    walk = ["D2", "F2", "G#2", "A2", "D2", "C2", "A#1", "A1"]
+    mel = ["D5", None, "F5", "E5", None, "C#5", "D5", None]
+    t, i = B["trio"], 0
+    while t < B["rooms"] - 0.1:  # sneaky "tip-toe" groove under the setup and the alibis
+        s.note("bass", lambda f, d: inst_pluck(f, d, 0.25), walk[i % 8], t, beat * 0.9, 0.9)
+        if mel[i % 8] and t > B["arrive"]:
+            s.note("lead", lambda f, d: inst_pluck(f, d, 0.6), mel[i % 8], t, beat, 0.32, 0.3)
+        if i % 2 == 1:
+            s.note("perc", lambda f, d: drum_hat(0.04), 100, t, 0.04, 0.5)
+        t += beat
+        i += 1
+    s.note("pad", lambda f, d: inst_pad(f, d, bright=700), "D2", B["trio"], B["rooms"] - B["trio"], 0.5)
+    t = B["rooms"]
+    for k, n in enumerate(["A5", "F5", "D5", "C#5", "A5", "F5", "E5", "C#5", "D5"]):
+        s.note("lead", inst_bell, n, t + k * beat * 0.95, beat * 2, 0.28, 0.3 * (-1) ** k)
+    s.note("pad", lambda f, d: inst_strings(f, d, 800), "D2", B["rooms"], B["marcus_end"] - B["rooms"], 0.6)
+    s.gate(B["marcus_end"] - 0.1, B["closed"] + 0.25, 0.05)
+    s.note("pad", lambda f, d: inst_pad(f, d, bright=900), "D2", B["recap"], B["freeze"] - B["recap"] + 0.3, 0.7)
+    s.chord("pad", lambda f, d: inst_tremolo(f, d, 7), ["D3", "F3", "A#3"], B["final"], B["freeze"] - B["final"], 0.5)
+    t = B["recap"]
+    while t < B["freeze"] - 0.1:
+        s.note("perc", lambda f, d: drum_hat(0.05) * 1.4, 100, t, 0.05, 0.6)
+        t += beat / 2
+    s.note("pad", lambda f, d: inst_strings(f, d, 600), "D2", B["freeze"] + 0.2, edl.DURATION - B["freeze"] - 0.2, 0.5)
+    return s
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("video")

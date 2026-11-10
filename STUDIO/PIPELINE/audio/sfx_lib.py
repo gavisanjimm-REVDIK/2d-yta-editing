@@ -300,6 +300,91 @@ def safe_creak():
     return dsp.fade(dsp.normalize(x) * 0.7)
 
 
+# ================================================================ VIDEO_002: Death by Pudding
+@reg("spoon_clatter", "Spoon dropping on a plate/table", ("foley", "comedy"))
+def spoon_clatter():
+    d = 0.9
+    x = np.zeros(samples(d))
+    for k, (tt, g) in enumerate(((0.0, 1.0), (0.12, 0.6), (0.21, 0.4), (0.27, 0.25), (0.31, 0.15))):
+        hit = sum(dsp.fm_bell(f, 0.3, 1.9, 1.5, 0.08) for f in (2300 + k * 40, 3700, 5200)) * g
+        dsp.place(x, hit, tt)
+    return dsp.fade(dsp.normalize(x) * 0.8)
+
+
+@reg("pudding_plop", "Wet comedic plop", ("comedy",))
+def pudding_plop():
+    d = 0.4
+    t = tvec(d)
+    x = dsp.sine(180 * np.exp(-t / 0.05) + 70, d) * dsp.exp_decay(d, 0.07)
+    x += dsp.lowpass(dsp.white(d, rng(50)), 900) * dsp.exp_decay(d, 0.03) * 0.4
+    return dsp.fade(dsp.normalize(x))
+
+
+@reg("wind_gust", "Blizzard gust through an open door", ("weather",))
+def wind_gust():
+    d = 2.2
+    t = tvec(d)
+    x = dsp.sweep_filter(dsp.pink(d, rng(51)), 300, 1400, "bandpass", q=1.0) * np.sin(np.pi * t / d) ** 1.5
+    return dsp.fade(dsp.normalize(x), 0.05, 0.4)
+
+
+@reg("chop", "Knife chopping on a board (3 chops)", ("foley",))
+def chop():
+    d = 0.8
+    x = np.zeros(samples(d))
+    for i in range(3):
+        c = dsp.lowpass(dsp.white(0.12, rng(52 + i)), 3500) * dsp.exp_decay(0.12, 0.012)
+        c += dsp.sine(np.linspace(260, 160, samples(0.12)), 0.12) * dsp.exp_decay(0.12, 0.02) * 0.6
+        dsp.place(x, c, i * 0.22)
+    return dsp.fade(dsp.normalize(x) * 0.8)
+
+
+@reg("typewriter", "Typewriter clacks + bell", ("foley",))
+def typewriter():
+    d = 1.4
+    x = np.zeros(samples(d))
+    r = rng(55)
+    tt = 0.0
+    while tt < 1.0:
+        k = dsp.bandpass(dsp.white(0.04, r), 1500, 7000) * dsp.exp_decay(0.04, 0.005)
+        dsp.place(x, k * r.uniform(0.6, 1.0), tt)
+        tt += r.uniform(0.07, 0.13)
+    dsp.place(x, dsp.fm_bell(dsp.note_hz("A6"), 0.4, 3.0, 1.0, 0.15) * 0.5, 1.05)
+    return dsp.fade(dsp.normalize(x) * 0.8)
+
+
+@reg("keys_jingle", "Car keys jingling", ("foley",))
+def keys_jingle():
+    d = 0.7
+    x = np.zeros(samples(d))
+    r = rng(57)
+    for k in range(9):
+        f = r.uniform(3000, 7000)
+        dsp.place(x, dsp.fm_bell(f, 0.15, 1.4, 1.2, 0.03) * r.uniform(0.3, 1.0), r.uniform(0, 0.45))
+    return dsp.fade(dsp.normalize(x) * 0.6)
+
+
+@reg("meow", "Grumpy cat meow (synth)", ("comedy", "animal"))
+def meow():
+    d = 0.75
+    t = tvec(d)
+    f0 = 520 + 260 * np.sin(np.pi * np.clip(t / d, 0, 1)) - 200 * (t / d)
+    ph = 2 * np.pi * np.cumsum(f0) / SR
+    src = sum(np.sin(k * ph) / k for k in range(1, 12))
+    form = dsp.bandpass(src, 700, 2600)  # rough "eow" formant
+    x = form * dsp.adsr(d, 0.06, 0.1, 0.8, 0.3) * (1 + 0.1 * np.sin(2 * np.pi * 7 * t))
+    return dsp.fade(dsp.normalize(x) * 0.7)
+
+
+@reg("comedy_sting", "Bassoon-ish 'bwomp' comedic sting", ("comedy", "music"))
+def comedy_sting():
+    d = 0.9
+    t = tvec(d)
+    f = 110 * (1 - 0.25 * (t / d))
+    x = dsp.lowpass(sum(np.sin(2 * np.pi * k * np.cumsum(f) / SR) / k for k in range(1, 10)), 900)
+    return dsp.fade(dsp.normalize(x * dsp.adsr(d, 0.02, 0.2, 0.7, 0.3)) * 0.8)
+
+
 # ================================================================ generator
 def build(names=None):
     OUT.mkdir(parents=True, exist_ok=True)

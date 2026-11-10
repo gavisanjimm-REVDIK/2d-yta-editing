@@ -70,6 +70,19 @@ CAST = {
                  shirt="#3F6FA8", shirt_sh="#2F5687", pants="#3F6FA8", pants_sh="#2F5687", shoes="#3A2A30",
                  sleeves="short", torso_h=1.4, shoulder_w=0.95, hip_w=0.85, leg=1.5,
                  eye_w=0.21, eye_h=0.25, eye_sep=0.38, extras=("dress", "apron", "lashes")),
+    # VIDEO_002 cast
+    "gaston": _c(skin="#EDB088", skin_sh="#D08F66", hair="#1E1A1A", hair_sh="#0F0D0D", hair_style="chef",
+                 shirt="#F4F1EA", shirt_sh="#D8D0C2", pants="#3A3A44", pants_sh="#2A2A32", shoes="#1A1A1A",
+                 sleeves="long", torso_h=1.55, shoulder_w=1.2, hip_w=1.1, belly=0.28, leg=1.45,
+                 eye_w=0.2, eye_h=0.23, eye_sep=0.38, extras=("chef_jacket",)),
+    "prim": _c(skin="#F2C6A4", skin_sh="#D9A684", hair="#3A2440", hair_sh="#24152A", hair_style="bob",
+               shirt="#8A5A9A", shirt_sh="#6C437A", pants="#5A3A6A", pants_sh="#452C52", shoes="#2A1A2A",
+               sleeves="long", torso_h=1.42, shoulder_w=0.95, hip_w=0.85, leg=1.6,
+               eye_w=0.2, eye_h=0.24, eye_sep=0.38, extras=("dress", "cardigan", "glasses", "lashes")),
+    "cedric": _c(skin="#F4C9A6", skin_sh="#DAA988", hair="#E3BC5E", hair_sh="#C29A3E", hair_style="slick",
+                 shirt="#B5302E", shirt_sh="#932422", pants="#C9B48A", pants_sh="#A8936C", shoes="#5A3A22",
+                 sleeves="long", torso_h=1.5, shoulder_w=1.05, hip_w=0.85, leg=1.85, head_ry=1.0,
+                 eye_w=0.2, eye_h=0.22, eye_sep=0.37, extras=("scarf",), temples=False),
 }
 
 # ================================================================ expressions
@@ -256,6 +269,13 @@ def hair_back(pen, C, hx, hy, rx, ry, turn):
         pen.shape(oval(hx, hy - 0.08, rx * 1.1, ry * 1.06), C["hair"], C["hair_sh"])
     elif st == "slick":
         pen.shape(oval(hx, hy - 0.1, rx * 1.05, ry * 1.02), C["hair"], C["hair_sh"])
+    elif st == "chef":
+        pen.shape(oval(hx, hy - 0.05, rx * 1.04, ry * 1.0), C["hair"], C["hair_sh"])
+    elif st == "bob":
+        bob = smooth_path([(hx - rx * 1.2, hy + ry * 0.55), (hx - rx * 1.22, hy - ry * 0.3), (hx - rx * 0.8, hy - ry * 1.08),
+                           (hx, hy - ry * 1.18), (hx + rx * 0.8, hy - ry * 1.08), (hx + rx * 1.22, hy - ry * 0.3),
+                           (hx + rx * 1.2, hy + ry * 0.55), (hx, hy + ry * 0.5)])
+        pen.shape(bob, C["hair"], C["hair_sh"])
     elif st == "cap_beard":
         tufts = spiky(hx, hy + 0.1, [-200, -185, -170, -10, 5, 20], 1.02, 1.18, rx, ry)
         pen.shape(tufts, C["hair"], C["hair_sh"])
@@ -303,7 +323,7 @@ def hair_front(pen, C, hx, hy, rx, ry, turn):
         q.moveTo(hx - 0.25 * rx + fx, hy - ry * 0.64)
         q.quadTo(hx - 0.35 * rx, hy - ry * 0.9, hx - 0.2 * rx, hy - ry * 1.02)
         pen.stroke(q, pen.ow * 0.6)
-        for s in (-1, 1):  # grey temples
+        for s in ((-1, 1) if C.get("temples", True) else ()):  # grey temples
             if s * turn > 0.6:
                 continue
             pen.c.drawPath(oval(hx + s * rx * 0.97, hy - 0.12, 0.08, 0.2), pen.p("#8C8C94"))
@@ -316,6 +336,35 @@ def hair_front(pen, C, hx, hy, rx, ry, turn):
         p.quadTo(hx - rx * 0.5, hy - ry * 0.5, hx - rx * 0.85, hy - ry * 0.3)
         p.close()
         pen.shape(p, C["hair"], C["hair_sh"])
+    elif st == "chef":
+        # tall puffy toque
+        hat = smooth_path([(hx - rx * 0.78, hy - ry * 0.62), (hx - rx * 1.05, hy - ry * 1.45), (hx - rx * 0.6, hy - ry * 2.05),
+                           (hx, hy - ry * 2.25), (hx + rx * 0.6, hy - ry * 2.05), (hx + rx * 1.05, hy - ry * 1.45),
+                           (hx + rx * 0.78, hy - ry * 0.62)])
+        pen.shape(hat, "#FFFFFF", "#DAD6CE", shade_dx=0.18)
+        band = skia.Path()
+        band.addRoundRect(skia.Rect(hx - rx * 0.86, hy - ry * 0.95, hx + rx * 0.86, hy - ry * 0.58), 0.08, 0.08)
+        pen.shape(band, "#F4F1EA", "#DAD6CE")
+        for k in (-0.3, 0.3):
+            q = skia.Path()
+            q.moveTo(hx + k * rx, hy - ry * 1.0)
+            q.quadTo(hx + k * rx * 1.4, hy - ry * 1.5, hx + k * rx * 0.8, hy - ry * 1.9)
+            pen.stroke(q, pen.ow * 0.6)
+        for side in (-1, 1):  # black sideburns
+            if side * turn > 0.6:
+                continue
+            pen.shape(smooth_path([(hx + side * rx * 0.85, hy - ry * 0.6), (hx + side * rx * 1.03, hy - ry * 0.4),
+                                   (hx + side * rx * 1.0, hy + ry * 0.05), (hx + side * rx * 0.88, hy - 0.05)]),
+                      C["hair"], C["hair_sh"])
+    elif st == "bob":
+        fringe = skia.Path()
+        fringe.moveTo(hx - rx * 1.0, hy - ry * 0.2)
+        fringe.arcTo(skia.Rect(hx - rx * 1.08, hy - ry * 1.12, hx + rx * 1.08, hy + ry * 1.12), 190, 160, False)
+        fringe.lineTo(hx + rx * 1.0, hy - ry * 0.2)
+        fringe.quadTo(hx + rx * 0.5 + fx, hy - ry * 0.45, hx + fx, hy - ry * 0.42)
+        fringe.quadTo(hx - rx * 0.5 + fx, hy - ry * 0.45, hx - rx * 1.0, hy - ry * 0.2)
+        fringe.close()
+        pen.shape(fringe, C["hair"], C["hair_sh"])
     elif st == "cap_beard":
         # beard
         b = smooth_path([(hx - rx * 0.92, hy + 0.05), (hx - rx * 0.7, hy + ry * 0.75), (hx + fx, hy + ry * 1.12),
@@ -386,6 +435,13 @@ def draw_face(pen, C, hx, hy, rx, ry, E, pose):
     q.moveTo(nx - 0.04 + turn * 0.06, ny - 0.12)
     q.quadTo(nx + 0.1 + turn * 0.08, ny - 0.02, nx + 0.0, ny + 0.05)
     pen.stroke(q, pen.ow * 0.8)
+    if C["hair_style"] == "chef":  # big curly black mustache
+        m = smooth_path([(nx - 0.62, ny + 0.02), (nx - 0.5, ny + 0.2), (nx - 0.25, ny + 0.12), (nx, ny + 0.16),
+                         (nx + 0.25, ny + 0.12), (nx + 0.5, ny + 0.2), (nx + 0.62, ny + 0.02), (nx + 0.42, ny + 0.28),
+                         (nx, ny + 0.24), (nx - 0.42, ny + 0.28)])
+        draw_mouth(pen, C, nx, hy + ry * 0.6, E, pose)
+        pen.shape(m, C["hair"], C["hair_sh"])
+        return
     if C["hair_style"] == "bald_mustache":  # handlebar mustache
         m = smooth_path([(nx - 0.45, ny + 0.2), (nx - 0.25, ny + 0.06), (nx, ny + 0.1), (nx + 0.25, ny + 0.06),
                          (nx + 0.45, ny + 0.2), (nx + 0.22, ny + 0.2), (nx, ny + 0.18), (nx - 0.22, ny + 0.2)])
@@ -589,6 +645,10 @@ def draw_character(canvas, C, x, y_feet, height_px, pose=None):
         if arm[5] != "behind":
             _draw_arm(pen, C, pose, *arm)
 
+    if pose.get("snow", 0) > 0.02:
+        for side in (-1, 1):
+            pen.shape(oval(side * (sw / 2 - 0.15), top + 0.0, 0.3 * pose["snow"] + 0.05, 0.1 * pose["snow"] + 0.03),
+                      "#FFFFFF", "#DDE6F2")
     # ---- neck + head
     hy = top - C["neck"] - ry * 0.92
     canvas.save()
@@ -614,15 +674,19 @@ def draw_character(canvas, C, x, y_feet, height_px, pose=None):
     if C["hair_style"] == "cap_beard":  # mouth sits on top of the beard so speech stays visible
         draw_mouth(pen, C, turn * 0.32 * rx * 1.15, hy + ry * 0.55, E, pose)
     draw_brows(pen, C, 0, hy, rx, ry, E, pose)
+    if "glasses" in C["extras"]:
+        draw_glasses(pen, C, 0, hy, rx, ry, turn)
+    if pose.get("tears", 0) > 0.02:
+        draw_tears(pen, C, 0, hy, rx, ry, turn, pose["tears"], pose.get("_t", 0.0))
     if "fedora" in C["extras"]:
-        draw_fedora(pen, 0, hy, rx, ry, turn)
+        draw_fedora(pen, 0, hy, rx, ry, turn, pose.get("snow", 0.0))
     canvas.restore()
     canvas.restore()
     canvas.restore()
     return {"head": (x, y_feet + hy * u), "unit": u, "hands": pose.get("_hands", {})}
 
 
-def draw_fedora(pen, hx, hy, rx, ry, turn):
+def draw_fedora(pen, hx, hy, rx, ry, turn, snow=0.0):
     """Brown fedora sitting on the messy hair, slightly tilted; hair still pokes out at the sides."""
     c = pen.c
     c.save()
@@ -646,7 +710,49 @@ def draw_fedora(pen, hx, hy, rx, ry, turn):
     band.close()
     pen.shape(band, "#2A1E18")
     pen.shape(brim, "#5A3E2A", "#46301F", shade_dx=0.0, shade_dy=0.06)
+    if snow > 0.02:  # snow piled on the hat (fresh from the blizzard)
+        cap = smooth_path([(hx - rx * 0.7 + fx, by - 0.62), (hx - 0.1 + fx, by - 0.78 - 0.12 * snow), (hx + rx * 0.68 + fx, by - 0.66),
+                           (hx + rx * 0.5 + fx, by - 0.56), (hx + fx, by - 0.62), (hx - rx * 0.5 + fx, by - 0.54)])
+        pen.shape(cap, "#FFFFFF", "#DDE6F2")
+        for k in (-1.0, 0.6):
+            pen.shape(oval(hx + k * rx + fx, by - 0.06, 0.3 * snow + 0.05, 0.1 * snow + 0.03), "#FFFFFF", outline=False)
     c.restore()
+
+
+def draw_glasses(pen, C, hx, hy, rx, ry, turn):
+    fx = turn * 0.32 * rx
+    ey = hy + C["eye_y"] * ry
+    rr = C["eye_w"] * 1.45
+    for side in (-1, 1):
+        cx = hx + side * C["eye_sep"] * rx * (1 - 0.15 * abs(turn)) + fx
+        pen.c.drawPath(oval(cx, ey, rr, rr), pen.p("#DDEEFF", 0.25))
+        pen.stroke(oval(cx, ey, rr, rr), pen.ow * 0.9)
+    q = skia.Path()
+    q.moveTo(hx - C["eye_sep"] * rx + rr + fx, ey - 0.03)
+    q.quadTo(hx + fx, ey - 0.1, hx + C["eye_sep"] * rx - rr + fx, ey - 0.03)
+    pen.stroke(q, pen.ow * 0.8)
+
+
+def draw_tears(pen, C, hx, hy, rx, ry, turn, amount, t):
+    fx = turn * 0.32 * rx
+    ey = hy + C["eye_y"] * ry + C["eye_h"] * 0.8
+    for side in (-1, 1):
+        cx = hx + side * C["eye_sep"] * rx + fx
+        L = 0.25 + 0.45 * amount
+        st = skia.Path()
+        st.moveTo(cx - 0.05, ey)
+        st.quadTo(cx - 0.07, ey + L * 0.6, cx, ey + L)
+        st.quadTo(cx + 0.07, ey + L * 0.6, cx + 0.05, ey)
+        st.close()
+        pen.c.drawPath(st, pen.p("#8FD3F5", 0.85))
+        ph = (t * 2.2 + (0.5 if side > 0 else 0)) % 1  # falling drop
+        dy = ey + L + ph * 0.5
+        d = skia.Path()
+        d.moveTo(cx, dy - 0.1)
+        d.quadTo(cx + 0.07, dy + 0.02, cx, dy + 0.05)
+        d.quadTo(cx - 0.07, dy + 0.02, cx, dy - 0.1)
+        d.close()
+        pen.c.drawPath(d, pen.p("#8FD3F5", 1 - ph))
 
 
 def prop_magnifier(pen, x, y, ang, side):
@@ -717,6 +823,31 @@ def _torso_details(pen, C, top, hip_y, sw, hw, th):
         pen.shape(bow, "#111111")
         for k in (0.35, 0.55):
             pen.shape(oval(0.0, top + th * k + 0.15, 0.04, 0.04), "#C9A54A", outline=False)
+    elif "chef_jacket" in ex:
+        for s_ in (-1, 1):
+            for k in (0.25, 0.45, 0.65):
+                pen.shape(oval(s_ * 0.18, top + th * k, 0.05, 0.05), "#2A2A30", outline=False)
+        pen.shape(smooth_path([(-0.28, top + 0.02), (0.28, top + 0.02), (0.12, top + 0.22), (0, top + 0.3), (-0.12, top + 0.22)]),
+                  "#C8322E")
+    elif "cardigan" in ex:
+        pen.shape(smooth_path([(-0.22, top + 0.02), (0.22, top + 0.02), (0.0, top + 0.3)]), "#F4F1EA")
+        q2 = skia.Path()
+        q2.moveTo(0, top + 0.3)
+        q2.lineTo(0, hip_y)
+        pen.stroke(q2, pen.ow * 0.7)
+        for k in (0.4, 0.6, 0.8):
+            pen.shape(oval(0.08, top + th * k, 0.04, 0.04), "#E0C070", outline=False)
+    elif "scarf" in ex:
+        wrap = smooth_path([(-0.36, top - 0.06), (0.36, top - 0.06), (0.3, top + 0.16), (-0.3, top + 0.16)])
+        pen.shape(wrap, "#2E5A8A", "#244870")
+        tail = skia.Path()
+        tail.addRoundRect(skia.Rect(0.1, top + 0.08, 0.34, top + th * 0.75), 0.06, 0.06)
+        pen.shape(tail, "#2E5A8A", "#244870")
+        for k in (0.35, 0.55):
+            q2 = skia.Path()
+            q2.moveTo(0.1, top + th * k)
+            q2.lineTo(0.34, top + th * k)
+            pen.stroke(q2, 0.06, "#F4F1EA")
     elif "overalls" in ex:
         bib = skia.Path()
         bib.addRoundRect(skia.Rect(-hw * 0.42, top + th * 0.38, hw * 0.42, hip_y + 0.08), 0.06, 0.06)
@@ -810,3 +941,33 @@ def prop_towel(pen, x, y, ang, side):
     r = skia.Path()
     r.addRoundRect(skia.Rect(-0.45 if side > 0 else x - 0.1, y - 0.15, 0.45 if side > 0 else x + 0.8, y + 0.2), 0.06, 0.06)
     pen.shape(r, "#F4F1EA", "#D8D0C2")
+
+
+def prop_cleaver(pen, x, y, ang, side):
+    """Big kitchen cleaver (red herring), blade up."""
+    pen.capsule(x, y + 0.05, x, y + 0.35, 0.13, "#5A3A22")
+    blade = skia.Path()
+    blade.addRoundRect(skia.Rect(x - 0.08, y - 0.62, x + 0.42, y - 0.02), 0.05, 0.05)
+    pen.shape(blade, "#C8CED4", "#A8B0B8")
+    pen.c.drawPath(oval(x + 0.3, y - 0.48, 0.05, 0.05), pen.p(INK))
+
+
+def prop_papers(pen, x, y, ang, side):
+    for k, dx in enumerate((0.0, 0.06)):
+        r = skia.Path()
+        r.addRoundRect(skia.Rect(x - 0.32 + dx, y - 0.5 + dx, x + 0.18 + dx, y + 0.12 + dx), 0.03, 0.03)
+        pen.shape(r, "#FFFFFF" if k else "#F2EEE4")
+    for k in range(4):
+        q = skia.Path()
+        q.moveTo(x - 0.22, y - 0.36 + k * 0.1)
+        q.lineTo(x + 0.12, y - 0.36 + k * 0.1)
+        pen.stroke(q, pen.ow * 0.4, "#6A6A80")
+
+
+def prop_keys(pen, x, y, ang, side):
+    """Car keys dangling from the fingers."""
+    pen.stroke(oval(x, y + 0.2, 0.1, 0.1), pen.ow * 0.7, "#C9A24A")
+    k = skia.Path()
+    k.addRoundRect(skia.Rect(x - 0.06, y + 0.28, x + 0.06, y + 0.58), 0.03, 0.03)
+    pen.shape(k, "#B8BEC4")
+    pen.shape(oval(x + 0.05, y + 0.62, 0.1, 0.08), "#2A2A30")
