@@ -17,7 +17,7 @@ sys.path.insert(0, str(STUDIO / "PIPELINE" / "twod"))
 sys.path.insert(0, str(HERE))
 import skia  # noqa: E402
 from kit import W, H, FPS, key, blink, clamp, smooth_noise, rgb, text, EASE  # noqa: E402
-from toon import draw_character, mix_expr, prop_flashlight  # noqa: E402
+from toon import draw_character, mix_expr, prop_flashlight, arm_blend  # noqa: E402
 from lipsync import load as load_lip, viseme  # noqa: E402
 import sets as S  # noqa: E402
 import edit_video003 as EDL  # noqa: E402
@@ -125,34 +125,66 @@ def depth_y(d):
     return 1020 + 880 * d ** 1.4, 0.18 + 0.95 * d ** 1.4
 
 
+def speed_lines(c, t, amount):
+    """Streaks rushing out of the vanishing point (we are running with Marcus)."""
+    if amount <= 0:
+        return
+    import random
+    r = random.Random(5)
+    for i in range(26):
+        a = r.uniform(0, math.tau)
+        ph = (t * 2.2 + r.random()) % 1
+        r0, r1 = 120 + 900 * ph, 120 + 900 * ph + 160
+        p = S.line_w(5, "#FFF4D8", 0.35 * amount * (1 - ph))
+        c.drawLine(540 + math.cos(a) * r0, 860 + math.sin(a) * r0, 540 + math.cos(a) * r1, 860 + math.sin(a) * r1, p)
+
+
 def shot_corridor(c, t):
     sl = B["slam"]
     c.save()
     cam(c, 1.0, 540, 960)
     bg(c, "corridor")
     torches(c, t, S.CORRIDOR_TORCHES, 1.0)
-    # stone slab slamming down at the far end (behind them: trapped!)
+    speed_lines(c, t, 1.0 - clamp((t - sl + 0.3) / 0.3))
+    # the stone slab slams down at the far end, behind Marcus: trapped
     drop = EASE["in"](clamp((t - sl + 0.05) / 0.18))
     if t > sl - 0.3:
-        S.shape(c, S.rect(420, 700 + 320 * drop - 320, 240, 320), "#8A6A3A", shade="#6E5228", sdx=18)
-        c.drawRect(skia.Rect(420, 380, 660, 700 + 320 * drop - 320), skia.Paint(Color=rgb("#120C06")))
-    if t > sl + 0.1:  # dust puff
+        c.save()
+        c.clipRect(skia.Rect(420, 700, 660, 1020))  # slides down out of the doorway's top edge
+        S.shape(c, S.rect(420, 380 + 320 * drop, 240, 320), "#8A6A3A", shade="#6E5228", sdx=18)
+        c.restore()
+    if t > sl + 0.1:
         u = clamp((t - sl - 0.1) / 1.0)
         S.radial(c, 540, 1010, 260 * (0.4 + u), "#E8C890", 0.5 * (1 - u))
-    # the cat burglar dashes past the camera with the golden scarab...
-    d = clamp(t / 1.5)
-    if d < 1:
-        y, s = depth_y(0.15 + 0.85 * d)
-        cx = 540 + 220 * d ** 2
-        S.cat(c, cx, y, 300 * s, t)
-        S.scarab(c, cx - 4 * s, y - 230 * s * 1.0, 1.1 * s * 3)
-    # ...Marcus runs after it, yelling
-    dm = clamp(t / 3.2)
-    y, s = depth_y(0.05 + 0.55 * dm)
-    actor(c, DET, 520 - 40 * dm, y, 1150 * s,
-          marcus_pose(t, expr="angry" if t < sl else "shocked", walk=(t * 2.6) % 1 if t < sl + 0.2 else None,
-                      arm_r=(1.0, -0.2, "down") if t < 2.4 else "relaxed", hand_r="point", arm_l="relaxed",
-                      turn=0.0 if t < sl else -0.6, look=(0, 0) if t < sl else (-0.8, -0.3)), t=t)
+    # Marcus sprints toward the camera (proper run cycle), then skids to a stop when the slab drops
+    run_until = sl - 0.15
+    dm = EASE["out"](clamp(t / (run_until + 0.4)))
+    y, s = depth_y(0.08 + 0.6 * dm)
+    running = t < run_until
+    ph = (t * 2.5) % 1
+    if running:  # little dust puff on every footfall
+        for k in range(2):
+            f = (ph + k * 0.5) % 1
+            if f < 0.35:
+                S.radial(c, 540 - 230 * dm + (60 if k else -60) * s, y + 6, 120 * s * (0.5 + f), "#E8C890",
+                         0.45 * (1 - f / 0.35))
+    skid = clamp((t - run_until) / 0.3)
+    pose = marcus_pose(t, expr="angry" if t < sl else "shocked",
+                       turn=-0.65 * EASE["out"](clamp((t - sl) / 0.3)), look=(0, 0) if t < sl else (-0.9, -0.3),
+                       tilt=(5 * math.sin(ph * math.tau) if running else -4 * skid))
+    if running:
+        pose.update(run=ph)
+        if t < 2.3:  # shouting + pointing after the thief while running
+            pose.update(arm_r=(1.0, -0.15, "down"), hand_r="point")
+    else:
+        pose.update(arm_l=arm_blend(DET, t, [(run_until, "relaxed"), (sl + 0.25, "up")], 0.2),
+                    arm_r=arm_blend(DET, t, [(run_until, "relaxed"), (sl + 0.25, "up")], 0.2))
+    mx = 540 - 230 * dm  # veers left so the far doorway (and the slab) stays visible
+    actor(c, DET, mx, y, 1150 * s, pose, t=t)
+    # the cat burglar gallops across the foreground first, scarab in its mouth
+    u = clamp(t / 1.35)
+    if u < 1:
+        S.cat_run(c, -260 + 1600 * u, 1880, 520, t)
     c.restore()
     vignette(c, 0.6)
 
@@ -172,7 +204,7 @@ def shot_chamber_wide(c, t):
     if u < 1:
         c.save()
         c.clipRect(skia.Rect(0, 0, 1000 + 70 * (1 - u), 1920))
-        S.cat(c, 760 + 260 * u, 1170, 110, t)
+        S.cat_run(c, 820 + 300 * u, 1172, 150, t)
         c.restore()
     # Marcus at the right, the mummy rises from the sarcophagus (left)
     actor(c, DET, 760, 1720, 960, marcus_pose(t, expr=expr_track(t, [(B["chamber"], "angry"), (B["mummy_up"], "shocked")]),
@@ -183,7 +215,10 @@ def shot_chamber_wide(c, t):
         c.save()
         c.clipRect(skia.Rect(-100, 0, 1080, 1520))
         actor(c, "mummy", 150, 1520 + 700 * (1 - rise), 900,
-              mummy_pose(t, expr="happy", arm_l="up", arm_r=(0.9, -0.7, "down"), turn=0.4), shadow=False, t=t)
+              mummy_pose(t, expr="happy", arm_l=arm_blend("mummy", t, [(B["mummy_up"], "relaxed"), (B["mummy_up"] + 0.5, "up")]),
+                         arm_r=arm_blend("mummy", t, [(B["mummy_up"], "relaxed"), (B["mummy_up"] + 0.6, (0.9, -0.7, "down")),
+                                                      (B["mummy_up"] + 2.4, (0.9, -0.7, "down")), (B["mummy_up"] + 3.0, "hips")]),
+                         turn=0.4), shadow=False, t=t)
         c.restore()
     c.restore()
     vignette(c, 0.5)
@@ -203,8 +238,9 @@ def cu_bg(c, t, cx):
 def shot_cu_mummy(c, t):
     cu_bg(c, t, 470)
     pose = mummy_pose(t, expr=expr_track(t, [(B["cu_mummy"], "happy"), (B["cu_mummy"] + 1.6, "smug")]),
-                      arm_l="hips", arm_r=(0.6, -0.4, "down") if t < B["cu_mummy"] + 1.6 else "relaxed",
-                      hand_r="point", turn=0.15)
+                      arm_l="hips", arm_r=arm_blend("mummy", t, [(B["cu_mummy"], (0.6, -0.4, "down")),
+                                                                 (B["cu_mummy"] + 1.9, "relaxed")], 0.35),
+                      hand_r="point" if t < B["cu_mummy"] + 1.7 else "open", turn=0.15)
     actor(c, "mummy", 540, MCU_Y, MCU_H, pose, shadow=False, t=t)
     vignette(c, 0.45)
 
@@ -222,8 +258,8 @@ def shot_cu_marcus(c, t):
     cu_bg(c, t, 640)
     pk = B["pick"]
     pose = marcus_pose(t, expr=expr_track(t, [(B["marcus"], "confident"), (pk - 0.2, "smug")]), arm_l="hips",
-                       arm_r=(1.1, -0.1, "down") if t > pk - 0.25 else "chin",
-                       hand_r="point" if t > pk - 0.25 else "fist", turn=0.2, look=(0.6, 0))
+                       arm_r=arm_blend(DET, t, [(B["marcus"], "chin"), (pk, (1.1, -0.1, "down"))], 0.3),
+                       hand_r="point" if t > pk - 0.15 else "fist", turn=0.2, look=(0.6, 0))
     actor(c, DET, 540, MCU_Y, MCU_H, pose, shadow=False, t=t)
     vignette(c, 0.45)
 
@@ -238,11 +274,13 @@ def shot_cu_gulp(c, t):
 
 # ================================================================ 4. the three doors (same framing each, sign card on top)
 def door_shot(c, t, n, t0):
-    x, y = S.DOORS[n]
+    """Same framing for all three doors: the door centred on its wall, sign card above it."""
+    u = clamp((t - t0) / 3.6)
     c.save()
-    cam(c, 1.6, clamp(x + S.DOOR_W / 2, 340, 740), y + 380)  # clamp: never past the room edge
-    bg(c, "chamber")
-    chamber_live(c, t)
+    c.translate(W / 2, 1100)
+    c.scale(1.0 + 0.05 * u, 1.0 + 0.05 * u)  # gentle push-in
+    c.translate(-W / 2, -1100)
+    S.door_closeup(c, n, t)
     c.restore()
     vignette(c, 0.45)
     sign_card(c, n, clamp((t - t0 - 0.15) / 0.25))
@@ -281,34 +319,32 @@ def shot_lunch(c, t):
     jump = clamp((t - rr) / 0.12) * (1 - clamp((t - rr - 0.5) / 0.3))
     actor(c, DET, 820, 1760 - 140 * jump, 860,
           marcus_pose(t, expr="suspicious" if t < rr else "panic", turn=-0.5,
-                      arm_l="up" if t > rr else "hips", arm_r="up" if t > rr else "relaxed",
+                      arm_l=arm_blend(DET, t, [(t0, "hips"), (rr + 0.12, "up")], 0.12),
+                      arm_r=arm_blend(DET, t, [(t0, "relaxed"), (rr + 0.12, "up")], 0.12),
                       look=(-0.9, 0.0)), t=t)
     c.restore()
     vignette(c, 0.5)
 
 
 # ================================================================ 6. recap: the three doors side by side (split screen)
-CARD = (150, 652, 780, 616)
+CARD = (200, 652, 680, 520)  # leaves a strip under each card for the caption
 CARD_S = 0.95
 
 
 def panel(c, t, n, name_t):
     c.drawPaint(skia.Paint(Color=rgb("#2A1A0A")))
     x, y, w_, h_ = CARD
-    dx, dy = S.DOORS[n]
     c.save()
     c.clipRect(skia.Rect.MakeXYWH(x, y, w_, h_))
     c.translate(x + w_ / 2, y + h_ / 2)
-    c.scale(CARD_S, CARD_S)
-    c.translate(-(dx + S.DOOR_W / 2), -(dy + 300))
-    bg(c, "chamber")
-    chamber_live(c, t)
+    c.scale(0.44, 0.44)  # whole door: number, sign tablet, handle clue, floor
+    c.translate(-540, -1040)
+    S.door_closeup(c, n, t)
     c.restore()
     c.drawRect(skia.Rect.MakeXYWH(x, y, w_, h_), skia.Paint(AntiAlias=True, Color=rgb("#E9DFC4"),
                                                             Style=skia.Paint.kStroke_Style, StrokeWidth=10))
     if not (t >= name_t - 0.1):
         overlay(c, "#000000", 0.55)
-    # sign text across the bottom of the card
     bar = skia.Rect.MakeXYWH(x + 10, y + h_ - 110, w_ - 20, 100)
     p = skia.Paint(Color=rgb("#1A1008"))
     p.setAlphaf(0.7)

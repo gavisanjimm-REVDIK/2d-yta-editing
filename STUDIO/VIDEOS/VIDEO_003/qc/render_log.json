@@ -27,5 +27,56 @@
     "jobs": {
       "lunch": 133
     }
+  },
+  {
+    "time": "2026-11-10 10:11:01",
+    "frames": 1808,
+    "seconds": 132.9,
+    "jobs": {
+      "corridor": 235,
+      "chamber_wide": 159,
+      "cu_mummy": 129,
+      "door1": 117,
+      "door2": 115,
+      "door3": 130,
+      "cu_marcus": 132,
+      "cu_mummy2": 200,
+      "lunch": 133,
+      "cu_gulp": 83,
+      "panel_1": 110,
+      "panel_2": 110,
+      "panel_3": 110,
+      "final": 45
+    }
+  },
+  {
+    "time": "2026-11-10 10:13:14",
+    "frames": 330,
+    "seconds": 6.8,
+    "jobs": {
+      "panel_1": 110,
+      "panel_2": 110,
+      "panel_3": 110
+    }
+  },
+  {
+    "time": "2026-11-10 10:15:06",
+    "frames": 330,
+    "seconds": 6.8,
+    "jobs": {
+      "panel_1": 110,
+      "panel_2": 110,
+      "panel_3": 110
+    }
+  },
+  {
+    "time": "2026-11-10 10:17:29",
+    "frames": 330,
+    "seconds": 6.9,
+    "jobs": {
+      "panel_1": 110,
+      "panel_2": 110,
+      "panel_3": 110
+    }
   }
 ]

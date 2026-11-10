@@ -32,7 +32,6 @@ v2 = _load("v002_sets", HERE.parent / "VIDEO_002" / "sets.py")
 W, H, INK = base.W, base.H, base.INK
 P, shape, rect, poly, vgrad, radial, line_w = base.P, base.shape, base.rect, base.poly, base.vgrad, base.radial, base.line_w
 smooth_path, oval, snapshot = base.smooth_path, base.oval, base.snapshot
-cat = v2.cat
 
 SAND, SAND_SH, STONE, STONE_SH = "#D9B26A", "#B8904E", "#C99A58", "#A87C42"
 
@@ -225,3 +224,136 @@ def lion_eyes(c, x, y, s, t, on):
 def scarab(c, x, y, s=1.0):
     shape(c, oval(x, y, 22 * s, 16 * s), "#E8B83A", ow=3)
     c.drawLine(x, y - 16 * s, x, y + 16 * s, line_w(2.5))
+
+
+# ================================================================ Mr. Whiskers, cleaner design (sitting + running)
+ORANGE, ORANGE_SH, CREAM, PINK = "#F0A040", "#D4832A", "#FBE7C6", "#F08A9A"
+
+
+def _cat_face(c, x, hy, k, look=0.0, smug=1.0, blink_=0.0, mouth="w"):
+    """Cat head centred at (x, hy), size factor k (1.0 = head radius 80px)."""
+    for sx in (-1, 1):  # ears with pink inner
+        ear = poly([(x + sx * 72 * k, hy - 30 * k), (x + sx * 64 * k, hy - 112 * k), (x + sx * 18 * k, hy - 66 * k)])
+        shape(c, ear, ORANGE, ow=4)
+        c.drawPath(poly([(x + sx * 60 * k, hy - 44 * k), (x + sx * 58 * k, hy - 92 * k), (x + sx * 30 * k, hy - 64 * k)]),
+                   P(PINK))
+    head = smooth_path([(x, hy - 76 * k), (x + 66 * k, hy - 52 * k), (x + 92 * k, hy + 6 * k), (x + 70 * k, hy + 58 * k),
+                        (x, hy + 72 * k), (x - 70 * k, hy + 58 * k), (x - 92 * k, hy + 6 * k), (x - 66 * k, hy - 52 * k)])
+    shape(c, head, ORANGE, shade=ORANGE_SH, sdx=10 * k, ow=4)
+    for dx in (-16, 0, 16):  # forehead stripes
+        c.drawLine(x + dx * k, hy - 72 * k, x + dx * 0.8 * k, hy - 48 * k, line_w(6 * k, ORANGE_SH))
+    shape(c, smooth_path([(x - 44 * k, hy + 24 * k), (x, hy + 8 * k), (x + 44 * k, hy + 24 * k), (x + 30 * k, hy + 60 * k),
+                          (x, hy + 68 * k), (x - 30 * k, hy + 60 * k)]), CREAM, ow=0.01)  # white muzzle
+    for sx in (-1, 1):  # almond eyes, slit pupils, smug lids
+        ex, ey = x + sx * 34 * k, hy - 6 * k
+        eye = smooth_path([(ex - 20 * k, ey), (ex, ey - 15 * k), (ex + 20 * k, ey), (ex, ey + 15 * k)])
+        c.drawPath(eye, P("#C8E870"))
+        c.save()
+        c.clipPath(eye, doAntiAlias=True)
+        c.drawPath(oval(ex + look * 7 * k, ey, 4 * k, 12 * k), P(INK))
+        lid = max(0.45 * smug, blink_)
+        if lid > 0.02:
+            c.drawRect(skia.Rect(ex - 22 * k, ey - 16 * k, ex + 22 * k, ey - 16 * k + 32 * k * lid), P(ORANGE))
+        c.restore()
+        c.drawPath(eye, line_w(3.5))
+        if lid > 0.02:
+            c.drawLine(ex - 19 * k, ey - 16 * k + 32 * k * lid, ex + 19 * k, ey - 16 * k + 32 * k * lid, line_w(3.5))
+    shape(c, poly([(x - 9 * k, hy + 16 * k), (x + 9 * k, hy + 16 * k), (x, hy + 27 * k)]), PINK, ow=2.5)  # nose
+    if mouth == "w":
+        sm = skia.Path()
+        sm.moveTo(x - 18 * k, hy + 34 * k)
+        sm.quadTo(x - 8 * k, hy + 44 * k, x, hy + 30 * k)
+        sm.quadTo(x + 8 * k, hy + 44 * k, x + 18 * k, hy + 34 * k)
+        c.drawPath(sm, line_w(3))
+    for sy in (-1, 0, 1):  # whiskers
+        for sx in (-1, 1):
+            c.drawLine(x + sx * 46 * k, hy + (28 + sy * 7) * k, x + sx * 112 * k, hy + (22 + sy * 16) * k, line_w(2.5))
+
+
+def cat(c, x, y, s, t, smug=1.0, look=0.0):
+    """Mr. Whiskers sitting (x, y = bottom centre), s = height px."""
+    k = s / 300
+    tail = skia.Path()
+    tail.moveTo(x + 70 * k, y - 16 * k)
+    tail.cubicTo(x + 170 * k, y - 10 * k, x + 170 * k, y - 120 * k + 16 * k * math.sin(t * 3),
+                 x + 125 * k, y - 160 * k)
+    c.drawPath(tail, line_w(30 * k, INK))
+    c.drawPath(tail, line_w(22 * k, ORANGE))
+    body = smooth_path([(x - 92 * k, y), (x - 100 * k, y - 110 * k), (x - 52 * k, y - 178 * k), (x + 52 * k, y - 178 * k),
+                        (x + 100 * k, y - 110 * k), (x + 92 * k, y)])
+    shape(c, body, ORANGE, shade=ORANGE_SH, sdx=14 * k, ow=4)
+    shape(c, smooth_path([(x - 40 * k, y - 10 * k), (x - 46 * k, y - 110 * k), (x, y - 150 * k), (x + 46 * k, y - 110 * k),
+                          (x + 40 * k, y - 10 * k)]), CREAM, ow=3)  # belly patch
+    for sx in (-1, 1):  # front paws
+        shape(c, oval(x + sx * 34 * k, y - 10 * k, 30 * k, 16 * k), CREAM, ow=3.5)
+    _cat_face(c, x, y - 232 * k, k, look, smug, blink_=0.0)
+
+
+def cat_run(c, x, y, s, t, facing=1, scarab_in_mouth=True):
+    """Side-view galloping cat (x, y = ground under the body centre), s = body length px, facing +1 = right."""
+    k = s / 300
+    ph = t * 9.0  # gallop speed
+    c.save()
+    c.translate(x, y)
+    c.scale(facing, 1)
+    stretch = 1 + 0.08 * math.sin(ph * 2)
+    bob = -12 * k * abs(math.sin(ph))
+    # tail streaming behind
+    tail = skia.Path()
+    tail.moveTo(-120 * k, -120 * k + bob)
+    tail.cubicTo(-200 * k, -150 * k + bob, -240 * k, -110 * k + 14 * k * math.sin(ph * 1.5), -280 * k, -150 * k)
+    c.drawPath(tail, line_w(26 * k, INK))
+    c.drawPath(tail, line_w(18 * k, ORANGE))
+    # legs: back pair and front pair, alternating reach (gallop)
+    for (bx, phase, far) in ((-90, 0.0, 1), (-70, 0.5, 0), (90, 3.14, 1), (110, 3.64, 0)):
+        a = math.sin(ph + phase)
+        lx0, ly0 = bx * k * stretch, -70 * k + bob
+        lx1, ly1 = lx0 + 46 * k * a, -6 * k - max(0.0, -a) * 30 * k
+        col = ORANGE_SH if far else ORANGE
+        c.drawLine(lx0, ly0, lx1, ly1, line_w(30 * k, INK))
+        c.drawLine(lx0, ly0, lx1, ly1, line_w(22 * k, col))
+        shape(c, oval(lx1 + 6 * k, ly1, 18 * k, 11 * k), CREAM, ow=3)
+    body = smooth_path([(-140 * k * stretch, -110 * k + bob), (-60 * k, -150 * k + bob), (80 * k, -145 * k + bob),
+                        (150 * k * stretch, -110 * k + bob), (120 * k, -60 * k + bob), (-120 * k, -60 * k + bob)])
+    shape(c, body, ORANGE, shade=ORANGE_SH, sdx=0, sdy=10 * k, ow=4)
+    for dx in (-60, -20, 20):  # back stripes
+        c.drawLine(dx * k, -150 * k + bob, (dx + 10) * k, -118 * k + bob, line_w(8 * k, ORANGE_SH))
+    # head (3/4 toward the direction of travel) with the golden scarab in its mouth
+    hx, hy = 175 * k * stretch, -170 * k + bob
+    c.save()
+    c.translate(hx, hy)
+    c.scale(0.85, 0.85)
+    _cat_face(c, 0, 0, k, look=0.8, smug=0.6, mouth="none")
+    c.restore()
+    if scarab_in_mouth:  # golden scarab held in the teeth, in front of the muzzle
+        radial(c, hx + 8 * k, hy + 52 * k, 70 * k, "#FFE070", 0.45, plus=True)
+        shape(c, oval(hx + 8 * k, hy + 52 * k, 30 * k, 21 * k), "#E8B83A", ow=3)
+        c.drawLine(hx + 8 * k, hy + 32 * k, hx + 8 * k, hy + 72 * k, line_w(3))
+    c.restore()
+
+
+def door_closeup(c, n, t, cx=540):
+    """One door, centred, on its own wall section (same framing for all three doors)."""
+    vgrad(c, (0, 0, W, H), "#B88A4A", "#9A6E36")
+    for x in range(-90, W, 180):
+        for y in range(0, 1500, 120):
+            c.drawRect(skia.Rect.MakeXYWH(x + ((y // 120) % 2) * 90, y, 180, 120), line_w(3, INK, 0.35))
+    hieroglyphs(c, 0, 60, W, 230, 11 + n, 0.5)
+    c.save()
+    k = 1.6
+    c.translate(cx, 1500)
+    c.scale(k, k)
+    c.translate(-(DOOR_W / 2), -DOOR_H)  # door bottom sits on the floor line
+    draw_door(c, n, 0, 0)
+    c.restore()
+    shape(c, poly([(0, 1500), (W, 1500), (W, H), (0, H)]), SAND, shade=SAND_SH, sdy=0, sdx=0)
+    for kx in range(0, W + 300, 200):
+        c.drawLine(kx, 1500, kx - 220, H, line_w(3, INK, 0.3))
+    if n == 3:  # water seeping under door 3 (scaled with the door)
+        x0 = cx - DOOR_W / 2 * k
+        shape(c, smooth_path([(x0 + 40, 1502), (x0 + DOOR_W * k - 40, 1502), (x0 + DOOR_W * k - 10, 1540),
+                              (cx + 30, 1560), (x0 + 30, 1536)]), "#8AA6B8", ow=2.5)
+        c.drawPath(smooth_path([(x0 + 90, 1512), (cx, 1528), (x0 + DOOR_W * k - 90, 1512)], closed=False),
+                   line_w(3, "#FFFFFF", 0.6))
+    for i, x in enumerate((cx - 330, cx + 330)):
+        torch(c, x, 760, t, 1.0, i + n)

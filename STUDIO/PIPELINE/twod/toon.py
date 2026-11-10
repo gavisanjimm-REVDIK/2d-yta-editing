@@ -142,6 +142,57 @@ ARM = {
 }
 
 
+def _run_leg(C, side, up, hip_y):
+    lx = side * C["hip_w"] * 0.27
+    fy = -0.8 * up
+    fx = lx + side * (0.05 + 0.05 * up)
+    kx = lx + side * (0.08 + 0.06 * up)
+    ky = hip_y + (fy - 0.12 - hip_y) * (0.5 - 0.3 * up) - 0.1 * up
+    return (lx, hip_y, kx, ky, fx, fy, up)
+
+
+def _draw_run_leg(pen, C, lx, hip_y, kx, ky, fx, fy, up):
+    col, sh, wd = (C["skin"], C["skin_sh"], C["limb_w"]) if "dress" in C["extras"] else (C["pants"], C["pants_sh"], C["pants_w"])
+    pen.capsule(lx, hip_y + (0.2 if "dress" in C["extras"] else 0), kx, ky, wd, col, sh)
+    pen.capsule(kx, ky, fx, fy - 0.12, wd * 0.95, col, sh)
+    if up > 0.3:  # knee cap highlight so the raised knee reads
+        pen.c.drawPath(oval(kx, ky, wd * 0.55, wd * 0.5), pen.p(col))
+        pen.stroke(oval(kx, ky, wd * 0.55, wd * 0.5), pen.ow * 0.8)
+    shoe = skia.Path()
+    shoe.addRoundRect(skia.Rect(fx - 0.21, fy - 0.2 - 0.06 * up, fx + 0.21, fy + 0.03), 0.12, 0.12)
+    pen.shape(shoe, C["shoes"])
+    sole = skia.Path()
+    sole.moveTo(fx - 0.19, fy - 0.02)
+    sole.lineTo(fx + 0.19, fy - 0.02)
+    pen.stroke(sole, pen.ow * 0.6, "#E8E0D8")
+
+
+def arm_target(C, preset):
+    """Numeric (hx, hy, bend) for a preset or tuple - lets shots blend smoothly between poses."""
+    if isinstance(C, str):
+        C = CAST[C]
+    if preset == "hips":
+        th, sw, hw, bel = C["torso_h"], C["shoulder_w"], C["hip_w"], C["belly"]
+        return ((hw / 2 + bel * 0.9 + 0.1) - (sw / 2 - 0.1), th * 0.62, "out")
+    if isinstance(preset, str):
+        return ARM[preset]
+    return tuple(preset) + (("out",) if len(preset) == 2 else ())
+
+
+def arm_blend(C, t, keys, blend=0.25):
+    """keys = [(t, preset_or_tuple), ...] -> eased hand target between consecutive poses (no snapping)."""
+    cur = arm_target(C, keys[0][1])
+    for i in range(1, len(keys)):
+        tk, pk = keys[i]
+        if t < tk - blend:
+            break
+        a, b = arm_target(C, keys[i - 1][1]), arm_target(C, pk)
+        u = clamp((t - (tk - blend)) / blend)
+        u = u * u * (3 - 2 * u)
+        cur = (a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u, b[2] if u > 0.5 else a[2])
+    return cur
+
+
 # ================================================================ drawing helpers
 class Pen:
     def __init__(self, canvas, unit):
@@ -608,10 +659,23 @@ def draw_character(canvas, C, x, y_feet, height_px, pose=None):
 
     # ---- legs
     walk = pose.get("walk")
+    run = pose.get("run")
+    deferred_legs = []
     hip_y = -C["leg"] + pose.get("bob", 0.0)
+    if run is not None:  # running bounce: body highest mid-stride, lowest on footfall
+        hip_y -= 0.16 * abs(math.sin(run * 2 * math.pi))
     for side in (-1, 1):
         lift = 0.0
         swing = 0.0
+        if run is not None:  # front-view run: high knee, bent leg (raised leg drawn over the coat later)
+            ph = run * 2 * math.pi + (0 if side < 0 else math.pi)
+            up = max(0.0, math.sin(ph))
+            leg = _run_leg(C, side, up, hip_y)
+            if up > 0.3:
+                deferred_legs.append(leg)
+            else:
+                _draw_run_leg(pen, C, *leg)
+            continue
         if walk is not None:
             ph = walk * 2 * math.pi + (0 if side < 0 else math.pi)
             lift = max(0.0, math.sin(ph)) * 0.22
@@ -650,6 +714,9 @@ def draw_character(canvas, C, x, y_feet, height_px, pose=None):
     arms = []
     for side, key_ in ((-1, "arm_l"), (1, "arm_r")):
         a = pose.get(key_, "down")
+        if run is not None and key_ not in pose:  # pump the arms, opposite to the legs
+            sw_ = math.sin(run * 2 * math.pi + (math.pi if side < 0 else 0))
+            a = (0.26 - 0.06 * sw_, 1.02 - 0.2 * sw_, "out")
         hx_, hy_, bend = ARM[a] if isinstance(a, str) else (a + ("out",))[:3]
         if a == "hips":  # knuckles on the side of THIS body (belly / wide hips aware)
             hx_ = (hw / 2 + bel * 0.9 + 0.1) - (sw / 2 - 0.1)
@@ -665,6 +732,9 @@ def draw_character(canvas, C, x, y_feet, height_px, pose=None):
             _draw_arm(pen, C, pose, *arm)
     pen.shape(torso, C["shirt"], C["shirt_sh"], shade_dx=0.16, shade_dy=0.0)
     _torso_details(pen, C, top, hip_y, sw, hw, th)
+    for leg in deferred_legs:  # running: the knee coming up toward the camera is in front of the coat
+        _draw_run_leg(pen, C, *leg)
+
     def raised(arm):  # hand above the shoulder line -> it belongs in front of the face/hat
         return arm[5] != "behind" and arm[4][1] < arm[2][1] - 0.05
     for arm in arms:
