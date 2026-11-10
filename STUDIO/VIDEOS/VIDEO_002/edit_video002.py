@@ -53,7 +53,7 @@ ROOM_LEN = (B["marcus_end"] - B["rooms"]) / 3
 B["room_kitchen"] = B["rooms"]
 B["room_library"] = B["rooms"] + ROOM_LEN
 B["room_hall"] = B["rooms"] + 2 * ROOM_LEN
-DURATION = round(B["freeze"] + 5.0, 2)
+DURATION = round(B["freeze"] + 3.5, 2)
 BPM = 96
 
 

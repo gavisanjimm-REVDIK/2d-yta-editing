@@ -41,5 +41,28 @@
       "cu_cedric": 149,
       "cu_marcus": 71
     }
+  },
+  {
+    "time": "2026-11-10 03:01:34",
+    "frames": 2046,
+    "seconds": 204.8,
+    "jobs": {
+      "dining": 130,
+      "trio": 68,
+      "ext": 84,
+      "arrive": 180,
+      "cu_gaston": 222,
+      "cu_prim": 197,
+      "cu_cedric": 175,
+      "cu_marcus": 82,
+      "room_kitchen": 55,
+      "room_library": 55,
+      "room_hall": 55,
+      "marcus_end": 118,
+      "panel_kitchen": 176,
+      "panel_library": 176,
+      "panel_hall": 176,
+      "final_lineup": 97
+    }
   }
 ]

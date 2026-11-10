@@ -1,6 +1,6 @@
 {
   "backend": "kokoro",
-  "duration": 52.225,
+  "duration": 57.749,
   "lines": [
     {
       "id": "L01",
@@ -293,155 +293,155 @@
     {
       "id": "L03",
       "who": "marcus",
-      "text": "Phew, what a blizzard! Right. Nobody leaves until I find the poisoner.",
-      "start": 9.941,
-      "end": 13.823,
+      "text": "Phew... what a blizzard! Right... nobody leaves, until I find the poisoner.",
+      "start": 9.641,
+      "end": 15.233,
       "words": [
         {
-          "word": "Phew,",
-          "start": 9.941,
-          "end": 10.181,
+          "word": "Phew...",
+          "start": 9.641,
+          "end": 10.001,
           "line": "L03",
           "who": "marcus"
         },
         {
           "word": "what",
-          "start": 10.321,
-          "end": 10.381,
+          "start": 10.341,
+          "end": 10.421,
           "line": "L03",
           "who": "marcus"
         },
         {
           "word": "a",
-          "start": 10.381,
-          "end": 10.501,
+          "start": 10.421,
+          "end": 10.561,
           "line": "L03",
           "who": "marcus"
         },
         {
           "word": "blizzard!",
-          "start": 10.501,
-          "end": 10.861,
+          "start": 10.561,
+          "end": 11.101,
           "line": "L03",
           "who": "marcus"
         },
         {
-          "word": "Right.",
-          "start": 11.261,
-          "end": 11.481,
+          "word": "Right...",
+          "start": 11.421,
+          "end": 11.681,
           "line": "L03",
           "who": "marcus"
         },
         {
-          "word": "Nobody",
-          "start": 11.801,
-          "end": 12.041,
+          "word": "nobody",
+          "start": 12.461,
+          "end": 12.781,
           "line": "L03",
           "who": "marcus"
         },
         {
-          "word": "leaves",
-          "start": 12.041,
-          "end": 12.421,
+          "word": "leaves,",
+          "start": 12.781,
+          "end": 13.381,
           "line": "L03",
           "who": "marcus"
         },
         {
           "word": "until",
-          "start": 12.421,
-          "end": 12.681,
+          "start": 13.381,
+          "end": 13.781,
           "line": "L03",
           "who": "marcus"
         },
         {
           "word": "I",
-          "start": 12.681,
-          "end": 12.841,
+          "start": 13.781,
+          "end": 13.961,
           "line": "L03",
           "who": "marcus"
         },
         {
           "word": "find",
-          "start": 12.841,
-          "end": 13.101,
+          "start": 13.961,
+          "end": 14.301,
           "line": "L03",
           "who": "marcus"
         },
         {
           "word": "the",
-          "start": 13.101,
-          "end": 13.261,
+          "start": 14.301,
+          "end": 14.481,
           "line": "L03",
           "who": "marcus"
         },
         {
           "word": "poisoner.",
-          "start": 13.261,
-          "end": 13.761,
+          "start": 14.481,
+          "end": 15.201,
           "line": "L03",
           "who": "marcus"
         }
       ],
       "words_local": [
         {
-          "word": "Phew,",
+          "word": "Phew...",
           "start": 0.0,
-          "end": 0.24
+          "end": 0.36
         },
         {
           "word": "what",
-          "start": 0.38,
-          "end": 0.44
+          "start": 0.7,
+          "end": 0.78
         },
         {
           "word": "a",
-          "start": 0.44,
-          "end": 0.56
-        },
-        {
-          "word": "blizzard!",
-          "start": 0.56,
+          "start": 0.78,
           "end": 0.92
         },
         {
-          "word": "Right.",
-          "start": 1.32,
-          "end": 1.54
+          "word": "blizzard!",
+          "start": 0.92,
+          "end": 1.46
         },
         {
-          "word": "Nobody",
-          "start": 1.86,
-          "end": 2.1
+          "word": "Right...",
+          "start": 1.78,
+          "end": 2.04
         },
         {
-          "word": "leaves",
-          "start": 2.1,
-          "end": 2.48
+          "word": "nobody",
+          "start": 2.82,
+          "end": 3.14
+        },
+        {
+          "word": "leaves,",
+          "start": 3.14,
+          "end": 3.74
         },
         {
           "word": "until",
-          "start": 2.48,
-          "end": 2.74
+          "start": 3.74,
+          "end": 4.14
         },
         {
           "word": "I",
-          "start": 2.74,
-          "end": 2.9
+          "start": 4.14,
+          "end": 4.32
         },
         {
           "word": "find",
-          "start": 2.9,
-          "end": 3.16
+          "start": 4.32,
+          "end": 4.66
         },
         {
           "word": "the",
-          "start": 3.16,
-          "end": 3.32
+          "start": 4.66,
+          "end": 4.84
         },
         {
           "word": "poisoner.",
-          "start": 3.32,
-          "end": 3.82
+          "start": 4.84,
+          "end": 5.56
         }
       ],
       "mismatch": 1
@@ -450,118 +450,118 @@
       "id": "L04",
       "who": "gaston",
       "text": "I made the pudding at six. Then I chopped onions all night. That's why I'm crying!",
-      "start": 14.073,
-      "end": 18.112,
+      "start": 15.483,
+      "end": 22.692,
       "words": [
         {
           "word": "I",
-          "start": 14.073,
-          "end": 14.213,
+          "start": 15.483,
+          "end": 15.763,
           "line": "L04",
           "who": "gaston"
         },
         {
           "word": "made",
-          "start": 14.213,
-          "end": 14.333,
+          "start": 15.763,
+          "end": 16.003,
           "line": "L04",
           "who": "gaston"
         },
         {
           "word": "the",
-          "start": 14.333,
-          "end": 14.453,
+          "start": 16.003,
+          "end": 16.243,
           "line": "L04",
           "who": "gaston"
         },
         {
           "word": "pudding",
-          "start": 14.453,
-          "end": 14.653,
+          "start": 16.243,
+          "end": 16.563,
           "line": "L04",
           "who": "gaston"
         },
         {
           "word": "at",
-          "start": 14.653,
-          "end": 14.853,
+          "start": 16.563,
+          "end": 16.803,
           "line": "L04",
           "who": "gaston"
         },
         {
           "word": "six.",
-          "start": 14.853,
-          "end": 15.133,
+          "start": 16.803,
+          "end": 17.243,
           "line": "L04",
           "who": "gaston"
         },
         {
           "word": "Then",
-          "start": 15.393,
-          "end": 15.453,
+          "start": 17.983,
+          "end": 18.243,
           "line": "L04",
           "who": "gaston"
         },
         {
           "word": "I",
-          "start": 15.453,
-          "end": 15.593,
+          "start": 18.243,
+          "end": 18.403,
           "line": "L04",
           "who": "gaston"
         },
         {
           "word": "chopped",
-          "start": 15.593,
-          "end": 15.873,
+          "start": 18.403,
+          "end": 18.723,
           "line": "L04",
           "who": "gaston"
         },
         {
           "word": "onions",
-          "start": 15.873,
-          "end": 16.213,
+          "start": 18.723,
+          "end": 19.143,
           "line": "L04",
           "who": "gaston"
         },
         {
           "word": "all",
-          "start": 16.213,
-          "end": 16.493,
+          "start": 19.143,
+          "end": 19.603,
           "line": "L04",
           "who": "gaston"
         },
         {
           "word": "night.",
-          "start": 16.493,
-          "end": 16.773,
+          "start": 19.603,
+          "end": 20.043,
           "line": "L04",
           "who": "gaston"
         },
         {
           "word": "That's",
-          "start": 17.013,
-          "end": 17.213,
+          "start": 21.083,
+          "end": 21.443,
           "line": "L04",
           "who": "gaston"
         },
         {
           "word": "why",
-          "start": 17.213,
-          "end": 17.373,
+          "start": 21.443,
+          "end": 21.663,
           "line": "L04",
           "who": "gaston"
         },
         {
           "word": "I'm",
-          "start": 17.373,
-          "end": 17.553,
+          "start": 21.663,
+          "end": 21.923,
           "line": "L04",
           "who": "gaston"
         },
         {
           "word": "crying!",
-          "start": 17.553,
-          "end": 17.833,
+          "start": 21.923,
+          "end": 22.343,
           "line": "L04",
           "who": "gaston"
         }
@@ -570,82 +570,82 @@
         {
           "word": "I",
           "start": 0.0,
-          "end": 0.14
+          "end": 0.28
         },
         {
           "word": "made",
-          "start": 0.14,
-          "end": 0.26
+          "start": 0.28,
+          "end": 0.52
         },
         {
           "word": "the",
-          "start": 0.26,
-          "end": 0.38
+          "start": 0.52,
+          "end": 0.76
         },
         {
           "word": "pudding",
-          "start": 0.38,
-          "end": 0.58
+          "start": 0.76,
+          "end": 1.08
         },
         {
           "word": "at",
-          "start": 0.58,
-          "end": 0.78
+          "start": 1.08,
+          "end": 1.32
         },
         {
           "word": "six.",
-          "start": 0.78,
-          "end": 1.06
+          "start": 1.32,
+          "end": 1.76
         },
         {
           "word": "Then",
-          "start": 1.32,
-          "end": 1.38
+          "start": 2.5,
+          "end": 2.76
         },
         {
           "word": "I",
-          "start": 1.38,
-          "end": 1.52
+          "start": 2.76,
+          "end": 2.92
         },
         {
           "word": "chopped",
-          "start": 1.52,
-          "end": 1.8
+          "start": 2.92,
+          "end": 3.24
         },
         {
           "word": "onions",
-          "start": 1.8,
-          "end": 2.14
+          "start": 3.24,
+          "end": 3.66
         },
         {
           "word": "all",
-          "start": 2.14,
-          "end": 2.42
+          "start": 3.66,
+          "end": 4.12
         },
         {
           "word": "night.",
-          "start": 2.42,
-          "end": 2.7
+          "start": 4.12,
+          "end": 4.56
         },
         {
           "word": "That's",
-          "start": 2.94,
-          "end": 3.14
+          "start": 5.6,
+          "end": 5.96
         },
         {
           "word": "why",
-          "start": 3.14,
-          "end": 3.3
+          "start": 5.96,
+          "end": 6.18
         },
         {
           "word": "I'm",
-          "start": 3.3,
-          "end": 3.48
+          "start": 6.18,
+          "end": 6.44
         },
         {
           "word": "crying!",
-          "start": 3.48,
-          "end": 3.76
+          "start": 6.44,
+          "end": 6.86
         }
       ],
       "mismatch": 0
@@ -654,111 +654,111 @@
       "id": "L05",
       "who": "prim",
       "text": "I was in the library, typing his new will. He left everything to his cat.",
-      "start": 18.312,
-      "end": 22.6,
+      "start": 22.892,
+      "end": 29.241,
       "words": [
         {
           "word": "I",
-          "start": 18.312,
-          "end": 18.452,
+          "start": 22.892,
+          "end": 23.052,
           "line": "L05",
           "who": "prim"
         },
         {
           "word": "was",
-          "start": 18.452,
-          "end": 18.572,
+          "start": 23.052,
+          "end": 23.172,
           "line": "L05",
           "who": "prim"
         },
         {
           "word": "in",
-          "start": 18.572,
-          "end": 18.712,
+          "start": 23.172,
+          "end": 23.332,
           "line": "L05",
           "who": "prim"
         },
         {
           "word": "the",
-          "start": 18.712,
-          "end": 18.852,
+          "start": 23.332,
+          "end": 23.472,
           "line": "L05",
           "who": "prim"
         },
         {
           "word": "library,",
-          "start": 18.852,
-          "end": 19.292,
+          "start": 23.472,
+          "end": 24.032,
           "line": "L05",
           "who": "prim"
         },
         {
           "word": "typing",
-          "start": 19.292,
-          "end": 19.672,
+          "start": 24.032,
+          "end": 24.612,
           "line": "L05",
           "who": "prim"
         },
         {
           "word": "his",
-          "start": 19.672,
-          "end": 20.012,
+          "start": 24.612,
+          "end": 24.932,
           "line": "L05",
           "who": "prim"
         },
         {
           "word": "new",
-          "start": 20.012,
-          "end": 20.312,
+          "start": 24.932,
+          "end": 25.252,
           "line": "L05",
           "who": "prim"
         },
         {
           "word": "will.",
-          "start": 20.312,
-          "end": 20.572,
+          "start": 25.252,
+          "end": 25.632,
           "line": "L05",
           "who": "prim"
         },
         {
           "word": "He",
-          "start": 20.932,
-          "end": 21.012,
+          "start": 26.532,
+          "end": 26.692,
           "line": "L05",
           "who": "prim"
         },
         {
           "word": "left",
-          "start": 21.012,
-          "end": 21.192,
+          "start": 26.692,
+          "end": 26.892,
           "line": "L05",
           "who": "prim"
         },
         {
           "word": "everything",
-          "start": 21.192,
-          "end": 21.632,
+          "start": 26.892,
+          "end": 27.612,
           "line": "L05",
           "who": "prim"
         },
         {
           "word": "to",
-          "start": 21.632,
-          "end": 21.952,
+          "start": 27.612,
+          "end": 28.372,
           "line": "L05",
           "who": "prim"
         },
         {
           "word": "his",
-          "start": 21.952,
-          "end": 22.092,
+          "start": 28.372,
+          "end": 28.552,
           "line": "L05",
           "who": "prim"
         },
         {
           "word": "cat.",
-          "start": 22.092,
-          "end": 22.352,
+          "start": 28.552,
+          "end": 28.952,
           "line": "L05",
           "who": "prim"
         }
@@ -767,77 +767,77 @@
         {
           "word": "I",
           "start": 0.0,
-          "end": 0.14
+          "end": 0.16
         },
         {
           "word": "was",
-          "start": 0.14,
-          "end": 0.26
+          "start": 0.16,
+          "end": 0.28
         },
         {
           "word": "in",
-          "start": 0.26,
-          "end": 0.4
+          "start": 0.28,
+          "end": 0.44
         },
         {
           "word": "the",
-          "start": 0.4,
-          "end": 0.54
+          "start": 0.44,
+          "end": 0.58
         },
         {
           "word": "library,",
-          "start": 0.54,
-          "end": 0.98
+          "start": 0.58,
+          "end": 1.14
         },
         {
           "word": "typing",
-          "start": 0.98,
-          "end": 1.36
+          "start": 1.14,
+          "end": 1.72
         },
         {
           "word": "his",
-          "start": 1.36,
-          "end": 1.7
+          "start": 1.72,
+          "end": 2.04
         },
         {
           "word": "new",
-          "start": 1.7,
-          "end": 2.0
+          "start": 2.04,
+          "end": 2.36
         },
         {
           "word": "will.",
-          "start": 2.0,
-          "end": 2.26
+          "start": 2.36,
+          "end": 2.74
         },
         {
           "word": "He",
-          "start": 2.62,
-          "end": 2.7
+          "start": 3.64,
+          "end": 3.8
         },
         {
           "word": "left",
-          "start": 2.7,
-          "end": 2.88
+          "start": 3.8,
+          "end": 4.0
         },
         {
           "word": "everything",
-          "start": 2.88,
-          "end": 3.32
+          "start": 4.0,
+          "end": 4.72
         },
         {
           "word": "to",
-          "start": 3.32,
-          "end": 3.64
+          "start": 4.72,
+          "end": 5.48
         },
         {
           "word": "his",
-          "start": 3.64,
-          "end": 3.78
+          "start": 5.48,
+          "end": 5.66
         },
         {
           "word": "cat.",
-          "start": 3.78,
-          "end": 4.04
+          "start": 5.66,
+          "end": 6.06
         }
       ],
       "mismatch": 0
@@ -846,125 +846,125 @@
       "id": "L06",
       "who": "cedric",
       "text": "Don't look at me! I only just got here. My car pulled in right before yours, detective.",
-      "start": 22.8,
-      "end": 27.205,
+      "start": 29.441,
+      "end": 35.022,
       "words": [
         {
           "word": "Don't",
-          "start": 22.8,
-          "end": 23.02,
+          "start": 29.441,
+          "end": 29.901,
           "line": "L06",
           "who": "cedric"
         },
         {
           "word": "look",
-          "start": 23.02,
-          "end": 23.12,
+          "start": 29.901,
+          "end": 30.021,
           "line": "L06",
           "who": "cedric"
         },
         {
           "word": "at",
-          "start": 23.12,
-          "end": 23.24,
+          "start": 30.021,
+          "end": 30.161,
           "line": "L06",
           "who": "cedric"
         },
         {
           "word": "me!",
-          "start": 23.24,
-          "end": 23.4,
+          "start": 30.161,
+          "end": 30.501,
           "line": "L06",
           "who": "cedric"
         },
         {
           "word": "I",
-          "start": 23.48,
-          "end": 23.58,
+          "start": 31.021,
+          "end": 31.121,
           "line": "L06",
           "who": "cedric"
         },
         {
           "word": "only",
-          "start": 23.58,
-          "end": 23.78,
+          "start": 31.121,
+          "end": 31.301,
           "line": "L06",
           "who": "cedric"
         },
         {
           "word": "just",
-          "start": 23.78,
-          "end": 23.98,
+          "start": 31.301,
+          "end": 31.541,
           "line": "L06",
           "who": "cedric"
         },
         {
           "word": "got",
-          "start": 23.98,
-          "end": 24.18,
+          "start": 31.541,
+          "end": 31.781,
           "line": "L06",
           "who": "cedric"
         },
         {
           "word": "here.",
-          "start": 24.18,
-          "end": 24.5,
+          "start": 31.781,
+          "end": 32.141,
           "line": "L06",
           "who": "cedric"
         },
         {
           "word": "My",
-          "start": 24.86,
-          "end": 24.96,
+          "start": 32.521,
+          "end": 32.661,
           "line": "L06",
           "who": "cedric"
         },
         {
           "word": "car",
-          "start": 24.96,
-          "end": 25.2,
+          "start": 32.661,
+          "end": 32.861,
           "line": "L06",
           "who": "cedric"
         },
         {
           "word": "pulled",
-          "start": 25.2,
-          "end": 25.5,
+          "start": 32.861,
+          "end": 33.121,
           "line": "L06",
           "who": "cedric"
         },
         {
           "word": "in",
-          "start": 25.5,
-          "end": 25.7,
+          "start": 33.121,
+          "end": 33.321,
           "line": "L06",
           "who": "cedric"
         },
         {
           "word": "right",
-          "start": 25.7,
-          "end": 25.88,
+          "start": 33.321,
+          "end": 33.561,
           "line": "L06",
           "who": "cedric"
         },
         {
           "word": "before",
-          "start": 25.88,
-          "end": 26.18,
+          "start": 33.561,
+          "end": 33.921,
           "line": "L06",
           "who": "cedric"
         },
         {
           "word": "yours,",
-          "start": 26.18,
-          "end": 26.5,
+          "start": 33.921,
+          "end": 34.281,
           "line": "L06",
           "who": "cedric"
         },
         {
           "word": "detective.",
-          "start": 26.68,
-          "end": 26.88,
+          "start": 34.421,
+          "end": 34.621,
           "line": "L06",
           "who": "cedric"
         }
@@ -973,87 +973,87 @@
         {
           "word": "Don't",
           "start": 0.0,
-          "end": 0.22
+          "end": 0.46
         },
         {
           "word": "look",
-          "start": 0.22,
-          "end": 0.32
+          "start": 0.46,
+          "end": 0.58
         },
         {
           "word": "at",
-          "start": 0.32,
-          "end": 0.44
+          "start": 0.58,
+          "end": 0.72
         },
         {
           "word": "me!",
-          "start": 0.44,
-          "end": 0.6
+          "start": 0.72,
+          "end": 1.06
         },
         {
           "word": "I",
-          "start": 0.68,
-          "end": 0.78
+          "start": 1.58,
+          "end": 1.68
         },
         {
           "word": "only",
-          "start": 0.78,
-          "end": 0.98
+          "start": 1.68,
+          "end": 1.86
         },
         {
           "word": "just",
-          "start": 0.98,
-          "end": 1.18
+          "start": 1.86,
+          "end": 2.1
         },
         {
           "word": "got",
-          "start": 1.18,
-          "end": 1.38
+          "start": 2.1,
+          "end": 2.34
         },
         {
           "word": "here.",
-          "start": 1.38,
-          "end": 1.7
-        },
-        {
-          "word": "My",
-          "start": 2.06,
-          "end": 2.16
-        },
-        {
-          "word": "car",
-          "start": 2.16,
-          "end": 2.4
-        },
-        {
-          "word": "pulled",
-          "start": 2.4,
+          "start": 2.34,
           "end": 2.7
         },
         {
+          "word": "My",
+          "start": 3.08,
+          "end": 3.22
+        },
+        {
+          "word": "car",
+          "start": 3.22,
+          "end": 3.42
+        },
+        {
+          "word": "pulled",
+          "start": 3.42,
+          "end": 3.68
+        },
+        {
           "word": "in",
-          "start": 2.7,
-          "end": 2.9
+          "start": 3.68,
+          "end": 3.88
         },
         {
           "word": "right",
-          "start": 2.9,
-          "end": 3.08
+          "start": 3.88,
+          "end": 4.12
         },
         {
           "word": "before",
-          "start": 3.08,
-          "end": 3.38
+          "start": 4.12,
+          "end": 4.48
         },
         {
           "word": "yours,",
-          "start": 3.38,
-          "end": 3.7
+          "start": 4.48,
+          "end": 4.84
         },
         {
           "word": "detective.",
-          "start": 3.88,
-          "end": 4.08
+          "start": 4.98,
+          "end": 5.18
         }
       ],
       "mismatch": 0
@@ -1062,55 +1062,55 @@
       "id": "L07",
       "who": "marcus",
       "text": "Interesting. Let me have a look around.",
-      "start": 27.805,
-      "end": 29.756,
+      "start": 35.322,
+      "end": 37.651,
       "words": [
         {
           "word": "Interesting.",
-          "start": 27.805,
-          "end": 28.285,
+          "start": 35.322,
+          "end": 35.942,
           "line": "L07",
           "who": "marcus"
         },
         {
           "word": "Let",
-          "start": 28.625,
-          "end": 28.705,
+          "start": 36.362,
+          "end": 36.482,
           "line": "L07",
           "who": "marcus"
         },
         {
           "word": "me",
-          "start": 28.705,
-          "end": 28.825,
+          "start": 36.482,
+          "end": 36.602,
           "line": "L07",
           "who": "marcus"
         },
         {
           "word": "have",
-          "start": 28.825,
-          "end": 28.965,
+          "start": 36.602,
+          "end": 36.762,
           "line": "L07",
           "who": "marcus"
         },
         {
           "word": "a",
-          "start": 28.965,
-          "end": 29.085,
+          "start": 36.762,
+          "end": 36.902,
           "line": "L07",
           "who": "marcus"
         },
         {
           "word": "look",
-          "start": 29.085,
-          "end": 29.205,
+          "start": 36.902,
+          "end": 37.022,
           "line": "L07",
           "who": "marcus"
         },
         {
           "word": "around.",
-          "start": 29.205,
-          "end": 29.525,
+          "start": 37.022,
+          "end": 37.382,
           "line": "L07",
           "who": "marcus"
         }
@@ -1119,37 +1119,37 @@
         {
           "word": "Interesting.",
           "start": 0.0,
-          "end": 0.48
+          "end": 0.62
         },
         {
           "word": "Let",
-          "start": 0.82,
-          "end": 0.9
-        },
-        {
-          "word": "me",
-          "start": 0.9,
-          "end": 1.02
-        },
-        {
-          "word": "have",
-          "start": 1.02,
+          "start": 1.04,
           "end": 1.16
         },
         {
-          "word": "a",
+          "word": "me",
           "start": 1.16,
           "end": 1.28
         },
         {
-          "word": "look",
+          "word": "have",
           "start": 1.28,
-          "end": 1.4
+          "end": 1.44
+        },
+        {
+          "word": "a",
+          "start": 1.44,
+          "end": 1.58
+        },
+        {
+          "word": "look",
+          "start": 1.58,
+          "end": 1.7
         },
         {
           "word": "around.",
-          "start": 1.4,
-          "end": 1.72
+          "start": 1.7,
+          "end": 2.06
         }
       ],
       "mismatch": 0
@@ -1158,62 +1158,62 @@
       "id": "L08",
       "who": "marcus",
       "text": "Case closed. The killer already told me everything.",
-      "start": 38.456,
-      "end": 41.285,
+      "start": 43.551,
+      "end": 47.038,
       "words": [
         {
           "word": "Case",
-          "start": 38.456,
-          "end": 38.716,
+          "start": 43.551,
+          "end": 43.831,
           "line": "L08",
           "who": "marcus"
         },
         {
           "word": "closed.",
-          "start": 38.716,
-          "end": 39.156,
+          "start": 43.831,
+          "end": 44.351,
           "line": "L08",
           "who": "marcus"
         },
         {
           "word": "The",
-          "start": 39.556,
-          "end": 39.656,
+          "start": 44.931,
+          "end": 45.111,
           "line": "L08",
           "who": "marcus"
         },
         {
           "word": "killer",
-          "start": 39.656,
-          "end": 39.856,
+          "start": 45.111,
+          "end": 45.391,
           "line": "L08",
           "who": "marcus"
         },
         {
           "word": "already",
-          "start": 39.856,
-          "end": 40.216,
+          "start": 45.391,
+          "end": 45.811,
           "line": "L08",
           "who": "marcus"
         },
         {
           "word": "told",
-          "start": 40.216,
-          "end": 40.496,
+          "start": 45.811,
+          "end": 46.151,
           "line": "L08",
           "who": "marcus"
         },
         {
           "word": "me",
-          "start": 40.496,
-          "end": 40.676,
+          "start": 46.151,
+          "end": 46.371,
           "line": "L08",
           "who": "marcus"
         },
         {
           "word": "everything.",
-          "start": 40.676,
-          "end": 41.016,
+          "start": 46.371,
+          "end": 46.731,
           "line": "L08",
           "who": "marcus"
         }
@@ -1222,42 +1222,42 @@
         {
           "word": "Case",
           "start": 0.0,
-          "end": 0.26
+          "end": 0.28
         },
         {
           "word": "closed.",
-          "start": 0.26,
-          "end": 0.7
+          "start": 0.28,
+          "end": 0.8
         },
         {
           "word": "The",
-          "start": 1.1,
-          "end": 1.2
+          "start": 1.38,
+          "end": 1.56
         },
         {
           "word": "killer",
-          "start": 1.2,
-          "end": 1.4
+          "start": 1.56,
+          "end": 1.84
         },
         {
           "word": "already",
-          "start": 1.4,
-          "end": 1.76
+          "start": 1.84,
+          "end": 2.26
         },
         {
           "word": "told",
-          "start": 1.76,
-          "end": 2.04
+          "start": 2.26,
+          "end": 2.6
         },
         {
           "word": "me",
-          "start": 2.04,
-          "end": 2.22
+          "start": 2.6,
+          "end": 2.82
         },
         {
           "word": "everything.",
-          "start": 2.22,
-          "end": 2.56
+          "start": 2.82,
+          "end": 3.18
         }
       ],
       "mismatch": 0
@@ -1266,125 +1266,125 @@
       "id": "L09",
       "who": "narrator",
       "text": "Gaston was in the kitchen. Miss Prim was in the library. And Cedric had only just arrived.",
-      "start": 41.685,
-      "end": 47.272,
+      "start": 47.438,
+      "end": 53.026,
       "words": [
         {
           "word": "Gaston",
-          "start": 41.685,
-          "end": 42.125,
+          "start": 47.438,
+          "end": 47.878,
           "line": "L09",
           "who": "narrator"
         },
         {
           "word": "was",
-          "start": 42.125,
-          "end": 42.325,
+          "start": 47.878,
+          "end": 48.078,
           "line": "L09",
           "who": "narrator"
         },
         {
           "word": "in",
-          "start": 42.325,
-          "end": 42.485,
+          "start": 48.078,
+          "end": 48.238,
           "line": "L09",
           "who": "narrator"
         },
         {
           "word": "the",
-          "start": 42.485,
-          "end": 42.625,
+          "start": 48.238,
+          "end": 48.378,
           "line": "L09",
           "who": "narrator"
         },
         {
           "word": "kitchen.",
-          "start": 42.625,
-          "end": 42.965,
+          "start": 48.378,
+          "end": 48.718,
           "line": "L09",
           "who": "narrator"
         },
         {
           "word": "Miss",
-          "start": 43.545,
-          "end": 43.565,
+          "start": 49.298,
+          "end": 49.318,
           "line": "L09",
           "who": "narrator"
         },
         {
           "word": "Prim",
-          "start": 43.565,
-          "end": 43.865,
+          "start": 49.318,
+          "end": 49.618,
           "line": "L09",
           "who": "narrator"
         },
         {
           "word": "was",
-          "start": 43.865,
-          "end": 44.145,
+          "start": 49.618,
+          "end": 49.898,
           "line": "L09",
           "who": "narrator"
         },
         {
           "word": "in",
-          "start": 44.145,
-          "end": 44.325,
+          "start": 49.898,
+          "end": 50.078,
           "line": "L09",
           "who": "narrator"
         },
         {
           "word": "the",
-          "start": 44.325,
-          "end": 44.445,
+          "start": 50.078,
+          "end": 50.198,
           "line": "L09",
           "who": "narrator"
         },
         {
           "word": "library.",
-          "start": 44.445,
-          "end": 44.945,
+          "start": 50.198,
+          "end": 50.698,
           "line": "L09",
           "who": "narrator"
         },
         {
           "word": "And",
-          "start": 45.345,
-          "end": 45.445,
+          "start": 51.098,
+          "end": 51.198,
           "line": "L09",
           "who": "narrator"
         },
         {
           "word": "Cedric",
-          "start": 45.445,
-          "end": 45.805,
+          "start": 51.198,
+          "end": 51.558,
           "line": "L09",
           "who": "narrator"
         },
         {
           "word": "had",
-          "start": 45.805,
-          "end": 45.925,
+          "start": 51.558,
+          "end": 51.678,
           "line": "L09",
           "who": "narrator"
         },
         {
           "word": "only",
-          "start": 45.925,
-          "end": 46.205,
+          "start": 51.678,
+          "end": 51.958,
           "line": "L09",
           "who": "narrator"
         },
         {
           "word": "just",
-          "start": 46.205,
-          "end": 46.525,
+          "start": 51.958,
+          "end": 52.278,
           "line": "L09",
           "who": "narrator"
         },
         {
           "word": "arrived.",
-          "start": 46.525,
-          "end": 47.005,
+          "start": 52.278,
+          "end": 52.758,
           "line": "L09",
           "who": "narrator"
         }
@@ -1482,83 +1482,83 @@
       "id": "L10",
       "who": "narrator",
       "text": "And no, it wasn't the cat. So, who is the killer?",
-      "start": 47.572,
-      "end": 50.825,
+      "start": 53.326,
+      "end": 56.349,
       "words": [
         {
           "word": "And",
-          "start": 47.572,
-          "end": 47.732,
+          "start": 53.326,
+          "end": 53.486,
           "line": "L10",
           "who": "narrator"
         },
         {
           "word": "no,",
-          "start": 47.732,
-          "end": 47.972,
+          "start": 53.486,
+          "end": 53.726,
           "line": "L10",
           "who": "narrator"
         },
         {
           "word": "it",
-          "start": 48.112,
-          "end": 48.192,
+          "start": 53.866,
+          "end": 53.946,
           "line": "L10",
           "who": "narrator"
         },
         {
           "word": "wasn't",
-          "start": 48.192,
-          "end": 48.532,
+          "start": 53.946,
+          "end": 54.206,
           "line": "L10",
           "who": "narrator"
         },
         {
           "word": "the",
-          "start": 48.532,
-          "end": 48.652,
+          "start": 54.206,
+          "end": 54.346,
           "line": "L10",
           "who": "narrator"
         },
         {
           "word": "cat.",
-          "start": 48.652,
-          "end": 48.912,
+          "start": 54.346,
+          "end": 54.586,
           "line": "L10",
           "who": "narrator"
         },
         {
           "word": "So,",
-          "start": 49.292,
-          "end": 49.612,
+          "start": 54.946,
+          "end": 55.226,
           "line": "L10",
           "who": "narrator"
         },
         {
           "word": "who",
-          "start": 49.612,
-          "end": 49.932,
+          "start": 55.226,
+          "end": 55.506,
           "line": "L10",
           "who": "narrator"
         },
         {
           "word": "is",
-          "start": 49.932,
-          "end": 50.152,
+          "start": 55.506,
+          "end": 55.726,
           "line": "L10",
           "who": "narrator"
         },
         {
           "word": "the",
-          "start": 50.152,
-          "end": 50.332,
+          "start": 55.726,
+          "end": 55.906,
           "line": "L10",
           "who": "narrator"
         },
         {
           "word": "killer?",
-          "start": 50.332,
-          "end": 50.532,
+          "start": 55.906,
+          "end": 56.086,
           "line": "L10",
           "who": "narrator"
         }
@@ -1582,42 +1582,42 @@
         {
           "word": "wasn't",
           "start": 0.62,
-          "end": 0.96
+          "end": 0.88
         },
         {
           "word": "the",
-          "start": 0.96,
-          "end": 1.08
+          "start": 0.88,
+          "end": 1.02
         },
         {
           "word": "cat.",
-          "start": 1.08,
-          "end": 1.34
+          "start": 1.02,
+          "end": 1.26
         },
         {
           "word": "So,",
-          "start": 1.72,
-          "end": 2.04
+          "start": 1.62,
+          "end": 1.9
         },
         {
           "word": "who",
-          "start": 2.04,
-          "end": 2.36
+          "start": 1.9,
+          "end": 2.18
         },
         {
           "word": "is",
-          "start": 2.36,
-          "end": 2.58
+          "start": 2.18,
+          "end": 2.4
         },
         {
           "word": "the",
-          "start": 2.58,
-          "end": 2.76
+          "start": 2.4,
+          "end": 2.58
         },
         {
           "word": "killer?",
-          "start": 2.76,
-          "end": 2.96
+          "start": 2.58,
+          "end": 2.76
         }
       ],
       "mismatch": 0
@@ -1779,723 +1779,723 @@
       "who": "narrator"
     },
     {
-      "word": "Phew,",
-      "start": 9.941,
-      "end": 10.181,
+      "word": "Phew...",
+      "start": 9.641,
+      "end": 10.001,
       "line": "L03",
       "who": "marcus"
     },
     {
       "word": "what",
-      "start": 10.321,
-      "end": 10.381,
+      "start": 10.341,
+      "end": 10.421,
       "line": "L03",
       "who": "marcus"
     },
     {
       "word": "a",
-      "start": 10.381,
-      "end": 10.501,
+      "start": 10.421,
+      "end": 10.561,
       "line": "L03",
       "who": "marcus"
     },
     {
       "word": "blizzard!",
-      "start": 10.501,
-      "end": 10.861,
+      "start": 10.561,
+      "end": 11.101,
       "line": "L03",
       "who": "marcus"
     },
     {
-      "word": "Right.",
-      "start": 11.261,
-      "end": 11.481,
+      "word": "Right...",
+      "start": 11.421,
+      "end": 11.681,
       "line": "L03",
       "who": "marcus"
     },
     {
-      "word": "Nobody",
-      "start": 11.801,
-      "end": 12.041,
+      "word": "nobody",
+      "start": 12.461,
+      "end": 12.781,
       "line": "L03",
       "who": "marcus"
     },
     {
-      "word": "leaves",
-      "start": 12.041,
-      "end": 12.421,
+      "word": "leaves,",
+      "start": 12.781,
+      "end": 13.381,
       "line": "L03",
       "who": "marcus"
     },
     {
       "word": "until",
-      "start": 12.421,
-      "end": 12.681,
+      "start": 13.381,
+      "end": 13.781,
       "line": "L03",
       "who": "marcus"
     },
     {
       "word": "I",
-      "start": 12.681,
-      "end": 12.841,
+      "start": 13.781,
+      "end": 13.961,
       "line": "L03",
       "who": "marcus"
     },
     {
       "word": "find",
-      "start": 12.841,
-      "end": 13.101,
+      "start": 13.961,
+      "end": 14.301,
       "line": "L03",
       "who": "marcus"
     },
     {
       "word": "the",
-      "start": 13.101,
-      "end": 13.261,
+      "start": 14.301,
+      "end": 14.481,
       "line": "L03",
       "who": "marcus"
     },
     {
       "word": "poisoner.",
-      "start": 13.261,
-      "end": 13.761,
+      "start": 14.481,
+      "end": 15.201,
       "line": "L03",
       "who": "marcus"
     },
     {
       "word": "I",
-      "start": 14.073,
-      "end": 14.213,
+      "start": 15.483,
+      "end": 15.763,
       "line": "L04",
       "who": "gaston"
     },
     {
       "word": "made",
-      "start": 14.213,
-      "end": 14.333,
+      "start": 15.763,
+      "end": 16.003,
       "line": "L04",
       "who": "gaston"
     },
     {
       "word": "the",
-      "start": 14.333,
-      "end": 14.453,
+      "start": 16.003,
+      "end": 16.243,
       "line": "L04",
       "who": "gaston"
     },
     {
       "word": "pudding",
-      "start": 14.453,
-      "end": 14.653,
+      "start": 16.243,
+      "end": 16.563,
       "line": "L04",
       "who": "gaston"
     },
     {
       "word": "at",
-      "start": 14.653,
-      "end": 14.853,
+      "start": 16.563,
+      "end": 16.803,
       "line": "L04",
       "who": "gaston"
     },
     {
       "word": "six.",
-      "start": 14.853,
-      "end": 15.133,
+      "start": 16.803,
+      "end": 17.243,
       "line": "L04",
       "who": "gaston"
     },
     {
       "word": "Then",
-      "start": 15.393,
-      "end": 15.453,
+      "start": 17.983,
+      "end": 18.243,
       "line": "L04",
       "who": "gaston"
     },
     {
       "word": "I",
-      "start": 15.453,
-      "end": 15.593,
+      "start": 18.243,
+      "end": 18.403,
       "line": "L04",
       "who": "gaston"
     },
     {
       "word": "chopped",
-      "start": 15.593,
-      "end": 15.873,
+      "start": 18.403,
+      "end": 18.723,
       "line": "L04",
       "who": "gaston"
     },
     {
       "word": "onions",
-      "start": 15.873,
-      "end": 16.213,
+      "start": 18.723,
+      "end": 19.143,
       "line": "L04",
       "who": "gaston"
     },
     {
       "word": "all",
-      "start": 16.213,
-      "end": 16.493,
+      "start": 19.143,
+      "end": 19.603,
       "line": "L04",
       "who": "gaston"
     },
     {
       "word": "night.",
-      "start": 16.493,
-      "end": 16.773,
+      "start": 19.603,
+      "end": 20.043,
       "line": "L04",
       "who": "gaston"
     },
     {
       "word": "That's",
-      "start": 17.013,
-      "end": 17.213,
+      "start": 21.083,
+      "end": 21.443,
       "line": "L04",
       "who": "gaston"
     },
     {
       "word": "why",
-      "start": 17.213,
-      "end": 17.373,
+      "start": 21.443,
+      "end": 21.663,
       "line": "L04",
       "who": "gaston"
     },
     {
       "word": "I'm",
-      "start": 17.373,
-      "end": 17.553,
+      "start": 21.663,
+      "end": 21.923,
       "line": "L04",
       "who": "gaston"
     },
     {
       "word": "crying!",
-      "start": 17.553,
-      "end": 17.833,
+      "start": 21.923,
+      "end": 22.343,
       "line": "L04",
       "who": "gaston"
     },
     {
       "word": "I",
-      "start": 18.312,
-      "end": 18.452,
+      "start": 22.892,
+      "end": 23.052,
       "line": "L05",
       "who": "prim"
     },
     {
       "word": "was",
-      "start": 18.452,
-      "end": 18.572,
+      "start": 23.052,
+      "end": 23.172,
       "line": "L05",
       "who": "prim"
     },
     {
       "word": "in",
-      "start": 18.572,
-      "end": 18.712,
+      "start": 23.172,
+      "end": 23.332,
       "line": "L05",
       "who": "prim"
     },
     {
       "word": "the",
-      "start": 18.712,
-      "end": 18.852,
+      "start": 23.332,
+      "end": 23.472,
       "line": "L05",
       "who": "prim"
     },
     {
       "word": "library,",
-      "start": 18.852,
-      "end": 19.292,
+      "start": 23.472,
+      "end": 24.032,
       "line": "L05",
       "who": "prim"
     },
     {
       "word": "typing",
-      "start": 19.292,
-      "end": 19.672,
+      "start": 24.032,
+      "end": 24.612,
       "line": "L05",
       "who": "prim"
     },
     {
       "word": "his",
-      "start": 19.672,
-      "end": 20.012,
+      "start": 24.612,
+      "end": 24.932,
       "line": "L05",
       "who": "prim"
     },
     {
       "word": "new",
-      "start": 20.012,
-      "end": 20.312,
+      "start": 24.932,
+      "end": 25.252,
       "line": "L05",
       "who": "prim"
     },
     {
       "word": "will.",
-      "start": 20.312,
-      "end": 20.572,
+      "start": 25.252,
+      "end": 25.632,
       "line": "L05",
       "who": "prim"
     },
     {
       "word": "He",
-      "start": 20.932,
-      "end": 21.012,
+      "start": 26.532,
+      "end": 26.692,
       "line": "L05",
       "who": "prim"
     },
     {
       "word": "left",
-      "start": 21.012,
-      "end": 21.192,
+      "start": 26.692,
+      "end": 26.892,
       "line": "L05",
       "who": "prim"
     },
     {
       "word": "everything",
-      "start": 21.192,
-      "end": 21.632,
+      "start": 26.892,
+      "end": 27.612,
       "line": "L05",
       "who": "prim"
     },
     {
       "word": "to",
-      "start": 21.632,
-      "end": 21.952,
+      "start": 27.612,
+      "end": 28.372,
       "line": "L05",
       "who": "prim"
     },
     {
       "word": "his",
-      "start": 21.952,
-      "end": 22.092,
+      "start": 28.372,
+      "end": 28.552,
       "line": "L05",
       "who": "prim"
     },
     {
       "word": "cat.",
-      "start": 22.092,
-      "end": 22.352,
+      "start": 28.552,
+      "end": 28.952,
       "line": "L05",
       "who": "prim"
     },
     {
       "word": "Don't",
-      "start": 22.8,
-      "end": 23.02,
+      "start": 29.441,
+      "end": 29.901,
       "line": "L06",
       "who": "cedric"
     },
     {
       "word": "look",
-      "start": 23.02,
-      "end": 23.12,
+      "start": 29.901,
+      "end": 30.021,
       "line": "L06",
       "who": "cedric"
     },
     {
       "word": "at",
-      "start": 23.12,
-      "end": 23.24,
+      "start": 30.021,
+      "end": 30.161,
       "line": "L06",
       "who": "cedric"
     },
     {
       "word": "me!",
-      "start": 23.24,
-      "end": 23.4,
+      "start": 30.161,
+      "end": 30.501,
       "line": "L06",
       "who": "cedric"
     },
     {
       "word": "I",
-      "start": 23.48,
-      "end": 23.58,
+      "start": 31.021,
+      "end": 31.121,
       "line": "L06",
       "who": "cedric"
     },
     {
       "word": "only",
-      "start": 23.58,
-      "end": 23.78,
+      "start": 31.121,
+      "end": 31.301,
       "line": "L06",
       "who": "cedric"
     },
     {
       "word": "just",
-      "start": 23.78,
-      "end": 23.98,
+      "start": 31.301,
+      "end": 31.541,
       "line": "L06",
       "who": "cedric"
     },
     {
       "word": "got",
-      "start": 23.98,
-      "end": 24.18,
+      "start": 31.541,
+      "end": 31.781,
       "line": "L06",
       "who": "cedric"
     },
     {
       "word": "here.",
-      "start": 24.18,
-      "end": 24.5,
+      "start": 31.781,
+      "end": 32.141,
       "line": "L06",
       "who": "cedric"
     },
     {
       "word": "My",
-      "start": 24.86,
-      "end": 24.96,
+      "start": 32.521,
+      "end": 32.661,
       "line": "L06",
       "who": "cedric"
     },
     {
       "word": "car",
-      "start": 24.96,
-      "end": 25.2,
+      "start": 32.661,
+      "end": 32.861,
       "line": "L06",
       "who": "cedric"
     },
     {
       "word": "pulled",
-      "start": 25.2,
-      "end": 25.5,
+      "start": 32.861,
+      "end": 33.121,
       "line": "L06",
       "who": "cedric"
     },
     {
       "word": "in",
-      "start": 25.5,
-      "end": 25.7,
+      "start": 33.121,
+      "end": 33.321,
       "line": "L06",
       "who": "cedric"
     },
     {
       "word": "right",
-      "start": 25.7,
-      "end": 25.88,
+      "start": 33.321,
+      "end": 33.561,
       "line": "L06",
       "who": "cedric"
     },
     {
       "word": "before",
-      "start": 25.88,
-      "end": 26.18,
+      "start": 33.561,
+      "end": 33.921,
       "line": "L06",
       "who": "cedric"
     },
     {
       "word": "yours,",
-      "start": 26.18,
-      "end": 26.5,
+      "start": 33.921,
+      "end": 34.281,
       "line": "L06",
       "who": "cedric"
     },
     {
       "word": "detective.",
-      "start": 26.68,
-      "end": 26.88,
+      "start": 34.421,
+      "end": 34.621,
       "line": "L06",
       "who": "cedric"
     },
     {
       "word": "Interesting.",
-      "start": 27.805,
-      "end": 28.285,
+      "start": 35.322,
+      "end": 35.942,
       "line": "L07",
       "who": "marcus"
     },
     {
       "word": "Let",
-      "start": 28.625,
-      "end": 28.705,
+      "start": 36.362,
+      "end": 36.482,
       "line": "L07",
       "who": "marcus"
     },
     {
       "word": "me",
-      "start": 28.705,
-      "end": 28.825,
+      "start": 36.482,
+      "end": 36.602,
       "line": "L07",
       "who": "marcus"
     },
     {
       "word": "have",
-      "start": 28.825,
-      "end": 28.965,
+      "start": 36.602,
+      "end": 36.762,
       "line": "L07",
       "who": "marcus"
     },
     {
       "word": "a",
-      "start": 28.965,
-      "end": 29.085,
+      "start": 36.762,
+      "end": 36.902,
       "line": "L07",
       "who": "marcus"
     },
     {
       "word": "look",
-      "start": 29.085,
-      "end": 29.205,
+      "start": 36.902,
+      "end": 37.022,
       "line": "L07",
       "who": "marcus"
     },
     {
       "word": "around.",
-      "start": 29.205,
-      "end": 29.525,
+      "start": 37.022,
+      "end": 37.382,
       "line": "L07",
       "who": "marcus"
     },
     {
       "word": "Case",
-      "start": 38.456,
-      "end": 38.716,
+      "start": 43.551,
+      "end": 43.831,
       "line": "L08",
       "who": "marcus"
     },
     {
       "word": "closed.",
-      "start": 38.716,
-      "end": 39.156,
+      "start": 43.831,
+      "end": 44.351,
       "line": "L08",
       "who": "marcus"
     },
     {
       "word": "The",
-      "start": 39.556,
-      "end": 39.656,
+      "start": 44.931,
+      "end": 45.111,
       "line": "L08",
       "who": "marcus"
     },
     {
       "word": "killer",
-      "start": 39.656,
-      "end": 39.856,
+      "start": 45.111,
+      "end": 45.391,
       "line": "L08",
       "who": "marcus"
     },
     {
       "word": "already",
-      "start": 39.856,
-      "end": 40.216,
+      "start": 45.391,
+      "end": 45.811,
       "line": "L08",
       "who": "marcus"
     },
     {
       "word": "told",
-      "start": 40.216,
-      "end": 40.496,
+      "start": 45.811,
+      "end": 46.151,
       "line": "L08",
       "who": "marcus"
     },
     {
       "word": "me",
-      "start": 40.496,
-      "end": 40.676,
+      "start": 46.151,
+      "end": 46.371,
       "line": "L08",
       "who": "marcus"
     },
     {
       "word": "everything.",
-      "start": 40.676,
-      "end": 41.016,
+      "start": 46.371,
+      "end": 46.731,
       "line": "L08",
       "who": "marcus"
     },
     {
       "word": "Gaston",
-      "start": 41.685,
-      "end": 42.125,
+      "start": 47.438,
+      "end": 47.878,
       "line": "L09",
       "who": "narrator"
     },
     {
       "word": "was",
-      "start": 42.125,
-      "end": 42.325,
+      "start": 47.878,
+      "end": 48.078,
       "line": "L09",
       "who": "narrator"
     },
     {
       "word": "in",
-      "start": 42.325,
-      "end": 42.485,
+      "start": 48.078,
+      "end": 48.238,
       "line": "L09",
       "who": "narrator"
     },
     {
       "word": "the",
-      "start": 42.485,
-      "end": 42.625,
+      "start": 48.238,
+      "end": 48.378,
       "line": "L09",
       "who": "narrator"
     },
     {
       "word": "kitchen.",
-      "start": 42.625,
-      "end": 42.965,
+      "start": 48.378,
+      "end": 48.718,
       "line": "L09",
       "who": "narrator"
     },
     {
       "word": "Miss",
-      "start": 43.545,
-      "end": 43.565,
+      "start": 49.298,
+      "end": 49.318,
       "line": "L09",
       "who": "narrator"
     },
     {
       "word": "Prim",
-      "start": 43.565,
-      "end": 43.865,
+      "start": 49.318,
+      "end": 49.618,
       "line": "L09",
       "who": "narrator"
     },
     {
       "word": "was",
-      "start": 43.865,
-      "end": 44.145,
+      "start": 49.618,
+      "end": 49.898,
       "line": "L09",
       "who": "narrator"
     },
     {
       "word": "in",
-      "start": 44.145,
-      "end": 44.325,
+      "start": 49.898,
+      "end": 50.078,
       "line": "L09",
       "who": "narrator"
     },
     {
       "word": "the",
-      "start": 44.325,
-      "end": 44.445,
+      "start": 50.078,
+      "end": 50.198,
       "line": "L09",
       "who": "narrator"
     },
     {
       "word": "library.",
-      "start": 44.445,
-      "end": 44.945,
+      "start": 50.198,
+      "end": 50.698,
       "line": "L09",
       "who": "narrator"
     },
     {
       "word": "And",
-      "start": 45.345,
-      "end": 45.445,
+      "start": 51.098,
+      "end": 51.198,
       "line": "L09",
       "who": "narrator"
     },
     {
       "word": "Cedric",
-      "start": 45.445,
-      "end": 45.805,
+      "start": 51.198,
+      "end": 51.558,
       "line": "L09",
       "who": "narrator"
     },
     {
       "word": "had",
-      "start": 45.805,
-      "end": 45.925,
+      "start": 51.558,
+      "end": 51.678,
       "line": "L09",
       "who": "narrator"
     },
     {
       "word": "only",
-      "start": 45.925,
-      "end": 46.205,
+      "start": 51.678,
+      "end": 51.958,
       "line": "L09",
       "who": "narrator"
     },
     {
       "word": "just",
-      "start": 46.205,
-      "end": 46.525,
+      "start": 51.958,
+      "end": 52.278,
       "line": "L09",
       "who": "narrator"
     },
     {
       "word": "arrived.",
-      "start": 46.525,
-      "end": 47.005,
+      "start": 52.278,
+      "end": 52.758,
       "line": "L09",
       "who": "narrator"
     },
     {
       "word": "And",
-      "start": 47.572,
-      "end": 47.732,
+      "start": 53.326,
+      "end": 53.486,
       "line": "L10",
       "who": "narrator"
     },
     {
       "word": "no,",
-      "start": 47.732,
-      "end": 47.972,
+      "start": 53.486,
+      "end": 53.726,
       "line": "L10",
       "who": "narrator"
     },
     {
       "word": "it",
-      "start": 48.112,
-      "end": 48.192,
+      "start": 53.866,
+      "end": 53.946,
       "line": "L10",
       "who": "narrator"
     },
     {
       "word": "wasn't",
-      "start": 48.192,
-      "end": 48.532,
+      "start": 53.946,
+      "end": 54.206,
       "line": "L10",
       "who": "narrator"
     },
     {
       "word": "the",
-      "start": 48.532,
-      "end": 48.652,
+      "start": 54.206,
+      "end": 54.346,
       "line": "L10",
       "who": "narrator"
     },
     {
       "word": "cat.",
-      "start": 48.652,
-      "end": 48.912,
+      "start": 54.346,
+      "end": 54.586,
       "line": "L10",
       "who": "narrator"
     },
     {
       "word": "So,",
-      "start": 49.292,
-      "end": 49.612,
+      "start": 54.946,
+      "end": 55.226,
       "line": "L10",
       "who": "narrator"
     },
     {
       "word": "who",
-      "start": 49.612,
-      "end": 49.932,
+      "start": 55.226,
+      "end": 55.506,
       "line": "L10",
       "who": "narrator"
     },
     {
       "word": "is",
-      "start": 49.932,
-      "end": 50.152,
+      "start": 55.506,
+      "end": 55.726,
       "line": "L10",
       "who": "narrator"
     },
     {
       "word": "the",
-      "start": 50.152,
-      "end": 50.332,
+      "start": 55.726,
+      "end": 55.906,
       "line": "L10",
       "who": "narrator"
     },
     {
       "word": "killer?",
-      "start": 50.332,
-      "end": 50.532,
+      "start": 55.906,
+      "end": 56.086,
       "line": "L10",
       "who": "narrator"
     }

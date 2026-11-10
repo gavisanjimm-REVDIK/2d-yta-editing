@@ -201,6 +201,8 @@ def main():
     be = be or Placeholder()
     can_whisper = be.name != "placeholder"
 
+    files_be = Files(vdir)
+    main_be = be
     report = []
     line_data = {}
     old_timing = json.loads((adir / "timing.json").read_text()) if (adir / "timing.json").exists() else {}
@@ -211,6 +213,8 @@ def main():
             if prev:
                 line_data[ln["id"]] = (dsp.read(lp), prev["words_local"], prev.get("mismatch", 0))
                 continue
+        be = files_be if ln.get("source") == "eleven" else main_be
+        can_whisper = be.name != "placeholder"
         ref = ln.get("voice_ref") or script.get("voice_ref")
         ref = str(STUDIO / ref) if ref else None
         best = None
@@ -233,6 +237,8 @@ def main():
         if len(toks) == len(best[1]):  # captions use the script's spelling, whisper only gives timing
             for wd, tk in zip(best[1], toks):
                 wd["word"] = tk
+        if len(best[0]) > samples(0.4):  # every line at the same loudness (mixed voice engines)
+            best = (dsp.mono(dsp.match_lufs(best[0], -20.0)), best[1], best[2])
         dsp.write(lp, best[0])
         line_data[ln["id"]] = best
         if best[2] > 0:
@@ -256,7 +262,7 @@ def main():
     for st, w in timeline:
         dsp.place(out, w, st)
     dsp.write(adir / "narration_raw.wav", out)
-    timing = {"backend": be.name, "duration": round(total, 3), "lines": lines_out,
+    timing = {"backend": main_be.name, "duration": round(total, 3), "lines": lines_out,
               "words": [w for l in lines_out for w in l["words"]]}
     (adir / "timing.json").write_text(json.dumps(timing, indent=2))
     print(f"narration -> {adir / 'narration_raw.wav'} ({total:.2f}s, backend={be.name})")

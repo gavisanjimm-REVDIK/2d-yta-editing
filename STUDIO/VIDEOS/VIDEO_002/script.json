@@ -3,11 +3,11 @@
   "start_offset": 0.2,
   "tail": 1.2,
   "cast": {
-    "narrator": "bm_george",
-    "marcus": "am_adam",
-    "gaston": "am_onyx",
-    "prim": "bf_alice",
-    "cedric": "am_liam"
+    "narrator": "bm_george (kokoro)",
+    "marcus": "am_michael (kokoro)",
+    "gaston": "ElevenLabs Henri",
+    "prim": "ElevenLabs Philippa",
+    "cedric": "ElevenLabs Rowan"
   },
   "lines": [
     {
@@ -25,15 +25,15 @@
       "voice": "bm_george",
       "speed": 1.08,
       "text": "Three suspects. One killer. And one tiny clue that almost everyone misses.",
-      "pause_after": 0.6,
+      "pause_after": 0.3,
       "eleven_prompt": "Three suspects. One killer. [mischievously] And one tiny clue that almost everyone misses."
     },
     {
       "id": "L03",
       "who": "marcus",
-      "voice": "am_adam",
-      "speed": 1.05,
-      "text": "Phew, what a blizzard! Right. Nobody leaves until I find the poisoner.",
+      "voice": "am_michael",
+      "speed": 0.84,
+      "text": "Phew... what a blizzard! Right... nobody leaves, until I find the poisoner.",
       "pause_after": 0.25,
       "eleven_prompt": "[exhales] Phew... what a blizzard! [pause] [slowly] Right. Nobody leaves... until I find the poisoner."
     },
@@ -44,7 +44,8 @@
       "speed": 1.05,
       "text": "I made the pudding at six. Then I chopped onions all night. That's why I'm crying!",
       "pause_after": 0.2,
-      "eleven_prompt": "[strong French accent] [crying] I made the pudding at six! Then I chopped onions all night. [sobbing] That's why I'm crying!"
+      "eleven_prompt": "[strong French accent] [crying] I made the pudding at six! Then I chopped onions all night. [sobbing] That's why I'm crying!",
+      "source": "eleven"
     },
     {
       "id": "L05",
@@ -53,7 +54,8 @@
       "speed": 1.08,
       "text": "I was in the library, typing his new will. He left everything to his cat.",
       "pause_after": 0.2,
-      "eleven_prompt": "[haughtily] I was in the library, typing his new will. [pause] He left everything... to his cat."
+      "eleven_prompt": "[haughtily] I was in the library, typing his new will. [pause] He left everything... to his cat.",
+      "source": "eleven"
     },
     {
       "id": "L06",
@@ -61,23 +63,24 @@
       "voice": "am_liam",
       "speed": 1.08,
       "text": "Don't look at me! I only just got here. My car pulled in right before yours, detective.",
-      "pause_after": 0.6,
-      "eleven_prompt": "[smugly] Don't look at me! I only just got here. My car pulled in right before yours, detective."
+      "pause_after": 0.3,
+      "eleven_prompt": "[smugly] Don't look at me! I only just got here. My car pulled in right before yours, detective.",
+      "source": "eleven"
     },
     {
       "id": "L07",
       "who": "marcus",
-      "voice": "am_adam",
-      "speed": 1.0,
+      "voice": "am_michael",
+      "speed": 0.92,
       "text": "Interesting. Let me have a look around.",
-      "pause_after": 8.7,
+      "pause_after": 5.9,
       "eleven_prompt": "[curious] Interesting. [pause] Let me have a look around."
     },
     {
       "id": "L08",
       "who": "marcus",
-      "voice": "am_adam",
-      "speed": 0.98,
+      "voice": "am_michael",
+      "speed": 0.92,
       "text": "Case closed. The killer already told me everything.",
       "pause_after": 0.4,
       "eleven_prompt": "[confidently] Case closed. [pause] The killer already told me everything."
@@ -95,13 +98,13 @@
       "id": "L10",
       "who": "narrator",
       "voice": "bm_george",
-      "speed": 1.02,
+      "speed": 1.08,
       "text": "And no, it wasn't the cat. So, who is the killer?",
       "pause_after": 0.2,
       "eleven_prompt": "[dryly] And no, it wasn't the cat. [pause] So... who is the killer?"
     }
   ],
-  "voice_engine": "elevenlabs eleven_v4 (takes in audio/eleven/<id>_<k>.mp3, narrate --backend files)",
+  "voice_engine": "kokoro for narrator + Marcus; ElevenLabs eleven_v4 takes (audio/eleven) for the three suspects",
   "eleven_flow": "Yzdh33lF0oZlp5W5ACLb",
   "eleven_cast": {
     "narrator": [
