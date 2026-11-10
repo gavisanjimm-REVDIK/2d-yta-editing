@@ -1,0 +1,20 @@
+{
+  "title": "The Three Doors of Doom",
+  "start_offset": 0.15,
+  "tail": 1.0,
+  "cast": {"narrator": "bm_george", "marcus": "am_michael", "mummy": "bm_lewis+bm_fable blend, slow, tomb echo"},
+  "lines": [
+    {"id": "L01", "who": "marcus", "voice": "am_michael", "speed": 1.0, "fx": "cave", "text": "Come back here, you furry little thief!", "pause_after": 0.2},
+    {"id": "L02", "who": "narrator", "voice": "bm_george", "speed": 1.05, "text": "Detective Marcus chased a cat burglar into a pyramid. Then, the door slammed shut.", "pause_after": 0.7},
+    {"id": "L03", "who": "mummy", "voice": [["bm_lewis", 0.6], ["bm_fable", 0.4]], "speed": 0.9, "fx": "cave", "text": "Ooh, a visitor! My first one in three thousand years!", "pause_after": 0.3},
+    {"id": "L04", "who": "mummy", "voice": [["bm_lewis", 0.6], ["bm_fable", 0.4]], "speed": 0.92, "fx": "cave", "text": "Three doors. One way out. The other two... not so much.", "pause_after": 0.35},
+    {"id": "L05", "who": "mummy", "voice": [["bm_lewis", 0.6], ["bm_fable", 0.4]], "speed": 0.92, "fx": "cave", "text": "Door one. A fire that burns for one thousand years.", "pause_after": 0.3},
+    {"id": "L06", "who": "mummy", "voice": [["bm_lewis", 0.6], ["bm_fable", 0.4]], "speed": 0.92, "fx": "cave", "text": "Door two. Lions that have not eaten in three years.", "pause_after": 0.3},
+    {"id": "L07", "who": "mummy", "voice": [["bm_lewis", 0.6], ["bm_fable", 0.4]], "speed": 0.92, "fx": "cave", "text": "Door three. A flood that arrives in three thousand years.", "pause_after": 0.35},
+    {"id": "L08", "who": "marcus", "voice": "am_michael", "speed": 0.98, "fx": "cave", "text": "Easy! Those lions starved ages ago. I pick door two!", "pause_after": 0.3},
+    {"id": "L09", "who": "mummy", "voice": [["bm_lewis", 0.6], ["bm_fable", 0.4]], "speed": 0.9, "fx": "cave", "text": "Careful, detective. I carved these signs on my very first day. Three thousand years ago.", "pause_after": 0.35},
+    {"id": "L10", "who": "mummy", "voice": [["bm_lewis", 0.6], ["bm_fable", 0.4]], "speed": 0.95, "fx": "cave", "text": "Now, excuse me. Lunch time, kitties!", "pause_after": 1.6},
+    {"id": "L11", "who": "marcus", "voice": "am_michael", "speed": 0.92, "fx": "cave", "text": "Okay. Maybe not door two.", "pause_after": 0.5},
+    {"id": "L12", "who": "narrator", "voice": "bm_george", "speed": 1.02, "text": "Fire, lions, or flood. Only one door is safe. Which door would you choose?", "pause_after": 0.2}
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "duration": 56.91,
+  "music_db": 0.0,
+  "duck_db": -8.0,
+  "bus_db": {
+    "sfx": -7.0,
+    "amb": -4.0
+  },
+  "music_gates": [],
+  "sfx": [
+    {
+      "t": 0.0,
+      "name": "amb_tomb",
+      "bus": "amb",
+      "dur": 56.91,
+      "loop": true,
+      "gain_db": 0,
+      "fade_in": 0.05,
+      "fade_out": 0.5
+    },
+    {
+      "t": 0.0,
+      "name": "whoosh_fast",
+      "gain_db": -4,
+      "note": "frame-0 dash"
+    },
+    {
+      "t": 0.15,
+      "name": "meow",
+      "gain_db": -10
+    },
+    {
+      "t": 0.25,
+      "name": "footstep_hard",
+      "gain_db": -9
+    },
+    {
+      "t": 0.6699999999999999,
+      "name": "footstep_hard",
+      "gain_db": -9
+    },
+    {
+      "t": 1.0899999999999999,
+      "name": "footstep_hard",
+      "gain_db": -9
+    },
+    {
+      "t": 1.51,
+      "name": "footstep_hard",
+      "gain_db": -9
+    },
+    {
+      "t": 1.93,
+      "name": "footstep_hard",
+      "gain_db": -9
+    },
+    {
+      "t": 2.35,
+      "name": "footstep_hard",
+      "gain_db": -9
+    },
+    {
+      "t": 2.77,
+      "name": "footstep_hard",
+      "gain_db": -9
+    },
+    {
+      "t": 3.19,
+      "name": "footstep_hard",
+      "gain_db": -9
+    },
+    {
+      "t": 3.61,
+      "name": "footstep_hard",
+      "gain_db": -9
+    },
+    {
+      "t": 7.319999999999999,
+      "name": "stone_slam",
+      "gain_db": 0,
+      "note": "trapped"
+    },
+    {
+      "t": 7.869999999999999,
+      "name": "comedy_boing",
+      "gain_db": -16,
+      "note": "cat squeezes out"
+    },
+    {
+      "t": 8.597999999999999,
+      "name": "sarcophagus_creak",
+      "gain_db": -4
+    },
+    {
+      "t": 13.018,
+      "name": "whoosh_fast",
+      "gain_db": -10
+    },
+    {
+      "t": 17.330999999999996,
+      "name": "whoosh_fast",
+      "gain_db": -9
+    },
+    {
+      "t": 21.22,
+      "name": "whoosh_fast",
+      "gain_db": -9
+    },
+    {
+      "t": 25.041999999999998,
+      "name": "whoosh_fast",
+      "gain_db": -9
+    },
+    {
+      "t": 26.342,
+      "name": "water_drip",
+      "gain_db": -10,
+      "note": "quiet clue"
+    },
+    {
+      "t": 27.742,
+      "name": "water_drip",
+      "gain_db": -12
+    },
+    {
+      "t": 32.529,
+      "name": "ui_pop",
+      "gain_db": -8
+    },
+    {
+      "t": 35.887,
+      "name": "chop",
+      "gain_db": -16,
+      "note": "chisel taps"
+    },
+    {
+      "t": 40.644,
+      "name": "cart_roll",
+      "gain_db": -6
+    },
+    {
+      "t": 43.575,
+      "name": "door_open",
+      "gain_db": -14,
+      "note": "hatch"
+    },
+    {
+      "t": 43.875,
+      "name": "lion_roar",
+      "gain_db": 2,
+      "note": "LUNCH TIME"
+    },
+    {
+      "t": 45.275,
+      "name": "pudding_plop",
+      "gain_db": -12,
+      "note": "gulp"
+    },
+    {
+      "t": 47.86,
+      "name": "ui_pop",
+      "gain_db": -12
+    },
+    {
+      "t": 48.4,
+      "name": "ui_pop",
+      "gain_db": -12
+    },
+    {
+      "t": 49.06,
+      "name": "ui_pop",
+      "gain_db": -12
+    },
+    {
+      "t": 51.43,
+      "name": "riser_tension",
+      "gain_db": -14
+    },
+    {
+      "t": 52.894999999999996,
+      "name": "sting_mystery",
+      "gain_db": 0
+    },
+    {
+      "t": 53.515,
+      "name": "ui_pop",
+      "gain_db": -8
+    }
+  ]
+}

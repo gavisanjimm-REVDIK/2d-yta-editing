@@ -70,6 +70,11 @@ CAST = {
                  shirt="#3F6FA8", shirt_sh="#2F5687", pants="#3F6FA8", pants_sh="#2F5687", shoes="#3A2A30",
                  sleeves="short", torso_h=1.4, shoulder_w=0.95, hip_w=0.85, leg=1.5,
                  eye_w=0.21, eye_h=0.25, eye_sep=0.38, extras=("dress", "apron", "lashes")),
+    # VIDEO_003 cast: Mumford the mummy gatekeeper (bandages everywhere, glowing eyes, comic)
+    "mummy": _c(skin="#E8DCC0", skin_sh="#C9B994", hair="#E8DCC0", hair_sh="#C9B994", hair_style="mummy",
+                shirt="#E8DCC0", shirt_sh="#C9B994", pants="#DDD0B0", pants_sh="#C2B28C", shoes="#C9B994",
+                sleeves="long", torso_h=1.5, shoulder_w=1.0, hip_w=0.82, leg=1.7, head_ry=1.02,
+                eye_w=0.17, eye_h=0.2, eye_sep=0.36, extras=("bandages",), ears=False, temples=False),
     # VIDEO_002 cast
     "gaston": _c(skin="#EDB088", skin_sh="#D08F66", hair="#1E1A1A", hair_sh="#0F0D0D", hair_style="chef",
                  shirt="#F4F1EA", shirt_sh="#D8D0C2", pants="#3A3A44", pants_sh="#2A2A32", shoes="#1A1A1A",
@@ -341,6 +346,17 @@ def hair_front(pen, C, hx, hy, rx, ry, turn):
         p.quadTo(hx - rx * 0.5, hy - ry * 0.5, hx - rx * 0.85, hy - ry * 0.3)
         p.close()
         pen.shape(p, C["hair"], C["hair_sh"])
+    elif st == "mummy":
+        for k, (y0, tilt) in enumerate(((-0.78, 0.06), (-0.5, -0.05), (0.3, 0.05), (0.55, -0.06), (0.8, 0.04))):
+            q = skia.Path()
+            yy = hy + y0 * ry
+            hw = rx * math.sqrt(max(0.05, 1 - (y0 * 0.95) ** 2))
+            q.moveTo(hx - hw, yy + tilt)
+            q.quadTo(hx + fx * 0.5, yy + 0.08 - tilt, hx + hw, yy - tilt)
+            pen.stroke(q, pen.ow * 0.75, "#B8A880")
+        tail = smooth_path([(hx + rx * 0.7, hy - ry * 0.6), (hx + rx * 1.35, hy - ry * 0.35), (hx + rx * 1.5, hy - ry * 0.05),
+                            (hx + rx * 1.32, hy - ry * 0.12), (hx + rx * 1.15, hy - ry * 0.3), (hx + rx * 0.75, hy - ry * 0.42)])
+        pen.shape(tail, C["skin"], C["skin_sh"])  # loose bandage end flapping off the head
     elif st == "chef":
         # tall puffy toque
         hat = smooth_path([(hx - rx * 0.78, hy - ry * 0.62), (hx - rx * 1.05, hy - ry * 1.45), (hx - rx * 0.6, hy - ry * 2.05),
@@ -836,6 +852,13 @@ def _torso_details(pen, C, top, hip_y, sw, hw, th):
         pen.shape(bow, "#111111")
         for k in (0.35, 0.55):
             pen.shape(oval(0.0, top + th * k + 0.15, 0.04, 0.04), "#C9A54A", outline=False)
+    elif "bandages" in ex:
+        for k in range(6):
+            y = top + 0.12 + k * th * 0.16
+            q2 = skia.Path()
+            q2.moveTo(-sw / 2 + 0.05, y + 0.06 * (k % 2))
+            q2.quadTo(0, y + 0.1, sw / 2 - 0.05, y - 0.04 + 0.06 * ((k + 1) % 2))
+            pen.stroke(q2, pen.ow * 0.7, "#B8A880")
     elif "chef_jacket" in ex:
         for s_ in (-1, 1):
             for k in (0.25, 0.45, 0.65):

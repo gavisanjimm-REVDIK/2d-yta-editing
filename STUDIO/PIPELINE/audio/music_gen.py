@@ -267,6 +267,45 @@ def cue_video002(edl) -> Score:
     return s
 
 
+def cue_video003(edl) -> Score:
+    """Adventure-comedy in an 'ancient' mode (D phrygian dominant): chase drums, a sneaky plucked riff for the
+    mummy, a hit on each door, silence before the roar, ticking build to the question."""
+    B = edl.B
+    s = Score(edl.DURATION, bpm=edl.BPM)
+    beat = s.beat
+    scale = ["D4", "D#4", "F#4", "G4", "A4", "A#4", "C5", "D5"]
+    t = 0.0  # chase: fast drums + riff until the slam
+    i = 0
+    while t < B["slam"] - 0.1:
+        s.add("perc", drum_kick(), t, 0.9)
+        if i % 2:
+            s.add("perc", drum_snare(seed=i), t, 0.5)
+        s.note("lead", lambda f, d: inst_pluck(f, d, 0.55), scale[[0, 1, 2, 1, 4, 3, 2, 1][i % 8]], t, beat * 0.5, 0.45)
+        t += beat / 2
+        i += 1
+    s.gate(B["slam"] - 0.05, B["chamber"] + 0.3, 0.03)
+    s.note("pad", lambda f, d: inst_pad(f, d, bright=700), "D2", B["chamber"] + 0.3, B["recap"] - B["chamber"], 0.6)
+    t, i = B["mummy_up"], 0
+    riff = [0, 2, 3, 4, 3, 2, 1, 0]
+    while t < B["lunch"] - 0.2:  # sneaky mummy riff
+        s.note("bass", lambda f, d: inst_pluck(f, d, 0.3), scale[riff[i % 8]][:-1] + "2", t, beat * 0.9, 0.8)
+        if i % 4 == 0:
+            s.add("perc", drum_kick(0.3) * 0.6, t, 0.6)
+        t += beat
+        i += 1
+    for k in ("door1", "door2", "door3"):
+        s.note("fx", inst_bell, "A5" if k != "door2" else "A#5", B[k] + 0.15, 1.6, 0.5)
+    s.gate(B["roar"] - 0.35, B["roar"] + 0.6, 0.04)
+    s.chord("pad", lambda f, d: inst_tremolo(f, d, 9), ["D3", "F#3", "A#3"], B["roar"] + 0.6, B["recap"] - B["roar"], 0.5)
+    s.chord("pad", lambda f, d: inst_strings(f, d, 1400), ["D3", "F#3", "A3"], B["recap"], B["freeze"] - B["recap"], 0.55)
+    t = B["recap"]
+    while t < B["freeze"] - 0.1:
+        s.note("perc", lambda f, d: drum_hat(0.05) * 1.4, 100, t, 0.05, 0.6)
+        t += beat / 2
+    s.note("pad", lambda f, d: inst_strings(f, d, 600), "D2", B["freeze"] + 0.2, edl.DURATION - B["freeze"] - 0.2, 0.5)
+    return s
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("video")

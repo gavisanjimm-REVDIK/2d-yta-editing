@@ -89,7 +89,8 @@ class Kokoro:
 
     def synth(self, line, ref):
         voice = line.get("voice", "am_michael")
-        lang = line.get("lang", "en-gb" if voice.startswith("b") else "en-us")
+        first = voice[0][0] if isinstance(voice, list) else voice
+        lang = line.get("lang", "en-gb" if first.startswith("b") else "en-us")
         sp = line.get("speed", 1.0) * (1.0, 0.96, 1.04, 0.92)[self.take % 4]
         if isinstance(voice, list):  # blend two voices: [["bm_george", 0.7], ["bm_lewis", 0.3]]
             vs = sum(self.k.get_voice_style(v) * w for v, w in voice)
@@ -237,6 +238,9 @@ def main():
         if len(toks) == len(best[1]):  # captions use the script's spelling, whisper only gives timing
             for wd, tk in zip(best[1], toks):
                 wd["word"] = tk
+        if ln.get("fx") == "cave":  # stone-room echo for characters inside the tomb
+            wet = dsp.mono(dsp.convolve_reverb(best[0], dsp.make_ir(1.1, 0.45, 3500, stereo_ir=False), 0.22))
+            best = (wet[: len(best[0]) + samples(0.25)], best[1], best[2])
         if len(best[0]) > samples(0.4):  # every line at the same loudness (mixed voice engines)
             best = (dsp.mono(dsp.match_lufs(best[0], -20.0)), best[1], best[2])
         dsp.write(lp, best[0])

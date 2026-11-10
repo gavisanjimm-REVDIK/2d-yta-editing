@@ -126,9 +126,9 @@ def main():
 
     master = narr + music + sum(buses.values())
     master = dsp.match_lufs(master, TARGET_LUFS)
-    master = dsp.limiter(master, TP_CEIL - 0.2)
+    master = dsp.limiter(master, TP_CEIL - 0.6)
     # limiter can drop loudness slightly; one more trim pass
-    master = dsp.limiter(dsp.match_lufs(master, TARGET_LUFS), TP_CEIL - 0.2)
+    master = dsp.limiter(dsp.match_lufs(master, TARGET_LUFS), TP_CEIL - 0.6)
 
     dsp.write(adir / "mix_master.wav", master)
     stems = {"narration": narr, "music": music, **buses}

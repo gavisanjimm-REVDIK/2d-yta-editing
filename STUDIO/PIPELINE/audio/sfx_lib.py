@@ -385,6 +385,75 @@ def comedy_sting():
     return dsp.fade(dsp.normalize(x * dsp.adsr(d, 0.02, 0.2, 0.7, 0.3)) * 0.8)
 
 
+# ================================================================ VIDEO_003: Three Doors of Doom
+@reg("lion_roar", "Big lion roar (growl + roar)", ("animal", "impact"))
+def lion_roar():
+    d = 2.4
+    t = tvec(d)
+    f0 = 95 + 55 * np.sin(np.pi * np.clip(t / 1.6, 0, 1)) ** 0.7
+    ph = 2 * np.pi * np.cumsum(f0) / SR
+    src = sum(np.sin(k * ph + 0.3 * k) / k ** 0.8 for k in range(1, 40))
+    rough = 1 + 0.6 * dsp.lowpass(dsp.white(d, rng(60)), 60) * 6  # throat rattle
+    x = dsp.bandpass(src * rough, 120, 3200) + dsp.bandpass(dsp.white(d, rng(61)), 300, 2500) * 0.35
+    env = np.clip(t / 0.18, 0, 1) * np.exp(-np.maximum(t - 1.3, 0) / 0.35)
+    x = dsp.saturate(x * env, 2.2)
+    return dsp.fade(dsp.normalize(dsp.mono(dsp.convolve_reverb(x, dsp.make_ir(1.6, 0.5, 3000), 0.25))[: samples(d)]))
+
+
+@reg("stone_slam", "Heavy stone slab slamming shut + rumble", ("impact",))
+def stone_slam():
+    d = 2.6
+    t = tvec(d)
+    hit = dsp.lowpass(dsp.brown(d, rng(62)), 300) * np.exp(-t / 0.5) * 1.2
+    crack = dsp.bandpass(dsp.white(d, rng(63)), 400, 4000) * np.exp(-t / 0.05)
+    sub = dsp.sine(np.linspace(55, 32, samples(d)), d) * np.exp(-t / 0.6)
+    gravel = np.zeros(samples(d))
+    r = rng(64)
+    for k in r.uniform(0.1, 1.6, 60):
+        dsp.place(gravel, dsp.bandpass(dsp.white(0.03, r), 1500, 6000) * dsp.exp_decay(0.03, 0.006) * r.uniform(0.1, 0.4), k)
+    x = dsp.saturate(hit + crack * 0.7 + sub + gravel, 1.6)
+    return dsp.fade(dsp.normalize(dsp.mono(dsp.convolve_reverb(x, dsp.make_ir(2.5, 0.6, 2500), 0.35))[: samples(d)]))
+
+
+@reg("amb_tomb", "Tomb room tone + torch crackle", ("ambience",))
+def amb_tomb():
+    d = 12.0
+    tone = dsp.lowpass(dsp.brown(d, rng(65)), 120) * 0.4
+    crackle = np.zeros(samples(d))
+    r = rng(66)
+    for k in r.uniform(0, d, 500):
+        dsp.place(crackle, dsp.highpass(dsp.white(0.01, r), 2500) * dsp.exp_decay(0.01, 0.002) * r.uniform(0.1, 0.8), k)
+    hiss = dsp.bandpass(dsp.pink(d, rng(67)), 800, 4000) * 0.06
+    return dsp.normalize(tone + crackle * 0.5 + hiss, 0.5)
+
+
+@reg("water_drip", "Single water drip in a stone room", ("foley",))
+def water_drip():
+    d = 0.5
+    t = tvec(d)
+    x = dsp.sine(1400 * np.exp(-t / 0.03) + 900, d) * dsp.exp_decay(d, 0.04)
+    return dsp.fade(dsp.normalize(dsp.mono(dsp.convolve_reverb(x, dsp.make_ir(0.8, 0.5, 6000), 0.4))[: samples(d)]) * 0.6)
+
+
+@reg("cart_roll", "Wooden cart rolling on stone", ("foley",))
+def cart_roll():
+    d = 2.0
+    t = tvec(d)
+    x = dsp.lowpass(dsp.brown(d, rng(68)), 400) * (0.7 + 0.3 * np.sin(2 * np.pi * 7 * t))
+    for k in np.arange(0.1, d, 0.28):
+        dsp.place(x, dsp.bandpass(dsp.white(0.03, rng(int(k * 100))), 800, 3000) * dsp.exp_decay(0.03, 0.008) * 0.5, k)
+    return dsp.fade(dsp.normalize(x) * 0.7, 0.1, 0.3)
+
+
+@reg("sarcophagus_creak", "Stone lid sliding open", ("foley",))
+def sarcophagus_creak():
+    d = 1.2
+    t = tvec(d)
+    x = dsp.bandpass(dsp.brown(d, rng(69)), 150, 1500) * dsp.adsr(d, 0.1, 0.2, 0.8, 0.3)
+    x *= 0.7 + 0.3 * np.abs(np.sin(2 * np.pi * 11 * t))
+    return dsp.fade(dsp.normalize(x) * 0.8)
+
+
 # ================================================================ generator
 def build(names=None):
     OUT.mkdir(parents=True, exist_ok=True)

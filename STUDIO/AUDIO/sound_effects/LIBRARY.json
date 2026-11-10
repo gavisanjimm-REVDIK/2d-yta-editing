@@ -352,5 +352,60 @@
     ],
     "dur": 0.9,
     "peak_db": -2.95
+  },
+  "lion_roar": {
+    "file": "lion_roar.flac",
+    "desc": "Big lion roar (growl + roar)",
+    "tags": [
+      "animal",
+      "impact"
+    ],
+    "dur": 2.4,
+    "peak_db": -1.01
+  },
+  "stone_slam": {
+    "file": "stone_slam.flac",
+    "desc": "Heavy stone slab slamming shut + rumble",
+    "tags": [
+      "impact"
+    ],
+    "dur": 2.6,
+    "peak_db": -1.01
+  },
+  "amb_tomb": {
+    "file": "amb_tomb.flac",
+    "desc": "Tomb room tone + torch crackle",
+    "tags": [
+      "ambience"
+    ],
+    "dur": 12.0,
+    "peak_db": -6.02
+  },
+  "water_drip": {
+    "file": "water_drip.flac",
+    "desc": "Single water drip in a stone room",
+    "tags": [
+      "foley"
+    ],
+    "dur": 0.5,
+    "peak_db": -5.45
+  },
+  "cart_roll": {
+    "file": "cart_roll.flac",
+    "desc": "Wooden cart rolling on stone",
+    "tags": [
+      "foley"
+    ],
+    "dur": 2.0,
+    "peak_db": -4.11
+  },
+  "sarcophagus_creak": {
+    "file": "sarcophagus_creak.flac",
+    "desc": "Stone lid sliding open",
+    "tags": [
+      "foley"
+    ],
+    "dur": 1.2,
+    "peak_db": -2.95
   }
 }

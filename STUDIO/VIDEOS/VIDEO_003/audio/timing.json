@@ -1,0 +1,2451 @@
+{
+  "backend": "kokoro",
+  "duration": 54.035,
+  "lines": [
+    {
+      "id": "L01",
+      "who": "marcus",
+      "text": "Come back here, you furry little thief!",
+      "start": 0.15,
+      "end": 2.53,
+      "words": [
+        {
+          "word": "Come",
+          "start": 0.15,
+          "end": 0.35,
+          "line": "L01",
+          "who": "marcus"
+        },
+        {
+          "word": "back",
+          "start": 0.35,
+          "end": 0.63,
+          "line": "L01",
+          "who": "marcus"
+        },
+        {
+          "word": "here,",
+          "start": 0.63,
+          "end": 0.89,
+          "line": "L01",
+          "who": "marcus"
+        },
+        {
+          "word": "you",
+          "start": 1.13,
+          "end": 1.13,
+          "line": "L01",
+          "who": "marcus"
+        },
+        {
+          "word": "furry",
+          "start": 1.13,
+          "end": 1.41,
+          "line": "L01",
+          "who": "marcus"
+        },
+        {
+          "word": "little",
+          "start": 1.41,
+          "end": 1.69,
+          "line": "L01",
+          "who": "marcus"
+        },
+        {
+          "word": "thief!",
+          "start": 1.69,
+          "end": 2.03,
+          "line": "L01",
+          "who": "marcus"
+        }
+      ],
+      "words_local": [
+        {
+          "word": "Come",
+          "start": 0.0,
+          "end": 0.2
+        },
+        {
+          "word": "back",
+          "start": 0.2,
+          "end": 0.48
+        },
+        {
+          "word": "here,",
+          "start": 0.48,
+          "end": 0.74
+        },
+        {
+          "word": "you",
+          "start": 0.98,
+          "end": 0.98
+        },
+        {
+          "word": "furry",
+          "start": 0.98,
+          "end": 1.26
+        },
+        {
+          "word": "little",
+          "start": 1.26,
+          "end": 1.54
+        },
+        {
+          "word": "thief!",
+          "start": 1.54,
+          "end": 1.88
+        }
+      ],
+      "mismatch": 0
+    },
+    {
+      "id": "L02",
+      "who": "narrator",
+      "text": "Detective Marcus chased a cat burglar into a pyramid. Then, the door slammed shut.",
+      "start": 2.73,
+      "end": 8.298,
+      "words": [
+        {
+          "word": "Detective",
+          "start": 2.73,
+          "end": 3.17,
+          "line": "L02",
+          "who": "narrator"
+        },
+        {
+          "word": "Marcus",
+          "start": 3.17,
+          "end": 3.59,
+          "line": "L02",
+          "who": "narrator"
+        },
+        {
+          "word": "chased",
+          "start": 3.59,
+          "end": 4.09,
+          "line": "L02",
+          "who": "narrator"
+        },
+        {
+          "word": "a",
+          "start": 4.09,
+          "end": 4.27,
+          "line": "L02",
+          "who": "narrator"
+        },
+        {
+          "word": "cat",
+          "start": 4.27,
+          "end": 4.49,
+          "line": "L02",
+          "who": "narrator"
+        },
+        {
+          "word": "burglar",
+          "start": 4.49,
+          "end": 4.89,
+          "line": "L02",
+          "who": "narrator"
+        },
+        {
+          "word": "into",
+          "start": 4.89,
+          "end": 5.13,
+          "line": "L02",
+          "who": "narrator"
+        },
+        {
+          "word": "a",
+          "start": 5.13,
+          "end": 5.31,
+          "line": "L02",
+          "who": "narrator"
+        },
+        {
+          "word": "pyramid.",
+          "start": 5.31,
+          "end": 5.69,
+          "line": "L02",
+          "who": "narrator"
+        },
+        {
+          "word": "Then,",
+          "start": 6.29,
+          "end": 6.57,
+          "line": "L02",
+          "who": "narrator"
+        },
+        {
+          "word": "the",
+          "start": 6.57,
+          "end": 7.01,
+          "line": "L02",
+          "who": "narrator"
+        },
+        {
+          "word": "door",
+          "start": 7.01,
+          "end": 7.27,
+          "line": "L02",
+          "who": "narrator"
+        },
+        {
+          "word": "slammed",
+          "start": 7.27,
+          "end": 7.67,
+          "line": "L02",
+          "who": "narrator"
+        },
+        {
+          "word": "shut.",
+          "start": 7.67,
+          "end": 8.07,
+          "line": "L02",
+          "who": "narrator"
+        }
+      ],
+      "words_local": [
+        {
+          "word": "Detective",
+          "start": 0.0,
+          "end": 0.44
+        },
+        {
+          "word": "Marcus",
+          "start": 0.44,
+          "end": 0.86
+        },
+        {
+          "word": "chased",
+          "start": 0.86,
+          "end": 1.36
+        },
+        {
+          "word": "a",
+          "start": 1.36,
+          "end": 1.54
+        },
+        {
+          "word": "cat",
+          "start": 1.54,
+          "end": 1.76
+        },
+        {
+          "word": "burglar",
+          "start": 1.76,
+          "end": 2.16
+        },
+        {
+          "word": "into",
+          "start": 2.16,
+          "end": 2.4
+        },
+        {
+          "word": "a",
+          "start": 2.4,
+          "end": 2.58
+        },
+        {
+          "word": "pyramid.",
+          "start": 2.58,
+          "end": 2.96
+        },
+        {
+          "word": "Then,",
+          "start": 3.56,
+          "end": 3.84
+        },
+        {
+          "word": "the",
+          "start": 3.84,
+          "end": 4.28
+        },
+        {
+          "word": "door",
+          "start": 4.28,
+          "end": 4.54
+        },
+        {
+          "word": "slammed",
+          "start": 4.54,
+          "end": 4.94
+        },
+        {
+          "word": "shut.",
+          "start": 4.94,
+          "end": 5.34
+        }
+      ],
+      "mismatch": 0
+    },
+    {
+      "id": "L03",
+      "who": "mummy",
+      "text": "Ooh, a visitor! My first one in three thousand years!",
+      "start": 8.998,
+      "end": 12.918,
+      "words": [
+        {
+          "word": "Ooh,",
+          "start": 8.998,
+          "end": 9.378,
+          "line": "L03",
+          "who": "mummy"
+        },
+        {
+          "word": "a",
+          "start": 9.498,
+          "end": 9.578,
+          "line": "L03",
+          "who": "mummy"
+        },
+        {
+          "word": "visitor!",
+          "start": 9.578,
+          "end": 9.998,
+          "line": "L03",
+          "who": "mummy"
+        },
+        {
+          "word": "My",
+          "start": 10.438,
+          "end": 10.578,
+          "line": "L03",
+          "who": "mummy"
+        },
+        {
+          "word": "first",
+          "start": 10.578,
+          "end": 10.878,
+          "line": "L03",
+          "who": "mummy"
+        },
+        {
+          "word": "one",
+          "start": 10.878,
+          "end": 11.118,
+          "line": "L03",
+          "who": "mummy"
+        },
+        {
+          "word": "in",
+          "start": 11.118,
+          "end": 11.318,
+          "line": "L03",
+          "who": "mummy"
+        },
+        {
+          "word": "three",
+          "start": 11.318,
+          "end": 11.678,
+          "line": "L03",
+          "who": "mummy"
+        },
+        {
+          "word": "thousand",
+          "start": 11.678,
+          "end": 12.098,
+          "line": "L03",
+          "who": "mummy"
+        },
+        {
+          "word": "years!",
+          "start": 12.098,
+          "end": 12.418,
+          "line": "L03",
+          "who": "mummy"
+        }
+      ],
+      "words_local": [
+        {
+          "word": "Ooh,",
+          "start": 0.0,
+          "end": 0.38
+        },
+        {
+          "word": "a",
+          "start": 0.5,
+          "end": 0.58
+        },
+        {
+          "word": "visitor!",
+          "start": 0.58,
+          "end": 1.0
+        },
+        {
+          "word": "My",
+          "start": 1.44,
+          "end": 1.58
+        },
+        {
+          "word": "first",
+          "start": 1.58,
+          "end": 1.88
+        },
+        {
+          "word": "one",
+          "start": 1.88,
+          "end": 2.12
+        },
+        {
+          "word": "in",
+          "start": 2.12,
+          "end": 2.32
+        },
+        {
+          "word": "three",
+          "start": 2.32,
+          "end": 2.68
+        },
+        {
+          "word": "thousand",
+          "start": 2.68,
+          "end": 3.1
+        },
+        {
+          "word": "years!",
+          "start": 3.1,
+          "end": 3.42
+        }
+      ],
+      "mismatch": 2
+    },
+    {
+      "id": "L04",
+      "who": "mummy",
+      "text": "Three doors. One way out. The other two... not so much.",
+      "start": 13.218,
+      "end": 17.181,
+      "words": [
+        {
+          "word": "Three",
+          "start": 13.218,
+          "end": 13.518,
+          "line": "L04",
+          "who": "mummy"
+        },
+        {
+          "word": "doors.",
+          "start": 13.518,
+          "end": 13.918,
+          "line": "L04",
+          "who": "mummy"
+        },
+        {
+          "word": "One",
+          "start": 14.138,
+          "end": 14.258,
+          "line": "L04",
+          "who": "mummy"
+        },
+        {
+          "word": "way",
+          "start": 14.258,
+          "end": 14.478,
+          "line": "L04",
+          "who": "mummy"
+        },
+        {
+          "word": "out.",
+          "start": 14.478,
+          "end": 14.758,
+          "line": "L04",
+          "who": "mummy"
+        },
+        {
+          "word": "The",
+          "start": 15.038,
+          "end": 15.098,
+          "line": "L04",
+          "who": "mummy"
+        },
+        {
+          "word": "other",
+          "start": 15.098,
+          "end": 15.278,
+          "line": "L04",
+          "who": "mummy"
+        },
+        {
+          "word": "two...",
+          "start": 15.278,
+          "end": 15.658,
+          "line": "L04",
+          "who": "mummy"
+        },
+        {
+          "word": "not",
+          "start": 16.038,
+          "end": 16.178,
+          "line": "L04",
+          "who": "mummy"
+        },
+        {
+          "word": "so",
+          "start": 16.178,
+          "end": 16.458,
+          "line": "L04",
+          "who": "mummy"
+        },
+        {
+          "word": "much.",
+          "start": 16.458,
+          "end": 16.738,
+          "line": "L04",
+          "who": "mummy"
+        }
+      ],
+      "words_local": [
+        {
+          "word": "Three",
+          "start": 0.0,
+          "end": 0.3
+        },
+        {
+          "word": "doors.",
+          "start": 0.3,
+          "end": 0.7
+        },
+        {
+          "word": "One",
+          "start": 0.92,
+          "end": 1.04
+        },
+        {
+          "word": "way",
+          "start": 1.04,
+          "end": 1.26
+        },
+        {
+          "word": "out.",
+          "start": 1.26,
+          "end": 1.54
+        },
+        {
+          "word": "The",
+          "start": 1.82,
+          "end": 1.88
+        },
+        {
+          "word": "other",
+          "start": 1.88,
+          "end": 2.06
+        },
+        {
+          "word": "two...",
+          "start": 2.06,
+          "end": 2.44
+        },
+        {
+          "word": "not",
+          "start": 2.82,
+          "end": 2.96
+        },
+        {
+          "word": "so",
+          "start": 2.96,
+          "end": 3.24
+        },
+        {
+          "word": "much.",
+          "start": 3.24,
+          "end": 3.52
+        }
+      ],
+      "mismatch": 0
+    },
+    {
+      "id": "L05",
+      "who": "mummy",
+      "text": "Door one. A fire that burns for one thousand years.",
+      "start": 17.531,
+      "end": 21.12,
+      "words": [
+        {
+          "word": "Door",
+          "start": 17.531,
+          "end": 17.791,
+          "line": "L05",
+          "who": "mummy"
+        },
+        {
+          "word": "one.",
+          "start": 17.791,
+          "end": 18.131,
+          "line": "L05",
+          "who": "mummy"
+        },
+        {
+          "word": "A",
+          "start": 18.411,
+          "end": 18.491,
+          "line": "L05",
+          "who": "mummy"
+        },
+        {
+          "word": "fire",
+          "start": 18.491,
+          "end": 18.811,
+          "line": "L05",
+          "who": "mummy"
+        },
+        {
+          "word": "that",
+          "start": 18.811,
+          "end": 19.051,
+          "line": "L05",
+          "who": "mummy"
+        },
+        {
+          "word": "burns",
+          "start": 19.051,
+          "end": 19.391,
+          "line": "L05",
+          "who": "mummy"
+        },
+        {
+          "word": "for",
+          "start": 19.391,
+          "end": 19.711,
+          "line": "L05",
+          "who": "mummy"
+        },
+        {
+          "word": "one",
+          "start": 19.711,
+          "end": 19.931,
+          "line": "L05",
+          "who": "mummy"
+        },
+        {
+          "word": "thousand",
+          "start": 19.931,
+          "end": 20.331,
+          "line": "L05",
+          "who": "mummy"
+        },
+        {
+          "word": "years.",
+          "start": 20.331,
+          "end": 20.631,
+          "line": "L05",
+          "who": "mummy"
+        }
+      ],
+      "words_local": [
+        {
+          "word": "Door",
+          "start": 0.0,
+          "end": 0.26
+        },
+        {
+          "word": "one.",
+          "start": 0.26,
+          "end": 0.6
+        },
+        {
+          "word": "A",
+          "start": 0.88,
+          "end": 0.96
+        },
+        {
+          "word": "fire",
+          "start": 0.96,
+          "end": 1.28
+        },
+        {
+          "word": "that",
+          "start": 1.28,
+          "end": 1.52
+        },
+        {
+          "word": "burns",
+          "start": 1.52,
+          "end": 1.86
+        },
+        {
+          "word": "for",
+          "start": 1.86,
+          "end": 2.18
+        },
+        {
+          "word": "one",
+          "start": 2.18,
+          "end": 2.4
+        },
+        {
+          "word": "thousand",
+          "start": 2.4,
+          "end": 2.8
+        },
+        {
+          "word": "years.",
+          "start": 2.8,
+          "end": 3.1
+        }
+      ],
+      "mismatch": 1
+    },
+    {
+      "id": "L06",
+      "who": "mummy",
+      "text": "Door two. Lions that have not eaten in three years.",
+      "start": 21.42,
+      "end": 24.942,
+      "words": [
+        {
+          "word": "Door",
+          "start": 21.42,
+          "end": 21.62,
+          "line": "L06",
+          "who": "mummy"
+        },
+        {
+          "word": "two.",
+          "start": 21.62,
+          "end": 22.02,
+          "line": "L06",
+          "who": "mummy"
+        },
+        {
+          "word": "Lions",
+          "start": 22.72,
+          "end": 22.72,
+          "line": "L06",
+          "who": "mummy"
+        },
+        {
+          "word": "that",
+          "start": 22.72,
+          "end": 22.94,
+          "line": "L06",
+          "who": "mummy"
+        },
+        {
+          "word": "have",
+          "start": 22.94,
+          "end": 23.1,
+          "line": "L06",
+          "who": "mummy"
+        },
+        {
+          "word": "not",
+          "start": 23.1,
+          "end": 23.3,
+          "line": "L06",
+          "who": "mummy"
+        },
+        {
+          "word": "eaten",
+          "start": 23.3,
+          "end": 23.64,
+          "line": "L06",
+          "who": "mummy"
+        },
+        {
+          "word": "in",
+          "start": 23.64,
+          "end": 23.88,
+          "line": "L06",
+          "who": "mummy"
+        },
+        {
+          "word": "three",
+          "start": 23.88,
+          "end": 24.12,
+          "line": "L06",
+          "who": "mummy"
+        },
+        {
+          "word": "years.",
+          "start": 24.12,
+          "end": 24.48,
+          "line": "L06",
+          "who": "mummy"
+        }
+      ],
+      "words_local": [
+        {
+          "word": "Door",
+          "start": 0.0,
+          "end": 0.2
+        },
+        {
+          "word": "two.",
+          "start": 0.2,
+          "end": 0.6
+        },
+        {
+          "word": "Lions",
+          "start": 1.3,
+          "end": 1.3
+        },
+        {
+          "word": "that",
+          "start": 1.3,
+          "end": 1.52
+        },
+        {
+          "word": "have",
+          "start": 1.52,
+          "end": 1.68
+        },
+        {
+          "word": "not",
+          "start": 1.68,
+          "end": 1.88
+        },
+        {
+          "word": "eaten",
+          "start": 1.88,
+          "end": 2.22
+        },
+        {
+          "word": "in",
+          "start": 2.22,
+          "end": 2.46
+        },
+        {
+          "word": "three",
+          "start": 2.46,
+          "end": 2.7
+        },
+        {
+          "word": "years.",
+          "start": 2.7,
+          "end": 3.06
+        }
+      ],
+      "mismatch": 0
+    },
+    {
+      "id": "L07",
+      "who": "mummy",
+      "text": "Door three. A flood that arrives in three thousand years.",
+      "start": 25.242,
+      "end": 29.219,
+      "words": [
+        {
+          "word": "Door",
+          "start": 25.242,
+          "end": 25.522,
+          "line": "L07",
+          "who": "mummy"
+        },
+        {
+          "word": "three.",
+          "start": 25.522,
+          "end": 25.982,
+          "line": "L07",
+          "who": "mummy"
+        },
+        {
+          "word": "A",
+          "start": 26.362,
+          "end": 26.442,
+          "line": "L07",
+          "who": "mummy"
+        },
+        {
+          "word": "flood",
+          "start": 26.442,
+          "end": 26.722,
+          "line": "L07",
+          "who": "mummy"
+        },
+        {
+          "word": "that",
+          "start": 26.722,
+          "end": 26.982,
+          "line": "L07",
+          "who": "mummy"
+        },
+        {
+          "word": "arrives",
+          "start": 26.982,
+          "end": 27.322,
+          "line": "L07",
+          "who": "mummy"
+        },
+        {
+          "word": "in",
+          "start": 27.322,
+          "end": 27.642,
+          "line": "L07",
+          "who": "mummy"
+        },
+        {
+          "word": "three",
+          "start": 27.642,
+          "end": 28.002,
+          "line": "L07",
+          "who": "mummy"
+        },
+        {
+          "word": "thousand",
+          "start": 28.002,
+          "end": 28.442,
+          "line": "L07",
+          "who": "mummy"
+        },
+        {
+          "word": "years.",
+          "start": 28.442,
+          "end": 28.722,
+          "line": "L07",
+          "who": "mummy"
+        }
+      ],
+      "words_local": [
+        {
+          "word": "Door",
+          "start": 0.0,
+          "end": 0.28
+        },
+        {
+          "word": "three.",
+          "start": 0.28,
+          "end": 0.74
+        },
+        {
+          "word": "A",
+          "start": 1.12,
+          "end": 1.2
+        },
+        {
+          "word": "flood",
+          "start": 1.2,
+          "end": 1.48
+        },
+        {
+          "word": "that",
+          "start": 1.48,
+          "end": 1.74
+        },
+        {
+          "word": "arrives",
+          "start": 1.74,
+          "end": 2.08
+        },
+        {
+          "word": "in",
+          "start": 2.08,
+          "end": 2.4
+        },
+        {
+          "word": "three",
+          "start": 2.4,
+          "end": 2.76
+        },
+        {
+          "word": "thousand",
+          "start": 2.76,
+          "end": 3.2
+        },
+        {
+          "word": "years.",
+          "start": 3.2,
+          "end": 3.48
+        }
+      ],
+      "mismatch": 1
+    },
+    {
+      "id": "L08",
+      "who": "marcus",
+      "text": "Easy! Those lions starved ages ago. I pick door two!",
+      "start": 29.569,
+      "end": 33.687,
+      "words": [
+        {
+          "word": "Easy!",
+          "start": 29.569,
+          "end": 29.909,
+          "line": "L08",
+          "who": "marcus"
+        },
+        {
+          "word": "Those",
+          "start": 30.089,
+          "end": 30.229,
+          "line": "L08",
+          "who": "marcus"
+        },
+        {
+          "word": "lions",
+          "start": 30.229,
+          "end": 30.609,
+          "line": "L08",
+          "who": "marcus"
+        },
+        {
+          "word": "starved",
+          "start": 30.609,
+          "end": 31.069,
+          "line": "L08",
+          "who": "marcus"
+        },
+        {
+          "word": "ages",
+          "start": 31.069,
+          "end": 31.469,
+          "line": "L08",
+          "who": "marcus"
+        },
+        {
+          "word": "ago.",
+          "start": 31.469,
+          "end": 31.869,
+          "line": "L08",
+          "who": "marcus"
+        },
+        {
+          "word": "I",
+          "start": 32.329,
+          "end": 32.429,
+          "line": "L08",
+          "who": "marcus"
+        },
+        {
+          "word": "pick",
+          "start": 32.429,
+          "end": 32.649,
+          "line": "L08",
+          "who": "marcus"
+        },
+        {
+          "word": "door",
+          "start": 32.649,
+          "end": 32.909,
+          "line": "L08",
+          "who": "marcus"
+        },
+        {
+          "word": "two!",
+          "start": 32.909,
+          "end": 33.269,
+          "line": "L08",
+          "who": "marcus"
+        }
+      ],
+      "words_local": [
+        {
+          "word": "Easy!",
+          "start": 0.0,
+          "end": 0.34
+        },
+        {
+          "word": "Those",
+          "start": 0.52,
+          "end": 0.66
+        },
+        {
+          "word": "lions",
+          "start": 0.66,
+          "end": 1.04
+        },
+        {
+          "word": "starved",
+          "start": 1.04,
+          "end": 1.5
+        },
+        {
+          "word": "ages",
+          "start": 1.5,
+          "end": 1.9
+        },
+        {
+          "word": "ago.",
+          "start": 1.9,
+          "end": 2.3
+        },
+        {
+          "word": "I",
+          "start": 2.76,
+          "end": 2.86
+        },
+        {
+          "word": "pick",
+          "start": 2.86,
+          "end": 3.08
+        },
+        {
+          "word": "door",
+          "start": 3.08,
+          "end": 3.34
+        },
+        {
+          "word": "two!",
+          "start": 3.34,
+          "end": 3.7
+        }
+      ],
+      "mismatch": 1
+    },
+    {
+      "id": "L09",
+      "who": "mummy",
+      "text": "Careful, detective. I carved these signs on my very first day. Three thousand years ago.",
+      "start": 33.987,
+      "end": 40.294,
+      "words": [
+        {
+          "word": "Careful,",
+          "start": 33.987,
+          "end": 34.627,
+          "line": "L09",
+          "who": "mummy"
+        },
+        {
+          "word": "detective.",
+          "start": 34.627,
+          "end": 35.107,
+          "line": "L09",
+          "who": "mummy"
+        },
+        {
+          "word": "I",
+          "start": 35.667,
+          "end": 35.887,
+          "line": "L09",
+          "who": "mummy"
+        },
+        {
+          "word": "carved",
+          "start": 35.887,
+          "end": 36.227,
+          "line": "L09",
+          "who": "mummy"
+        },
+        {
+          "word": "these",
+          "start": 36.227,
+          "end": 36.487,
+          "line": "L09",
+          "who": "mummy"
+        },
+        {
+          "word": "signs",
+          "start": 36.487,
+          "end": 36.807,
+          "line": "L09",
+          "who": "mummy"
+        },
+        {
+          "word": "on",
+          "start": 36.807,
+          "end": 37.027,
+          "line": "L09",
+          "who": "mummy"
+        },
+        {
+          "word": "my",
+          "start": 37.027,
+          "end": 37.187,
+          "line": "L09",
+          "who": "mummy"
+        },
+        {
+          "word": "very",
+          "start": 37.187,
+          "end": 37.427,
+          "line": "L09",
+          "who": "mummy"
+        },
+        {
+          "word": "first",
+          "start": 37.427,
+          "end": 37.767,
+          "line": "L09",
+          "who": "mummy"
+        },
+        {
+          "word": "day.",
+          "start": 37.767,
+          "end": 38.187,
+          "line": "L09",
+          "who": "mummy"
+        },
+        {
+          "word": "Three",
+          "start": 38.607,
+          "end": 38.747,
+          "line": "L09",
+          "who": "mummy"
+        },
+        {
+          "word": "thousand",
+          "start": 38.747,
+          "end": 39.107,
+          "line": "L09",
+          "who": "mummy"
+        },
+        {
+          "word": "years",
+          "start": 39.107,
+          "end": 39.507,
+          "line": "L09",
+          "who": "mummy"
+        },
+        {
+          "word": "ago.",
+          "start": 39.507,
+          "end": 39.867,
+          "line": "L09",
+          "who": "mummy"
+        }
+      ],
+      "words_local": [
+        {
+          "word": "Careful,",
+          "start": 0.0,
+          "end": 0.64
+        },
+        {
+          "word": "detective.",
+          "start": 0.64,
+          "end": 1.12
+        },
+        {
+          "word": "I",
+          "start": 1.68,
+          "end": 1.9
+        },
+        {
+          "word": "carved",
+          "start": 1.9,
+          "end": 2.24
+        },
+        {
+          "word": "these",
+          "start": 2.24,
+          "end": 2.5
+        },
+        {
+          "word": "signs",
+          "start": 2.5,
+          "end": 2.82
+        },
+        {
+          "word": "on",
+          "start": 2.82,
+          "end": 3.04
+        },
+        {
+          "word": "my",
+          "start": 3.04,
+          "end": 3.2
+        },
+        {
+          "word": "very",
+          "start": 3.2,
+          "end": 3.44
+        },
+        {
+          "word": "first",
+          "start": 3.44,
+          "end": 3.78
+        },
+        {
+          "word": "day.",
+          "start": 3.78,
+          "end": 4.2
+        },
+        {
+          "word": "Three",
+          "start": 4.62,
+          "end": 4.76
+        },
+        {
+          "word": "thousand",
+          "start": 4.76,
+          "end": 5.12
+        },
+        {
+          "word": "years",
+          "start": 5.12,
+          "end": 5.52
+        },
+        {
+          "word": "ago.",
+          "start": 5.52,
+          "end": 5.88
+        }
+      ],
+      "mismatch": 0
+    },
+    {
+      "id": "L10",
+      "who": "mummy",
+      "text": "Now, excuse me. Lunch time, kitties!",
+      "start": 40.644,
+      "end": 43.625,
+      "words": [
+        {
+          "word": "Now",
+          "start": 40.644,
+          "end": 40.944,
+          "line": "L10",
+          "who": "mummy"
+        },
+        {
+          "word": "excuse",
+          "start": 40.944,
+          "end": 41.404,
+          "line": "L10",
+          "who": "mummy"
+        },
+        {
+          "word": "me,",
+          "start": 41.404,
+          "end": 41.744,
+          "line": "L10",
+          "who": "mummy"
+        },
+        {
+          "word": "lunchtime",
+          "start": 42.264,
+          "end": 42.744,
+          "line": "L10",
+          "who": "mummy"
+        },
+        {
+          "word": "kitties.",
+          "start": 42.744,
+          "end": 43.204,
+          "line": "L10",
+          "who": "mummy"
+        }
+      ],
+      "words_local": [
+        {
+          "word": "Now",
+          "start": 0.0,
+          "end": 0.3
+        },
+        {
+          "word": "excuse",
+          "start": 0.3,
+          "end": 0.76
+        },
+        {
+          "word": "me,",
+          "start": 0.76,
+          "end": 1.1
+        },
+        {
+          "word": "lunchtime",
+          "start": 1.62,
+          "end": 2.1
+        },
+        {
+          "word": "kitties.",
+          "start": 2.1,
+          "end": 2.56
+        }
+      ],
+      "mismatch": 2
+    },
+    {
+      "id": "L11",
+      "who": "marcus",
+      "text": "Okay. Maybe not door two.",
+      "start": 45.225,
+      "end": 47.36,
+      "words": [
+        {
+          "word": "Okay.",
+          "start": 45.225,
+          "end": 45.725,
+          "line": "L11",
+          "who": "marcus"
+        },
+        {
+          "word": "Maybe",
+          "start": 45.885,
+          "end": 46.025,
+          "line": "L11",
+          "who": "marcus"
+        },
+        {
+          "word": "not",
+          "start": 46.025,
+          "end": 46.245,
+          "line": "L11",
+          "who": "marcus"
+        },
+        {
+          "word": "door",
+          "start": 46.245,
+          "end": 46.525,
+          "line": "L11",
+          "who": "marcus"
+        },
+        {
+          "word": "two.",
+          "start": 46.525,
+          "end": 46.865,
+          "line": "L11",
+          "who": "marcus"
+        }
+      ],
+      "words_local": [
+        {
+          "word": "Okay.",
+          "start": 0.0,
+          "end": 0.5
+        },
+        {
+          "word": "Maybe",
+          "start": 0.66,
+          "end": 0.8
+        },
+        {
+          "word": "not",
+          "start": 0.8,
+          "end": 1.02
+        },
+        {
+          "word": "door",
+          "start": 1.02,
+          "end": 1.3
+        },
+        {
+          "word": "two.",
+          "start": 1.3,
+          "end": 1.64
+        }
+      ],
+      "mismatch": 0
+    },
+    {
+      "id": "L12",
+      "who": "narrator",
+      "text": "Fire, lions, or flood. Only one door is safe. Which door would you choose?",
+      "start": 47.86,
+      "end": 52.835,
+      "words": [
+        {
+          "word": "Fire,",
+          "start": 47.86,
+          "end": 48.24,
+          "line": "L12",
+          "who": "narrator"
+        },
+        {
+          "word": "lions,",
+          "start": 48.4,
+          "end": 48.72,
+          "line": "L12",
+          "who": "narrator"
+        },
+        {
+          "word": "or",
+          "start": 49.04,
+          "end": 49.06,
+          "line": "L12",
+          "who": "narrator"
+        },
+        {
+          "word": "flood.",
+          "start": 49.06,
+          "end": 49.42,
+          "line": "L12",
+          "who": "narrator"
+        },
+        {
+          "word": "Only",
+          "start": 49.86,
+          "end": 50.06,
+          "line": "L12",
+          "who": "narrator"
+        },
+        {
+          "word": "one",
+          "start": 50.06,
+          "end": 50.32,
+          "line": "L12",
+          "who": "narrator"
+        },
+        {
+          "word": "door",
+          "start": 50.32,
+          "end": 50.52,
+          "line": "L12",
+          "who": "narrator"
+        },
+        {
+          "word": "is",
+          "start": 50.52,
+          "end": 50.7,
+          "line": "L12",
+          "who": "narrator"
+        },
+        {
+          "word": "safe.",
+          "start": 50.7,
+          "end": 51.0,
+          "line": "L12",
+          "who": "narrator"
+        },
+        {
+          "word": "Which",
+          "start": 51.48,
+          "end": 51.58,
+          "line": "L12",
+          "who": "narrator"
+        },
+        {
+          "word": "door",
+          "start": 51.58,
+          "end": 51.86,
+          "line": "L12",
+          "who": "narrator"
+        },
+        {
+          "word": "would",
+          "start": 51.86,
+          "end": 52.06,
+          "line": "L12",
+          "who": "narrator"
+        },
+        {
+          "word": "you",
+          "start": 52.06,
+          "end": 52.22,
+          "line": "L12",
+          "who": "narrator"
+        },
+        {
+          "word": "choose?",
+          "start": 52.22,
+          "end": 52.52,
+          "line": "L12",
+          "who": "narrator"
+        }
+      ],
+      "words_local": [
+        {
+          "word": "Fire,",
+          "start": 0.0,
+          "end": 0.38
+        },
+        {
+          "word": "lions,",
+          "start": 0.54,
+          "end": 0.86
+        },
+        {
+          "word": "or",
+          "start": 1.18,
+          "end": 1.2
+        },
+        {
+          "word": "flood.",
+          "start": 1.2,
+          "end": 1.56
+        },
+        {
+          "word": "Only",
+          "start": 2.0,
+          "end": 2.2
+        },
+        {
+          "word": "one",
+          "start": 2.2,
+          "end": 2.46
+        },
+        {
+          "word": "door",
+          "start": 2.46,
+          "end": 2.66
+        },
+        {
+          "word": "is",
+          "start": 2.66,
+          "end": 2.84
+        },
+        {
+          "word": "safe.",
+          "start": 2.84,
+          "end": 3.14
+        },
+        {
+          "word": "Which",
+          "start": 3.62,
+          "end": 3.72
+        },
+        {
+          "word": "door",
+          "start": 3.72,
+          "end": 4.0
+        },
+        {
+          "word": "would",
+          "start": 4.0,
+          "end": 4.2
+        },
+        {
+          "word": "you",
+          "start": 4.2,
+          "end": 4.36
+        },
+        {
+          "word": "choose?",
+          "start": 4.36,
+          "end": 4.66
+        }
+      ],
+      "mismatch": 0
+    }
+  ],
+  "words": [
+    {
+      "word": "Come",
+      "start": 0.15,
+      "end": 0.35,
+      "line": "L01",
+      "who": "marcus"
+    },
+    {
+      "word": "back",
+      "start": 0.35,
+      "end": 0.63,
+      "line": "L01",
+      "who": "marcus"
+    },
+    {
+      "word": "here,",
+      "start": 0.63,
+      "end": 0.89,
+      "line": "L01",
+      "who": "marcus"
+    },
+    {
+      "word": "you",
+      "start": 1.13,
+      "end": 1.13,
+      "line": "L01",
+      "who": "marcus"
+    },
+    {
+      "word": "furry",
+      "start": 1.13,
+      "end": 1.41,
+      "line": "L01",
+      "who": "marcus"
+    },
+    {
+      "word": "little",
+      "start": 1.41,
+      "end": 1.69,
+      "line": "L01",
+      "who": "marcus"
+    },
+    {
+      "word": "thief!",
+      "start": 1.69,
+      "end": 2.03,
+      "line": "L01",
+      "who": "marcus"
+    },
+    {
+      "word": "Detective",
+      "start": 2.73,
+      "end": 3.17,
+      "line": "L02",
+      "who": "narrator"
+    },
+    {
+      "word": "Marcus",
+      "start": 3.17,
+      "end": 3.59,
+      "line": "L02",
+      "who": "narrator"
+    },
+    {
+      "word": "chased",
+      "start": 3.59,
+      "end": 4.09,
+      "line": "L02",
+      "who": "narrator"
+    },
+    {
+      "word": "a",
+      "start": 4.09,
+      "end": 4.27,
+      "line": "L02",
+      "who": "narrator"
+    },
+    {
+      "word": "cat",
+      "start": 4.27,
+      "end": 4.49,
+      "line": "L02",
+      "who": "narrator"
+    },
+    {
+      "word": "burglar",
+      "start": 4.49,
+      "end": 4.89,
+      "line": "L02",
+      "who": "narrator"
+    },
+    {
+      "word": "into",
+      "start": 4.89,
+      "end": 5.13,
+      "line": "L02",
+      "who": "narrator"
+    },
+    {
+      "word": "a",
+      "start": 5.13,
+      "end": 5.31,
+      "line": "L02",
+      "who": "narrator"
+    },
+    {
+      "word": "pyramid.",
+      "start": 5.31,
+      "end": 5.69,
+      "line": "L02",
+      "who": "narrator"
+    },
+    {
+      "word": "Then,",
+      "start": 6.29,
+      "end": 6.57,
+      "line": "L02",
+      "who": "narrator"
+    },
+    {
+      "word": "the",
+      "start": 6.57,
+      "end": 7.01,
+      "line": "L02",
+      "who": "narrator"
+    },
+    {
+      "word": "door",
+      "start": 7.01,
+      "end": 7.27,
+      "line": "L02",
+      "who": "narrator"
+    },
+    {
+      "word": "slammed",
+      "start": 7.27,
+      "end": 7.67,
+      "line": "L02",
+      "who": "narrator"
+    },
+    {
+      "word": "shut.",
+      "start": 7.67,
+      "end": 8.07,
+      "line": "L02",
+      "who": "narrator"
+    },
+    {
+      "word": "Ooh,",
+      "start": 8.998,
+      "end": 9.378,
+      "line": "L03",
+      "who": "mummy"
+    },
+    {
+      "word": "a",
+      "start": 9.498,
+      "end": 9.578,
+      "line": "L03",
+      "who": "mummy"
+    },
+    {
+      "word": "visitor!",
+      "start": 9.578,
+      "end": 9.998,
+      "line": "L03",
+      "who": "mummy"
+    },
+    {
+      "word": "My",
+      "start": 10.438,
+      "end": 10.578,
+      "line": "L03",
+      "who": "mummy"
+    },
+    {
+      "word": "first",
+      "start": 10.578,
+      "end": 10.878,
+      "line": "L03",
+      "who": "mummy"
+    },
+    {
+      "word": "one",
+      "start": 10.878,
+      "end": 11.118,
+      "line": "L03",
+      "who": "mummy"
+    },
+    {
+      "word": "in",
+      "start": 11.118,
+      "end": 11.318,
+      "line": "L03",
+      "who": "mummy"
+    },
+    {
+      "word": "three",
+      "start": 11.318,
+      "end": 11.678,
+      "line": "L03",
+      "who": "mummy"
+    },
+    {
+      "word": "thousand",
+      "start": 11.678,
+      "end": 12.098,
+      "line": "L03",
+      "who": "mummy"
+    },
+    {
+      "word": "years!",
+      "start": 12.098,
+      "end": 12.418,
+      "line": "L03",
+      "who": "mummy"
+    },
+    {
+      "word": "Three",
+      "start": 13.218,
+      "end": 13.518,
+      "line": "L04",
+      "who": "mummy"
+    },
+    {
+      "word": "doors.",
+      "start": 13.518,
+      "end": 13.918,
+      "line": "L04",
+      "who": "mummy"
+    },
+    {
+      "word": "One",
+      "start": 14.138,
+      "end": 14.258,
+      "line": "L04",
+      "who": "mummy"
+    },
+    {
+      "word": "way",
+      "start": 14.258,
+      "end": 14.478,
+      "line": "L04",
+      "who": "mummy"
+    },
+    {
+      "word": "out.",
+      "start": 14.478,
+      "end": 14.758,
+      "line": "L04",
+      "who": "mummy"
+    },
+    {
+      "word": "The",
+      "start": 15.038,
+      "end": 15.098,
+      "line": "L04",
+      "who": "mummy"
+    },
+    {
+      "word": "other",
+      "start": 15.098,
+      "end": 15.278,
+      "line": "L04",
+      "who": "mummy"
+    },
+    {
+      "word": "two...",
+      "start": 15.278,
+      "end": 15.658,
+      "line": "L04",
+      "who": "mummy"
+    },
+    {
+      "word": "not",
+      "start": 16.038,
+      "end": 16.178,
+      "line": "L04",
+      "who": "mummy"
+    },
+    {
+      "word": "so",
+      "start": 16.178,
+      "end": 16.458,
+      "line": "L04",
+      "who": "mummy"
+    },
+    {
+      "word": "much.",
+      "start": 16.458,
+      "end": 16.738,
+      "line": "L04",
+      "who": "mummy"
+    },
+    {
+      "word": "Door",
+      "start": 17.531,
+      "end": 17.791,
+      "line": "L05",
+      "who": "mummy"
+    },
+    {
+      "word": "one.",
+      "start": 17.791,
+      "end": 18.131,
+      "line": "L05",
+      "who": "mummy"
+    },
+    {
+      "word": "A",
+      "start": 18.411,
+      "end": 18.491,
+      "line": "L05",
+      "who": "mummy"
+    },
+    {
+      "word": "fire",
+      "start": 18.491,
+      "end": 18.811,
+      "line": "L05",
+      "who": "mummy"
+    },
+    {
+      "word": "that",
+      "start": 18.811,
+      "end": 19.051,
+      "line": "L05",
+      "who": "mummy"
+    },
+    {
+      "word": "burns",
+      "start": 19.051,
+      "end": 19.391,
+      "line": "L05",
+      "who": "mummy"
+    },
+    {
+      "word": "for",
+      "start": 19.391,
+      "end": 19.711,
+      "line": "L05",
+      "who": "mummy"
+    },
+    {
+      "word": "one",
+      "start": 19.711,
+      "end": 19.931,
+      "line": "L05",
+      "who": "mummy"
+    },
+    {
+      "word": "thousand",
+      "start": 19.931,
+      "end": 20.331,
+      "line": "L05",
+      "who": "mummy"
+    },
+    {
+      "word": "years.",
+      "start": 20.331,
+      "end": 20.631,
+      "line": "L05",
+      "who": "mummy"
+    },
+    {
+      "word": "Door",
+      "start": 21.42,
+      "end": 21.62,
+      "line": "L06",
+      "who": "mummy"
+    },
+    {
+      "word": "two.",
+      "start": 21.62,
+      "end": 22.02,
+      "line": "L06",
+      "who": "mummy"
+    },
+    {
+      "word": "Lions",
+      "start": 22.72,
+      "end": 22.72,
+      "line": "L06",
+      "who": "mummy"
+    },
+    {
+      "word": "that",
+      "start": 22.72,
+      "end": 22.94,
+      "line": "L06",
+      "who": "mummy"
+    },
+    {
+      "word": "have",
+      "start": 22.94,
+      "end": 23.1,
+      "line": "L06",
+      "who": "mummy"
+    },
+    {
+      "word": "not",
+      "start": 23.1,
+      "end": 23.3,
+      "line": "L06",
+      "who": "mummy"
+    },
+    {
+      "word": "eaten",
+      "start": 23.3,
+      "end": 23.64,
+      "line": "L06",
+      "who": "mummy"
+    },
+    {
+      "word": "in",
+      "start": 23.64,
+      "end": 23.88,
+      "line": "L06",
+      "who": "mummy"
+    },
+    {
+      "word": "three",
+      "start": 23.88,
+      "end": 24.12,
+      "line": "L06",
+      "who": "mummy"
+    },
+    {
+      "word": "years.",
+      "start": 24.12,
+      "end": 24.48,
+      "line": "L06",
+      "who": "mummy"
+    },
+    {
+      "word": "Door",
+      "start": 25.242,
+      "end": 25.522,
+      "line": "L07",
+      "who": "mummy"
+    },
+    {
+      "word": "three.",
+      "start": 25.522,
+      "end": 25.982,
+      "line": "L07",
+      "who": "mummy"
+    },
+    {
+      "word": "A",
+      "start": 26.362,
+      "end": 26.442,
+      "line": "L07",
+      "who": "mummy"
+    },
+    {
+      "word": "flood",
+      "start": 26.442,
+      "end": 26.722,
+      "line": "L07",
+      "who": "mummy"
+    },
+    {
+      "word": "that",
+      "start": 26.722,
+      "end": 26.982,
+      "line": "L07",
+      "who": "mummy"
+    },
+    {
+      "word": "arrives",
+      "start": 26.982,
+      "end": 27.322,
+      "line": "L07",
+      "who": "mummy"
+    },
+    {
+      "word": "in",
+      "start": 27.322,
+      "end": 27.642,
+      "line": "L07",
+      "who": "mummy"
+    },
+    {
+      "word": "three",
+      "start": 27.642,
+      "end": 28.002,
+      "line": "L07",
+      "who": "mummy"
+    },
+    {
+      "word": "thousand",
+      "start": 28.002,
+      "end": 28.442,
+      "line": "L07",
+      "who": "mummy"
+    },
+    {
+      "word": "years.",
+      "start": 28.442,
+      "end": 28.722,
+      "line": "L07",
+      "who": "mummy"
+    },
+    {
+      "word": "Easy!",
+      "start": 29.569,
+      "end": 29.909,
+      "line": "L08",
+      "who": "marcus"
+    },
+    {
+      "word": "Those",
+      "start": 30.089,
+      "end": 30.229,
+      "line": "L08",
+      "who": "marcus"
+    },
+    {
+      "word": "lions",
+      "start": 30.229,
+      "end": 30.609,
+      "line": "L08",
+      "who": "marcus"
+    },
+    {
+      "word": "starved",
+      "start": 30.609,
+      "end": 31.069,
+      "line": "L08",
+      "who": "marcus"
+    },
+    {
+      "word": "ages",
+      "start": 31.069,
+      "end": 31.469,
+      "line": "L08",
+      "who": "marcus"
+    },
+    {
+      "word": "ago.",
+      "start": 31.469,
+      "end": 31.869,
+      "line": "L08",
+      "who": "marcus"
+    },
+    {
+      "word": "I",
+      "start": 32.329,
+      "end": 32.429,
+      "line": "L08",
+      "who": "marcus"
+    },
+    {
+      "word": "pick",
+      "start": 32.429,
+      "end": 32.649,
+      "line": "L08",
+      "who": "marcus"
+    },
+    {
+      "word": "door",
+      "start": 32.649,
+      "end": 32.909,
+      "line": "L08",
+      "who": "marcus"
+    },
+    {
+      "word": "two!",
+      "start": 32.909,
+      "end": 33.269,
+      "line": "L08",
+      "who": "marcus"
+    },
+    {
+      "word": "Careful,",
+      "start": 33.987,
+      "end": 34.627,
+      "line": "L09",
+      "who": "mummy"
+    },
+    {
+      "word": "detective.",
+      "start": 34.627,
+      "end": 35.107,
+      "line": "L09",
+      "who": "mummy"
+    },
+    {
+      "word": "I",
+      "start": 35.667,
+      "end": 35.887,
+      "line": "L09",
+      "who": "mummy"
+    },
+    {
+      "word": "carved",
+      "start": 35.887,
+      "end": 36.227,
+      "line": "L09",
+      "who": "mummy"
+    },
+    {
+      "word": "these",
+      "start": 36.227,
+      "end": 36.487,
+      "line": "L09",
+      "who": "mummy"
+    },
+    {
+      "word": "signs",
+      "start": 36.487,
+      "end": 36.807,
+      "line": "L09",
+      "who": "mummy"
+    },
+    {
+      "word": "on",
+      "start": 36.807,
+      "end": 37.027,
+      "line": "L09",
+      "who": "mummy"
+    },
+    {
+      "word": "my",
+      "start": 37.027,
+      "end": 37.187,
+      "line": "L09",
+      "who": "mummy"
+    },
+    {
+      "word": "very",
+      "start": 37.187,
+      "end": 37.427,
+      "line": "L09",
+      "who": "mummy"
+    },
+    {
+      "word": "first",
+      "start": 37.427,
+      "end": 37.767,
+      "line": "L09",
+      "who": "mummy"
+    },
+    {
+      "word": "day.",
+      "start": 37.767,
+      "end": 38.187,
+      "line": "L09",
+      "who": "mummy"
+    },
+    {
+      "word": "Three",
+      "start": 38.607,
+      "end": 38.747,
+      "line": "L09",
+      "who": "mummy"
+    },
+    {
+      "word": "thousand",
+      "start": 38.747,
+      "end": 39.107,
+      "line": "L09",
+      "who": "mummy"
+    },
+    {
+      "word": "years",
+      "start": 39.107,
+      "end": 39.507,
+      "line": "L09",
+      "who": "mummy"
+    },
+    {
+      "word": "ago.",
+      "start": 39.507,
+      "end": 39.867,
+      "line": "L09",
+      "who": "mummy"
+    },
+    {
+      "word": "Now",
+      "start": 40.644,
+      "end": 40.944,
+      "line": "L10",
+      "who": "mummy"
+    },
+    {
+      "word": "excuse",
+      "start": 40.944,
+      "end": 41.404,
+      "line": "L10",
+      "who": "mummy"
+    },
+    {
+      "word": "me,",
+      "start": 41.404,
+      "end": 41.744,
+      "line": "L10",
+      "who": "mummy"
+    },
+    {
+      "word": "lunchtime",
+      "start": 42.264,
+      "end": 42.744,
+      "line": "L10",
+      "who": "mummy"
+    },
+    {
+      "word": "kitties.",
+      "start": 42.744,
+      "end": 43.204,
+      "line": "L10",
+      "who": "mummy"
+    },
+    {
+      "word": "Okay.",
+      "start": 45.225,
+      "end": 45.725,
+      "line": "L11",
+      "who": "marcus"
+    },
+    {
+      "word": "Maybe",
+      "start": 45.885,
+      "end": 46.025,
+      "line": "L11",
+      "who": "marcus"
+    },
+    {
+      "word": "not",
+      "start": 46.025,
+      "end": 46.245,
+      "line": "L11",
+      "who": "marcus"
+    },
+    {
+      "word": "door",
+      "start": 46.245,
+      "end": 46.525,
+      "line": "L11",
+      "who": "marcus"
+    },
+    {
+      "word": "two.",
+      "start": 46.525,
+      "end": 46.865,
+      "line": "L11",
+      "who": "marcus"
+    },
+    {
+      "word": "Fire,",
+      "start": 47.86,
+      "end": 48.24,
+      "line": "L12",
+      "who": "narrator"
+    },
+    {
+      "word": "lions,",
+      "start": 48.4,
+      "end": 48.72,
+      "line": "L12",
+      "who": "narrator"
+    },
+    {
+      "word": "or",
+      "start": 49.04,
+      "end": 49.06,
+      "line": "L12",
+      "who": "narrator"
+    },
+    {
+      "word": "flood.",
+      "start": 49.06,
+      "end": 49.42,
+      "line": "L12",
+      "who": "narrator"
+    },
+    {
+      "word": "Only",
+      "start": 49.86,
+      "end": 50.06,
+      "line": "L12",
+      "who": "narrator"
+    },
+    {
+      "word": "one",
+      "start": 50.06,
+      "end": 50.32,
+      "line": "L12",
+      "who": "narrator"
+    },
+    {
+      "word": "door",
+      "start": 50.32,
+      "end": 50.52,
+      "line": "L12",
+      "who": "narrator"
+    },
+    {
+      "word": "is",
+      "start": 50.52,
+      "end": 50.7,
+      "line": "L12",
+      "who": "narrator"
+    },
+    {
+      "word": "safe.",
+      "start": 50.7,
+      "end": 51.0,
+      "line": "L12",
+      "who": "narrator"
+    },
+    {
+      "word": "Which",
+      "start": 51.48,
+      "end": 51.58,
+      "line": "L12",
+      "who": "narrator"
+    },
+    {
+      "word": "door",
+      "start": 51.58,
+      "end": 51.86,
+      "line": "L12",
+      "who": "narrator"
+    },
+    {
+      "word": "would",
+      "start": 51.86,
+      "end": 52.06,
+      "line": "L12",
+      "who": "narrator"
+    },
+    {
+      "word": "you",
+      "start": 52.06,
+      "end": 52.22,
+      "line": "L12",
+      "who": "narrator"
+    },
+    {
+      "word": "choose?",
+      "start": 52.22,
+      "end": 52.52,
+      "line": "L12",
+      "who": "narrator"
+    }
+  ]
+}

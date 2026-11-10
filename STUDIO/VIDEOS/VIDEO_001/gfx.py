@@ -69,7 +69,7 @@ def case_file(t_oliver, t_sophie, t_daniel):
     return draw
 
 
-def end_card(t0, title="WHO IS LYING?"):
+def end_card(t0, title="WHO IS LYING?", sub="COMMENT YOUR ANSWER!"):
     def draw(c, t, al):
         u = clamp((t - t0) / 0.35)
         s = EASE["back"](u)
@@ -85,7 +85,7 @@ def end_card(t0, title="WHO IS LYING?"):
             c.translate(W / 2, 1640)
             k = 0.85 + 0.15 * EASE["back"](u2)
             c.scale(k, k)
-            text(c, "COMMENT YOUR ANSWER!", 0, 0, 92, "#FFD23F", face="Anton-Regular.ttf", outline=12, alpha=u2, clamp_safe=False,
+            text(c, sub, 0, 0, 92, "#FFD23F", face="Anton-Regular.ttf", outline=12, alpha=u2, clamp_safe=False,
                  max_w=W - 2 * SAFE)
             c.restore()
     return draw
