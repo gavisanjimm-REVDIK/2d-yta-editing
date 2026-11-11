@@ -1,0 +1,2368 @@
+{
+  "backend": "kokoro",
+  "duration": 53.668,
+  "lines": [
+    {
+      "id": "L01",
+      "who": "narrator",
+      "text": "On January first, at exactly midnight, evil stopped existing.",
+      "start": 0.6,
+      "end": 4.966,
+      "words": [
+        {
+          "word": "On",
+          "start": 0.6,
+          "end": 0.78,
+          "line": "L01",
+          "who": "narrator"
+        },
+        {
+          "word": "January",
+          "start": 0.78,
+          "end": 1.08,
+          "line": "L01",
+          "who": "narrator"
+        },
+        {
+          "word": "first,",
+          "start": 1.08,
+          "end": 1.92,
+          "line": "L01",
+          "who": "narrator"
+        },
+        {
+          "word": "at",
+          "start": 2.18,
+          "end": 2.2,
+          "line": "L01",
+          "who": "narrator"
+        },
+        {
+          "word": "exactly",
+          "start": 2.2,
+          "end": 2.64,
+          "line": "L01",
+          "who": "narrator"
+        },
+        {
+          "word": "midnight,",
+          "start": 2.64,
+          "end": 3.16,
+          "line": "L01",
+          "who": "narrator"
+        },
+        {
+          "word": "evil",
+          "start": 3.7,
+          "end": 3.8,
+          "line": "L01",
+          "who": "narrator"
+        },
+        {
+          "word": "stopped",
+          "start": 3.8,
+          "end": 4.22,
+          "line": "L01",
+          "who": "narrator"
+        },
+        {
+          "word": "existing.",
+          "start": 4.22,
+          "end": 4.68,
+          "line": "L01",
+          "who": "narrator"
+        }
+      ],
+      "words_local": [
+        {
+          "word": "On",
+          "start": 0.0,
+          "end": 0.18
+        },
+        {
+          "word": "January",
+          "start": 0.18,
+          "end": 0.48
+        },
+        {
+          "word": "first,",
+          "start": 0.48,
+          "end": 1.32
+        },
+        {
+          "word": "at",
+          "start": 1.58,
+          "end": 1.6
+        },
+        {
+          "word": "exactly",
+          "start": 1.6,
+          "end": 2.04
+        },
+        {
+          "word": "midnight,",
+          "start": 2.04,
+          "end": 2.56
+        },
+        {
+          "word": "evil",
+          "start": 3.1,
+          "end": 3.2
+        },
+        {
+          "word": "stopped",
+          "start": 3.2,
+          "end": 3.62
+        },
+        {
+          "word": "existing.",
+          "start": 3.62,
+          "end": 4.08
+        }
+      ],
+      "mismatch": 1
+    },
+    {
+      "id": "L02",
+      "who": "narrator",
+      "text": "Not just crime. The very idea of it. Gone.",
+      "start": 5.466,
+      "end": 8.273,
+      "words": [
+        {
+          "word": "Not",
+          "start": 5.466,
+          "end": 5.666,
+          "line": "L02",
+          "who": "narrator"
+        },
+        {
+          "word": "just",
+          "start": 5.666,
+          "end": 5.846,
+          "line": "L02",
+          "who": "narrator"
+        },
+        {
+          "word": "crime.",
+          "start": 5.846,
+          "end": 6.186,
+          "line": "L02",
+          "who": "narrator"
+        },
+        {
+          "word": "The",
+          "start": 6.466,
+          "end": 6.526,
+          "line": "L02",
+          "who": "narrator"
+        },
+        {
+          "word": "very",
+          "start": 6.526,
+          "end": 6.766,
+          "line": "L02",
+          "who": "narrator"
+        },
+        {
+          "word": "idea",
+          "start": 6.766,
+          "end": 7.146,
+          "line": "L02",
+          "who": "narrator"
+        },
+        {
+          "word": "of",
+          "start": 7.146,
+          "end": 7.346,
+          "line": "L02",
+          "who": "narrator"
+        },
+        {
+          "word": "it.",
+          "start": 7.346,
+          "end": 7.546,
+          "line": "L02",
+          "who": "narrator"
+        },
+        {
+          "word": "Gone.",
+          "start": 7.786,
+          "end": 8.026,
+          "line": "L02",
+          "who": "narrator"
+        }
+      ],
+      "words_local": [
+        {
+          "word": "Not",
+          "start": 0.0,
+          "end": 0.2
+        },
+        {
+          "word": "just",
+          "start": 0.2,
+          "end": 0.38
+        },
+        {
+          "word": "crime.",
+          "start": 0.38,
+          "end": 0.72
+        },
+        {
+          "word": "The",
+          "start": 1.0,
+          "end": 1.06
+        },
+        {
+          "word": "very",
+          "start": 1.06,
+          "end": 1.3
+        },
+        {
+          "word": "idea",
+          "start": 1.3,
+          "end": 1.68
+        },
+        {
+          "word": "of",
+          "start": 1.68,
+          "end": 1.88
+        },
+        {
+          "word": "it.",
+          "start": 1.88,
+          "end": 2.08
+        },
+        {
+          "word": "Gone.",
+          "start": 2.32,
+          "end": 2.56
+        }
+      ],
+      "mismatch": 0
+    },
+    {
+      "id": "L03",
+      "who": "narrator",
+      "text": "Prisons opened. Wars stopped mid sentence. Nobody remembered why they started.",
+      "start": 8.773,
+      "end": 13.864,
+      "words": [
+        {
+          "word": "Prisons",
+          "start": 8.773,
+          "end": 9.153,
+          "line": "L03",
+          "who": "narrator"
+        },
+        {
+          "word": "opened.",
+          "start": 9.153,
+          "end": 9.593,
+          "line": "L03",
+          "who": "narrator"
+        },
+        {
+          "word": "Wars",
+          "start": 10.153,
+          "end": 10.313,
+          "line": "L03",
+          "who": "narrator"
+        },
+        {
+          "word": "stopped",
+          "start": 10.313,
+          "end": 10.753,
+          "line": "L03",
+          "who": "narrator"
+        },
+        {
+          "word": "mid",
+          "start": 10.753,
+          "end": 10.993,
+          "line": "L03",
+          "who": "narrator"
+        },
+        {
+          "word": "sentence.",
+          "start": 10.993,
+          "end": 11.533,
+          "line": "L03",
+          "who": "narrator"
+        },
+        {
+          "word": "Nobody",
+          "start": 12.053,
+          "end": 12.293,
+          "line": "L03",
+          "who": "narrator"
+        },
+        {
+          "word": "remembered",
+          "start": 12.293,
+          "end": 12.773,
+          "line": "L03",
+          "who": "narrator"
+        },
+        {
+          "word": "why",
+          "start": 12.773,
+          "end": 13.093,
+          "line": "L03",
+          "who": "narrator"
+        },
+        {
+          "word": "they",
+          "start": 13.093,
+          "end": 13.253,
+          "line": "L03",
+          "who": "narrator"
+        },
+        {
+          "word": "started.",
+          "start": 13.253,
+          "end": 13.613,
+          "line": "L03",
+          "who": "narrator"
+        }
+      ],
+      "words_local": [
+        {
+          "word": "Prisons",
+          "start": 0.0,
+          "end": 0.38
+        },
+        {
+          "word": "opened.",
+          "start": 0.38,
+          "end": 0.82
+        },
+        {
+          "word": "Wars",
+          "start": 1.38,
+          "end": 1.54
+        },
+        {
+          "word": "stopped",
+          "start": 1.54,
+          "end": 1.98
+        },
+        {
+          "word": "mid",
+          "start": 1.98,
+          "end": 2.22
+        },
+        {
+          "word": "sentence.",
+          "start": 2.22,
+          "end": 2.76
+        },
+        {
+          "word": "Nobody",
+          "start": 3.28,
+          "end": 3.52
+        },
+        {
+          "word": "remembered",
+          "start": 3.52,
+          "end": 4.0
+        },
+        {
+          "word": "why",
+          "start": 4.0,
+          "end": 4.32
+        },
+        {
+          "word": "they",
+          "start": 4.32,
+          "end": 4.48
+        },
+        {
+          "word": "started.",
+          "start": 4.48,
+          "end": 4.84
+        }
+      ],
+      "mismatch": 1
+    },
+    {
+      "id": "L04",
+      "who": "narrator",
+      "text": "Detective Marcus had nothing left to solve.",
+      "start": 14.464,
+      "end": 17.144,
+      "words": [
+        {
+          "word": "Detective",
+          "start": 14.464,
+          "end": 14.944,
+          "line": "L04",
+          "who": "narrator"
+        },
+        {
+          "word": "Marcus",
+          "start": 14.944,
+          "end": 15.384,
+          "line": "L04",
+          "who": "narrator"
+        },
+        {
+          "word": "had",
+          "start": 15.384,
+          "end": 15.844,
+          "line": "L04",
+          "who": "narrator"
+        },
+        {
+          "word": "nothing",
+          "start": 15.844,
+          "end": 16.084,
+          "line": "L04",
+          "who": "narrator"
+        },
+        {
+          "word": "left",
+          "start": 16.084,
+          "end": 16.384,
+          "line": "L04",
+          "who": "narrator"
+        },
+        {
+          "word": "to",
+          "start": 16.384,
+          "end": 16.624,
+          "line": "L04",
+          "who": "narrator"
+        },
+        {
+          "word": "solve.",
+          "start": 16.624,
+          "end": 16.944,
+          "line": "L04",
+          "who": "narrator"
+        }
+      ],
+      "words_local": [
+        {
+          "word": "Detective",
+          "start": 0.0,
+          "end": 0.48
+        },
+        {
+          "word": "Marcus",
+          "start": 0.48,
+          "end": 0.92
+        },
+        {
+          "word": "had",
+          "start": 0.92,
+          "end": 1.38
+        },
+        {
+          "word": "nothing",
+          "start": 1.38,
+          "end": 1.62
+        },
+        {
+          "word": "left",
+          "start": 1.62,
+          "end": 1.92
+        },
+        {
+          "word": "to",
+          "start": 1.92,
+          "end": 2.16
+        },
+        {
+          "word": "solve.",
+          "start": 2.16,
+          "end": 2.48
+        }
+      ],
+      "mismatch": 0
+    },
+    {
+      "id": "L05",
+      "who": "marcus",
+      "text": "Well... I guess the world doesn't need me anymore.",
+      "start": 17.544,
+      "end": 20.517,
+      "words": [
+        {
+          "word": "Well...",
+          "start": 17.544,
+          "end": 17.984,
+          "line": "L05",
+          "who": "marcus"
+        },
+        {
+          "word": "I",
+          "start": 18.304,
+          "end": 18.424,
+          "line": "L05",
+          "who": "marcus"
+        },
+        {
+          "word": "guess",
+          "start": 18.424,
+          "end": 18.584,
+          "line": "L05",
+          "who": "marcus"
+        },
+        {
+          "word": "the",
+          "start": 18.584,
+          "end": 18.844,
+          "line": "L05",
+          "who": "marcus"
+        },
+        {
+          "word": "world",
+          "start": 18.844,
+          "end": 19.084,
+          "line": "L05",
+          "who": "marcus"
+        },
+        {
+          "word": "doesn't",
+          "start": 19.084,
+          "end": 19.524,
+          "line": "L05",
+          "who": "marcus"
+        },
+        {
+          "word": "need",
+          "start": 19.524,
+          "end": 19.704,
+          "line": "L05",
+          "who": "marcus"
+        },
+        {
+          "word": "me",
+          "start": 19.704,
+          "end": 19.924,
+          "line": "L05",
+          "who": "marcus"
+        },
+        {
+          "word": "anymore.",
+          "start": 19.924,
+          "end": 20.164,
+          "line": "L05",
+          "who": "marcus"
+        }
+      ],
+      "words_local": [
+        {
+          "word": "Well...",
+          "start": 0.0,
+          "end": 0.44
+        },
+        {
+          "word": "I",
+          "start": 0.76,
+          "end": 0.88
+        },
+        {
+          "word": "guess",
+          "start": 0.88,
+          "end": 1.04
+        },
+        {
+          "word": "the",
+          "start": 1.04,
+          "end": 1.3
+        },
+        {
+          "word": "world",
+          "start": 1.3,
+          "end": 1.54
+        },
+        {
+          "word": "doesn't",
+          "start": 1.54,
+          "end": 1.98
+        },
+        {
+          "word": "need",
+          "start": 1.98,
+          "end": 2.16
+        },
+        {
+          "word": "me",
+          "start": 2.16,
+          "end": 2.38
+        },
+        {
+          "word": "anymore.",
+          "start": 2.38,
+          "end": 2.62
+        }
+      ],
+      "mismatch": 0
+    },
+    {
+      "id": "L06",
+      "who": "narrator",
+      "text": "The world was perfect. Doors stayed open. Strangers shared everything.",
+      "start": 21.317,
+      "end": 25.767,
+      "words": [
+        {
+          "word": "The",
+          "start": 21.317,
+          "end": 21.417,
+          "line": "L06",
+          "who": "narrator"
+        },
+        {
+          "word": "world",
+          "start": 21.417,
+          "end": 21.657,
+          "line": "L06",
+          "who": "narrator"
+        },
+        {
+          "word": "was",
+          "start": 21.657,
+          "end": 21.877,
+          "line": "L06",
+          "who": "narrator"
+        },
+        {
+          "word": "perfect.",
+          "start": 21.877,
+          "end": 22.317,
+          "line": "L06",
+          "who": "narrator"
+        },
+        {
+          "word": "Doors",
+          "start": 22.857,
+          "end": 22.977,
+          "line": "L06",
+          "who": "narrator"
+        },
+        {
+          "word": "stayed",
+          "start": 22.977,
+          "end": 23.337,
+          "line": "L06",
+          "who": "narrator"
+        },
+        {
+          "word": "open.",
+          "start": 23.337,
+          "end": 23.717,
+          "line": "L06",
+          "who": "narrator"
+        },
+        {
+          "word": "Strangers",
+          "start": 24.397,
+          "end": 24.637,
+          "line": "L06",
+          "who": "narrator"
+        },
+        {
+          "word": "shared",
+          "start": 24.637,
+          "end": 25.097,
+          "line": "L06",
+          "who": "narrator"
+        },
+        {
+          "word": "everything.",
+          "start": 25.097,
+          "end": 25.537,
+          "line": "L06",
+          "who": "narrator"
+        }
+      ],
+      "words_local": [
+        {
+          "word": "The",
+          "start": 0.0,
+          "end": 0.1
+        },
+        {
+          "word": "world",
+          "start": 0.1,
+          "end": 0.34
+        },
+        {
+          "word": "was",
+          "start": 0.34,
+          "end": 0.56
+        },
+        {
+          "word": "perfect.",
+          "start": 0.56,
+          "end": 1.0
+        },
+        {
+          "word": "Doors",
+          "start": 1.54,
+          "end": 1.66
+        },
+        {
+          "word": "stayed",
+          "start": 1.66,
+          "end": 2.02
+        },
+        {
+          "word": "open.",
+          "start": 2.02,
+          "end": 2.4
+        },
+        {
+          "word": "Strangers",
+          "start": 3.08,
+          "end": 3.32
+        },
+        {
+          "word": "shared",
+          "start": 3.32,
+          "end": 3.78
+        },
+        {
+          "word": "everything.",
+          "start": 3.78,
+          "end": 4.22
+        }
+      ],
+      "mismatch": 0
+    },
+    {
+      "id": "L07",
+      "who": "narrator",
+      "text": "But slowly, something began to fade.",
+      "start": 26.267,
+      "end": 28.516,
+      "words": [
+        {
+          "word": "But",
+          "start": 26.267,
+          "end": 26.387,
+          "line": "L07",
+          "who": "narrator"
+        },
+        {
+          "word": "slowly,",
+          "start": 26.387,
+          "end": 26.867,
+          "line": "L07",
+          "who": "narrator"
+        },
+        {
+          "word": "something",
+          "start": 27.247,
+          "end": 27.487,
+          "line": "L07",
+          "who": "narrator"
+        },
+        {
+          "word": "began",
+          "start": 27.487,
+          "end": 27.827,
+          "line": "L07",
+          "who": "narrator"
+        },
+        {
+          "word": "to",
+          "start": 27.827,
+          "end": 28.027,
+          "line": "L07",
+          "who": "narrator"
+        },
+        {
+          "word": "fade.",
+          "start": 28.027,
+          "end": 28.227,
+          "line": "L07",
+          "who": "narrator"
+        }
+      ],
+      "words_local": [
+        {
+          "word": "But",
+          "start": 0.0,
+          "end": 0.12
+        },
+        {
+          "word": "slowly,",
+          "start": 0.12,
+          "end": 0.6
+        },
+        {
+          "word": "something",
+          "start": 0.98,
+          "end": 1.22
+        },
+        {
+          "word": "began",
+          "start": 1.22,
+          "end": 1.56
+        },
+        {
+          "word": "to",
+          "start": 1.56,
+          "end": 1.76
+        },
+        {
+          "word": "fade.",
+          "start": 1.76,
+          "end": 1.96
+        }
+      ],
+      "mismatch": 0
+    },
+    {
+      "id": "L08",
+      "who": "narrator",
+      "text": "Nobody said thank you anymore. Kindness wasn't a choice. It was just... weather.",
+      "start": 29.116,
+      "end": 34.009,
+      "words": [
+        {
+          "word": "Nobody",
+          "start": 29.116,
+          "end": 29.436,
+          "line": "L08",
+          "who": "narrator"
+        },
+        {
+          "word": "said",
+          "start": 29.436,
+          "end": 29.796,
+          "line": "L08",
+          "who": "narrator"
+        },
+        {
+          "word": "thank",
+          "start": 29.796,
+          "end": 30.076,
+          "line": "L08",
+          "who": "narrator"
+        },
+        {
+          "word": "you",
+          "start": 30.076,
+          "end": 30.216,
+          "line": "L08",
+          "who": "narrator"
+        },
+        {
+          "word": "anymore.",
+          "start": 30.216,
+          "end": 30.516,
+          "line": "L08",
+          "who": "narrator"
+        },
+        {
+          "word": "Kindness",
+          "start": 31.256,
+          "end": 31.656,
+          "line": "L08",
+          "who": "narrator"
+        },
+        {
+          "word": "wasn't",
+          "start": 31.656,
+          "end": 31.956,
+          "line": "L08",
+          "who": "narrator"
+        },
+        {
+          "word": "a",
+          "start": 31.956,
+          "end": 32.056,
+          "line": "L08",
+          "who": "narrator"
+        },
+        {
+          "word": "choice.",
+          "start": 32.056,
+          "end": 32.336,
+          "line": "L08",
+          "who": "narrator"
+        },
+        {
+          "word": "It",
+          "start": 32.676,
+          "end": 32.696,
+          "line": "L08",
+          "who": "narrator"
+        },
+        {
+          "word": "was",
+          "start": 32.696,
+          "end": 32.836,
+          "line": "L08",
+          "who": "narrator"
+        },
+        {
+          "word": "just...",
+          "start": 32.836,
+          "end": 33.216,
+          "line": "L08",
+          "who": "narrator"
+        },
+        {
+          "word": "weather.",
+          "start": 33.216,
+          "end": 33.736,
+          "line": "L08",
+          "who": "narrator"
+        }
+      ],
+      "words_local": [
+        {
+          "word": "Nobody",
+          "start": 0.0,
+          "end": 0.32
+        },
+        {
+          "word": "said",
+          "start": 0.32,
+          "end": 0.68
+        },
+        {
+          "word": "thank",
+          "start": 0.68,
+          "end": 0.96
+        },
+        {
+          "word": "you",
+          "start": 0.96,
+          "end": 1.1
+        },
+        {
+          "word": "anymore.",
+          "start": 1.1,
+          "end": 1.4
+        },
+        {
+          "word": "Kindness",
+          "start": 2.14,
+          "end": 2.54
+        },
+        {
+          "word": "wasn't",
+          "start": 2.54,
+          "end": 2.84
+        },
+        {
+          "word": "a",
+          "start": 2.84,
+          "end": 2.94
+        },
+        {
+          "word": "choice.",
+          "start": 2.94,
+          "end": 3.22
+        },
+        {
+          "word": "It",
+          "start": 3.56,
+          "end": 3.58
+        },
+        {
+          "word": "was",
+          "start": 3.58,
+          "end": 3.72
+        },
+        {
+          "word": "just...",
+          "start": 3.72,
+          "end": 4.1
+        },
+        {
+          "word": "weather.",
+          "start": 4.1,
+          "end": 4.62
+        }
+      ],
+      "mismatch": 0
+    },
+    {
+      "id": "L09",
+      "who": "narrator",
+      "text": "Without the dark, nobody noticed the light.",
+      "start": 34.509,
+      "end": 36.925,
+      "words": [
+        {
+          "word": "Without",
+          "start": 34.509,
+          "end": 34.789,
+          "line": "L09",
+          "who": "narrator"
+        },
+        {
+          "word": "the",
+          "start": 34.789,
+          "end": 34.949,
+          "line": "L09",
+          "who": "narrator"
+        },
+        {
+          "word": "dark,",
+          "start": 34.949,
+          "end": 35.269,
+          "line": "L09",
+          "who": "narrator"
+        },
+        {
+          "word": "nobody",
+          "start": 35.649,
+          "end": 35.889,
+          "line": "L09",
+          "who": "narrator"
+        },
+        {
+          "word": "noticed",
+          "start": 35.889,
+          "end": 36.249,
+          "line": "L09",
+          "who": "narrator"
+        },
+        {
+          "word": "the",
+          "start": 36.249,
+          "end": 36.489,
+          "line": "L09",
+          "who": "narrator"
+        },
+        {
+          "word": "light.",
+          "start": 36.489,
+          "end": 36.709,
+          "line": "L09",
+          "who": "narrator"
+        }
+      ],
+      "words_local": [
+        {
+          "word": "Without",
+          "start": 0.0,
+          "end": 0.28
+        },
+        {
+          "word": "the",
+          "start": 0.28,
+          "end": 0.44
+        },
+        {
+          "word": "dark,",
+          "start": 0.44,
+          "end": 0.76
+        },
+        {
+          "word": "nobody",
+          "start": 1.14,
+          "end": 1.38
+        },
+        {
+          "word": "noticed",
+          "start": 1.38,
+          "end": 1.74
+        },
+        {
+          "word": "the",
+          "start": 1.74,
+          "end": 1.98
+        },
+        {
+          "word": "light.",
+          "start": 1.98,
+          "end": 2.2
+        }
+      ],
+      "mismatch": 0
+    },
+    {
+      "id": "L10",
+      "who": "lily",
+      "text": "Uncle Marcus, what's a hero?",
+      "start": 37.825,
+      "end": 39.476,
+      "words": [
+        {
+          "word": "Uncle",
+          "start": 37.825,
+          "end": 38.108,
+          "line": "L10",
+          "who": "lily"
+        },
+        {
+          "word": "Marcus,",
+          "start": 38.108,
+          "end": 38.492,
+          "line": "L10",
+          "who": "lily"
+        },
+        {
+          "word": "what's",
+          "start": 38.808,
+          "end": 38.958,
+          "line": "L10",
+          "who": "lily"
+        },
+        {
+          "word": "a",
+          "start": 38.958,
+          "end": 39.008,
+          "line": "L10",
+          "who": "lily"
+        },
+        {
+          "word": "hero?",
+          "start": 39.008,
+          "end": 39.225,
+          "line": "L10",
+          "who": "lily"
+        }
+      ],
+      "words_local": [
+        {
+          "word": "Uncle",
+          "start": 0.0,
+          "end": 0.283
+        },
+        {
+          "word": "Marcus,",
+          "start": 0.283,
+          "end": 0.667
+        },
+        {
+          "word": "what's",
+          "start": 0.983,
+          "end": 1.133
+        },
+        {
+          "word": "a",
+          "start": 1.133,
+          "end": 1.183
+        },
+        {
+          "word": "hero?",
+          "start": 1.183,
+          "end": 1.4
+        }
+      ],
+      "mismatch": 0
+    },
+    {
+      "id": "L11",
+      "who": "marcus",
+      "text": "Someone who chooses to do good. Even when they could choose not to.",
+      "start": 40.576,
+      "end": 45.291,
+      "words": [
+        {
+          "word": "Someone",
+          "start": 40.576,
+          "end": 41.016,
+          "line": "L11",
+          "who": "marcus"
+        },
+        {
+          "word": "who",
+          "start": 41.016,
+          "end": 41.216,
+          "line": "L11",
+          "who": "marcus"
+        },
+        {
+          "word": "chooses",
+          "start": 41.216,
+          "end": 41.616,
+          "line": "L11",
+          "who": "marcus"
+        },
+        {
+          "word": "to",
+          "start": 41.616,
+          "end": 41.936,
+          "line": "L11",
+          "who": "marcus"
+        },
+        {
+          "word": "do",
+          "start": 41.936,
+          "end": 42.136,
+          "line": "L11",
+          "who": "marcus"
+        },
+        {
+          "word": "good.",
+          "start": 42.136,
+          "end": 42.496,
+          "line": "L11",
+          "who": "marcus"
+        },
+        {
+          "word": "Even",
+          "start": 42.916,
+          "end": 43.356,
+          "line": "L11",
+          "who": "marcus"
+        },
+        {
+          "word": "when",
+          "start": 43.356,
+          "end": 43.576,
+          "line": "L11",
+          "who": "marcus"
+        },
+        {
+          "word": "they",
+          "start": 43.576,
+          "end": 43.776,
+          "line": "L11",
+          "who": "marcus"
+        },
+        {
+          "word": "could",
+          "start": 43.776,
+          "end": 43.956,
+          "line": "L11",
+          "who": "marcus"
+        },
+        {
+          "word": "choose",
+          "start": 43.956,
+          "end": 44.356,
+          "line": "L11",
+          "who": "marcus"
+        },
+        {
+          "word": "not",
+          "start": 44.356,
+          "end": 44.696,
+          "line": "L11",
+          "who": "marcus"
+        },
+        {
+          "word": "to.",
+          "start": 44.696,
+          "end": 45.096,
+          "line": "L11",
+          "who": "marcus"
+        }
+      ],
+      "words_local": [
+        {
+          "word": "Someone",
+          "start": 0.0,
+          "end": 0.44
+        },
+        {
+          "word": "who",
+          "start": 0.44,
+          "end": 0.64
+        },
+        {
+          "word": "chooses",
+          "start": 0.64,
+          "end": 1.04
+        },
+        {
+          "word": "to",
+          "start": 1.04,
+          "end": 1.36
+        },
+        {
+          "word": "do",
+          "start": 1.36,
+          "end": 1.56
+        },
+        {
+          "word": "good.",
+          "start": 1.56,
+          "end": 1.92
+        },
+        {
+          "word": "Even",
+          "start": 2.34,
+          "end": 2.78
+        },
+        {
+          "word": "when",
+          "start": 2.78,
+          "end": 3.0
+        },
+        {
+          "word": "they",
+          "start": 3.0,
+          "end": 3.2
+        },
+        {
+          "word": "could",
+          "start": 3.2,
+          "end": 3.38
+        },
+        {
+          "word": "choose",
+          "start": 3.38,
+          "end": 3.78
+        },
+        {
+          "word": "not",
+          "start": 3.78,
+          "end": 4.12
+        },
+        {
+          "word": "to.",
+          "start": 4.12,
+          "end": 4.52
+        }
+      ],
+      "mismatch": 0
+    },
+    {
+      "id": "L12",
+      "who": "lily",
+      "text": "Why would anyone choose not to?",
+      "start": 45.791,
+      "end": 47.268,
+      "words": [
+        {
+          "word": "Why",
+          "start": 45.791,
+          "end": 45.991,
+          "line": "L12",
+          "who": "lily"
+        },
+        {
+          "word": "would",
+          "start": 45.991,
+          "end": 46.124,
+          "line": "L12",
+          "who": "lily"
+        },
+        {
+          "word": "anyone",
+          "start": 46.124,
+          "end": 46.324,
+          "line": "L12",
+          "who": "lily"
+        },
+        {
+          "word": "choose",
+          "start": 46.324,
+          "end": 46.641,
+          "line": "L12",
+          "who": "lily"
+        },
+        {
+          "word": "not",
+          "start": 46.641,
+          "end": 46.924,
+          "line": "L12",
+          "who": "lily"
+        },
+        {
+          "word": "to?",
+          "start": 46.924,
+          "end": 47.124,
+          "line": "L12",
+          "who": "lily"
+        }
+      ],
+      "words_local": [
+        {
+          "word": "Why",
+          "start": 0.0,
+          "end": 0.2
+        },
+        {
+          "word": "would",
+          "start": 0.2,
+          "end": 0.333
+        },
+        {
+          "word": "anyone",
+          "start": 0.333,
+          "end": 0.533
+        },
+        {
+          "word": "choose",
+          "start": 0.533,
+          "end": 0.85
+        },
+        {
+          "word": "not",
+          "start": 0.85,
+          "end": 1.133
+        },
+        {
+          "word": "to?",
+          "start": 1.133,
+          "end": 1.333
+        }
+      ],
+      "mismatch": 0
+    },
+    {
+      "id": "L13",
+      "who": "narrator",
+      "text": "Maybe a world without evil is also a world without heroes.",
+      "start": 48.668,
+      "end": 52.468,
+      "words": [
+        {
+          "word": "Maybe",
+          "start": 48.668,
+          "end": 48.968,
+          "line": "L13",
+          "who": "narrator"
+        },
+        {
+          "word": "a",
+          "start": 48.968,
+          "end": 49.168,
+          "line": "L13",
+          "who": "narrator"
+        },
+        {
+          "word": "world",
+          "start": 49.168,
+          "end": 49.408,
+          "line": "L13",
+          "who": "narrator"
+        },
+        {
+          "word": "without",
+          "start": 49.408,
+          "end": 49.748,
+          "line": "L13",
+          "who": "narrator"
+        },
+        {
+          "word": "evil",
+          "start": 49.748,
+          "end": 50.128,
+          "line": "L13",
+          "who": "narrator"
+        },
+        {
+          "word": "is",
+          "start": 50.128,
+          "end": 50.668,
+          "line": "L13",
+          "who": "narrator"
+        },
+        {
+          "word": "also",
+          "start": 50.668,
+          "end": 51.028,
+          "line": "L13",
+          "who": "narrator"
+        },
+        {
+          "word": "a",
+          "start": 51.028,
+          "end": 51.228,
+          "line": "L13",
+          "who": "narrator"
+        },
+        {
+          "word": "world",
+          "start": 51.228,
+          "end": 51.448,
+          "line": "L13",
+          "who": "narrator"
+        },
+        {
+          "word": "without",
+          "start": 51.448,
+          "end": 51.788,
+          "line": "L13",
+          "who": "narrator"
+        },
+        {
+          "word": "heroes.",
+          "start": 51.788,
+          "end": 52.128,
+          "line": "L13",
+          "who": "narrator"
+        }
+      ],
+      "words_local": [
+        {
+          "word": "Maybe",
+          "start": 0.0,
+          "end": 0.3
+        },
+        {
+          "word": "a",
+          "start": 0.3,
+          "end": 0.5
+        },
+        {
+          "word": "world",
+          "start": 0.5,
+          "end": 0.74
+        },
+        {
+          "word": "without",
+          "start": 0.74,
+          "end": 1.08
+        },
+        {
+          "word": "evil",
+          "start": 1.08,
+          "end": 1.46
+        },
+        {
+          "word": "is",
+          "start": 1.46,
+          "end": 2.0
+        },
+        {
+          "word": "also",
+          "start": 2.0,
+          "end": 2.36
+        },
+        {
+          "word": "a",
+          "start": 2.36,
+          "end": 2.56
+        },
+        {
+          "word": "world",
+          "start": 2.56,
+          "end": 2.78
+        },
+        {
+          "word": "without",
+          "start": 2.78,
+          "end": 3.12
+        },
+        {
+          "word": "heroes.",
+          "start": 3.12,
+          "end": 3.46
+        }
+      ],
+      "mismatch": 0
+    }
+  ],
+  "words": [
+    {
+      "word": "On",
+      "start": 0.6,
+      "end": 0.78,
+      "line": "L01",
+      "who": "narrator"
+    },
+    {
+      "word": "January",
+      "start": 0.78,
+      "end": 1.08,
+      "line": "L01",
+      "who": "narrator"
+    },
+    {
+      "word": "first,",
+      "start": 1.08,
+      "end": 1.92,
+      "line": "L01",
+      "who": "narrator"
+    },
+    {
+      "word": "at",
+      "start": 2.18,
+      "end": 2.2,
+      "line": "L01",
+      "who": "narrator"
+    },
+    {
+      "word": "exactly",
+      "start": 2.2,
+      "end": 2.64,
+      "line": "L01",
+      "who": "narrator"
+    },
+    {
+      "word": "midnight,",
+      "start": 2.64,
+      "end": 3.16,
+      "line": "L01",
+      "who": "narrator"
+    },
+    {
+      "word": "evil",
+      "start": 3.7,
+      "end": 3.8,
+      "line": "L01",
+      "who": "narrator"
+    },
+    {
+      "word": "stopped",
+      "start": 3.8,
+      "end": 4.22,
+      "line": "L01",
+      "who": "narrator"
+    },
+    {
+      "word": "existing.",
+      "start": 4.22,
+      "end": 4.68,
+      "line": "L01",
+      "who": "narrator"
+    },
+    {
+      "word": "Not",
+      "start": 5.466,
+      "end": 5.666,
+      "line": "L02",
+      "who": "narrator"
+    },
+    {
+      "word": "just",
+      "start": 5.666,
+      "end": 5.846,
+      "line": "L02",
+      "who": "narrator"
+    },
+    {
+      "word": "crime.",
+      "start": 5.846,
+      "end": 6.186,
+      "line": "L02",
+      "who": "narrator"
+    },
+    {
+      "word": "The",
+      "start": 6.466,
+      "end": 6.526,
+      "line": "L02",
+      "who": "narrator"
+    },
+    {
+      "word": "very",
+      "start": 6.526,
+      "end": 6.766,
+      "line": "L02",
+      "who": "narrator"
+    },
+    {
+      "word": "idea",
+      "start": 6.766,
+      "end": 7.146,
+      "line": "L02",
+      "who": "narrator"
+    },
+    {
+      "word": "of",
+      "start": 7.146,
+      "end": 7.346,
+      "line": "L02",
+      "who": "narrator"
+    },
+    {
+      "word": "it.",
+      "start": 7.346,
+      "end": 7.546,
+      "line": "L02",
+      "who": "narrator"
+    },
+    {
+      "word": "Gone.",
+      "start": 7.786,
+      "end": 8.026,
+      "line": "L02",
+      "who": "narrator"
+    },
+    {
+      "word": "Prisons",
+      "start": 8.773,
+      "end": 9.153,
+      "line": "L03",
+      "who": "narrator"
+    },
+    {
+      "word": "opened.",
+      "start": 9.153,
+      "end": 9.593,
+      "line": "L03",
+      "who": "narrator"
+    },
+    {
+      "word": "Wars",
+      "start": 10.153,
+      "end": 10.313,
+      "line": "L03",
+      "who": "narrator"
+    },
+    {
+      "word": "stopped",
+      "start": 10.313,
+      "end": 10.753,
+      "line": "L03",
+      "who": "narrator"
+    },
+    {
+      "word": "mid",
+      "start": 10.753,
+      "end": 10.993,
+      "line": "L03",
+      "who": "narrator"
+    },
+    {
+      "word": "sentence.",
+      "start": 10.993,
+      "end": 11.533,
+      "line": "L03",
+      "who": "narrator"
+    },
+    {
+      "word": "Nobody",
+      "start": 12.053,
+      "end": 12.293,
+      "line": "L03",
+      "who": "narrator"
+    },
+    {
+      "word": "remembered",
+      "start": 12.293,
+      "end": 12.773,
+      "line": "L03",
+      "who": "narrator"
+    },
+    {
+      "word": "why",
+      "start": 12.773,
+      "end": 13.093,
+      "line": "L03",
+      "who": "narrator"
+    },
+    {
+      "word": "they",
+      "start": 13.093,
+      "end": 13.253,
+      "line": "L03",
+      "who": "narrator"
+    },
+    {
+      "word": "started.",
+      "start": 13.253,
+      "end": 13.613,
+      "line": "L03",
+      "who": "narrator"
+    },
+    {
+      "word": "Detective",
+      "start": 14.464,
+      "end": 14.944,
+      "line": "L04",
+      "who": "narrator"
+    },
+    {
+      "word": "Marcus",
+      "start": 14.944,
+      "end": 15.384,
+      "line": "L04",
+      "who": "narrator"
+    },
+    {
+      "word": "had",
+      "start": 15.384,
+      "end": 15.844,
+      "line": "L04",
+      "who": "narrator"
+    },
+    {
+      "word": "nothing",
+      "start": 15.844,
+      "end": 16.084,
+      "line": "L04",
+      "who": "narrator"
+    },
+    {
+      "word": "left",
+      "start": 16.084,
+      "end": 16.384,
+      "line": "L04",
+      "who": "narrator"
+    },
+    {
+      "word": "to",
+      "start": 16.384,
+      "end": 16.624,
+      "line": "L04",
+      "who": "narrator"
+    },
+    {
+      "word": "solve.",
+      "start": 16.624,
+      "end": 16.944,
+      "line": "L04",
+      "who": "narrator"
+    },
+    {
+      "word": "Well...",
+      "start": 17.544,
+      "end": 17.984,
+      "line": "L05",
+      "who": "marcus"
+    },
+    {
+      "word": "I",
+      "start": 18.304,
+      "end": 18.424,
+      "line": "L05",
+      "who": "marcus"
+    },
+    {
+      "word": "guess",
+      "start": 18.424,
+      "end": 18.584,
+      "line": "L05",
+      "who": "marcus"
+    },
+    {
+      "word": "the",
+      "start": 18.584,
+      "end": 18.844,
+      "line": "L05",
+      "who": "marcus"
+    },
+    {
+      "word": "world",
+      "start": 18.844,
+      "end": 19.084,
+      "line": "L05",
+      "who": "marcus"
+    },
+    {
+      "word": "doesn't",
+      "start": 19.084,
+      "end": 19.524,
+      "line": "L05",
+      "who": "marcus"
+    },
+    {
+      "word": "need",
+      "start": 19.524,
+      "end": 19.704,
+      "line": "L05",
+      "who": "marcus"
+    },
+    {
+      "word": "me",
+      "start": 19.704,
+      "end": 19.924,
+      "line": "L05",
+      "who": "marcus"
+    },
+    {
+      "word": "anymore.",
+      "start": 19.924,
+      "end": 20.164,
+      "line": "L05",
+      "who": "marcus"
+    },
+    {
+      "word": "The",
+      "start": 21.317,
+      "end": 21.417,
+      "line": "L06",
+      "who": "narrator"
+    },
+    {
+      "word": "world",
+      "start": 21.417,
+      "end": 21.657,
+      "line": "L06",
+      "who": "narrator"
+    },
+    {
+      "word": "was",
+      "start": 21.657,
+      "end": 21.877,
+      "line": "L06",
+      "who": "narrator"
+    },
+    {
+      "word": "perfect.",
+      "start": 21.877,
+      "end": 22.317,
+      "line": "L06",
+      "who": "narrator"
+    },
+    {
+      "word": "Doors",
+      "start": 22.857,
+      "end": 22.977,
+      "line": "L06",
+      "who": "narrator"
+    },
+    {
+      "word": "stayed",
+      "start": 22.977,
+      "end": 23.337,
+      "line": "L06",
+      "who": "narrator"
+    },
+    {
+      "word": "open.",
+      "start": 23.337,
+      "end": 23.717,
+      "line": "L06",
+      "who": "narrator"
+    },
+    {
+      "word": "Strangers",
+      "start": 24.397,
+      "end": 24.637,
+      "line": "L06",
+      "who": "narrator"
+    },
+    {
+      "word": "shared",
+      "start": 24.637,
+      "end": 25.097,
+      "line": "L06",
+      "who": "narrator"
+    },
+    {
+      "word": "everything.",
+      "start": 25.097,
+      "end": 25.537,
+      "line": "L06",
+      "who": "narrator"
+    },
+    {
+      "word": "But",
+      "start": 26.267,
+      "end": 26.387,
+      "line": "L07",
+      "who": "narrator"
+    },
+    {
+      "word": "slowly,",
+      "start": 26.387,
+      "end": 26.867,
+      "line": "L07",
+      "who": "narrator"
+    },
+    {
+      "word": "something",
+      "start": 27.247,
+      "end": 27.487,
+      "line": "L07",
+      "who": "narrator"
+    },
+    {
+      "word": "began",
+      "start": 27.487,
+      "end": 27.827,
+      "line": "L07",
+      "who": "narrator"
+    },
+    {
+      "word": "to",
+      "start": 27.827,
+      "end": 28.027,
+      "line": "L07",
+      "who": "narrator"
+    },
+    {
+      "word": "fade.",
+      "start": 28.027,
+      "end": 28.227,
+      "line": "L07",
+      "who": "narrator"
+    },
+    {
+      "word": "Nobody",
+      "start": 29.116,
+      "end": 29.436,
+      "line": "L08",
+      "who": "narrator"
+    },
+    {
+      "word": "said",
+      "start": 29.436,
+      "end": 29.796,
+      "line": "L08",
+      "who": "narrator"
+    },
+    {
+      "word": "thank",
+      "start": 29.796,
+      "end": 30.076,
+      "line": "L08",
+      "who": "narrator"
+    },
+    {
+      "word": "you",
+      "start": 30.076,
+      "end": 30.216,
+      "line": "L08",
+      "who": "narrator"
+    },
+    {
+      "word": "anymore.",
+      "start": 30.216,
+      "end": 30.516,
+      "line": "L08",
+      "who": "narrator"
+    },
+    {
+      "word": "Kindness",
+      "start": 31.256,
+      "end": 31.656,
+      "line": "L08",
+      "who": "narrator"
+    },
+    {
+      "word": "wasn't",
+      "start": 31.656,
+      "end": 31.956,
+      "line": "L08",
+      "who": "narrator"
+    },
+    {
+      "word": "a",
+      "start": 31.956,
+      "end": 32.056,
+      "line": "L08",
+      "who": "narrator"
+    },
+    {
+      "word": "choice.",
+      "start": 32.056,
+      "end": 32.336,
+      "line": "L08",
+      "who": "narrator"
+    },
+    {
+      "word": "It",
+      "start": 32.676,
+      "end": 32.696,
+      "line": "L08",
+      "who": "narrator"
+    },
+    {
+      "word": "was",
+      "start": 32.696,
+      "end": 32.836,
+      "line": "L08",
+      "who": "narrator"
+    },
+    {
+      "word": "just...",
+      "start": 32.836,
+      "end": 33.216,
+      "line": "L08",
+      "who": "narrator"
+    },
+    {
+      "word": "weather.",
+      "start": 33.216,
+      "end": 33.736,
+      "line": "L08",
+      "who": "narrator"
+    },
+    {
+      "word": "Without",
+      "start": 34.509,
+      "end": 34.789,
+      "line": "L09",
+      "who": "narrator"
+    },
+    {
+      "word": "the",
+      "start": 34.789,
+      "end": 34.949,
+      "line": "L09",
+      "who": "narrator"
+    },
+    {
+      "word": "dark,",
+      "start": 34.949,
+      "end": 35.269,
+      "line": "L09",
+      "who": "narrator"
+    },
+    {
+      "word": "nobody",
+      "start": 35.649,
+      "end": 35.889,
+      "line": "L09",
+      "who": "narrator"
+    },
+    {
+      "word": "noticed",
+      "start": 35.889,
+      "end": 36.249,
+      "line": "L09",
+      "who": "narrator"
+    },
+    {
+      "word": "the",
+      "start": 36.249,
+      "end": 36.489,
+      "line": "L09",
+      "who": "narrator"
+    },
+    {
+      "word": "light.",
+      "start": 36.489,
+      "end": 36.709,
+      "line": "L09",
+      "who": "narrator"
+    },
+    {
+      "word": "Uncle",
+      "start": 37.825,
+      "end": 38.108,
+      "line": "L10",
+      "who": "lily"
+    },
+    {
+      "word": "Marcus,",
+      "start": 38.108,
+      "end": 38.492,
+      "line": "L10",
+      "who": "lily"
+    },
+    {
+      "word": "what's",
+      "start": 38.808,
+      "end": 38.958,
+      "line": "L10",
+      "who": "lily"
+    },
+    {
+      "word": "a",
+      "start": 38.958,
+      "end": 39.008,
+      "line": "L10",
+      "who": "lily"
+    },
+    {
+      "word": "hero?",
+      "start": 39.008,
+      "end": 39.225,
+      "line": "L10",
+      "who": "lily"
+    },
+    {
+      "word": "Someone",
+      "start": 40.576,
+      "end": 41.016,
+      "line": "L11",
+      "who": "marcus"
+    },
+    {
+      "word": "who",
+      "start": 41.016,
+      "end": 41.216,
+      "line": "L11",
+      "who": "marcus"
+    },
+    {
+      "word": "chooses",
+      "start": 41.216,
+      "end": 41.616,
+      "line": "L11",
+      "who": "marcus"
+    },
+    {
+      "word": "to",
+      "start": 41.616,
+      "end": 41.936,
+      "line": "L11",
+      "who": "marcus"
+    },
+    {
+      "word": "do",
+      "start": 41.936,
+      "end": 42.136,
+      "line": "L11",
+      "who": "marcus"
+    },
+    {
+      "word": "good.",
+      "start": 42.136,
+      "end": 42.496,
+      "line": "L11",
+      "who": "marcus"
+    },
+    {
+      "word": "Even",
+      "start": 42.916,
+      "end": 43.356,
+      "line": "L11",
+      "who": "marcus"
+    },
+    {
+      "word": "when",
+      "start": 43.356,
+      "end": 43.576,
+      "line": "L11",
+      "who": "marcus"
+    },
+    {
+      "word": "they",
+      "start": 43.576,
+      "end": 43.776,
+      "line": "L11",
+      "who": "marcus"
+    },
+    {
+      "word": "could",
+      "start": 43.776,
+      "end": 43.956,
+      "line": "L11",
+      "who": "marcus"
+    },
+    {
+      "word": "choose",
+      "start": 43.956,
+      "end": 44.356,
+      "line": "L11",
+      "who": "marcus"
+    },
+    {
+      "word": "not",
+      "start": 44.356,
+      "end": 44.696,
+      "line": "L11",
+      "who": "marcus"
+    },
+    {
+      "word": "to.",
+      "start": 44.696,
+      "end": 45.096,
+      "line": "L11",
+      "who": "marcus"
+    },
+    {
+      "word": "Why",
+      "start": 45.791,
+      "end": 45.991,
+      "line": "L12",
+      "who": "lily"
+    },
+    {
+      "word": "would",
+      "start": 45.991,
+      "end": 46.124,
+      "line": "L12",
+      "who": "lily"
+    },
+    {
+      "word": "anyone",
+      "start": 46.124,
+      "end": 46.324,
+      "line": "L12",
+      "who": "lily"
+    },
+    {
+      "word": "choose",
+      "start": 46.324,
+      "end": 46.641,
+      "line": "L12",
+      "who": "lily"
+    },
+    {
+      "word": "not",
+      "start": 46.641,
+      "end": 46.924,
+      "line": "L12",
+      "who": "lily"
+    },
+    {
+      "word": "to?",
+      "start": 46.924,
+      "end": 47.124,
+      "line": "L12",
+      "who": "lily"
+    },
+    {
+      "word": "Maybe",
+      "start": 48.668,
+      "end": 48.968,
+      "line": "L13",
+      "who": "narrator"
+    },
+    {
+      "word": "a",
+      "start": 48.968,
+      "end": 49.168,
+      "line": "L13",
+      "who": "narrator"
+    },
+    {
+      "word": "world",
+      "start": 49.168,
+      "end": 49.408,
+      "line": "L13",
+      "who": "narrator"
+    },
+    {
+      "word": "without",
+      "start": 49.408,
+      "end": 49.748,
+      "line": "L13",
+      "who": "narrator"
+    },
+    {
+      "word": "evil",
+      "start": 49.748,
+      "end": 50.128,
+      "line": "L13",
+      "who": "narrator"
+    },
+    {
+      "word": "is",
+      "start": 50.128,
+      "end": 50.668,
+      "line": "L13",
+      "who": "narrator"
+    },
+    {
+      "word": "also",
+      "start": 50.668,
+      "end": 51.028,
+      "line": "L13",
+      "who": "narrator"
+    },
+    {
+      "word": "a",
+      "start": 51.028,
+      "end": 51.228,
+      "line": "L13",
+      "who": "narrator"
+    },
+    {
+      "word": "world",
+      "start": 51.228,
+      "end": 51.448,
+      "line": "L13",
+      "who": "narrator"
+    },
+    {
+      "word": "without",
+      "start": 51.448,
+      "end": 51.788,
+      "line": "L13",
+      "who": "narrator"
+    },
+    {
+      "word": "heroes.",
+      "start": 51.788,
+      "end": 52.128,
+      "line": "L13",
+      "who": "narrator"
+    }
+  ]
+}

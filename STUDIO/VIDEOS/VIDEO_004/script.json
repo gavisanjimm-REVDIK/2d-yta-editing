@@ -1,0 +1,21 @@
+{
+  "title": "The Day Evil Disappeared",
+  "start_offset": 0.6,
+  "tail": 1.0,
+  "cast": {"narrator": "af_heart (warm, slow)", "marcus": "am_michael", "lily": "af_bella pitched up (child)"},
+  "lines": [
+    {"id": "L01", "who": "narrator", "voice": "af_heart", "speed": 0.9, "text": "On January first, at exactly midnight, evil stopped existing.", "pause_after": 0.5},
+    {"id": "L02", "who": "narrator", "voice": "af_heart", "speed": 0.92, "text": "Not just crime. The very idea of it. Gone.", "pause_after": 0.5},
+    {"id": "L03", "who": "narrator", "voice": "af_heart", "speed": 0.95, "text": "Prisons opened. Wars stopped mid sentence. Nobody remembered why they started.", "pause_after": 0.6},
+    {"id": "L04", "who": "narrator", "voice": "af_heart", "speed": 0.92, "text": "Detective Marcus had nothing left to solve.", "pause_after": 0.4},
+    {"id": "L05", "who": "marcus", "voice": "am_michael", "speed": 0.85, "text": "Well... I guess the world doesn't need me anymore.", "pause_after": 0.8},
+    {"id": "L06", "who": "narrator", "voice": "af_heart", "speed": 0.95, "text": "The world was perfect. Doors stayed open. Strangers shared everything.", "pause_after": 0.5},
+    {"id": "L07", "who": "narrator", "voice": "af_heart", "speed": 0.9, "text": "But slowly, something began to fade.", "pause_after": 0.6},
+    {"id": "L08", "who": "narrator", "voice": "af_heart", "speed": 0.9, "text": "Nobody said thank you anymore. Kindness wasn't a choice. It was just... weather.", "pause_after": 0.5},
+    {"id": "L09", "who": "narrator", "voice": "af_heart", "speed": 0.88, "text": "Without the dark, nobody noticed the light.", "pause_after": 0.9},
+    {"id": "L10", "who": "lily", "voice": "af_bella", "speed": 1.0, "pitch": 1.2, "text": "Uncle Marcus, what's a hero?", "pause_after": 1.1},
+    {"id": "L11", "who": "marcus", "voice": "am_michael", "speed": 0.82, "text": "Someone who chooses to do good. Even when they could choose not to.", "pause_after": 0.5},
+    {"id": "L12", "who": "lily", "voice": "af_bella", "speed": 1.0, "pitch": 1.2, "text": "Why would anyone choose not to?", "pause_after": 1.4},
+    {"id": "L13", "who": "narrator", "voice": "af_heart", "speed": 0.88, "text": "Maybe a world without evil is also a world without heroes.", "pause_after": 0.2}
+  ]
+}

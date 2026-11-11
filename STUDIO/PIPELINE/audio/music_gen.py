@@ -44,6 +44,15 @@ def inst_bell(freq, dur):
     return dsp.fm_bell(freq, dur, 3.5, 2.0, min(dur, 1.5)) * 0.5
 
 
+def inst_piano(freq, dur, bright=0.6):
+    """Soft felt-piano: decaying harmonics with a gentle hammer."""
+    t = tvec(dur)
+    x = sum(np.sin(2 * np.pi * freq * k * (1 + 0.0004 * k * k) * t) * np.exp(-t * (1.2 + 0.9 * k)) / k ** (1.6 - bright)
+            for k in range(1, 9))
+    x += dsp.bandpass(dsp.white(dur), 800, 3000) * np.exp(-t / 0.01) * 0.05
+    return x * np.clip(t / 0.004, 0, 1) * np.clip((dur - t) / 0.08, 0, 1) * 0.45
+
+
 def inst_bass(freq, dur):
     x = dsp.sine(freq, dur) + 0.3 * dsp.saw(freq, dur, 8)
     return dsp.lowpass(x, 400, 2) * dsp.adsr(dur, 0.01, 0.1, 0.8, 0.08) * 0.6
@@ -303,6 +312,55 @@ def cue_video003(edl) -> Score:
         s.note("perc", lambda f, d: drum_hat(0.05) * 1.4, 100, t, 0.05, 0.6)
         t += beat / 2
     s.note("pad", lambda f, d: inst_strings(f, d, 600), "D2", B["freeze"] + 0.2, edl.DURATION - B["freeze"] - 0.2, 0.5)
+    return s
+
+
+def cue_video004(edl) -> Score:
+    """Emotional: felt piano + strings. Warm major hope (2031-2033), it thins and loses colour (2035),
+    one held note of silence-ish for 'nobody noticed the light', then a gentle bittersweet theme for 2041."""
+    B = edl.B
+    s = Score(edl.DURATION, bpm=edl.BPM)
+    beat = s.beat
+    bar = 4 * beat
+
+    def arp(t0, t1, chords, gain=0.6, spread=True):
+        t, i = t0, 0
+        while t < t1 - 0.1:
+            ch = chords[(i // 4) % len(chords)]
+            s.note("lead", inst_piano, ch[i % len(ch)], t, beat * 2.5, gain, 0.2 * ((i % 3) - 1) if spread else 0)
+            t += beat / 2
+            i += 1
+
+    # midnight: a single low piano note under the clock, then the hopeful theme blooms after the bell
+    s.note("lead", inst_piano, "D3", 0.3, 3.0, 0.7)
+    hope = [["D3", "A3", "F#4", "A4"], ["B2", "F#3", "D4", "F#4"], ["G2", "D3", "B3", "D4"], ["A2", "E3", "C#4", "E4"]]
+    arp(B["midnight"] + 0.3, B["office"], hope, 0.55)
+    for k, ch in enumerate(hope):
+        s.chord("pad", lambda f, d: inst_strings(f, d, 1600), ch[1:], B["midnight"] + 0.3 + k * bar, bar + 0.4, 0.35)
+    # office: sparse, lonely (single notes, minor colour)
+    for k, n in enumerate(["F#4", "E4", "D4", "B3", "C#4", "A3"]):
+        s.note("lead", inst_piano, n, B["office"] + k * beat * 1.4, beat * 3, 0.55)
+    s.note("pad", lambda f, d: inst_strings(f, d, 900), "B2", B["office"], B["summer"] - B["office"], 0.35)
+    # perfect world: bright full arpeggio
+    arp(B["summer"], B["fade"], hope, 0.6)
+    s.chord("pad", lambda f, d: inst_strings(f, d, 2000), ["D3", "F#3", "A3"], B["summer"], B["fade"] - B["summer"] + 0.5, 0.4)
+    # fading: the same arpeggio, quieter and thinner, chords drift to minor and dissolve
+    fade = [["D3", "A3", "F4", "A4"], ["A#2", "F3", "D4"], ["G2", "D3", "A#3"], ["A2", "E3", "C4"]]
+    arp(B["fade"], B["light"], fade, 0.4)
+    s.note("pad", lambda f, d: inst_strings(f, d, 700), "D2", B["fade"], B["light"] - B["fade"] + 1.0, 0.4)
+    s.gate(B["light"] + 0.2, B["park"] - 0.2, 0.6)          # near silence for the white dip
+    # 2041: bittersweet theme, slow, with a held string chord under the last line
+    theme = ["F#4", "E4", "D4", "E4", "F#4", "A4", "G4", "F#4", "E4", "D4"]
+    for k, n in enumerate(theme):
+        s.note("lead", inst_piano, n, B["park"] + k * beat, beat * 3, 0.5)
+    sad = [["B2", "F#3", "D4"], ["G2", "D3", "B3"], ["D3", "A3", "F#4"], ["A2", "E3", "C#4"]]
+    for k in range(int((edl.DURATION - B["park"]) / bar) + 1):
+        ch = sad[k % 4]
+        s.chord("pad", lambda f, d: inst_strings(f, d, 1200), ch, B["park"] + k * bar, bar + 0.5, 0.4)
+        s.note("bass", inst_piano, ch[0], B["park"] + k * bar, bar, 0.5)
+    s.gate(B["two_shot"] + 1.5, B["final"] - 0.1, 0.4)  # silence after 'why would anyone choose not to?'
+    s.note("lead", inst_piano, "D5", B["end"], 4.0, 0.45)
+    s.note("lead", inst_piano, "A4", B["end"] + 0.5, 3.5, 0.4)
     return s
 
 

@@ -407,5 +407,62 @@
     ],
     "dur": 1.2,
     "peak_db": -2.95
+  },
+  "clock_bell": {
+    "file": "clock_bell.flac",
+    "desc": "Big clock-tower bell strike (deep, long)",
+    "tags": [
+      "bell"
+    ],
+    "dur": 6.0,
+    "peak_db": -1.01
+  },
+  "firework_pop": {
+    "file": "firework_pop.flac",
+    "desc": "Distant firework pop + crackle",
+    "tags": [
+      "weather"
+    ],
+    "dur": 1.8,
+    "peak_db": -2.95
+  },
+  "cell_slide": {
+    "file": "cell_slide.flac",
+    "desc": "Prison cell door sliding open (metal)",
+    "tags": [
+      "foley",
+      "door"
+    ],
+    "dur": 1.6,
+    "peak_db": -1.01
+  },
+  "paper_slap": {
+    "file": "paper_slap.flac",
+    "desc": "Newspaper landing on a desk",
+    "tags": [
+      "foley"
+    ],
+    "dur": 0.5,
+    "peak_db": -2.83
+  },
+  "type_key": {
+    "file": "type_key.flac",
+    "desc": "Single typewriter key strike",
+    "tags": [
+      "ui",
+      "foley"
+    ],
+    "dur": 0.09,
+    "peak_db": -5.45
+  },
+  "birds": {
+    "file": "birds.flac",
+    "desc": "Light birdsong bed (summer)",
+    "tags": [
+      "ambience",
+      "nature"
+    ],
+    "dur": 10.0,
+    "peak_db": -7.96
   }
 }

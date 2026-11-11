@@ -1,0 +1,47 @@
+[
+  {
+    "time": "2026-11-11 00:48:52",
+    "frames": 1712,
+    "seconds": 197.5,
+    "jobs": {
+      "city": 157,
+      "prison": 101,
+      "news": 167,
+      "office": 94,
+      "cu_marcus": 106,
+      "street": 500,
+      "park_wide": 4,
+      "cu_lily": 81,
+      "cu_marcus2": 158,
+      "two_shot": 82,
+      "final": 262
+    }
+  },
+  {
+    "time": "2026-11-11 00:51:42",
+    "frames": 700,
+    "seconds": 81.3,
+    "jobs": {
+      "office": 94,
+      "cu_marcus": 106,
+      "street": 500
+    }
+  },
+  {
+    "time": "2026-11-11 00:55:04",
+    "frames": 268,
+    "seconds": 30.6,
+    "jobs": {
+      "prison": 101,
+      "news": 167
+    }
+  },
+  {
+    "time": "2026-11-11 00:57:46",
+    "frames": 167,
+    "seconds": 16.5,
+    "jobs": {
+      "news": 167
+    }
+  }
+]

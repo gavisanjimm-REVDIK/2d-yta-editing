@@ -70,6 +70,21 @@ CAST = {
                  shirt="#3F6FA8", shirt_sh="#2F5687", pants="#3F6FA8", pants_sh="#2F5687", shoes="#3A2A30",
                  sleeves="short", torso_h=1.4, shoulder_w=0.95, hip_w=0.85, leg=1.5,
                  eye_w=0.21, eye_h=0.25, eye_sep=0.38, extras=("dress", "apron", "lashes")),
+    # VIDEO_004 cast
+    "lily": _c(skin="#F5C9A6", skin_sh="#DDA984", hair="#6A3A1E", hair_sh="#4E2A14", hair_style="pigtails",
+               shirt="#E8708A", shirt_sh="#C85A72", pants="#E8708A", pants_sh="#C85A72", shoes="#C83A3A",
+               sleeves="short", torso_h=0.95, shoulder_w=0.8, hip_w=0.72, leg=0.95, head_rx=1.05, head_ry=1.0,
+               eye_w=0.3, eye_h=0.34, eye_sep=0.42, extras=("dress", "lashes"), upper_arm=0.45, fore_arm=0.45),
+    "marcus_cardigan": _c(shirt="#5A6A4A", shirt_sh="#465438", sleeves="long", extras=("cardigan",),
+                          pants="#3A3A44", pants_sh="#2A2A32"),
+    "prisoner": _c(skin="#E8A97E", skin_sh="#C98A5F", hair="#2A2420", hair_sh="#1A1614", hair_style="slick",
+                   shirt="#E8782E", shirt_sh="#C25E1E", pants="#E8782E", pants_sh="#C25E1E", shoes="#2A2A2A",
+                   sleeves="long", torso_h=1.55, shoulder_w=1.2, hip_w=1.0, leg=1.6, temples=False,
+                   eye_w=0.19, eye_h=0.22, eye_sep=0.38),
+    "guard": _c(skin="#D9A07A", skin_sh="#BC825C", hair="#1E1A1A", hair_sh="#0F0D0D", hair_style="guard_cap",
+                shirt="#2E3E5E", shirt_sh="#222E48", pants="#2E3E5E", pants_sh="#222E48", shoes="#1A1A1A",
+                sleeves="long", torso_h=1.55, shoulder_w=1.15, hip_w=0.95, leg=1.65,
+                eye_w=0.19, eye_h=0.22, eye_sep=0.38, extras=("badge",)),
     # VIDEO_003 cast: Mumford the mummy gatekeeper (bandages everywhere, glowing eyes, comic)
     "mummy": _c(skin="#E8DCC0", skin_sh="#C9B994", hair="#E8DCC0", hair_sh="#C9B994", hair_style="mummy",
                 shirt="#E8DCC0", shirt_sh="#C9B994", pants="#DDD0B0", pants_sh="#C2B28C", shoes="#C9B994",
@@ -332,6 +347,13 @@ def hair_back(pen, C, hx, hy, rx, ry, turn):
         pen.shape(oval(hx, hy - 0.1, rx * 1.05, ry * 1.02), C["hair"], C["hair_sh"])
     elif st == "chef":
         pen.shape(oval(hx, hy - 0.05, rx * 1.04, ry * 1.0), C["hair"], C["hair_sh"])
+    elif st == "pigtails":
+        for side in (-1, 1):
+            pen.shape(oval(hx + side * rx * 1.25, hy + ry * 0.15, 0.32, 0.42), C["hair"], C["hair_sh"])
+            pen.shape(oval(hx + side * rx * 1.02, hy - ry * 0.1, 0.1, 0.12), "#F4D24A")  # hair ties
+        pen.shape(oval(hx, hy - 0.06, rx * 1.05, ry * 1.02), C["hair"], C["hair_sh"])
+    elif st == "guard_cap":
+        pen.shape(oval(hx, hy - 0.05, rx * 1.03, ry * 0.98), C["hair"], C["hair_sh"])
     elif st == "bob":
         bob = smooth_path([(hx - rx * 1.2, hy + ry * 0.55), (hx - rx * 1.22, hy - ry * 0.3), (hx - rx * 0.8, hy - ry * 1.08),
                            (hx, hy - ry * 1.18), (hx + rx * 0.8, hy - ry * 1.08), (hx + rx * 1.22, hy - ry * 0.3),
@@ -428,6 +450,26 @@ def hair_front(pen, C, hx, hy, rx, ry, turn):
             pen.shape(smooth_path([(hx + side * rx * 0.85, hy - ry * 0.6), (hx + side * rx * 1.03, hy - ry * 0.4),
                                    (hx + side * rx * 1.0, hy + ry * 0.05), (hx + side * rx * 0.88, hy - 0.05)]),
                       C["hair"], C["hair_sh"])
+    elif st == "pigtails":
+        fringe = skia.Path()
+        fringe.moveTo(hx - rx * 1.0, hy - ry * 0.15)
+        fringe.arcTo(skia.Rect(hx - rx * 1.08, hy - ry * 1.12, hx + rx * 1.08, hy + ry * 1.12), 190, 160, False)
+        fringe.lineTo(hx + rx * 1.0, hy - ry * 0.15)
+        for k in range(5, -1, -1):  # little scalloped bangs
+            px = hx - rx * 1.0 + k * rx * 0.4 + fx
+            fringe.quadTo(px + rx * 0.2, hy - ry * 0.3, px, hy - ry * 0.5)
+        fringe.close()
+        pen.shape(fringe, C["hair"], C["hair_sh"])
+    elif st == "guard_cap":
+        cap = skia.Path()
+        cap.moveTo(hx - rx * 1.04, hy - ry * 0.42)
+        cap.quadTo(hx - rx * 1.0, hy - ry * 1.3, hx, hy - ry * 1.28)
+        cap.quadTo(hx + rx * 1.0, hy - ry * 1.3, hx + rx * 1.04, hy - ry * 0.42)
+        cap.close()
+        pen.shape(cap, "#2E3E5E", "#222E48")
+        pen.shape(smooth_path([(hx - rx * 0.95 + fx, hy - ry * 0.48), (hx + fx * 1.3, hy - ry * 0.3),
+                               (hx + rx * 0.98 + fx, hy - ry * 0.48), (hx + fx, hy - ry * 0.56)]), "#1A1A22")
+        pen.shape(oval(hx + fx, hy - ry * 0.85, 0.16, 0.14), "#E0C070")
     elif st == "bob":
         fringe = skia.Path()
         fringe.moveTo(hx - rx * 1.0, hy - ry * 0.2)
@@ -664,7 +706,20 @@ def draw_character(canvas, C, x, y_feet, height_px, pose=None):
     hip_y = -C["leg"] + pose.get("bob", 0.0)
     if run is not None:  # running bounce: body highest mid-stride, lowest on footfall
         hip_y -= 0.16 * abs(math.sin(run * 2 * math.pi))
-    for side in (-1, 1):
+    if pose.get("sit"):  # seated, seen from the front: short foreshortened thighs, knees, shins to the floor
+        hip_y = -C["leg"] * 0.6 + pose.get("bob", 0.0)
+        for side in (-1, 1):
+            lx = side * C["hip_w"] * 0.27
+            kx, ky = side * C["hip_w"] * 0.36, hip_y + 0.12
+            col, sh, wd = (C["skin"], C["skin_sh"], C["limb_w"]) if "dress" in C["extras"] else (C["pants"], C["pants_sh"], C["pants_w"])
+            pen.capsule(kx, ky, kx, -0.14, wd * 0.95, col, sh)
+            pen.capsule(lx, hip_y, kx, ky, wd * 1.15, col, sh)
+            pen.c.drawPath(oval(kx, ky, wd * 0.62, wd * 0.55), pen.p(col))
+            pen.stroke(oval(kx, ky, wd * 0.62, wd * 0.55), pen.ow * 0.8)
+            shoe = skia.Path()
+            shoe.addRoundRect(skia.Rect(kx - 0.22, -0.2, kx + 0.22, 0.03), 0.12, 0.12)
+            pen.shape(shoe, C["shoes"])
+    for side in ((-1, 1) if not pose.get("sit") else ()):
         lift = 0.0
         swing = 0.0
         if run is not None:  # front-view run: high knee, bent leg (raised leg drawn over the coat later)
@@ -929,6 +984,11 @@ def _torso_details(pen, C, top, hip_y, sw, hw, th):
             q2.moveTo(-sw / 2 + 0.05, y + 0.06 * (k % 2))
             q2.quadTo(0, y + 0.1, sw / 2 - 0.05, y - 0.04 + 0.06 * ((k + 1) % 2))
             pen.stroke(q2, pen.ow * 0.7, "#B8A880")
+    elif "badge" in ex:
+        pen.shape(smooth_path([(-0.3, top + th * 0.25), (-0.18, top + th * 0.22), (-0.16, top + th * 0.36),
+                               (-0.24, top + th * 0.42), (-0.32, top + th * 0.36)]), "#E0C070")
+        for k in (0.25, 0.45, 0.65):
+            pen.shape(oval(0.0, top + th * k, 0.04, 0.04), "#E0C070", outline=False)
     elif "chef_jacket" in ex:
         for s_ in (-1, 1):
             for k in (0.25, 0.45, 0.65):

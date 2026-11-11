@@ -454,6 +454,72 @@ def sarcophagus_creak():
     return dsp.fade(dsp.normalize(x) * 0.8)
 
 
+# ================================================================ VIDEO_004: The Day Evil Disappeared
+@reg("clock_bell", "Big clock-tower bell strike (deep, long)", ("bell",))
+def clock_bell():
+    d = 6.0
+    f = dsp.note_hz("A2")
+    x = sum(dsp.fm_bell(f * r, d, 1.4 + 0.3 * i, 2.5, 3.0 - 0.4 * i) * g
+            for i, (r, g) in enumerate(((1.0, 1.0), (2.0, 0.5), (2.76, 0.35), (5.4, 0.15))))
+    return dsp.fade(dsp.normalize(dsp.mono(dsp.convolve_reverb(x, dsp.make_ir(4.0, 0.7, 3000), 0.35))[: samples(d)]), 0.001, 1.0)
+
+
+@reg("firework_pop", "Distant firework pop + crackle", ("weather",))
+def firework_pop():
+    d = 1.8
+    t = tvec(d)
+    boom = dsp.lowpass(dsp.brown(d, rng(70)), 400) * np.exp(-t / 0.25)
+    crack = np.zeros(samples(d))
+    r = rng(71)
+    for k in r.uniform(0.15, 1.3, 70):
+        dsp.place(crack, dsp.highpass(dsp.white(0.012, r), 3000) * dsp.exp_decay(0.012, 0.003) * r.uniform(0.2, 0.8), k)
+    return dsp.fade(dsp.normalize(dsp.mono(dsp.convolve_reverb(boom + crack * 0.5, dsp.make_ir(2.0, 0.6, 4000), 0.4))[: samples(d)]) * 0.8)
+
+
+@reg("cell_slide", "Prison cell door sliding open (metal)", ("foley", "door"))
+def cell_slide():
+    d = 1.6
+    t = tvec(d)
+    rumble = dsp.bandpass(dsp.brown(d, rng(72)), 80, 900) * dsp.adsr(d, 0.05, 0.2, 0.8, 0.3)
+    squeal = dsp.bandpass(dsp.saw(1400, d, 6), 900, 3000) * 0.08 * dsp.adsr(d, 0.3, 0.3, 0.5, 0.4)
+    clank = np.zeros(samples(d))
+    dsp.place(clank, impact_metal()[: samples(0.8)] * 0.6, 1.25)
+    return dsp.fade(dsp.normalize(rumble + squeal + clank))
+
+
+@reg("paper_slap", "Newspaper landing on a desk", ("foley",))
+def paper_slap():
+    d = 0.5
+    x = dsp.bandpass(dsp.white(d, rng(73)), 600, 6000) * dsp.exp_decay(d, 0.03)
+    x += dsp.lowpass(dsp.white(d, rng(74)), 300) * dsp.exp_decay(d, 0.05) * 0.6
+    return dsp.fade(dsp.normalize(x) * 0.85)
+
+
+@reg("type_key", "Single typewriter key strike", ("ui", "foley"))
+def type_key():
+    d = 0.09
+    x = dsp.bandpass(dsp.white(d, rng(75)), 1200, 6000) * dsp.exp_decay(d, 0.008)
+    x += dsp.sine(np.linspace(900, 500, samples(d)), d) * dsp.exp_decay(d, 0.01) * 0.4
+    return dsp.fade(dsp.normalize(x) * 0.6, 0.0005, 0.01)
+
+
+@reg("birds", "Light birdsong bed (summer)", ("ambience", "nature"))
+def birds():
+    d = 10.0
+    x = np.zeros(samples(d))
+    r = rng(76)
+    tt = 0.2
+    while tt < d - 0.5:
+        n = r.integers(2, 5)
+        base = r.uniform(2800, 4200)
+        for k in range(n):
+            dur = r.uniform(0.06, 0.14)
+            ch = dsp.sine(np.linspace(base * r.uniform(0.9, 1.1), base * r.uniform(1.1, 1.4), samples(dur)), dur)
+            dsp.place(x, ch * dsp.adsr(dur, 0.01, 0.02, 0.7, 0.03) * r.uniform(0.3, 0.8), tt + k * 0.12)
+        tt += r.uniform(0.5, 1.6)
+    return dsp.normalize(dsp.mono(dsp.convolve_reverb(x, dsp.make_ir(1.2, 0.5, 6000), 0.25))[: samples(d)], 0.4)
+
+
 # ================================================================ generator
 def build(names=None):
     OUT.mkdir(parents=True, exist_ok=True)
