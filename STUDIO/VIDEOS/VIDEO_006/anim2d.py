@@ -672,7 +672,7 @@ def shot_table(c, t, lid, p):
         c.restore()
     items = [("fresh OYSTERS", 300, 410, "oysters"), ("PUSO", 780, 420, "puso"), ("ISAW", 300, 700, "isaw"),
              ("clear WATER", 780, 640, "pitcher"), ("2 unfinished plates", 540, 980, "unfinished"),
-             ("EMPTY oyster shells", 540, 1240, "empty"), ("BROKEN GLASS", 540, 1560, "broken")]
+             ("EMPTY oyster shells", 540, 1240, "empty"), ("BROKEN GLASS", 830, 1450, "broken")]
     for lab, x, y, at in items:
         pill(c, lab, x, y, 40, bg="#C8382E" if at in ("empty", "broken") else "#2A1A12", alpha=pop(t, word_t(lid, at)))
 
