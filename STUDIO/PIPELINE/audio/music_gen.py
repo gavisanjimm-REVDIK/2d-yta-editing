@@ -364,6 +364,32 @@ def cue_video004(edl) -> Score:
     return s
 
 
+def cue_video005(edl) -> Score:
+    """Calm, curious lo-fi for a long explainer: soft piano/pluck loop + pad + light beat, low and steady;
+    each section start gets a small bell; it never competes with the narration."""
+    s = Score(edl.DURATION, bpm=edl.BPM)
+    beat = s.beat
+    bar = 4 * beat
+    prog = [["D3", "F#3", "A3", "C#4"], ["B2", "D3", "F#3", "A3"], ["G2", "B2", "D3", "F#3"], ["A2", "C#3", "E3", "G3"]]
+    mel = ["F#4", "A4", "C#5", "A4", "E4", "F#4", "A4", "B4"]
+    t, i = 0.0, 0
+    while t < edl.DURATION:
+        ch = prog[i % 4]
+        s.chord("pad", lambda f, d: inst_pad(f, d, bright=900), ch, t, bar + 0.3, 0.45)
+        s.note("bass", inst_bass, ch[0], t, bar * 0.9, 0.5)
+        for j in range(4):
+            s.note("lead", lambda f, d: inst_pluck(f, d, 0.35), mel[(i * 4 + j) % 8], t + j * beat, beat * 1.4, 0.22,
+                   0.25 * ((j % 2) * 2 - 1))
+            if j in (0, 2):
+                s.add("perc", drum_kick(0.3) * 0.35, t + j * beat, 0.5)
+            s.add("perc", drum_hat(0.05), t + j * beat + beat / 2, 0.25)
+        t += bar
+        i += 1
+    for t0, _name in edl.SECTION_T[1:]:
+        s.note("fx", inst_bell, "A5", t0 + 0.05, 1.5, 0.35)
+    return s
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("video")

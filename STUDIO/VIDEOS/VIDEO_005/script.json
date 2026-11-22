@@ -1,0 +1,440 @@
+{
+  "title": "Protists Part 1: Excavata and the SAR Clade",
+  "start_offset": 0.5,
+  "tail": 1.0,
+  "source": "PSHS Biology 3, Learning Guide 9.2 (Protista, Model Organisms Part 1)",
+  "lines": [
+    {
+      "id": "L01",
+      "who": "marcus",
+      "voice": "am_michael",
+      "speed": 0.98,
+      "text": "Detective Marcus here. Today's case: a tiny suspect, hiding in your drinking water.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L02",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "This organism is a single cell with several flagella. So, is it a prokaryote, like a bacterium?",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L03",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Look closer. It is bigger than a prokaryotic cell, and it has a nucleus. So it belongs to the domain Eukarya, the same domain as humans.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L04",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Its name is Giardia lamblia. It is a protist, and as a human parasite, it causes a diarrheal disease called giardiasis.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L05",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "So what exactly is a protist? Protists are all the eukaryotes that are not plants, animals, or fungi.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L06",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "That makes them a hugely diverse group. The name Protista was first used by Ernst Haeckel in 1866.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L07",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Scientists used to sort protists by what they resembled.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L08",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Animal like protozoa. Plant like protophyta, which are mostly algae. And fungus like slime molds and water molds.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L09",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "But those groups were not based on real evolutionary relationships. Today, protists are classified using phylogenetics: grouping by evolutionary relatedness.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L10",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "And it turns out many protists are not closely related at all. Almost every rule about them has a major exception.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L11",
+      "who": "marcus",
+      "voice": "am_michael",
+      "speed": 0.98,
+      "text": "A group full of exceptions. My favorite kind of case.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L12",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Today, protists are divided into four supergroups: Excavata, the SAR clade, Archaeplastida, and Unikonta.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L13",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "In this lesson, we investigate the first two: Excavata, and the SAR clade.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L14",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Supergroup one: Excavata.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "L15",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Excavates have an asymmetrical shape, with a feeding groove that looks excavated, or dug out, from one side of the cell.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L16",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "They include parasites, photosynthetic species, and heterotrophic predators. Their subgroups are diplomonads, parabasalids, and euglenozoans.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L17",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "First, the diplomonads. Most are parasites, including our suspect, Giardia.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "L18",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Scientists once thought they had no mitochondria. But they do have tiny leftover mitochondria, called mitosomes, and their exact job is still not fully understood.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L19",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Diplomonads live where there is no oxygen, so they make energy through other pathways, such as glycolysis.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L20",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Each cell has two identical nuclei, and it swims using several flagella.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L21",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Next, the parabasalids. They also have reduced mitochondria.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "L22",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "In most organisms, mitochondria use oxygen to make energy. In parabasalids, they work without oxygen and release hydrogen gas, so they are called hydrogenosomes.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L23",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Parabasalids move using flagella, and a rippling membrane.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L24",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "One example is Trichomonas vaginalis, which causes a sexually transmitted infection called trichomoniasis.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L25",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Men rarely show symptoms. Infected women may become more vulnerable to H I V, and to genital wart virus, which causes over ninety percent of cervical cancer. In pregnancy, it raises the risk of preterm delivery.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L26",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "The third subgroup: euglenozoans. They include parasites, heterotrophs, autotrophs, and mixotrophs, from ten to five hundred micrometers long.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "L27",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Euglenoids swim with two flagella, steering toward light that they sense with a simple eyespot.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L28",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Euglena is a mixotroph. In the light, it photosynthesizes. In the dark, its chloroplasts shrink and stop working, and it absorbs food from its surroundings instead.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L29",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Another euglenozoan group, the kinetoplastids, is named after the kinetoplast: a mass of D N A inside one single, oversized mitochondrion.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L30",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "These include the trypanosomes. Trypanosoma brucei spends part of its life cycle inside the tsetse fly.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L31",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "When a tsetse fly bites an infected person, the parasite grows in the fly's gut, then moves to its salivary glands. The next bite passes it to a new host.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L32",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Trypanosoma brucei causes African sleeping sickness in central Africa: severe fatigue, and then coma. Left untreated, it can be fatal.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L33",
+      "who": "marcus",
+      "voice": "am_michael",
+      "speed": 0.98,
+      "text": "Three Excavata suspects down. Now, the next lineup.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L34",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Supergroup two: the SAR clade. SAR stands for its three groups: Stramenopiles, Alveolates, and Rhizarians.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "L35",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Each group has a signature. Stramenopiles have one hairy and one smooth flagellum. Alveolates have little sacs, called alveoli, under the plasma membrane. Rhizarians are amoebas with thin, threadlike pseudopodia.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L36",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Stramenopiles include diatoms, golden algae, and brown algae.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L37",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Their long front flagellum is covered in tiny three part bristles, called mastigonemes, which help push the cell forward.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L38",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Some stramenopiles are photosynthetic. Others are heterotrophs, including parasites like Blastocystis and the water molds, and gut partners like Opalina.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L39",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Next, the alveolates: dinoflagellates, apicomplexans, and ciliates. Most are single celled, but some form chains, and some cells reach millimeters long.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "L40",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "They feed in every way: parasitic, heterotrophic, autotrophic, and mixotrophic. Some even keep stolen chloroplasts from their prey.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L41",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Dinoflagellates are armored with plates of cellulose. Two flagella beat in grooves around the cell, so it spins as it swims. Dinos means whirling, and flagellum means whip.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L42",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Dinoflagellates are behind red tides, also called harmful algal blooms.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L43",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Apicomplexans are parasites that live inside animal tissues. At the tip of their infectious stage, the sporozoite, sits the apical complex, which helps them break into host cells.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L44",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Many need more than one host. Plasmodium, carried by mosquitoes, causes malaria.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L45",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Ciliates are covered in cilia. Cilia have the same structure as flagella, but they are shorter, far more numerous, and they beat in waves.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L46",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Finally, the rhizarians. Most are free living heterotrophs, and they are hard to grow in the lab.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "L47",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "A few became photosynthetic by taking in other organisms. Chlorarachniophytes took in a green alga, and Paulinella recently took in a cyanobacterium.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L48",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Forams and their relatives reach out with fine, threadlike pseudopods that can branch and join into nets.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L49",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Rhizarians matter in freshwater and soil. In some soils, cercozoans make up thirty to sixty percent of all protists.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L50",
+      "who": "marcus",
+      "voice": "am_michael",
+      "speed": 0.98,
+      "text": "Case summary.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "L51",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Protists are eukaryotes that are not plants, animals, or fungi, now sorted by evolution into four supergroups.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L52",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Excavata: diplomonads, parabasalids, and euglenozoans. The SAR clade: stramenopiles, alveolates, and rhizarians.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L53",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "From giardiasis and malaria to red tides and healthy soil, these tiny cells shape our health and our planet.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L54",
+      "who": "marcus",
+      "voice": "am_michael",
+      "speed": 0.98,
+      "text": "Case closed. Next time: Archaeplastida and Unikonta.",
+      "pause_after": 0.2
+    }
+  ]
+}
