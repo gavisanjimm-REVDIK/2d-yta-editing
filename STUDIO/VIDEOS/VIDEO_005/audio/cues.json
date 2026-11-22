@@ -1,0 +1,717 @@
+{
+  "duration": 435.28,
+  "music_db": -4.0,
+  "duck_db": -9.0,
+  "bus_db": {
+    "sfx": -7.0,
+    "amb": -20.0
+  },
+  "music_gates": [],
+  "sfx": [
+    {
+      "t": 0.0,
+      "name": "amb_room",
+      "bus": "amb",
+      "dur": 435.28,
+      "loop": true,
+      "gain_db": -6,
+      "fade_in": 0.5,
+      "fade_out": 1.0
+    },
+    {
+      "t": 6.324999999999999,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 13.143,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 22.398,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 31.093,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 37.88400000000001,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 46.44500000000001,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 49.926,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 58.026,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 69.207,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 76.68599999999999,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 80.53399999999999,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 88.45599999999999,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 93.80299999999998,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 96.18599999999999,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 103.95799999999998,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 114.05799999999999,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 119.54599999999999,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 130.92,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 137.97299999999998,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 143.158,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 147.53,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 159.66899999999998,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 163.68699999999998,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 171.725,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 187.416,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 197.76,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 203.731,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 215.178,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 225.92,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 233.689,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 244.346,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 254.31199999999998,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 258.571,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 266.711,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 281.59000000000003,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 286.017,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 293.90000000000003,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 304.56600000000003,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 315.339,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 324.507,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 336.81600000000003,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 342.132,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 354.30600000000004,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 359.985,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 369.125,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 375.54,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 386.481,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 393.66700000000003,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 401.959,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 403.361,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 411.04,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 419.89300000000003,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 427.14500000000004,
+      "name": "whoosh_fast",
+      "gain_db": -16
+    },
+    {
+      "t": 7.855,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 9.095,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 19.693,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 19.693,
+      "name": "impact_soft",
+      "gain_db": -12
+    },
+    {
+      "t": 25.388,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 26.908,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 29.928,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 39.354,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 43.374,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 44.194,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 58.676,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 67.996,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 99.596,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 97.456,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 104.788,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 106.048,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 108.468,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 110.708,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 111.788,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 114.948,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 130.016,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 130.016,
+      "name": "impact_soft",
+      "gain_db": -12
+    },
+    {
+      "t": 132.89,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 136.83,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 139.763,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 142.263,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 144.068,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 158.26,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 158.26,
+      "name": "impact_soft",
+      "gain_db": -12
+    },
+    {
+      "t": 161.319,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 162.539,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 168.017,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 170.317,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 171.995,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 175.995,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 178.355,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 181.795,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 183.755,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 191.126,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 193.246,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 195.266,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 202.87,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 199.51,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 204.901,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 204.901,
+      "name": "impact_soft",
+      "gain_db": -12
+    },
+    {
+      "t": 217.228,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 224.648,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 229.51,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 232.65,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 248.056,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 249.756,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 253.656,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 283.08,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 284.12,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 285.1,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 290.707,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 292.467,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 295.51,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 300.23,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 301.41,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 303.63,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 306.736,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 308.936,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 310.556,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 312.176,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 327.097,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 329.757,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 333.697,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 350.582,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 353.262,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 359.116,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 363.655,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 363.655,
+      "name": "impact_soft",
+      "gain_db": -12
+    },
+    {
+      "t": 372.495,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 390.231,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 386.751,
+      "name": "ui_pop",
+      "gain_db": -15
+    },
+    {
+      "t": 31.213,
+      "name": "whoosh_slow",
+      "gain_db": -14
+    },
+    {
+      "t": 93.92299999999999,
+      "name": "whoosh_slow",
+      "gain_db": -14
+    },
+    {
+      "t": 114.178,
+      "name": "whoosh_slow",
+      "gain_db": -14
+    },
+    {
+      "t": 143.278,
+      "name": "whoosh_slow",
+      "gain_db": -14
+    },
+    {
+      "t": 187.536,
+      "name": "whoosh_slow",
+      "gain_db": -14
+    },
+    {
+      "t": 254.432,
+      "name": "whoosh_slow",
+      "gain_db": -14
+    },
+    {
+      "t": 281.71000000000004,
+      "name": "whoosh_slow",
+      "gain_db": -14
+    },
+    {
+      "t": 304.68600000000004,
+      "name": "whoosh_slow",
+      "gain_db": -14
+    },
+    {
+      "t": 369.245,
+      "name": "whoosh_slow",
+      "gain_db": -14
+    },
+    {
+      "t": 402.079,
+      "name": "whoosh_slow",
+      "gain_db": -14
+    }
+  ]
+}

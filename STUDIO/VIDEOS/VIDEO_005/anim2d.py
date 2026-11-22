@@ -111,7 +111,7 @@ def callout(c, label, anchor, t, ta, side=None, dy=0, bg="#C8382E"):
     c.drawLine(ax, ay, ax + (lx - ax) * e, ay + (ly - ay) * e, paint("#FFFFFF", 1, 3))
     c.drawCircle(ax, ay, 12, paint("#FFFFFF"))
     c.drawCircle(ax, ay, 12, paint(INK, 1, 4))
-    pill(c, label, lx, ly, 40, bg=bg, alpha=u, scale=0.85 + 0.15 * EASE["back"](u))
+    pill(c, label, lx, ly, 46, bg=bg, alpha=u, scale=0.85 + 0.15 * EASE["back"](u))
 
 
 def org(c, name, x, y, s, t, **kw):
@@ -127,7 +127,7 @@ def stamp(c, label, t, ta, y=960, rot=-8):
     c.translate(W / 2, y)
     c.rotate(rot)
     c.scale(k, k)
-    tw = text_width(label, 84, BOLD)
+    tw = min(text_width(label, 84, BOLD), W - 200)
     r = skia.Rect(-tw / 2 - 30, -70, tw / 2 + 30, 40)
     c.drawRRect(skia.RRect.MakeRectXY(r, 14, 14), paint("#FFF4E0", 0.85 * u))
     c.drawRRect(skia.RRect.MakeRectXY(r, 14, 14), paint("#C8382E", u, 9))
@@ -251,7 +251,7 @@ def shot_scope(c, t, lid, p):
 def shot_compare(c, t, lid, p):
     desk_bg(c)
     for i, (name, kw, cap) in enumerate(p["panels"]):
-        y0 = 360 + i * 600
+        y0 = 320 + i * 640
         ta = seg_bounds(lid)[0] + 0.1 + 0.5 * i
         u = EASE["out"](pop(t, ta, 0.4))
         if u <= 0:
@@ -259,20 +259,20 @@ def shot_compare(c, t, lid, p):
         c.save()
         c.translate(0, 40 * (1 - u))
         dark = p.get("dark2") and i == 1
-        r = skia.Rect.MakeXYWH(70, y0, 940, 540)
+        r = skia.Rect.MakeXYWH(70, y0, 940, 520)
         c.drawRRect(skia.RRect.MakeRectXY(r, 30, 30), paint("#1E2A36" if dark else "#EAF4F6", u))
         c.drawRRect(skia.RRect.MakeRectXY(r, 30, 30), paint(INK, u, 6))
         c.save()
         c.clipRect(r)
         kw = dict(kw)
         s = kw.pop("s", 1.0)
-        org(c, name, 540, y0 + 230, s, t, **kw)
+        org(c, name, 540, y0 + 215, s, t, **kw)
         c.restore()
-        text(c, cap, 540, y0 + 500, 48, "#FFFFFF" if dark else INK, face=BOLD, shadow=False, alpha=u, max_w=880)
+        text(c, cap, 540, y0 + 480, 52, "#FFFFFF" if dark else INK, face=BOLD, shadow=False, alpha=u, max_w=880)
         c.restore()
     if p.get("stamp"):
         lab, at = p["stamp"]
-        stamp(c, lab, t, word_t(lid, at), y=930)
+        stamp(c, lab, t, word_t(lid, at), y=935, rot=-4)
 
 
 # ================================================================ 4. parchment card with bullets
@@ -284,7 +284,7 @@ def shot_card(c, t, lid, p):
     c.save()
     c.translate(0, 60 * (1 - u))
     parchment(c, x, y, w_, h_, u)
-    text(c, p["title"], W / 2, y + 140, 64, "#8A1F1A", face=SERIF, shadow=False, alpha=u, max_w=w_ - 100)
+    text(c, p["title"], W / 2, y + 140, 70, "#8A1F1A", face=SERIF, shadow=False, alpha=u, max_w=w_ - 100)
     c.drawLine(x + 80, y + 180, x + w_ - 80, y + 180, paint(INK, u, 4))
     top = y + 270
     if p.get("icon"):
@@ -292,22 +292,22 @@ def shot_card(c, t, lid, p):
         c.save()
         clip = skia.Rect.MakeXYWH(x + 60, y + 200, w_ - 120, 340)
         c.clipRect(clip)
-        org(c, name, W / 2, y + 380, s, t)
+        org(c, name, W / 2, y + 380, s * 1.35, t)
         c.restore()
-        top = y + 600
+        top = y + 640
     for i, (b, at) in enumerate(p["bullets"]):
         ta = word_t(lid, at)
         v = pop(t, ta, 0.3)
         if v <= 0:
             continue
-        by = top + i * 140
-        c.drawCircle(x + 110, by - 18, 14 * EASE["back"](v), paint("#C8382E"))
-        text(c, b, x + 150, by, 50, INK, face=BOLD, align="left", shadow=False, alpha=v, clamp_safe=False, max_w=w_ - 220)
+        by = top + i * min(165, (y + h_ - 90 - top) / max(len(p["bullets"]) - 1, 1))
+        c.drawCircle(x + 100, by - 22, 16 * EASE["back"](v), paint("#C8382E"))
+        text(c, b, x + 140, by, 62, INK, face=BOLD, align="left", shadow=False, alpha=v, clamp_safe=False, max_w=w_ - 200)
         if p.get("strike") and i == 0 and len(p["bullets"]) > 1:
             s2 = pop(t, word_t(lid, p["bullets"][1][1]), 0.4)
             if s2 > 0:
-                tw = min(text_width(b, 50, BOLD), w_ - 220)
-                c.drawLine(x + 140, by - 18, x + 140 + (tw + 20) * s2, by - 18, paint("#C8382E", 1, 8))
+                tw = min(text_width(b, 62, BOLD), w_ - 200)
+                c.drawLine(x + 130, by - 22, x + 130 + (tw + 20) * s2, by - 22, paint("#C8382E", 1, 9))
     c.restore()
 
 
@@ -464,7 +464,7 @@ def shot_lifecycle(c, t, lid, p):
             org(c, "insect", x - 30, y, 0.9, t, kind="tsetse")
             M.radial(c, x - 30 if i == 1 else x + 60, y - 10, 70, "#E8509A", 0.8, plus=True)
         c.restore()
-        pill(c, lab, x, y + 210, 34, bg="#2A1A12", alpha=v)
+        pill(c, lab, x, y + 215, 42, bg="#2A1A12", alpha=v)
         if i > 0:  # arrow from previous node
             px, py = nodes[i - 1][1]
             e = EASE["out"](v)

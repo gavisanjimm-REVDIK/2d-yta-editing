@@ -57,6 +57,43 @@ def mismatches(ref: str, hyp: str) -> int:
     return d[-1]
 
 
+def align_words(script_text, words):
+    """Put the script's exact words on whisper's timings (captions + word-synced graphics must show the real
+    spelling, e.g. 'eyespot' not 'ice pot'). Matched words copy timing; unmatched runs share the time span of
+    the whisper words they replace, split by character length."""
+    import difflib
+    toks = script_text.split()
+    if not words:
+        return words
+    if len(toks) == len(words):
+        return [{**w, "word": tk} for w, tk in zip(words, toks)]
+    def norm(x):
+        return "".join(ch for ch in x.lower() if ch.isalnum())
+    a, b = [norm(x) for x in toks], [norm(w["word"]) for w in words]
+    out = [None] * len(toks)
+    sm = difflib.SequenceMatcher(a=a, b=b, autojunk=False)
+    ops = sm.get_opcodes()
+    for tag, i1, i2, j1, j2 in ops:
+        if tag == "equal":
+            for k in range(i2 - i1):
+                out[i1 + k] = {**words[j1 + k], "word": toks[i1 + k]}
+        elif i2 > i1:
+            if j2 > j1:
+                st, en = words[j1]["start"], words[j2 - 1]["end"]
+            else:  # script words with no whisper counterpart: squeeze between neighbours
+                st = words[j1 - 1]["end"] if j1 > 0 else words[0]["start"]
+                en = words[j1]["start"] if j1 < len(words) else st + 0.2
+                en = max(en, st + 0.05)
+            lens = [max(len(toks[k]), 1) for k in range(i1, i2)]
+            tot = sum(lens)
+            cur = st
+            for k, ln_ in zip(range(i1, i2), lens):
+                d = (en - st) * ln_ / tot
+                out[k] = {"word": toks[k], "start": round(cur, 3), "end": round(cur + d, 3)}
+                cur += d
+    return out
+
+
 # ---------------------------------------------------------------- backends
 class Placeholder:
     name = "placeholder"
@@ -234,10 +271,7 @@ def main():
                 best = (wav, words, mm)
             if mm == 0:
                 break
-        toks = ln["text"].split()
-        if len(toks) == len(best[1]):  # captions use the script's spelling, whisper only gives timing
-            for wd, tk in zip(best[1], toks):
-                wd["word"] = tk
+        best = (best[0], align_words(ln["text"], best[1]), best[2])  # script spelling, whisper timing
         if ln.get("pitch") and ln["pitch"] != 1.0 and be.name != "files":
             from scipy.signal import resample_poly
             pr = ln["pitch"]
