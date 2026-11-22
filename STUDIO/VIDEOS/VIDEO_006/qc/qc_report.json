@@ -13,52 +13,7 @@
   "true_peak": -1.4,
   "lra": 1.7,
   "black": [],
-  "frozen": [
-    [
-      62.6333,
-      63.3667
-    ],
-    [
-      63.3667,
-      64.1333
-    ],
-    [
-      154.667,
-      155.333
-    ],
-    [
-      155.333,
-      156.033
-    ],
-    [
-      229.233,
-      229.967
-    ],
-    [
-      229.967,
-      230.6
-    ],
-    [
-      346.867,
-      347.9
-    ],
-    [
-      347.9,
-      348.633
-    ],
-    [
-      370.033,
-      370.7
-    ],
-    [
-      370.7,
-      371.567
-    ],
-    [
-      371.567,
-      372.333
-    ]
-  ],
+  "frozen": [],
   "silence": [],
   "checks": {
     "resolution_1080x1920": true,
@@ -69,7 +24,7 @@
     "lufs_-14_+-1": true,
     "true_peak_<=-1": true,
     "no_black_>0.1s": true,
-    "no_freeze_>0.6s": false
+    "no_freeze_>0.6s": true
   },
   "contact_sheet": "/home/user/2d-yta-editing/STUDIO/VIDEOS/VIDEO_006/qc/contact_sheet.jpg"
 }

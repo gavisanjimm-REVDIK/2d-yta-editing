@@ -41,10 +41,10 @@ clue and asks viewers to comment their suspect (end card "WHO DID IT? / COMMENT 
 ## Numbers / QC
 | item | result |
 |---|---|
-| render | 11,695 frames, 481 s full render (0.04 s/frame); export 477 s; 12 shots re-rendered after the freeze fix |
+| render | 11,695 frames, 481 s full render (0.04 s/frame); export ~470 s; fixes re-rendered only the changed shots (2,745 frames in 100 s, then 340 frames in 12 s) |
 | mix | master −14.0 LUFS, −1.4 dBTP |
 | QC (first export) | 1080×1920, 30 fps, h264/aac 48k, 389.8 s, loudness/peak pass, no black frames. Duration check "fails" by design (30–90 s rule is for Shorts; this is a full lesson). 11 freeze flags, all at shot starts where the desk was empty until the first tile's word → fixed with placeholders |
-| QC (final) | see below |
+| QC (final) | all checks pass except the expected duration rule: 389.8 s, −14.0 LUFS, −1.4 dBTP, no black, **no freeze flags**. Spot-checked frames: case stamp, table, end card, placeholders. Also moved the "BROKEN GLASS" label off the caption line |
 
 ## Known limits
 - TTS pronounces some names imperfectly (e.g. Cabucgayan, phycoerythrin, Pyrodinium); captions show the correct spelling.
