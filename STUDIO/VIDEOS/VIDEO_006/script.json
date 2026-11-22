@@ -1,0 +1,408 @@
+{
+  "title": "Protists Part 2: Archaeplastida and Unikonta",
+  "start_offset": 0.5,
+  "tail": 1.0,
+  "source": "PSHS Biology 3, Learning Guide 9.3 (Protista Part 2)",
+  "lines": [
+    {
+      "id": "L01",
+      "who": "marcus",
+      "voice": "am_michael",
+      "speed": 0.98,
+      "text": "Detective Marcus, back on the protist beat. Part two: the last two supergroups.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L02",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Last time, we met Excavata and the SAR clade. Today: Archaeplastida, and Unikonta.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L03",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Supergroup three: Archaeplastida.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "L04",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "The name literally means ancient plastids. All its members share chloroplasts that trace back to one event, about a billion years ago.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L05",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "A heterotrophic eukaryote engulfed a cyanobacteria like organism. Instead of being digested, it stayed, and became the chloroplast. This is the theory of endosymbiosis.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L06",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "The similarities between plastids and cyanobacteria were first noticed by Schimper, in 1883.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L07",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Later, McFadden described how deeply the two partners merged: in structure, in metabolism, and in their genes. The result was a lineage of eukaryotes powered by light.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L08",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Dating that event with molecular clocks is still difficult. But every archaeplastid descends from it.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L09",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Archaeplastida has three subgroups: glaucophytes, red algae, and the green algae together with land plants.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L10",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "First, the glaucophytes. Not much is known about them, except that they live near the surface of fresh water.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "L11",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Their plastids, called cyanelles, keep many traits of the original cyanobacterium. The model species, Cyanophora paradoxa, helps scientists study how endosymbiosis happened.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L12",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Next, the rhodophytes, or red algae. There are at least six thousand species, mostly marine.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "L13",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Some are single celled, but most are filamentous or multicellular.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L14",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Their red color comes from a pigment called phycoerythrin. The deeper they live, the darker they look. In deep water, some appear almost black.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L15",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Red algae are common in warm tropical seas, and they are economically important. They give us carrageenan and agar.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L16",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "And the nori wrapped around your sushi? That is the red alga Pyropia, dried into sheets.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L17",
+      "who": "marcus",
+      "voice": "am_michael",
+      "speed": 0.98,
+      "text": "So that's what's been hiding in my sushi.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L18",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "The third subgroup is Chloroplastida: the green algae, together with land plants.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L19",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "About twelve thousand green algae species are known. They share the pigments of land plants: chlorophyll a and b, carotene, and xanthophyll.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L20",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Green algae can be motile or non motile. Most live in fresh water, but there are land and marine species too.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L21",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Tiny, free floating green algae are key oxygen producers in aquatic ecosystems.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L22",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "They come in many forms: unicellular, colonial, multicellular, filamentous, and tubular.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L23",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Chlamydomonas is a single swimming cell. Volvox lives in rolling colonies. Ulva, the sea lettuce, is multicellular. And Caulerpa taxifolia is the largest single celled organism.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L24",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Think it over. What conditions could have allowed ancestral green algae to move onto land? Pause, and think.",
+      "pause_after": 2.5
+    },
+    {
+      "id": "L25",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "One suggested answer: their closest living relatives, the charophytes, live in fresh water. Adapting to a dry, glaciated Earth may have produced pathways like photorespiration, helping them move onto land.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L26",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Supergroup four: Unikonta.",
+      "pause_after": 0.5
+    },
+    {
+      "id": "L27",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "It is the most mixed group of all, with two major clades: Amoebozoa and Opisthokonta. Molecular studies link them, but their exact relationship is still being tested.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L28",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Amoebozoa are amoebas for all, or most, of their life cycle. They move using pseudopodia.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L29",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Most have broad, lobe shaped pseudopods. A few are filose, or reticulate.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L30",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Lobose amoebae can be naked, or covered by a glycocalyx, a barrier against their surroundings.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L31",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "When food runs low, they form cysts. When conditions improve, they eat their prey by phagocytosis.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L32",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "This makes them an important link in aquatic food webs.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L33",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Amoebozoa also include the fungus like slime molds, such as Physarum. The most species rich group is the plasmodial slime molds.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L34",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "They live worldwide, on decaying plants, leaf litter, and tree bark. Their spores develop into a plasmodium, often yellow or orange.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L35",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "The other clade, Opisthokonta, includes two protist groups: nucleariids, and choanoflagellates.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L36",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Nucleariids are filose amoebae, considered the ancestral group of fungi.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L37",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Choanoflagellates are the closest known relatives of animals. They are single celled or colonial, and live in fresh and salt water worldwide.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L38",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "A collar of microvilli surrounds one flagellum. The beating flagellum creates a current, food particles are filtered onto the collar, and then eaten by phagocytosis.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L39",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Think it over. Choanoflagellates look strikingly like choanocytes, the collar cells of sponges. If they are the ancestral form, what could have pushed them to become multicellular?",
+      "pause_after": 2.0
+    },
+    {
+      "id": "L40",
+      "who": "marcus",
+      "voice": "am_michael",
+      "speed": 0.98,
+      "text": "And now, a real case for you to solve.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L41",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "December twenty second, twenty sixteen. Eight twenty four p m. Cabucgayan, Biliran. A neighbor reports a married couple found unconscious, in their house facing the sea.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L42",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "On the table: fresh oysters, puso, isaw, and a pitcher of clear water. Two unfinished plates, each with an empty oyster shell. A broken glass lies on the floor.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L43",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Nearby, an earthen jar of water smells like rotten eggs. And by the basin: empty blister packs of paracetamol.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L44",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "The weather: twenty eight degrees Celsius, with eighty three percent humidity. At the hospital, the couple is stable, but still unconscious.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L45",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "The epidemiologist suspects a parasitic protist. Four suspects: Plasmodium, Entamoeba, Giardia, and Pyrodinium bahamense.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L46",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Which protist is the most probable suspect, and why? Build its profile: general information, symptoms, diagnosis, and a treatment available locally.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L47",
+      "who": "marcus",
+      "voice": "am_michael",
+      "speed": 0.98,
+      "text": "Use the clues. Comment your suspect. I'll be reading.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L48",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Protists keep surprising scientists. New species are still waiting to be found: some harmful, some helpful, and some that may explain how animals came from a single cell.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L49",
+      "who": "narrator",
+      "voice": "af_heart",
+      "speed": 0.95,
+      "text": "Big things really do come in small packages.",
+      "pause_after": 0.45
+    },
+    {
+      "id": "L50",
+      "who": "marcus",
+      "voice": "am_michael",
+      "speed": 0.98,
+      "text": "Case closed. For now.",
+      "pause_after": 0.2
+    }
+  ]
+}
