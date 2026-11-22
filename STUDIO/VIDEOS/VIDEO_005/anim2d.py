@@ -612,7 +612,20 @@ SHOT_FNS = {k[5:]: v for k, v in globals().items() if k.startswith("shot_")}
 def draw_job(c, job, t):
     lid = job[2:]
     typ, params = PLAN[lid]
+    if typ == "scope":  # the microscope already focuses in
+        SHOT_FNS[typ](c, t, lid, params)
+        return
+    t0, t1 = seg_bounds(lid)
+    u = clamp((t - t0) / max(t1 - t0, 0.1))
+    k = 1.0 + 0.045 * u  # slow push so cards/diagrams never sit dead still
+    c.save()
+    c.translate(W / 2, H * 0.52)
+    c.scale(k, k)
+    c.rotate(0.4 * math.sin(t * 0.5))
+    c.translate(-W / 2, -H * 0.52)
+    c.drawPaint(paint("#2E2016"))  # fill the corners the slight rotation reveals
     SHOT_FNS[typ](c, t, lid, params)
+    c.restore()
 
 
 def render(job_frame):

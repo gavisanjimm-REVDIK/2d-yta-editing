@@ -3,8 +3,8 @@
   "music_db": -4.0,
   "duck_db": -9.0,
   "bus_db": {
-    "sfx": -7.0,
-    "amb": -20.0
+    "sfx": 0.0,
+    "amb": -12.0
   },
   "music_gates": [],
   "sfx": [

@@ -26,6 +26,6 @@ for lid, (typ, p) in PLAN.items():
         sfx.append({"t": A.word_t(lid, p["stamp"][1]), "name": "impact_soft", "gain_db": -12})
 for t0, _ in E.SECTION_T[1:]:
     sfx.append({"t": t0, "name": "whoosh_slow", "gain_db": -14})
-cues = {"duration": D, "music_db": -4.0, "duck_db": -9.0, "bus_db": {"sfx": -7.0, "amb": -20.0}, "music_gates": [], "sfx": sfx}
+cues = {"duration": D, "music_db": -4.0, "duck_db": -9.0, "bus_db": {"sfx": 0.0, "amb": -12.0}, "music_gates": [], "sfx": sfx}
 (V / "audio" / "cues.json").write_text(json.dumps(cues, indent=2))
 print("cues ->", V / "audio" / "cues.json", len(sfx), "events")
